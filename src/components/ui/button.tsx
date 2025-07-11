@@ -10,12 +10,13 @@ const buttonVariants = cva(
     variants: {
       variant: {
         login:
-          "bg-white rounded-[8px] border-[2px] border-neutral-100 hover:bg-neutral-100",
+          "bg-white border-[2px] border-neutral-100 hover:bg-neutral-100",
         request: 
-          "bg-primary-900 rounded-[8px] hover:bg-primary-800"
+          "bg-primary-900 hover:bg-primary-800"
       },
       size: {
-        default: "h-[48px] px-[24px] py-[12px] text-[16px] flex flex-col justify-center items-center leading-[24px] font-medium",
+        default: "h-[48px] rounded-[8px] px-[24px] py-[12px] text-[16px] flex flex-col justify-center items-center leading-[24px] font-medium",
+        big: "h-[64px] rounded-[12px] px-[32px] py-[20px] text-[16px] flex flex-col justify-center items-center leading-[24px] font-medium",
       },
     },
     defaultVariants: {
