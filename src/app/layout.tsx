@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "../components/layout/navbar";
 import CTA from "@/components/layout/cta";
+import Footer from "@/components/layout/footer";
 
 export const metadata: Metadata = {
   title: "SoftQA",
@@ -24,6 +25,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <CTA />
+        <Footer />
       </body>
     </html>
   );
