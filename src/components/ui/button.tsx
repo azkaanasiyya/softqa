@@ -12,7 +12,11 @@ const buttonVariants = cva(
         login:
           "bg-white border-[2px] border-neutral-100 hover:bg-neutral-100",
         request: 
-          "bg-primary-900 hover:bg-primary-800"
+          "bg-primary-900 hover:bg-primary-800",
+        get:
+          "bg-cyan-500 hover:bg-cyan-400",
+        talk:
+          "bg-primary-800 hover:bg-primary-700 border-[2px] border-[#FFFFFF0F]",
       },
       size: {
         default: "h-[48px] rounded-[8px] px-[24px] py-[12px] text-[16px] flex flex-col justify-center items-center leading-[24px] font-medium",
