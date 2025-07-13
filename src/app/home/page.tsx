@@ -1,7 +1,7 @@
 import HomeContent from "@/components/home/content";
 import HomeFAQs from "@/components/home/faqs";
 import HomeHero from "@/components/home/hero";
-import HomeSocialProof from "@/components/home/socialProof";
+import HomeSocialProof from "@/components/common/socialProof";
 import HomeTestimonials from "@/components/home/testimonials";
 import HomeUsers from "@/components/home/users";
 
