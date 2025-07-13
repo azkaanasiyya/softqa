@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function HomeSocialProof() {
+export default function SocialProof() {
     return (
         <div className="relative bg-[url('/home/bg-social.png')] bg-no-repeat bg-center bg-cover border-t border-b border-grayscale-100 py-16 flex flex-col gap-8 items-center">
             <div className="absolute">
