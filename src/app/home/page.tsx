@@ -1,5 +1,5 @@
 import HomeContent from "@/components/home/content";
-import HomeFAQs from "@/components/home/faqs";
+import FAQs from "@/components/common/faqs";
 import HomeHero from "@/components/home/hero";
 import HomeSocialProof from "@/components/common/socialProof";
 import HomeTestimonials from "@/components/home/testimonials";
@@ -13,7 +13,7 @@ export default function HomePage() {
             <HomeContent />
             <HomeUsers />
             <HomeTestimonials />
-            <HomeFAQs />
+            <FAQs />
         </div>
     )
 }

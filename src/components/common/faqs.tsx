@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/accordion"
 import { faqs } from "../data/faqs";
 
-export default function HomeFAQs() {
+export default function FAQs() {
     return (
         <div className="bg-primary-50 py-[116px] px-[124px] flex flex-col justify-center items-center">
             <div className="max-w-[1192px] flex flex-row gap-8">
