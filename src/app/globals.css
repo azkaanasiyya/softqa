@@ -97,6 +97,17 @@ body {
   --color-grayscale-800: #1C2733;
   --color-grayscale-900: #0D131B;
 
+  --color-white-opacity-6: #FFFFFF0F;
+  --color-white-opacity-12: #FFFFFF1F;
+  --color-white-opacity-24: #FFFFFF3D;
+  --color-white-opacity-32: #FFFFFF52;
+  --color-white-opacity-40: #FFFFFF66;
+  --color-white-opacity-64: #FFFFFFA3;
+  --color-white-opacity-72: #FFFFFFB8;
+  --color-white-opacity-80: #FFFFFFCC;
+  --color-white-opacity-88: #FFFFFFE0;
+  --color-white-opacity-96: #FFFFFFEB;
+
   --color-base-white: #ffffff;
   --color-base-black: #000000;
 
