@@ -1,5 +1,6 @@
 import { Input } from "../ui/input";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function WebinarFeatures() {
     return (
@@ -39,10 +40,12 @@ export default function WebinarFeatures() {
                                         <p className="text-[16px] leading-6 text-grayscale-600">A guide to the best open-source QA tools for small and medium-sized teams.</p>
                                     </div>
                                 </div>
-                                <div className="flex flex-row gap-1 items-end cursor-pointer">
-                                    <p className="text-[16px] leading-6 text-primary-500 font-medium underline">Read more</p>
-                                    <Image src="/webinar/icon.png" alt="icon" width={16} height={16} className="w-4 h-4"/>
-                                </div>
+                                <Link href="/webinar/webinardetail" className="cursor-pointer">
+                                    <div className="flex flex-row gap-1 items-end cursor-pointer">
+                                        <p className="text-[16px] leading-6 text-primary-500 font-medium underline">Read more</p>
+                                        <Image src="/webinar/icon.png" alt="icon" width={16} height={16} className="w-4 h-4"/>
+                                    </div>
+                                </Link>
                             </div>
                         </div>
                         <div className="bg-grayscale-50 rounded-[16px] p-2 h-[456px] flex flex-col">
@@ -63,10 +66,12 @@ export default function WebinarFeatures() {
                                         <p className="text-[16px] leading-6 text-grayscale-600">Learn how to utilize batch mode and automation tools to cover all your test cases...</p>
                                     </div>
                                 </div>
-                                <div className="flex flex-row gap-1 items-end cursor-pointer">
-                                    <p className="text-[16px] leading-6 text-primary-500 font-medium underline">Read more</p>
-                                    <Image src="/webinar/icon.png" alt="icon" width={16} height={16} className="w-4 h-4"/>
-                                </div>
+                                <Link href="/webinar/webinardetail" className="cursor-pointer">
+                                    <div className="flex flex-row gap-1 items-end cursor-pointer">
+                                        <p className="text-[16px] leading-6 text-primary-500 font-medium underline">Read more</p>
+                                        <Image src="/webinar/icon.png" alt="icon" width={16} height={16} className="w-4 h-4"/>
+                                    </div>
+                                </Link>
                             </div>
                         </div>
                         <div className="bg-grayscale-50 rounded-[16px] p-2 h-[456px] flex flex-col">
@@ -87,10 +92,12 @@ export default function WebinarFeatures() {
                                         <p className="text-[16px] leading-6 text-grayscale-600">Protect your code and maintain compliance with robust security measures in your autom...</p>
                                     </div>
                                 </div>
-                                <div className="flex flex-row gap-1 items-end cursor-pointer">
-                                    <p className="text-[16px] leading-6 text-primary-500 font-medium underline">Read more</p>
-                                    <Image src="/webinar/icon.png" alt="icon" width={16} height={16} className="w-4 h-4"/>
-                                </div>
+                                <Link href="/webinar/webinardetail" className="cursor-pointer">
+                                    <div className="flex flex-row gap-1 items-end cursor-pointer">
+                                        <p className="text-[16px] leading-6 text-primary-500 font-medium underline">Read more</p>
+                                        <Image src="/webinar/icon.png" alt="icon" width={16} height={16} className="w-4 h-4"/>
+                                    </div>
+                                </Link>
                             </div>
                         </div>
                         <div className="bg-grayscale-50 rounded-[16px] p-2 h-[456px] flex flex-col">
@@ -111,10 +118,12 @@ export default function WebinarFeatures() {
                                         <p className="text-[16px] leading-6 text-grayscale-600">Understand the role of continuous testing in DevOps pipelines and how it enhances colla...</p>
                                     </div>
                                 </div>
-                                <div className="flex flex-row gap-1 items-end cursor-pointer">
-                                    <p className="text-[16px] leading-6 text-primary-500 font-medium underline">Read more</p>
-                                    <Image src="/webinar/icon.png" alt="icon" width={16} height={16} className="w-4 h-4"/>
-                                </div>
+                               <Link href="/webinar/webinardetail" className="cursor-pointer">
+                                    <div className="flex flex-row gap-1 items-end cursor-pointer">
+                                        <p className="text-[16px] leading-6 text-primary-500 font-medium underline">Read more</p>
+                                        <Image src="/webinar/icon.png" alt="icon" width={16} height={16} className="w-4 h-4"/>
+                                    </div>
+                                </Link>
                             </div>
                         </div>
                         <div className="bg-grayscale-50 rounded-[16px] p-2 h-[456px] flex flex-col">
@@ -135,10 +144,12 @@ export default function WebinarFeatures() {
                                         <p className="text-[16px] leading-6 text-grayscale-600">Implement QA automation practices that help minimize bugs and deliver software with zero...</p>
                                     </div>
                                 </div>
-                                <div className="flex flex-row gap-1 items-end cursor-pointer">
-                                    <p className="text-[16px] leading-6 text-primary-500 font-medium underline">Read more</p>
-                                    <Image src="/webinar/icon.png" alt="icon" width={16} height={16} className="w-4 h-4"/>
-                                </div>
+                                <Link href="/webinar/webinardetail" className="cursor-pointer">
+                                    <div className="flex flex-row gap-1 items-end cursor-pointer">
+                                        <p className="text-[16px] leading-6 text-primary-500 font-medium underline">Read more</p>
+                                        <Image src="/webinar/icon.png" alt="icon" width={16} height={16} className="w-4 h-4"/>
+                                    </div>
+                                </Link>
                             </div>
                         </div>
                         <div className="bg-grayscale-50 rounded-[16px] p-2 h-[456px] flex flex-col">
@@ -159,10 +170,12 @@ export default function WebinarFeatures() {
                                         <p className="text-[16px] leading-6 text-grayscale-600">Discover strategies to design scalable QA frameworks that grow with your organization&apos;...</p>
                                     </div>
                                 </div>
-                                <div className="flex flex-row gap-1 items-end cursor-pointer">
-                                    <p className="text-[16px] leading-6 text-primary-500 font-medium underline">Read more</p>
-                                    <Image src="/webinar/icon.png" alt="icon" width={16} height={16} className="w-4 h-4"/>
-                                </div>
+                                <Link href="/webinar/webinardetail" className="cursor-pointer">
+                                    <div className="flex flex-row gap-1 items-end cursor-pointer">
+                                        <p className="text-[16px] leading-6 text-primary-500 font-medium underline">Read more</p>
+                                        <Image src="/webinar/icon.png" alt="icon" width={16} height={16} className="w-4 h-4"/>
+                                    </div>
+                                </Link>
                             </div>
                         </div>
                         <div className="bg-grayscale-50 rounded-[16px] p-2 h-[456px] flex flex-col">
@@ -183,10 +196,12 @@ export default function WebinarFeatures() {
                                         <p className="text-[16px] leading-6 text-grayscale-600">Learn how AI can help you generate and refine test scripts, saving time and reducing...</p>
                                     </div>
                                 </div>
-                                <div className="flex flex-row gap-1 items-end cursor-pointer">
-                                    <p className="text-[16px] leading-6 text-primary-500 font-medium underline">Read more</p>
-                                    <Image src="/webinar/icon.png" alt="icon" width={16} height={16} className="w-4 h-4"/>
-                                </div>
+                                <Link href="/webinar/webinardetail" className="cursor-pointer">
+                                    <div className="flex flex-row gap-1 items-end cursor-pointer">
+                                        <p className="text-[16px] leading-6 text-primary-500 font-medium underline">Read more</p>
+                                        <Image src="/webinar/icon.png" alt="icon" width={16} height={16} className="w-4 h-4"/>
+                                    </div>
+                                </Link>
                             </div>
                         </div>
                         <div className="bg-grayscale-50 rounded-[16px] p-2 h-[456px] flex flex-col">
@@ -207,10 +222,12 @@ export default function WebinarFeatures() {
                                         <p className="text-[16px] leading-6 text-grayscale-600">Foster collaboration between development and QA teams to enhance software quality a...</p>
                                     </div>
                                 </div>
-                                <div className="flex flex-row gap-1 items-end cursor-pointer">
-                                    <p className="text-[16px] leading-6 text-primary-500 font-medium underline">Read more</p>
-                                    <Image src="/webinar/icon.png" alt="icon" width={16} height={16} className="w-4 h-4"/>
-                                </div>
+                                <Link href="/webinar/webinardetail" className="cursor-pointer">
+                                    <div className="flex flex-row gap-1 items-end cursor-pointer">
+                                        <p className="text-[16px] leading-6 text-primary-500 font-medium underline">Read more</p>
+                                        <Image src="/webinar/icon.png" alt="icon" width={16} height={16} className="w-4 h-4"/>
+                                    </div>
+                                </Link>
                             </div>
                         </div>
                         <div className="bg-grayscale-50 rounded-[16px] p-2 h-[456px] flex flex-col">
@@ -231,10 +248,12 @@ export default function WebinarFeatures() {
                                         <p className="text-[16px] leading-6 text-grayscale-600">Overcome the common challenges faced during QA automation with tried-and-true so...</p>
                                     </div>
                                 </div>
-                                <div className="flex flex-row gap-1 items-end cursor-pointer">
-                                    <p className="text-[16px] leading-6 text-primary-500 font-medium underline">Read more</p>
-                                    <Image src="/webinar/icon.png" alt="icon" width={16} height={16} className="w-4 h-4"/>
-                                </div>
+                                <Link href="/webinar/webinardetail" className="cursor-pointer">
+                                    <div className="flex flex-row gap-1 items-end cursor-pointer">
+                                        <p className="text-[16px] leading-6 text-primary-500 font-medium underline">Read more</p>
+                                        <Image src="/webinar/icon.png" alt="icon" width={16} height={16} className="w-4 h-4"/>
+                                    </div>
+                                </Link>
                             </div>
                         </div>
                     </div>
