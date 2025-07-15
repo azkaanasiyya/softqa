@@ -4,6 +4,7 @@ import HomeHero from "@/components/home/hero";
 import SocialProof from "@/components/common/socialProof";
 import HomeTestimonials from "@/components/home/testimonials";
 import HomeUsers from "@/components/home/users";
+import CTA from "@/components/layout/cta";
 
 export default function HomePage() {
     return (
@@ -14,6 +15,7 @@ export default function HomePage() {
             <HomeUsers />
             <HomeTestimonials />
             <FAQs />
+            <CTA />
         </div>
     )
 }
