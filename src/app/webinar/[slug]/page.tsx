@@ -1,4 +1,5 @@
 // import { useParams } from "next/navigation";
+import CTA from "@/components/layout/cta";
 import ContentWebDetail from "../../../components/webinar/webinardetail/contentwebdetail";
 import MoreWebDetail from "../../../components/webinar/webinardetail/morewebdetail";
 
@@ -9,6 +10,7 @@ export default function WebinarDetailPage() {
         <div>
             <ContentWebDetail />
             <MoreWebDetail />
+            <CTA />
         </div>
     )
 }
