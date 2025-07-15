@@ -7,6 +7,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import { faqs } from "../data/faqs";
+import Link from "next/link";
 
 export default function FAQs() {
     return (
@@ -20,10 +21,12 @@ export default function FAQs() {
                         </div>
                         <h2 className="max-w-[580px] text-[48px] leading-[60px] font-normal text-grayscale-900">Frequently asked questions</h2>
                     </div>
-                    <Button variant="login" size="medium" className="cursor-pointer text-primary-500">
-                        Help Center
+                    <Link href="/help" className="cursor-pointer">
+                        <Button variant="login" size="medium" className="cursor-pointer text-primary-500">
+                            Help Center
                         <Image src="/home/help-icon.png" alt="faqs" width={16} height={16} />
                     </Button>
+                    </Link>
                 </div>
                 <div className="flex justify-center pt-12 w-[682px]">
                     <div className="flex flex-col w-[682px]">
