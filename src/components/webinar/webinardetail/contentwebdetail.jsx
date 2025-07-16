@@ -6,7 +6,7 @@ export default function ContentWebDetail() {
             <div className="max-w-[1192px] flex flex-col gap-[88px]">
                 <div className="flex flex-row gap-1 items-start">
                     <span className="text-[16px] leading-6 text-grayscale-900">Webinar</span>
-                    <span className="text-[16px] leading-6 text-grayscale-500 w-4 flexf flex-col justify-center items-center">/</span>
+                    <span className="text-[16px] leading-6 text-grayscale-500 w-4 flex flex-col justify-center items-center">/</span>
                     <span className="text-[16px] leading-6 text-grayscale-400">Achieving 100% Test Coverage</span>
                 </div>
                 <div className="flex flex-col gap-8">
