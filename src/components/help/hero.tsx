@@ -1,6 +1,7 @@
 import { InputSearch } from "../custom/inputsearch";
 import Image from "next/image";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 export default function HelpHero() {
     return (
@@ -22,12 +23,14 @@ export default function HelpHero() {
                 </div>
                 <div className="grid grid-cols-3 gap-8">
                     <div className="bg-grayscale-50 rounded-[16px] flex flex-col pt-1 pb-4 px-6 gap-2 w-[376px]">
-                        <div className="flex flex-row justify-between py-5 border-b border-grayscale-100">
-                            <h5 className="text-[24px] leading-[30px] text-grayscale-900">General questions</h5>
-                            <div className="flex flex-col justify-center items-center rounded-[8px] w-6 h-6 bg-grayscale-100 p-1">
-                                <Image src="/help/right-green.png" alt="icon" width={16} height={16} />
+                        <Link href="/help/helpdetail" className="cursor-pointer">
+                            <div className="flex flex-row justify-between py-5 border-b border-grayscale-100">
+                                <h5 className="text-[24px] leading-[30px] text-grayscale-900">General questions</h5>
+                                <div className="flex flex-col justify-center items-center rounded-[8px] w-6 h-6 bg-grayscale-100 p-1">
+                                    <Image src="/help/right-green.png" alt="icon" width={16} height={16} />
+                                </div>
                             </div>
-                        </div>
+                        </Link>                        
                         <div className="flex flex-col gap-1">
                             <div className="flex flex-row justify-between items-center py-3">
                                 <span className="text-[18px] leading-7 text-grayscale-900">How do I create an account?</span>
