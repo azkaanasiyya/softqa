@@ -1,7 +1,8 @@
 import { InputSearch } from "../custom/inputsearch";
 import Image from "next/image";
-import { Button } from "../ui/button";
+// import { Button } from "../ui/button";
 import Link from "next/link";
+import { HelpModal } from "./modal";
 
 export default function HelpHero() {
     return (
@@ -139,7 +140,7 @@ export default function HelpHero() {
                             <h4 className="text-[32px] leading-10 text-white">Haven&apos;t found what you need?</h4>
                             <span className="text-[16px] leading-6 text-[#FFFFFFEB]">Get in touch - we&apos;re happy to help!</span>
                         </div>
-                        <Button variant="get" size="default" className="cursor-pointer text-primary-500">Contact Us</Button>
+                        <HelpModal />
                     </div>
                 </div>
             </div>
