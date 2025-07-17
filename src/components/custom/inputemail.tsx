@@ -7,7 +7,7 @@ export function InputEmail(props: React.ComponentProps<typeof Input>) {
         <Input 
             {...props}
             className={cn(
-                "w-[488px] h-14 border-[1.5px] border-primary-500 p-4 text-[16px] text-grayscale-400 leading-6 rounded-[12px]",
+                "max-w-[520px] w-full h-14 border-[1.5px] border-primary-500 p-4 text-[16px] text-grayscale-400 leading-6 rounded-[12px]",
                 props.className
             )}
         />
