@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { InputEmail } from "../custom/inputemail";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 export default function SignInHero() {
     return (
@@ -24,7 +25,9 @@ export default function SignInHero() {
                                         <span className="text-[16px] leading-6 text-grayscale-900">Password</span>
                                         <InputEmail placeholder="Enter your password"/>
                                     </div>
-                                    <span className="text-[14px] leading-[22px] font-medium text-primary-500 text-end">Forgot Password?</span>
+                                    <Link href="/auth/forgot" className="cursor-pointer self-end">
+                                        <span className="text-[14px] leading-[22px] font-medium text-primary-500 text-end">Forgot Password?</span>    
+                                    </Link>
                                 </div>
                                 <Button variant="request" size="medium" className="w-full text-cyan-500">Sign In</Button>
                             </div>
@@ -44,7 +47,9 @@ export default function SignInHero() {
                         </div>
                         <div className="flex flex-row gap-2">
                             <span className="text-[16px] leading-6 text-grayscale-600">Don’t have an Account?</span>
-                            <span className="text-[16px] leading-6 text-primary-500 font-medium">Sign Up</span>
+                            <Link href="/auth/sign-up" className="cursor-pointer">
+                                <span className="text-[16px] leading-6 text-primary-500 font-medium">Sign Up</span>
+                            </Link>
                         </div>
                     </div>
                 </div>
