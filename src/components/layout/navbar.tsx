@@ -38,13 +38,15 @@ export default function Navbar() {
                 })}
             </ul>
             <div className="flex flex-row gap-4">
-                <Button
-                    variant="login"
-                    size="default"
-                    className="cursor-pointer text-primary-500"
-                >
-                    Sign In
-                </Button>
+                <Link href="/auth/sign-in">
+                    <Button
+                        variant="login"
+                        size="default"
+                        className="cursor-pointer text-primary-500"
+                    >
+                        Sign In
+                    </Button>
+                </Link>
                 <Button
                     variant="request"
                     size="default"
