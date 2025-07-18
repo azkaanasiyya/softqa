@@ -1,5 +1,6 @@
 import { Button } from "../ui/button";
 import Image from "next/image";
+import { HomeModal } from "./modal";
 
 export default function HomeHero() {
     return (
@@ -26,13 +27,7 @@ export default function HomeHero() {
                                 >
                                     Get Started
                                 </Button>
-                                <Button
-                                    variant="login"
-                                    size="big"
-                                    className="cursor-pointer text-primary-500"
-                                >
-                                    Talk to Sales       
-                                </Button>
+                                <HomeModal />
                             </div>
                         </div>
                     </div>
