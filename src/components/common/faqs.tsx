@@ -12,8 +12,8 @@ import Link from "next/link";
 export default function FAQs() {
     return (
         <div className="bg-primary-50 py-[116px] px-[124px] flex flex-col justify-center items-center">
-            <div className="max-w-[1192px] flex flex-row gap-8">
-                <div className="w-[478px] flex flex-col justify-between items-start">
+            <div className="max-w-[1192px] flex flex-col lg:flex-row gap-8">
+                <div className="max-w-[478px] w-full flex flex-col justify-between items-start">
                     <div className="flex flex-col gap-4">
                         <div className="flex flex-row gap-2">
                             <div className="h-[22px] w-[1px] bg-primary-500" />
@@ -28,12 +28,12 @@ export default function FAQs() {
                     </Button>
                     </Link>
                 </div>
-                <div className="flex justify-center pt-12 w-[682px]">
-                    <div className="flex flex-col w-[682px]">
+                <div className="flex justify-center pt-12 max-w-[682px] w-full">
+                    <div className="flex flex-col max-w-[682px] w-full">
                         <Accordion
                             type="single"
                             collapsible
-                            className="w-[682px]"
+                            className="max-w-[682px] w-full"
                         >
                             {faqs.map((faq) => (
                                 <AccordionItem value={faq.value} key={faq.value}>
