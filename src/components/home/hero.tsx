@@ -4,8 +4,8 @@ import { HomeModal } from "./modal";
 
 export default function HomeHero() {
     return (
-        <div className="px-[124px] pt-[88px] pb-[104px] flex flex-row justify-center items-center">
-            <div className="max-w-[1192px] flex flex-row items-center justify-center gap-12">
+        <div className="px-[124px] pt-[88px] pb-[104px] flex flex-col justify-center items-center">
+            <div className="max-w-[1192px] flex flex-col lg:flex-row items-center justify-center gap-12">
                 <div className="flex flex-col justify-between py-6 max-w-[580px] items-start">
                     <div className="flex flex-col justify-between h-[568px]">
                         <div className="flex flex-col gap-4">
