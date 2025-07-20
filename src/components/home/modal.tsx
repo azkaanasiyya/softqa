@@ -12,7 +12,7 @@ export function HomeModal() {
             <Button
                 variant="login"
                 size="big"
-                className="cursor-pointer text-primary-500"
+                className="cursor-pointer text-primary-500 w-full"
             >
                 Talk to Sales       
             </Button>
