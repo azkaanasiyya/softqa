@@ -7,7 +7,7 @@ export function InputSearch(props: React.ComponentProps<typeof Input>) {
     <Input
       {...props}
       className={cn(
-        "w-[760px] h-16 border-2 border-grayscale-100 p-5 text-[16px] text-grayscale-400 leading-6 rounded-[16px]",
+        "w-full max-w-[760px] h-16 border-2 border-grayscale-100 p-5 text-[16px] text-grayscale-400 leading-6 rounded-[16px]",
         props.className
       )}
     />
