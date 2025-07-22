@@ -7,6 +7,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import { faqs } from "../data/faqs";
+import Link from "next/link";
 
 export default function FAQs() {
     return (
@@ -20,17 +21,19 @@ export default function FAQs() {
                         </div>
                         <h2 className="max-w-[580px] text-[32px] md:text-[48px] leading-10 md:leading-[60px] font-normal text-center lg:text-start text-grayscale-900">Frequently asked questions</h2>
                     </div>
-                    <Button variant="login" size="medium" className="cursor-pointer text-primary-500">
-                        Help Center
+                    <Link href="/help" className="hidden lg:block cursor-pointer">
+                        <Button variant="login" size="medium" className="cursor-pointer text-primary-500">
+                            Help Center
                         <Image src="/home/help-icon.png" alt="faqs" width={16} height={16} />
                     </Button>
+                    </Link>
                 </div>
-                <div className="flex justify-center pt-12 w-[682px]">
-                    <div className="flex flex-col w-[682px]">
+                <div className="flex justify-center pt-5 md:pt-8 lg:pt-12 max-w-[682px] w-full">
+                    <div className="flex flex-col max-w-[682px] w-full">
                         <Accordion
                             type="single"
                             collapsible
-                            className="w-[682px]"
+                            className="max-w-[682px] w-full"
                         >
                             {faqs.map((faq) => (
                                 <AccordionItem value={faq.value} key={faq.value}>
@@ -42,6 +45,12 @@ export default function FAQs() {
                         </Accordion>
                     </div>
                 </div>
+                <Link href="/help" className="lg:hidden cursor-pointer mt-4 items-center justify-center flex-row">
+                        <Button variant="login" size="medium" className="cursor-pointer text-primary-500">
+                            Help Center
+                        <Image src="/home/help-icon.png" alt="faqs" width={16} height={16} />
+                    </Button>
+                </Link>
             </div>
         </div>
     )

@@ -32,6 +32,7 @@ export default function WebinarHero() {
                             <div className="bg-additional-lavender rounded-[12px] pl-4 flex flex-row justify-between">
                                 <div className="flex flex-col justify-between my-4 items-start">
                                     <h4 className="text-[23.04px] md:text-[24px] lg:text-[32px] leading-[28.8px] md:leading-[30px] lg:leading-10 text-grayscale-900">Cost- <br />Efficient QA</h4>
+
                                     <div className="rounded-[17px] border border-grayscale-900 py-1 px-2">
                                         <p className="text-[10px] leading-[150%] text-grayscale-900">#Business</p>
                                     </div>
@@ -42,6 +43,7 @@ export default function WebinarHero() {
                                 <div className="flex flex-col gap-1">
                                     <p className="text-[14px] leading-[22px] text-grayscale-600">Mar 23, 2024</p>
                                     <div className="flex flex-col gap-2 lg:gap-3">
+
                                         <h5 className="text-[24px] leading-[30px] text-grayscale-900">Reducing QA Costs with Automation</h5>
                                         <p className="text-[16px] leading-6 text-grayscale-600">Learn how automation can significantly reduce quality assurance costs while ensuring high software standards. Discover practical t...</p>
                                     </div>
@@ -53,6 +55,7 @@ export default function WebinarHero() {
                             <div className="bg-additional-touch rounded-[12px] pl-4 flex flex-row justify-between">
                                 <div className="flex flex-col justify-between my-4 items-start">
                                     <h4 className="text-[23.04px] md:text-[24px] lg:text-[32px] leading-[28.8px] text-grayscale-900">Machine <br />Learning QA</h4>
+
                                     <div className="rounded-[17px] border border-grayscale-900 py-1 px-2">
                                         <p className="text-[10px] leading-[150%] text-grayscale-900">#innovation</p>
                                     </div>
@@ -60,6 +63,7 @@ export default function WebinarHero() {
                                 <Image src="/webinar/monica.png" alt="icon" width={156} height={212} className="rounded-tr-[12px] rounded-br-[12px]" />
                             </div>
                             <div className="min-h-[236px] h-full flex flex-col gap-8 md:gap-6 lg:justify-between items-start px-3 pb-3 pt-4 lg:py-4 lg:pl-4 lg:pr-16">
+
                                 <div className="flex flex-col gap-1">
                                     <p className="text-[14px] leading-[22px] text-grayscale-600">Mar 23, 2024</p>
                                     <div className="flex flex-col gap-3">
@@ -68,6 +72,7 @@ export default function WebinarHero() {
                                     </div>
                                 </div>
                                 <Button variant="request" size="medium" className="text-cyan-500 w-full lg:w-auto">Register</Button>
+
                             </div>
                         </div>
                     </div>
