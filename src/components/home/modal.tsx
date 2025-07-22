@@ -16,8 +16,8 @@ export function HomeModal() {
             >
                 Talk to Sales       
             </Button>
-        </DialogTrigger>
-        <DialogContent className="w-full">
+        </DialogTrigger> 
+        <DialogContent className="w-full max-w-[584px] overflow-y-auto max-h-[90vh]">
             <div className="flex flex-col w-full gap-6">
                 <div className="flex flex-col gap-2">
                     <DialogHeader>
