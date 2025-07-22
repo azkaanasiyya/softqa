@@ -4,25 +4,28 @@ import Link from "next/link";
 
 export default function WebinarFeatures() {
     return (
-        <div className="bg-base-white flex flex-col justify-center items-center pt-[124px] pb-[132px] px-[124px]">
-            <div className="max-w-[1192px] flex flex-col gap-10">
-                <div className="flex flex-row justify-between items-center">
-                    <h3 className="text-[40px] leading-[50px] text-grayscale-900">Watch past webinars</h3>
-                    <div className="flex flex-row gap-4">
+        <div className="bg-base-white flex flex-col justify-center items-center pt-[48.49px] pb-12 md:py-16 lg:pt-[124px] lg:pb-[132px] px-6 md:px-8 lg:px-[124px]">
+            <div className="max-w-[1192px] flex flex-col gap-4 md:gap-6 lg:gap-10">
+                <div className="flex flex-col lg:flex-row gap-8 md:gap-12 lg:justify-between items-stretch lg:items-center">
+                    <h3 className="text-[32px] md:text-[40px] leading-10 md:leading-[50px] text-grayscale-900 w-full">Watch past webinars</h3>
+                    <div className="flex flex-row gap-4 w-full justify-between lg:justify-end">
                         <Input type="search" placeholder="Search webinar..." />
-                        <div className="inline-flex h-12 gap-2 p-3 items-center rounded-[12px] border-2 border-grayscale-100">
+                        <div className="hidden md:inline-flex h-12 gap-2 p-3 items-center rounded-[12px] border-2 border-grayscale-100">
                             <p className="text-[16px] text-grayscale-900 whitespace-nowrap">Most recent</p>
                             <Image src="/webinar/down.png" alt="icon" width={20} height={20} className="object-contain"/>
                         </div>  
-                        <div className="inline-flex h-12 gap-2 p-3 items-center rounded-[12px] border-2 border-grayscale-100">
+                        <div className="hidden md:inline-flex  h-12 gap-2 p-3 items-center rounded-[12px] border-2 border-grayscale-100">
                             <p className="text-[16px] text-grayscale-900 whitespace-nowrap">All categories</p>
                             <Image src="/webinar/down.png" alt="icon" width={20} height={20} className="object-contain"/>
+                        </div>
+                        <div className="flex flex-col md:hidden items-center justify-center w-12 h-12 rounded-[12px] border-2 border-grayscale-100">
+                            <Image src="/webinar/filter.png" alt="icon" width={20} height={20} className="w-5 h-5"/>
                         </div>     
                     </div>
                 </div>
                 <div className="flex flex-col gap-16">
-                    <div className="grid grid-cols-3 gap-8">
-                        <div className="bg-grayscale-50 rounded-[16px] p-2 h-[456px] flex flex-col">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8">
+                        <div className="bg-grayscale-50 rounded-[16px] p-2 lg:min-h-[456px] flex flex-col">
                             <div className="bg-additional-palm rounded-[12px] pl-4 flex flex-row gap-6">
                                 <div className="flex flex-col max-w-[164px] items-start justify-between my-4">
                                     <h4 className="text-[32px] leading-10 text-grayscale-900">Open Source QA</h4>
@@ -30,7 +33,7 @@ export default function WebinarFeatures() {
                                         <p className="text-[10px] leading-[150%] text-grayscale-900">#Innovation</p>
                                     </div>
                                 </div>
-                                <Image src="/webinar/john.png" alt="icon" width={156} height={212} className="rounded-tr-[12px] rounded-br-[12px]" />
+                                <Image src="/webinar/john.png" alt="icon" width={156} height={212} className="rounded-tr-[12px] rounded-br-[12px] w-full h-full lg:w-[156px] lg:h-[212px]" />
                             </div>
                             <div className="flex flex-col justify-between h-[228px] p-4">
                                 <div className="flex flex-col gap-1">
@@ -48,7 +51,7 @@ export default function WebinarFeatures() {
                                 </Link>
                             </div>
                         </div>
-                        <div className="bg-grayscale-50 rounded-[16px] p-2 h-[456px] flex flex-col">
+                        <div className="bg-grayscale-50 rounded-[16px] p-2 min-h-[456px] flex flex-col">
                             <div className="bg-additional-light rounded-[12px] pl-4 flex flex-row gap-6">
                                 <div className="flex flex-col max-w-[164px] items-start justify-between my-4">
                                     <h4 className="text-[32px] leading-10 text-grayscale-900">100% Coverage</h4>
@@ -56,7 +59,7 @@ export default function WebinarFeatures() {
                                         <p className="text-[10px] leading-[150%] text-grayscale-900">#Technology</p>
                                     </div>
                                 </div>
-                                <Image src="/webinar/david.png" alt="icon" width={156} height={212} className="rounded-tr-[12px] rounded-br-[12px]" />
+                                <Image src="/webinar/david.png" alt="icon" width={156} height={212} className="rounded-tr-[12px] rounded-br-[12px] w-full h-full lg:w-[156px] lg:h-[212px]" />
                             </div>
                             <div className="flex flex-col justify-between h-[228px] p-4">
                                 <div className="flex flex-col gap-1">

@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function PricingHero() {
     return (
-        <div className="bg-[url('/pricing/bg-hero-pricing.png')] bg-no-repeat bg-center bg-cover flex flex-col justify-center items-center py-[104px] px-[124px]">
+        <div className="bg-[url('/pricing/bg-hero-pricing.png')] bg-no-repeat bg-center bg-cover flex flex-col justify-center items-center pt-20 pb-16 lg:py-[104px] px-6 md:px-8 lg:px-[124px]">
             <div className="max-w-[1192px] flex flex-col gap-16 items-center">
                 <div className="flex flex-col gap-4 items-center">
                     <div className="flex flex-col gap-4 items-center">
@@ -16,8 +16,8 @@ export default function PricingHero() {
                     <p className="max-w-[654px] text-[18px] leading-8 font-normal text-[#FFFFFFEB] text-center">From startup to enterprise, find the perfect plan to fit your needs and enhance your QA. Unlock the power of autonomous testing with SoftQA today.</p>
                 </div>
                 <div className="flex flex-col gap-[72px]">
-                    <div className="flex flex-row items-end">
-                        <div className="bg-primary-900 flex flex-col gap-8 p-8 rounded-[16px] border-2 border-[#FFFFFF0F] w-[397.33px] h-[678px]">
+                    <div className="flex flex-col lg:flex-row items-center lg:items-end">
+                        <div className="bg-primary-900 flex flex-col gap-8 p-8 rounded-[16px] border-2 border-[#FFFFFF0F] lg:max-w-[397.33px] w-full min-h-[678px]">
                             <div className="flex flex-col gap-6">
                                 <div className="flex flex-col gap-6">
                                     <div className="flex flex-col gap-1">
@@ -66,7 +66,7 @@ export default function PricingHero() {
                                 </div>
                             </div>
                         </div>
-                        <div className="p-[3px] rounded-[16px] bg-gradient-to-b from-[#B5FFFE] to-[#12454B] w-[397.33px]">
+                        <div className="p-[3px] rounded-[16px] bg-gradient-to-b from-[#B5FFFE] to-[#12454B] lg:max-w-[397.33px] w-full min-h-[694px]">
                             <div className="bg-[#12454B] flex flex-col gap-8 p-8 rounded-[16px] h-[694px] ">
                                 <div className="flex flex-col gap-6">
                                     <div className="flex flex-col gap-6">
@@ -120,7 +120,7 @@ export default function PricingHero() {
                                 </div>
                             </div>
                         </div>
-                        <div className="bg-primary-900 flex flex-col gap-8 p-8 rounded-[16px] border-2 border-[#FFFFFF0F] w-[397.33px] h-[678px]">
+                        <div className="bg-primary-900 flex flex-col gap-8 p-8 rounded-[16px] border-2 border-[#FFFFFF0F] lg:max-w-[397.33px] w-full lg:h-[678px] h-auto">
                             <div className="flex flex-col gap-6">
                                 <div className="flex flex-col gap-6">
                                     <div className="flex flex-col gap-1">
