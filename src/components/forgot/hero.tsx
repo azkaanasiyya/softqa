@@ -5,14 +5,14 @@ import Image from "next/image";
 
 export default function ForgotHero() {
     return (
-        <div className="bg-primary-50 py-[248px] px-[430px] flex flex-col justify-center items-center">
-            <div className="bg-base-white rounded-[12px] max-w-[580px] w-full py-10 px-12 flex flex-col items-center gap-4">
+        <div className="bg-primary-50 w-screen h-screen flex flex-col justify-center px-6 md:px-8 lg:p-0 items-center">
+            <div className="bg-base-white rounded-[12px] max-w-[580px] w-full py-8 md:py-10 px-6 md:px-12 flex flex-col items-center gap-4">
                 <div className="felx flex-col gap-6">
                     <div className="flex flex-col gap-4">
-                       <h4 className="text-[32px] leading-10 text-grayscale-900 text-center">Password recovery</h4> 
-                       <p className="text-[18px] leading-8 text-grayscale-600 text-center">Enter your account&apos;s email and we&apos;ll send you an email to reset the password.</p>
+                       <h4 className="text-[24px] md:text-[32px] leading-[30px] md:leading-10 text-grayscale-900 text-center">Password recovery</h4> 
+                       <p className="text-[16px] md:text-[18px] leading-7 md:leading-8 text-grayscale-600 text-center">Enter your account&apos;s email and we&apos;ll send you an email to reset the password.</p>
                     </div>
-                    <div className="flex flex-col gap-8">
+                    <div className="flex flex-col gap-6 md:gap-8">
                         <div className="flex flex-col gap-2">
                             <span className="text-[16px] leading-6 text-grayscale-900">Email</span>
                             <InputEmail placeholder="Enter your email"/>

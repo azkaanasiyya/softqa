@@ -6,14 +6,14 @@ import Link from "next/link";
 export default function SignInHero() {
     return (
         <div className="flex flex-col justify-center w-full items-center">
-            <div className="flex flex-row max-w-[1720px] w-full gap-[124px] pl-[124px] mx-auto">
-                <div className="pt-[45px] pb-[124px] flex flex-col gap-24 items-start">
-                    <Image src="/logo.svg" alt="logo" width={148.8} height={48} />
-                    <div className="flex flex-col items-center gap-6 max-w-[488px] w-full">
-                        <div className="flex flex-col gap-8">
-                            <div className="flex flex-col gap-10">
-                                <h4 className="text-[32px] leading-10 text-grayscale-900">Welcome Back!</h4>
-                                <span className="text-[18px] leading-8 text-grayscale-600">Sign in to access your dashboard and continue optimizing your QA process.</span>
+            <div className="flex flex-col items-center lg:items-start lg:flex-row max-w-[1720px] w-full lg:gap-[124px] py-8 md:pt-12 px-6 md:px-8 lg:py-0 lg:pr-0 lg:pl-[124px] lg:mx-auto">
+                <div className="lg:pt-[45px] md:pb-[152px] lg:pb-[124px] flex flex-col gap-8 md:gap-[88px] lg:gap-24 items-start w-full">
+                    <Image src="/logo.svg" alt="logo" width={148.8} height={48} className="lg:w-[148.8px] lg:h-[48px] w-[124px] h-[40px]"/>
+                    <div className="flex flex-col items-center gap-6 w-full lg:max-w-[488px]">
+                        <div className="flex flex-col gap-3 md:gap-12 lg:gap-8 w-full">
+                            <div className="flex flex-col gap-3 lg:gap-4">
+                                <h4 className="text-[24px] md:text-[32px] leading-[30px] md:leading-10 text-grayscale-900">Welcome Back!</h4>
+                                <span className="text-[16px] md:text-[18px] leading-7 md:leading-8 text-grayscale-600">Sign in to access your dashboard and continue optimizing your QA process.</span>
                             </div>
                             <div className="flex flex-col gap-6">
                                 <div className="flex flex-col gap-2">
@@ -32,14 +32,14 @@ export default function SignInHero() {
                                 <Button variant="request" size="medium" className="w-full text-cyan-500">Sign In</Button>
                             </div>
                         </div>
-                        <div className="flex flex-col items-center gap-6">
-                            <Image src="/auth/or.png" alt="image" width={488} height={22} />
-                            <div className="flex flex-col items-center gap-4">
-                                <div className="flex items-center justify-center gap-3 w-[488px] px-6 py-5 rounded-[12px] border-2 border-grayscale-100 h-14">
+                        <div className="flex flex-col items-center gap-6 w-full">
+                            <Image src="/auth/or.png" alt="image" width={488} height={22}  className="lg:w-[488px] lg:h-[22px] w-full h-full"/>
+                            <div className="flex flex-col items-center gap-4 w-full">
+                                <div className="flex items-center justify-center gap-3 w-full lg:max-w-[488px] px-6 py-5 rounded-[12px] border-2 border-grayscale-100 h-14">
                                     <Image src="/auth/google.png" alt="image" width={18} height={18} />
                                     <span className="text-[16px] leading-6 text-grayscale-900">Continue with Google</span>
                                 </div>
-                                <div className="flex justify-center gap-3 items-center w-[488px] px-6 py-5 rounded-[12px] border-2 border-grayscale-100 h-14">
+                                <div className="flex justify-center gap-3 items-center w-full lg:max-w-[488px] px-6 py-5 rounded-[12px] border-2 border-grayscale-100 h-14">
                                     <Image src="/auth/apple.png" alt="image" width={16.28} height={20} />
                                     <span className="text-[16px] leading-6 text-grayscale-900">Continue with Apple</span>
                                 </div>
@@ -53,7 +53,7 @@ export default function SignInHero() {
                         </div>
                     </div>
                 </div>
-                <div className="bg-[url('/auth/bg-sign-in.png')] bg-no-repeat bg-center bg-cover pt-[216px] px-[72px] pb-16 flex flex-col w-full gap-[210px]">
+                <div className="bg-[url('/auth/bg-sign-in.png')] bg-no-repeat bg-center bg-cover pt-[216px] px-[72px] pb-16 hidden lg:flex lg:flex-col w-full gap-[210px]">
                     <div className="flex flex-col max-w-[560px] gap-8">
                         <h1 className="text-[56px] leading-[70px] text-base-white">Revolutionize QA with Smarter Automation</h1>
                         <div className="flex flex-col gap-10">
