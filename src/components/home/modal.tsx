@@ -4,19 +4,29 @@ import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogT
 import { Textarea } from "../ui/textarea";
 import Image from "next/image";
 
-export function HomeModal() {
+type HomeModalProps = {
+    triggerType?: 'white' | 'green';
+};
+
+export function HomeModal({triggerType = 'white'}: HomeModalProps) {
     return (
         <Dialog>
             <form>
-        <DialogTrigger asChild>
-            <Button
+            {triggerType === 'white' ? (
+            <DialogTrigger asChild>
+                <Button
                 variant="login"
                 size="big"
                 className="cursor-pointer text-primary-500 w-full"
             >
                 Talk to Sales       
             </Button>
-        </DialogTrigger> 
+            </DialogTrigger>
+            ) : (
+            <DialogTrigger asChild>
+                <Button variant="talk" size="big" className="cursor-pointer text-cyan-500">Talk to Sales</Button>
+            </DialogTrigger>
+            )}
         <DialogContent className="w-full md:max-w-[584px] max-w-[90vw] overflow-y-auto max-h-[90vh]">
             <div className="flex flex-col w-full gap-6">
                 <div className="flex flex-col gap-2">

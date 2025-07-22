@@ -31,7 +31,7 @@ export default function HomeHero() {
                                     </Button>
                                 </Link>
                                 
-                                <HomeModal />
+                                <HomeModal triggerType="white"/>
                             </div>
                         </div>
                     </div>

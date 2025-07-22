@@ -1,5 +1,7 @@
+import Link from "next/link";
 import { Button } from "../ui/button";
 import Image from "next/image";
+import { HomeModal } from "../home/modal";
 
 export default function CTA() {
     return (
@@ -17,8 +19,10 @@ export default function CTA() {
                         <p className="text-[18px] leading-8 md:leading-[28px] font-normal text-start md:text-center lg:text-start text-base-white opacity-[88%]">Try and see the magic of the SoftQA in action.</p>
                     </div>
                     <div className="flex flex-col md:flex-row gap-4 w-full md:w-auto md:gap-5">
-                        <Button variant="get" size="big" className="cursor-pointer text-primary-900">Get Started</Button>
-                        <Button variant="talk" size="big" className="cursor-pointer text-cyan-500">Talk to Sales</Button>
+                        <Link href="/auth/sign-up">
+                           <Button variant="get" size="big" className="cursor-pointer text-primary-900">Get Started</Button> 
+                        </Link>
+                        <HomeModal triggerType="green"/>
                     </div>
                 </div>
                 <Image src="/cta/img-desktop.png" alt="cta" width={704} height={484} className="w-[704px] h-[484px] object-cover object-left-top overflow-visible hidden lg:block" />

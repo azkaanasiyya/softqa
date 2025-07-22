@@ -18,8 +18,8 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="relative z-50">
-      <div className="flex justify-between items-center px-8 lg:px-20 py-5">
+    <nav className="relative z-50 flex flex-col justify-center items-center">
+      <div className="max-w-[1280px] w-full flex justify-between items-center px-8 lg:px-20 py-5">
         <Link href="/" className="cursor-pointer">
           <Image src="/logo.svg" alt="logo" width={124} height={40} />
         </Link>
@@ -49,13 +49,16 @@ export default function Navbar() {
         {/* Desktop Buttons */}
         <div className="hidden lg:flex gap-4">
           <Link href="/auth/sign-in">
-            <Button variant="login" size="default" className="text-primary-500">
+            <Button variant="login" size="default" className="text-primary-500 cursor-pointer">
               Sign In
             </Button>
           </Link>
-          <Button variant="request" size="default" className="text-cyan-500">
-            Get Started
-          </Button>
+          <Link href="/auth/sign-up">
+            <Button variant="request" size="default" className="text-cyan-500 cursor-pointer">
+              Get Started
+            </Button>
+          </Link>
+          
         </div>
 
         {/* Mobile/Tablet Hamburger */}
@@ -101,9 +104,12 @@ export default function Navbar() {
             </ul>
 
             <div className="flex flex-col gap-4 p-6 md:p-8">
-              <Button variant="request" size="default" className="w-full text-cyan-500">
-                Get Started
-              </Button>
+              <Link href="/auth/sign-up" onClick={() => setIsOpen(false)}>
+                <Button variant="request" size="default" className="w-full text-cyan-500">
+                  Get Started
+                </Button>
+              </Link>
+              
               <Link href="/auth/sign-in" onClick={() => setIsOpen(false)}>
                 <Button variant="login" size="default" className="w-full text-primary-500">
                   Sign In
