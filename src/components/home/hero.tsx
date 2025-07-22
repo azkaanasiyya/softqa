@@ -1,6 +1,7 @@
 import { Button } from "../ui/button";
 import Image from "next/image";
 import { HomeModal } from "./modal";
+import Link from "next/link";
 
 export default function HomeHero() {
     return (
@@ -20,13 +21,16 @@ export default function HomeHero() {
                                 SoftQA automatically writes your unit tests at mind-boggling scale. Your software development process will never feel the same again.
                             </p>
                             <div className="flex flex-col md:flex-row w-full md:w-auto gap-4 md:gap-5">
-                                <Button
-                                    variant="request"
-                                    size="big"
-                                    className="cursor-pointer text-cyan-500"
-                                >
-                                    Get Started
-                                </Button>
+                                <Link href="/auth/sign-up">
+                                    <Button
+                                        variant="request"
+                                        size="big"
+                                        className="cursor-pointer text-cyan-500"
+                                    >
+                                        Get Started
+                                    </Button>
+                                </Link>
+                                
                                 <HomeModal />
                             </div>
                         </div>
