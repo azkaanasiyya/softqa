@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Button } from "../ui/button";
 import Image from "next/image";
 
@@ -16,8 +17,12 @@ export default function DeveloperHero() {
                     <div className="flex flex-col gap-10 lg:gap-6 lg:pt-[52px] lg:max-w-[580px]">
                         <p className="text-[18px] leading-[32px] font-normal text-[#FFFFFFE0]">SoftQA is the Modern Software Quality Platform that empowers developers to ship more features without compromising code quality, without leaving their IDE.</p>
                         <div className="flex flex-col w-full md:w-auto md:flex-row gap-4 md:gap-5">
-                            <Button variant="get" size="big" className="cursor-pointer text-primary-900">Get Started</Button>
-                            <Button variant="talk" size="big" className="cursor-pointer text-cyan-500">View Pricing</Button>
+                            <Link href="/auth/sign-up">
+                                <Button variant="get" size="big" className="cursor-pointer text-primary-900">Get Started</Button>
+                            </Link>
+                            <Link href="/pricing">
+                                <Button variant="talk" size="big" className="cursor-pointer text-cyan-500">View Pricing</Button>
+                            </Link>
                         </div>
                     </div>
                 </div>
