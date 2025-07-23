@@ -16,7 +16,9 @@ export function TabsComparison() {
     <div className="flex w-full flex-col">
       <Tabs defaultValue="starter">
         <TabsList>
-          <TabsTrigger value="starter">Starter</TabsTrigger>
+          <TabsTrigger value="starter">
+            <></>
+          </TabsTrigger>
           <TabsTrigger value="team">Team</TabsTrigger>
           <TabsTrigger value="enterprise">Enterprise</TabsTrigger>
         </TabsList>
