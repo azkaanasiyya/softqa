@@ -14,17 +14,20 @@ export function HomeModal({triggerType = 'white'}: HomeModalProps) {
             <form>
             {triggerType === 'white' ? (
             <DialogTrigger asChild>
-                <Button
-                variant="login"
-                size="big"
-                className="cursor-pointer text-primary-500 w-full"
-            >
-                Talk to Sales       
-            </Button>
+                <div className="w-full">
+                    <Button
+                        variant="login"
+                        size="big"
+                        className="cursor-pointer text-primary-500 w-full"
+                    >
+                        Talk to Sales       
+                    </Button> 
+                </div>
+                
             </DialogTrigger>
             ) : (
             <DialogTrigger asChild>
-                <Button variant="talk" size="big" className="cursor-pointer text-cyan-500">Talk to Sales</Button>
+                <Button variant="talk" size="big" className="cursor-pointer text-cyan-500 w-full">Talk to Sales</Button>
             </DialogTrigger>
             )}
         <DialogContent className="w-full md:max-w-[584px] max-w-[90vw] overflow-y-auto max-h-[90vh]">
