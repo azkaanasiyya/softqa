@@ -17,7 +17,7 @@ export function TabsComparison() {
       <Tabs defaultValue="starter">
         <TabsList>
           <TabsTrigger value="starter">
-            <></>
+            Starter
           </TabsTrigger>
           <TabsTrigger value="team">Team</TabsTrigger>
           <TabsTrigger value="enterprise">Enterprise</TabsTrigger>

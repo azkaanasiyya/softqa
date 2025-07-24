@@ -1,8 +1,12 @@
+"use client"
+
 import { InputEmail } from "../custom/inputemail";
 import { Button } from "../ui/button";
-import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "../ui/dialog";
+import { Dialog, DialogClose, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "../ui/dialog";
 import { Textarea } from "../ui/textarea";
 import Image from "next/image";
+import { SelectRegion } from "./selectregion";
+import { SelectNumber } from "./selectnumber";
 
 type HomeModalProps = {
     triggerType?: 'white' | 'green';
@@ -11,7 +15,7 @@ type HomeModalProps = {
 export function HomeModal({triggerType = 'white'}: HomeModalProps) {
     return (
         <Dialog>
-            <form>
+            <form onSubmit={(e) => e.preventDefault()}>
             {triggerType === 'white' ? (
             <DialogTrigger asChild>
                 <div className="w-full">
@@ -58,17 +62,11 @@ export function HomeModal({triggerType = 'white'}: HomeModalProps) {
                 <div className="flex flex-col md:flex-row gap-6">
                     <div className="flex flex-col w-full gap-2">
                         <span className="text-[16px] leading-6 text-grayscale-900">Region*</span>
-                        <div className="inline-flex w-full h-14 justify-between px-4 items-center rounded-[12px] border-2 border-grayscale-100">
-                            <p className="text-[16px] leading-6 text-grayscale-400 whitespace-nowrap">Select one</p>
-                            <Image src="/webinar/down.png" alt="icon" width={20} height={20} className="object-contain"/>
-                        </div>  
+                        <SelectRegion />
                     </div>
                     <div className="flex flex-col w-full gap-2">
                         <span className="text-[16px] leading-6 text-grayscale-900">Number of users*</span>
-                        <div className="inline-flex w-full h-14 justify-between px-4 items-center rounded-[12px] border-2 border-grayscale-100">
-                            <p className="text-[16px] leading-6 text-grayscale-400 whitespace-nowrap">Select one</p>
-                            <Image src="/webinar/down.png" alt="icon" width={20} height={20} className="object-contain"/>
-                        </div> 
+                        <SelectNumber />
                     </div>
                 </div>
                 <div className="flex flex-col gap-2">
@@ -77,7 +75,9 @@ export function HomeModal({triggerType = 'white'}: HomeModalProps) {
                 </div>
             </div>
           <DialogFooter>
-            <Button variant="request" size="big" className="cursor-pointer text-cyan-500 w-full max-w-[520px]">Send to Sales</Button>
+            <DialogClose asChild>
+                <Button variant="request" size="big" className="cursor-pointer text-cyan-500 w-full max-w-[520px]">Send to Sales</Button>
+            </DialogClose>
           </DialogFooter>
         </DialogContent>
       </form>
