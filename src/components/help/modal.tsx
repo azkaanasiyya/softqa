@@ -2,7 +2,7 @@ import { InputEmail } from "../custom/inputemail";
 import { Button } from "../ui/button";
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "../ui/dialog";
 import { Textarea } from "../ui/textarea";
-import { DropdownHelp } from "./dropdown";
+import { SelectTopics } from "./selecttopics";
 
 export function HelpModal() {
     return (
@@ -26,7 +26,7 @@ export function HelpModal() {
                 </div>
                 <div className="flex flex-col gap-2">
                     <span className="text-[16px] leading-6 text-grayscale-900">Topics*</span>
-                    <DropdownHelp />
+                    <SelectTopics />
                 </div>
                 <div className="flex flex-col gap-2">
                     <span className="text-[16px] leading-6 text-grayscale-900">What issues can we help?*</span>
