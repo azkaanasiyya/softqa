@@ -63,10 +63,10 @@ export default function HomeTestimonials() {
         <div className="flex flex-col-reverse md:flex-row items-stretch w-full">
 
           <div className="flex flex-row md:hidden gap-2 mt-6 items-center justify-center">
-            <button onClick={prev} className="bg-transparent hover:bg-primary-50 rounded-[12px] w-12 h-12 flex justify-center items-center">
+            <button onClick={prev} className="cursor-pointer bg-transparent hover:bg-primary-50 rounded-[12px] w-12 h-12 flex justify-center items-center">
               <Image src="/home/testimonials/arrow-left.png" alt="prev" width={20} height={20} />
             </button>
-            <button onClick={next} className="bg-primary-50 hover:bg-primary-100 rounded-[12px] w-12 h-12 flex justify-center items-center">
+            <button onClick={next} className="cursor-pointer bg-primary-50 hover:bg-primary-100 rounded-[12px] w-12 h-12 flex justify-center items-center">
               <Image src="/home/testimonials/arrow-right.png" alt="next" width={20} height={20} />
             </button>
           </div>
@@ -88,10 +88,8 @@ export default function HomeTestimonials() {
                 </div>
               </div>
               <div className="hidden md:flex md:flex-col items-center">
-                <div className="flex flex-col justify-center items-center p-2">
-                    <button onClick={prev}><Image src="/home/testimonials/arrow-up.png" alt="up" width={16} height={16} /></button>
-                </div>
-                <button onClick={next}><Image src="/home/testimonials/arrow-down.png" alt="down" width={32} height={32} /></button>
+                <button className="cursor-pointer flex flex-col justify-center items-center p-2" onClick={prev}><Image src="/home/testimonials/arrow-up.png" alt="up" width={16} height={16} /></button>
+                <button className="cursor-pointer" onClick={next}><Image src="/home/testimonials/arrow-down.png" alt="down" width={32} height={32} /></button>
               </div>
             </div>
           </div>
