@@ -11,7 +11,7 @@ export function HelpModal() {
         <DialogTrigger asChild>
           <Button variant="get" size="default" className="cursor-pointer text-primary-500 w-full max-w-[328px]">Contact Us</Button>
         </DialogTrigger>
-        <DialogContent className="w-full md:max-w-[584px] max-w-[90vw] overflow-y-auto max-h-[90vh]">
+        <DialogContent className="w-full md:max-w-[584px] max-w-[90vw] overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] max-h-[90vh]">
             <div className="flex flex-col gap-6">
                 <DialogHeader>
                     <DialogTitle>Get in touch</DialogTitle>
