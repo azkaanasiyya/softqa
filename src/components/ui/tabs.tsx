@@ -36,17 +36,22 @@ function TabsList({
 
 function TabsTrigger({
   className,
+  children,
   ...props
 }: React.ComponentProps<typeof TabsPrimitive.Trigger>) {
   return (
     <TabsPrimitive.Trigger
       data-slot="tabs-trigger"
       className={cn(
-        "data-[state=active]:bg-primary-50 data-[state=active]:text-primary-500 data-[state=active]:border-b-primary-500 border-x border-grayscale-100 border-t border-b-2 focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:outline-ring dark:data-[state=active]:border-input  inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 text-grayscale-500 rounded-t-[8px] border px-6 py-5 text-[16px] leading-6 whitespace-nowrap transition-[color,box-shadow] focus-visible:ring-[3px] focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+        "data-[state=active]:bg-primary-50 data-[state=active]:text-primary-500 data-[state=active]:border-b-primary-500 border-t border-b-2 border-l border-r-0 last:border-r border-grayscale-100 focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:outline-ring dark:data-[state=active]:border-input inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 text-grayscale-500 first:rounded-tl-[8px] last:rounded-tr-[8px] px-2 md:px-6 py-1.5 md:py-5 text-[16px] leading-6 whitespace-nowrap transition-[color,box-shadow] focus-visible:ring-[3px] focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
         className
       )}
       {...props}
-    />
+    >
+      <div className="flex flex-col md:flex-row items-center md:justify-between w-full">
+        {children}
+      </div>
+    </TabsPrimitive.Trigger>
   )
 }
 
