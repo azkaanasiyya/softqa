@@ -8,11 +8,12 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
+import { ChevronDownIcon } from "lucide-react"
 
 export function SelectNumber() {
   return (
     <Select>
-      <SelectTrigger className="w-full">
+      <SelectTrigger icon={<ChevronDownIcon />} className="w-full">
         <SelectValue placeholder="Select one" />
       </SelectTrigger>
       <SelectContent>
