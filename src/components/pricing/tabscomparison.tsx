@@ -17,10 +17,17 @@ export function TabsComparison() {
       <Tabs defaultValue="starter">
         <TabsList>
           <TabsTrigger value="starter">
-            Starter
+            <span>Starter</span>
+            <span className="text-[18px] leading-7 text-grayscale-900">$29</span>
           </TabsTrigger>
-          <TabsTrigger value="team">Team</TabsTrigger>
-          <TabsTrigger value="enterprise">Enterprise</TabsTrigger>
+          <TabsTrigger value="team">
+            <span>Team</span>
+            <span className="text-[18px] leading-7 text-grayscale-900">$99</span>
+          </TabsTrigger>
+          <TabsTrigger value="enterprise">
+            <span>Enterprise</span>
+            <span className="text-[18px] leading-7 text-grayscale-900">Custom</span>
+          </TabsTrigger>
         </TabsList>
         <TabsContent value="starter">
           <Card>
