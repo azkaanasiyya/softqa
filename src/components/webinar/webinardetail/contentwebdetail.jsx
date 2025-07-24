@@ -1,6 +1,33 @@
+"use client";
+
 import Image from "next/image";
+import { useState, useEffect } from "react";
+import { MobileSectionSelect } from "./selectid";
 
 export default function ContentWebDetail() {
+
+const [activeId, setActiveId] = useState("");
+
+    useEffect(() => {
+        const sections = document.querySelectorAll("section[id]");
+        const observer = new IntersectionObserver(
+            (entries) => {
+            const visible = entries
+                .filter(entry => entry.isIntersecting)
+                .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+            if (visible) {
+                setActiveId(visible.target.id);
+            }
+            },
+            {
+            rootMargin: "-30% 0px -60% 0px",
+            threshold: 0.5,
+            }
+        );
+        sections.forEach(section => observer.observe(section));
+        return () => observer.disconnect();
+        }, []);
+
     return (
         <div className="flex flex-col justify-center items-center pt-6 md:pt-8 lg:pt-8 px-6 md:px-8 lg:px-[124px] pb-12 md:pb-20 lg:pb-[104px]">
             <div className="max-w-[1192px] flex flex-col gap-12 lg:gap-[88px]">
@@ -47,64 +74,65 @@ export default function ContentWebDetail() {
                     <Image src="/webinar/david-kim.png" alt="icon" width={1192} height={624} className="lg:w-[1192px] lg:h-[624px] w-full h-full" />
                 </div>
                 <div className="flex flex-col lg:flex-row lg:items-start gap-8">
-                    <div className="flex flex-row justify-between md:hidden px-4 py-[15px] rounded-[12px] border-2 border-grayscale-100">
+                    {/* <div className="flex flex-row justify-between md:hidden px-4 py-[15px] rounded-[12px] border-2 border-grayscale-100">
                         <span className="text-[16px] leading-6 font-medium text-grayscale-900">00 - 12:00</span>
                         <Image src="/webinar/playlist.png" alt="icon" width={20} height={20} />
-                    </div>
+                    </div> */}
+                    <MobileSectionSelect activeId={activeId} setActiveId={setActiveId} />
                     <div className="lg:sticky lg:top-24 hidden md:flex md:flex-col gap-8 max-w-[274px]">
                         <div className="flex flex-col gap-3">
                             <span className="text-[16px] leading-6 text-grayscale-900">0:00 - 12:00</span>
                             <div className="flex flex-col gap-2">
-                                <div className="flex flex-row gap-2 items-center">
-                                    <div className="h-[16px] w-[2px] bg-primary-500" />
-                                    <p className="text-[16px] font-normal leading-[24px] text-primary-500">Introduction and Overview</p>
-                                </div>
-                                <div className="flex flex-row gap-2 items-center">
-                                    <div className="h-[16px] w-[2px] bg-grayscale-200" />
-                                    <p className="text-[16px] font-normal leading-[24px] text-grayscale-500">Why Achieve 100% Test Coverage?</p>
-                                </div>
+                                <a href="#section-1" onClick={() => setActiveId("section-1")} className="flex flex-row gap-2 items-center">
+                                    <div className={`h-[16px] w-[2px] ${activeId === 'section-1' ? 'bg-primary-500' : 'bg-grayscale-200'}`} />
+                                    <p className={`text-[16px] font-normal leading-[24px] ${activeId === 'section-1' ? 'text-primary-500' : 'text-grayscale-500'}`}>Introduction and Overview</p>
+                                </a>
+                                <a href="#section-1-2" onClick={() => setActiveId("section-1-2")} className="flex flex-row gap-2 items-center">
+                                    <div className={`h-[16px] w-[2px] ${activeId === 'section-1-2' ? 'bg-primary-500' : 'bg-grayscale-200'}`} />
+                                    <p className={`text-[16px] font-normal leading-[24px] ${activeId === 'section-1-2' ? 'text-primary-500' : 'text-grayscale-500'}`}>Why Achieve 100% Test Coverage?</p>
+                                </a>
                             </div>
                         </div>
                         <div className="flex flex-col gap-3">
                             <span className="text-[16px] leading-6 text-grayscale-900">12:01 - 30:00</span>
                             <div className="flex flex-col gap-2">
-                                <div className="flex flex-row gap-2 items-start">
-                                    <div className="h-[16px] w-[2px] mt-1 bg-grayscale-200" />
-                                    <p className="text-[16px] font-normal leading-[24px] text-grayscale-500">Efficient Test Execution with Batch Mode</p>
-                                </div>
-                                <div className="flex flex-row gap-2 items-center">
-                                    <div className="h-[16px] w-[2px] bg-grayscale-200" />
-                                    <p className="text-[16px] font-normal leading-[24px] text-grayscale-500">Automation Tools and Frameworks</p>
-                                </div>
+                                <a href="#section-2" onClick={() => setActiveId("section-2")} className="flex flex-row gap-2 items-start">
+                                    <div className={`h-[16px] w-[2px] ${activeId === 'section-2' ? 'bg-primary-500' : 'bg-grayscale-200'}`} />
+                                    <p className={`text-[16px] font-normal leading-[24px] ${activeId === 'section-2' ? 'text-primary-500' : 'text-grayscale-500'}`}>Efficient Test Execution with Batch Mode</p>
+                                </a>
+                                <a href="#section-2-2" onClick={() => setActiveId("section-2-2")} className="flex flex-row gap-2 items-center">
+                                    <div className={`h-[16px] w-[2px] ${activeId === 'section-2-2' ? 'bg-primary-500' : 'bg-grayscale-200'}`} />
+                                    <p className={`text-[16px] font-normal leading-[24px] ${activeId === 'section-2-2' ? 'text-primary-500' : 'text-grayscale-500'}`}>Automation Tools and Frameworks</p>
+                                </a>
                             </div>
                         </div>
                         <div className="flex flex-col gap-3">
                             <span className="text-[16px] leading-6 text-grayscale-900">30:01 - 50:00</span>
                             <div className="flex flex-col gap-2">
-                                <div className="flex flex-row gap-2 items-start">
-                                    <div className="h-[16px] w-[2px] mt-1 bg-grayscale-200" />
-                                    <p className="text-[16px] font-normal leading-[24px] text-grayscale-500">Managing Technical Debt Through Testing</p>
-                                </div>
-                                <div className="flex flex-row gap-2 items-start">
-                                    <div className="h-[16px] w-[2px] mt-1 bg-grayscale-200" />
-                                    <p className="text-[16px] font-normal leading-[24px] text-grayscale-500">Managing Technical Debt Through Testing</p>
-                                </div>
+                                <a href="#section-3" onClick={() => setActiveId("section-3")} className="flex flex-row gap-2 items-start">
+                                    <div className={`h-[16px] w-[2px] ${activeId === 'section-3' ? 'bg-primary-500' : 'bg-grayscale-200'}`} />
+                                    <p className={`text-[16px] font-normal leading-[24px] ${activeId === 'section-3' ? 'text-primary-500' : 'text-grayscale-500'}`}>Managing Technical Debt Through Testing</p>
+                                </a>
+                                <a href="#section-3-2" onClick={() => setActiveId("section-3-2")} className="flex flex-row gap-2 items-start">
+                                    <div className={`h-[16px] w-[2px] ${activeId === 'section-3-2' ? 'bg-primary-500' : 'bg-grayscale-200'}`} />
+                                    <p className={`text-[16px] font-normal leading-[24px] ${activeId === 'section-3-2' ? 'text-primary-500' : 'text-grayscale-500'}`}>Actionable Strategies for High Coverage</p>
+                                </a>
                             </div>
                         </div>
                         <div className="flex flex-col gap-3">
                             <span className="text-[16px] leading-6 text-grayscale-900">50:01 - 57:00</span>
-                            <div className="flex flex-row gap-2 items-center">
-                                <div className="h-[16px] w-[2px] bg-grayscale-200" />
-                                <p className="text-[16px] font-normal leading-[24px] text-grayscale-500">Final Thoughts</p>
-                            </div>
+                            <a href="#section-4" onClick={() => setActiveId("section-4")} className="flex flex-row gap-2 items-center">
+                                <div className={`h-[16px] w-[2px] ${activeId === 'section-4' ? 'bg-primary-500' : 'bg-grayscale-200'}`} />
+                                <p className={`text-[16px] font-normal leading-[24px] ${activeId === 'section-4' ? 'text-primary-500' : 'text-grayscale-500'}`}>Final Thoughts</p>
+                            </a>
                         </div>
                     </div>
                     <div className="lg:overflow-y-auto lg:[&::-webkit-scrollbar]:hidden lg:[-ms-overflow-style:none] lg:[scrollbar-width:none] lg:max-h-screen flex flex-col gap-12 lg:gap-[72px] lg:pl-16">
-                        <div className="flex flex-col gap-4 max-w-[822px]">
+                        <section id="section-1" className="flex flex-col gap-4 max-w-[822px]">
                             <h1 className="text-[40px] md:text-[56px] leading-[50px] md:leading-[70px] text-grayscale-900">0:00 - 12:00</h1>
                             <div className="flex flex-col gap-16">
                                 <div className="flex flex-col gap-10">
-                                    <h4 className="text-[24px] md:text-[32px] leading-[30px] md:leading-10 text-grayscale-900">Introduction and Overview</h4>
+                                    <h4 id="section-1" className="text-[24px] md:text-[32px] leading-[30px] md:leading-10 text-grayscale-900">Introduction and Overview</h4>
                                     <div className="flex flex-col gap-8">
                                         <div className="flex flex-col gap-2">
                                             <div className="flex flex-row gap-3 items-center">
@@ -137,7 +165,7 @@ export default function ContentWebDetail() {
                                     </div>
                                 </div>
                                 <div className="flex flex-col gap-10">
-                                    <h4 className="text-[32px] leading-10 text-grayscale-900">Why Achieve 100% Test Coverage?</h4>
+                                    <h4 id="section-1-2" className="text-[32px] leading-10 text-grayscale-900">Why Achieve 100% Test Coverage?</h4>
                                     <div className="flex flex-col gap-8">
                                         <div className="flex flex-col gap-2">
                                             <div className="flex flex-row gap-3 items-center">
@@ -170,12 +198,12 @@ export default function ContentWebDetail() {
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="flex flex-col gap-4 max-w-[822px]">
+                        </section>
+                        <section id="section-2" className="flex flex-col gap-4 max-w-[822px]">
                             <h1 className="text-[40px] md:text-[56px] leading-[50px] md:leading-[70px] text-grayscale-900">12:01 - 30:00</h1>
                             <div className="flex flex-col gap-16">
                                 <div className="flex flex-col gap-10">
-                                    <h4 className="text-[24px] md:text-[32px] leading-[30px] md:leading-10 text-grayscale-900">Efficient Test Execution with Batch Mode</h4>
+                                    <h4 id="section-2" className="text-[24px] md:text-[32px] leading-[30px] md:leading-10 text-grayscale-900">Efficient Test Execution with Batch Mode</h4>
                                     <div className="flex flex-col gap-8">
                                         <div className="flex flex-col gap-2">
                                             <div className="flex flex-row gap-3 items-center">
@@ -208,7 +236,7 @@ export default function ContentWebDetail() {
                                     </div>
                                 </div>
                                 <div className="flex flex-col gap-10">
-                                    <h4 className="text-[24px] md:text-[32px] leading-[30px] md:leading-10 text-grayscale-900">Automation Tools and Frameworks</h4>
+                                    <h4 id="section-2-2" className="text-[24px] md:text-[32px] leading-[30px] md:leading-10 text-grayscale-900">Automation Tools and Frameworks</h4>
                                     <div className="flex flex-col gap-8">
                                         <div className="flex flex-col gap-2">
                                             <div className="flex flex-row gap-3 items-center">
@@ -241,12 +269,12 @@ export default function ContentWebDetail() {
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="flex flex-col gap-4 max-w-[822px]">
+                        </section>
+                        <section id="section-3" className="flex flex-col gap-4 max-w-[822px]">
                             <h1 className="text-[40px] md:text-[56px] leading-[50px] md:leading-[70px] text-grayscale-900">30:01 - 50:00</h1>
                             <div className="flex flex-col gap-16">
                                 <div className="flex flex-col gap-10">
-                                    <h4 className="text-[24px] md:text-[32px] leading-[30px] md:leading-10 text-grayscale-900">Managing Technical Debt Through Testing</h4>
+                                    <h4 id="section-3" className="text-[24px] md:text-[32px] leading-[30px] md:leading-10 text-grayscale-900">Managing Technical Debt Through Testing</h4>
                                     <div className="flex flex-col gap-8">
                                         <div className="flex flex-col gap-2">
                                             <div className="flex flex-row gap-3 items-center">
@@ -293,7 +321,7 @@ export default function ContentWebDetail() {
                                     </div>
                                 </div>
                                 <div className="flex flex-col gap-10">
-                                    <h4 className="text-[24px] md:text-[32px] leading-[30px] md:leading-10 text-grayscale-900">Actionable Strategies for High Coverage</h4>
+                                    <h4 id="section-3-2" className="text-[24px] md:text-[32px] leading-[30px] md:leading-10 text-grayscale-900">Actionable Strategies for High Coverage</h4>
                                     <div className="flex flex-col gap-8">
                                         <div className="flex flex-col gap-2">
                                             <div className="flex flex-row gap-3 items-center">
@@ -326,11 +354,11 @@ export default function ContentWebDetail() {
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="flex flex-col gap-4 max-w-[822px]">
+                        </section>
+                        <section id="section-4" className="flex flex-col gap-4 max-w-[822px]">
                             <h1 className="text-[40px] md:text-[56px] leading-[50px] md:leading-[70px] text-grayscale-900">50:01 - 57:00</h1>
                             <div className="flex flex-col gap-10">
-                                <h4 className="text-[24px] md:text-[32px] leading-[30px] md:leading-10 text-grayscale-900">Final Thoughts</h4>
+                                <h4 id="section-4" className="text-[24px] md:text-[32px] leading-[30px] md:leading-10 text-grayscale-900">Final Thoughts</h4>
                                     <div className="flex flex-col gap-8">
                                         <div className="flex flex-col gap-2">
                                             <div className="flex flex-row gap-3 items-center">
@@ -355,7 +383,7 @@ export default function ContentWebDetail() {
                                         </div>
                                     </div>
                             </div>
-                        </div>
+                        </section>
                         <div className="bg-primary-50 flex flex-row items-center justify-between w-full rounded-[12px] p-4 md:p-6">
                             <span className="text-[16px] md:text-[24px] leading-6 md:leading-[30px] font-medium md:font-normal text-grayscale-900">Share this webinar?</span>
                             <div className="flex flex-row gap-2">

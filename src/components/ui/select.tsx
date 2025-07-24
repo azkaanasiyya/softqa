@@ -6,6 +6,13 @@ import { ChevronDownIcon, ChevronUpIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
+type SelectTriggerProps = React.ComponentProps<typeof SelectPrimitive.Trigger> & {
+  size?: "sm" | "default"
+  icon?: React.ReactNode
+  iconClassName?: string
+  hideDefaultIcon?: boolean
+}
+
 function Select({
   ...props
 }: React.ComponentProps<typeof SelectPrimitive.Root>) {
@@ -28,10 +35,11 @@ function SelectTrigger({
   className,
   size = "default",
   children,
+  icon,
+  iconClassName,
+  hideDefaultIcon,
   ...props
-}: React.ComponentProps<typeof SelectPrimitive.Trigger> & {
-  size?: "sm" | "default"
-}) {
+}: SelectTriggerProps) {
   return (
     <SelectPrimitive.Trigger
       data-slot="select-trigger"
@@ -43,9 +51,16 @@ function SelectTrigger({
       {...props}
     >
       {children}
-      <SelectPrimitive.Icon asChild>
-        <ChevronDownIcon className="size-4 opacity-50" />
-      </SelectPrimitive.Icon>
+
+      {!hideDefaultIcon && (
+        <SelectPrimitive.Icon asChild>
+          {icon ? (
+            <span className={cn("size-4 opacity-50", iconClassName)}>{icon}</span>
+          ) : (
+            <ChevronDownIcon className={cn("size-4 opacity-50", iconClassName)} />
+          )}
+        </SelectPrimitive.Icon>
+      )}
     </SelectPrimitive.Trigger>
   )
 }
