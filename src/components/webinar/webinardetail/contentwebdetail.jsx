@@ -46,12 +46,12 @@ export default function ContentWebDetail() {
                     </div>
                     <Image src="/webinar/david-kim.png" alt="icon" width={1192} height={624} className="lg:w-[1192px] lg:h-[624px] w-full h-full" />
                 </div>
-                <div className="flex flex-col lg:flex-row gap-8">
+                <div className="flex flex-col lg:flex-row lg:items-start gap-8">
                     <div className="flex flex-row justify-between md:hidden px-4 py-[15px] rounded-[12px] border-2 border-grayscale-100">
                         <span className="text-[16px] leading-6 font-medium text-grayscale-900">00 - 12:00</span>
                         <Image src="/webinar/playlist.png" alt="icon" width={20} height={20} />
                     </div>
-                    <div className="hidden md:flex md:flex-col gap-8 max-w-[274px] sticky">
+                    <div className="sticky top-24 hidden md:flex md:flex-col gap-8 max-w-[274px]">
                         <div className="flex flex-col gap-3">
                             <span className="text-[16px] leading-6 text-grayscale-900">0:00 - 12:00</span>
                             <div className="flex flex-col gap-2">
@@ -99,7 +99,7 @@ export default function ContentWebDetail() {
                             </div>
                         </div>
                     </div>
-                    <div className="flex flex-col gap-12 lg:gap-[72px] lg:pl-16">
+                    <div className="overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] max-h-screen flex flex-col gap-12 lg:gap-[72px] lg:pl-16">
                         <div className="flex flex-col gap-4 max-w-[822px]">
                             <h1 className="text-[40px] md:text-[56px] leading-[50px] md:leading-[70px] text-grayscale-900">0:00 - 12:00</h1>
                             <div className="flex flex-col gap-16">
