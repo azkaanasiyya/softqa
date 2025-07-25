@@ -1,7 +1,8 @@
-// import { Input } from "../ui/input";
 import Image from "next/image";
 import Link from "next/link";
 import { InputWebinar } from "../custom/inputwebinar";
+import { SelectCategories } from "./selectcategories";
+import { SelectRecent } from "./selectrecent";
 
 export default function WebinarFeatures() {
     return (
@@ -9,16 +10,10 @@ export default function WebinarFeatures() {
             <div className="max-w-[1192px] flex flex-col gap-4 md:gap-6 lg:gap-10">
                 <div className="flex flex-col lg:flex-row gap-8 md:gap-12 lg:justify-between items-stretch lg:items-center">
                     <h3 className="text-[32px] md:text-[40px] leading-10 md:leading-[50px] text-grayscale-900 w-full">Watch past webinars</h3>
-                    <div className="flex flex-row gap-4 w-full justify-between lg:justify-end">
+                    <div className="flex flex-row gap-4 w-full">
                         <InputWebinar placeholder="Search webinar..."/>
-                        <div className="hidden md:inline-flex h-12 gap-2 p-3 items-center rounded-[12px] border-2 border-grayscale-100">
-                            <p className="text-[16px] text-grayscale-900 whitespace-nowrap">Most recent</p>
-                            <Image src="/webinar/down.png" alt="icon" width={20} height={20} className="object-contain"/>
-                        </div>  
-                        <div className="hidden md:inline-flex  h-12 gap-2 p-3 items-center rounded-[12px] border-2 border-grayscale-100">
-                            <p className="text-[16px] text-grayscale-900 whitespace-nowrap">All categories</p>
-                            <Image src="/webinar/down.png" alt="icon" width={20} height={20} className="object-contain"/>
-                        </div>
+                        <SelectRecent />
+                        <SelectCategories />
                         <div className="flex flex-col md:hidden items-center justify-center w-12 h-12 rounded-[12px] border-2 border-grayscale-100">
                             <Image src="/webinar/filter.png" alt="icon" width={20} height={20} className="w-5 h-5"/>
                         </div>     
