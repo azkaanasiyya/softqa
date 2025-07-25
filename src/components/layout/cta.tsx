@@ -10,9 +10,9 @@ export default function CTA() {
                 <div className="flex flex-col items-center lg:items-start gap-8 md:gap-12 max-w-[327px] md:max-w-[704px] lg:max-w-[580px]">
                     <div className="flex flex-col items-start md:items-center lg:items-start gap-4">
                         <h2 className="text-[32px] md:text-[48px] leading-10 md:leading-[60px] font-normal text-start md:text-center lg:text-start text-base-white">
-                            Ready to turn
+                            Ready to turn{" "}
                             <br className="block md:hidden" />
-                             your
+                            your
                             <br className="hidden md:block" />
                             development innovation?
                         </h2>
