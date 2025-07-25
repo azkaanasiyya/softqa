@@ -33,7 +33,6 @@ export function MobileSectionSelect({
         icon={<Image src="/webinar/playlist.png" alt="icon" width={20} height={20} />} 
         className="md:hidden px-4 py-[15px] rounded-[12px] border-2 border-grayscale-100 justify-between">
         <SelectValue placeholder="Select section" />
-        {/* <Image src="/webinar/playlist.png" alt="icon" width={20} height={20} /> */}
       </SelectTrigger>
       <SelectContent>
         {sectionList.map((section) => (

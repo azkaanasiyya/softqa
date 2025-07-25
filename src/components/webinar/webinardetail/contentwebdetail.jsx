@@ -74,10 +74,6 @@ const [activeId, setActiveId] = useState("");
                     <Image src="/webinar/david-kim.png" alt="icon" width={1192} height={624} className="lg:w-[1192px] lg:h-[624px] w-full h-full" />
                 </div>
                 <div className="flex flex-col lg:flex-row lg:items-start gap-8">
-                    {/* <div className="flex flex-row justify-between md:hidden px-4 py-[15px] rounded-[12px] border-2 border-grayscale-100">
-                        <span className="text-[16px] leading-6 font-medium text-grayscale-900">00 - 12:00</span>
-                        <Image src="/webinar/playlist.png" alt="icon" width={20} height={20} />
-                    </div> */}
                     <MobileSectionSelect activeId={activeId} setActiveId={setActiveId} />
                     <div className="lg:sticky lg:top-24 hidden md:flex md:flex-col gap-8 max-w-[274px]">
                         <div className="flex flex-col gap-3">
