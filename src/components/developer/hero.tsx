@@ -83,7 +83,7 @@ export default function DeveloperHero() {
                 <button
                   key={index}
                   onClick={() => setCurrentSlide(index)}
-                  className={`transition-all duration-300 rounded-full h-2 ${
+                  className={`transition-all duration-300 rounded-full cursor-pointer h-2 ${
                     currentSlide === index ? "w-8 bg-primary-500" : "w-2 bg-grayscale-200"
                   }`}
                 />
@@ -93,7 +93,7 @@ export default function DeveloperHero() {
             <div className="flex justify-between items-center w-full">
 
               <div className="flex items-center gap-2 md:gap-4">
-                <button onClick={prev} className="bg-primary-50 rounded-full flex justify-center items-center w-6 h-6 md:w-8 md:h-8">
+                <button onClick={prev} className="bg-primary-50 rounded-full cursor-pointer flex justify-center items-center w-6 h-6 md:w-8 md:h-8">
                   <Image src="/developer/arrow-left.png" alt="prev" width={16} height={16} />
                 </button>
                 <div className="flex flex-row gap-2 items-center">
@@ -111,7 +111,7 @@ export default function DeveloperHero() {
                     {slides[(currentSlide + 1) % slides.length].name.split(" ")[0]}
                   </p>
                 </div>
-                <button onClick={next} className="bg-primary-500 rounded-full flex justify-center items-center w-8 h-8">
+                <button onClick={next} className="bg-primary-500 rounded-full cursor-pointer flex justify-center items-center w-8 h-8">
                   <Image src="/developer/arrow-right.png" alt="next" width={16} height={16} />
                 </button>
               </div>
