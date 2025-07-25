@@ -135,7 +135,7 @@ const [activeId, setActiveId] = useState("");
                                                 <Image src="/webinar/james-icon.png" alt="icon" width={32} height={32} />
                                                 <span className="text-[18px] leading-7 text-grayscale-900">James</span>
                                             </div>
-                                            <p className="text-[16px] md:text-[18px] leading-7 md:leading-8 text-grayscale-600">Hi, and welcome to this episode of the Achieving 100% Test Coverage podcast. <br /> <br />I'm James, your host for today, and I have the pleasure of being joined by our guest, David Kim. David, thanks for joining us.</p>
+                                            <p className="text-[16px] md:text-[18px] leading-7 md:leading-8 text-grayscale-600">Hi, and welcome to this episode of the Achieving 100% Test Coverage podcast. <br /> <br />I&apos;m James, your host for today, and I have the pleasure of being joined by our guest, David Kim. David, thanks for joining us.</p>
                                         </div>
                                         <div className="flex flex-col gap-2">
                                             <div className="flex flex-row gap-3 items-center">
@@ -149,14 +149,14 @@ const [activeId, setActiveId] = useState("");
                                                 <Image src="/webinar/james-icon.png" alt="icon" width={32} height={32} />
                                                 <span className="text-[18px] leading-7 text-grayscale-900">James</span>
                                             </div>
-                                            <p className="text-[16px] md:text-[18px] leading-7 md:leading-8 text-grayscale-600">David, you're known for your expertise in QA strategy. Could you give our listeners a bit of background on how you became passionate about testing and achieving full coverage?</p>
+                                            <p className="text-[16px] md:text-[18px] leading-7 md:leading-8 text-grayscale-600">David, you&apos;re known for your expertise in QA strategy. Could you give our listeners a bit of background on how you became passionate about testing and achieving full coverage?</p>
                                         </div>
                                         <div className="flex flex-col gap-2">
                                             <div className="flex flex-row gap-3 items-center">
                                                 <Image src="/webinar/david-icon.png" alt="icon" width={32} height={32} />
                                                 <span className="text-[18px] leading-7 text-grayscale-900">David Kim</span>
                                             </div>
-                                            <p className="text-[16px] md:text-[18px] leading-7 md:leading-8 text-grayscale-600">Absolutely. I started as a developer, but I quickly realized how testing bridges the gap between good and great software. Over the years, I've focused on optimizing QA workflows and tools, which brings me here to share strategies on 100% test coverage.</p>
+                                            <p className="text-[16px] md:text-[18px] leading-7 md:leading-8 text-grayscale-600">Absolutely. I started as a developer, but I quickly realized how testing bridges the gap between good and great software. Over the years, I&apos;ve focused on optimizing QA workflows and tools, which brings me here to share strategies on 100% test coverage.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -175,7 +175,7 @@ const [activeId, setActiveId] = useState("");
                                                 <Image src="/webinar/david-icon.png" alt="icon" width={32} height={32} />
                                                 <span className="text-[18px] leading-7 text-grayscale-900">David Kim</span>
                                             </div>
-                                            <p className="text-[16px] md:text-[18px] leading-7 md:leading-8 text-grayscale-600">Achieving full coverage isn't just about numbers; it’s about ensuring your code works as intended under all conditions. It reduces bugs in production and makes the code more maintainable. However, it’s equally important to balance effort with value.</p>
+                                            <p className="text-[16px] md:text-[18px] leading-7 md:leading-8 text-grayscale-600">Achieving full coverage isn&apos;t just about numbers; it’s about ensuring your code works as intended under all conditions. It reduces bugs in production and makes the code more maintainable. However, it’s equally important to balance effort with value.</p>
                                         </div>
                                         <div className="flex flex-col gap-2">
                                             <div className="flex flex-row gap-3 items-center">
