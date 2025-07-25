@@ -29,11 +29,10 @@ export default function FAQs() {
                     </Link>
                 </div>
                 <div className="flex justify-center pt-5 md:pt-8 lg:pt-12 max-w-[682px] w-full">
-                    <div className="flex flex-col max-w-[682px] w-full">
+                    <div className="flex flex-col w-full">
                         <Accordion
                             type="single"
                             collapsible
-                            className="max-w-[682px] w-full"
                         >
                             {faqs.map((faq) => (
                                 <AccordionItem value={faq.value} key={faq.value}>

@@ -12,6 +12,7 @@ function Accordion({
   return <AccordionPrimitive.Root data-slot="accordion" {...props} />
 }
 
+
 function AccordionItem({
   className,
   ...props
@@ -19,7 +20,7 @@ function AccordionItem({
   return (
     <AccordionPrimitive.Item
       data-slot="accordion-item"
-      className={cn("border-b last:border-b-0", className)}
+      className={cn("border-b last:border-b-0 w-full", className)}
       {...props}
     />
   )
@@ -35,7 +36,7 @@ function AccordionTrigger({
       <AccordionPrimitive.Trigger
         data-slot="accordion-trigger"
         className={cn(
-          "focus-visible:border-ring focus-visible:ring-ring/50 px-3 py-8 flex flex-1 items-start justify-between gap-4 rounded-md text-left text-[16px] md:text-[20px] font-normal leading-6 md:leading-9 text-grayscale-900 transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-180",
+          "w-full focus-visible:border-ring focus-visible:ring-ring/50 px-3 py-8 flex flex-1 items-start justify-between gap-4 rounded-md text-left text-[16px] md:text-[20px] font-normal leading-6 md:leading-9 text-grayscale-900 transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-180",
           className
         )}
         {...props}
@@ -55,7 +56,7 @@ function AccordionContent({
   return (
     <AccordionPrimitive.Content
       data-slot="accordion-content"
-      className="cursor-pointer data-[state=closed]:animate-accordion-up px-3 text-[16px] md:text-[18px] leading-7 md:leading-[32px] font-normal text-grayscale-400 data-[state=open]:animate-accordion-down overflow-hidden text-sm"
+      className="cursor-pointer data-[state=closed]:animate-accordion-up pl-3 max-w-[602px] text-[16px] md:text-[18px] leading-7 md:leading-[32px] font-normal text-grayscale-400 w-full data-[state=open]:animate-accordion-down overflow-hidden text-sm"
       {...props}
     >
       <div className={cn("pt-0 pb-4", className)}>{children}</div>
