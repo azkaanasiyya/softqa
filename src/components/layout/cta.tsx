@@ -12,7 +12,7 @@ export default function CTA() {
                         <h2 className="text-[32px] md:text-[48px] leading-10 md:leading-[60px] font-normal text-start md:text-center lg:text-start text-base-white">
                             Ready to turn
                             <br className="block md:hidden" />
-                            your
+                             your
                             <br className="hidden md:block" />
                             development innovation?
                         </h2>
