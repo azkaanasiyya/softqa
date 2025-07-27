@@ -1,12 +1,12 @@
 "use client"
 
-import { InputEmail } from "../custom/inputemail";
 import { Button } from "../ui/button";
 import { Dialog, DialogClose, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "../ui/dialog";
 import { Textarea } from "../ui/textarea";
 import Image from "next/image";
 import { SelectRegion } from "./selectregion";
 import { SelectNumber } from "./selectnumber";
+import { InputName } from "../custom/inputname";
 
 type HomeModalProps = {
     triggerType?: 'white' | 'green';
@@ -48,16 +48,16 @@ export function HomeModal({triggerType = 'white'}: HomeModalProps) {
                 <div className="flex flex-col md:flex-row gap-6">
                     <div className="flex flex-col w-full gap-2">
                         <span className="text-[16px] leading-6 text-grayscale-900">First name*</span>
-                        <InputEmail placeholder="Enter first name"/>
+                        <InputName placeholder="Enter first name"/>
                     </div>
                     <div className="flex flex-col w-full gap-2">
                         <span className="text-[16px] leading-6 text-grayscale-900">Last name*</span>
-                        <InputEmail placeholder="Enter last name"/>
+                        <InputName placeholder="Enter last name"/>
                     </div>
                 </div>
                 <div className="flex flex-col gap-2">
                     <span className="text-[16px] leading-6 text-grayscale-900">Your Email*</span>
-                    <InputEmail placeholder="Enter your email"/>
+                    <InputName placeholder="Enter your email"/>
                 </div>
                 <div className="flex flex-col md:flex-row gap-6">
                     <div className="flex flex-col w-full gap-2">

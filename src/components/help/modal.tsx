@@ -1,4 +1,4 @@
-import { InputEmail } from "../custom/inputemail";
+import { InputName } from "../custom/inputname";
 import { Button } from "../ui/button";
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "../ui/dialog";
 import { Textarea } from "../ui/textarea";
@@ -18,11 +18,11 @@ export function HelpModal() {
                 </DialogHeader>
                 <div className="flex flex-col gap-2">
                     <span className="text-[16px] leading-6 text-grayscale-900">Your name*</span>
-                    <InputEmail placeholder="Enter your name"/>
+                    <InputName placeholder="Enter your name"/>
                 </div>
                 <div className="flex flex-col gap-2">
                     <span className="text-[16px] leading-6 text-grayscale-900">Your Email*</span>
-                    <InputEmail placeholder="Enter your email"/>
+                    <InputName placeholder="Enter your email"/>
                 </div>
                 <div className="flex flex-col gap-2">
                     <span className="text-[16px] leading-6 text-grayscale-900">Topics*</span>
