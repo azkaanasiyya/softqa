@@ -1,15 +1,34 @@
-import * as React from "react";
-import { cn } from "@/lib/utils";
-import { Input } from "@/components/ui/input";
+"use client";
 
-export function InputWebinar(props: React.ComponentProps<typeof Input>) {
+import { Search } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { useState } from "react";
+
+export function InputWebinar(props: React.InputHTMLAttributes<HTMLInputElement>) {
+  const [focused, setFocused] = useState(false);
+
   return (
-    <Input
-      {...props}
-      className={cn(
-        "w-full md:max-w-[377px] lg:max-w-[216px] h-12 border-2 border-grayscale-100 px-4 py-3 text-[16px] text-grayscale-400 leading-6 rounded-[16px]",
-        props.className
-      )}
-    />
+    <div className="relative w-full max-w-[760px]">
+      <span className="absolute left-4 top-1/2 -translate-y-1/2">
+        <Search className={cn("w-5 h-5", focused ? "text-primary-500" : "text-grayscale-400")} />
+      </span>
+      <input
+        {...props}
+        onFocus={(e) => {
+          setFocused(true);
+          props.onFocus?.(e);
+        }}
+        onBlur={(e) => {
+          setFocused(false);
+          props.onBlur?.(e);
+        }}
+        className={cn(
+          "w-full md:min-w-[370px] lg:min-w-[216px] h-12 pl-[44px] border-2 border-grayscale-100 pr-4 py-3 text-[16px] text-grayscale-400 leading-6 rounded-[16px]",
+          focused && "border-primary-500 text-primary-500",
+          props.className
+        )}
+      />
+    </div>
   );
 }
+
