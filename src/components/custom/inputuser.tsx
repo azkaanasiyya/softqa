@@ -2,16 +2,16 @@
 
 import { cn } from "@/lib/utils"
 import { Input } from "../ui/input"
-import { Mail } from "lucide-react"
+import { User } from "lucide-react"
 import * as React from "react"
 
-export function InputEmail(props: React.ComponentProps<typeof Input>) {
+export function InputUser(props: React.ComponentProps<typeof Input>) {
   const [isFocused, setIsFocused] = React.useState(false)
 
   return (
     <div className="relative w-full lg:max-w-[520px]">
         <span className="absolute left-5 top-1/2 -translate-y-1/2">
-            <Mail
+            <User
                 className={cn("w-5 h-5", isFocused ? "text-primary-500" : "text-grayscale-400"
                 )}
             />
