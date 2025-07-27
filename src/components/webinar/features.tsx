@@ -1,15 +1,51 @@
+"use client"
 import Image from "next/image"
 import Link from "next/link"
+import { useEffect, useState } from "react"
 import { InputWebinar } from "../custom/inputwebinar"
 import { SelectCategories } from "./selectcategories"
 import { SelectRecent } from "./selectrecent"
 import { webinars } from "../data/webinars"
 
 export default function WebinarFeatures() {
+  const [currentPage, setCurrentPage] = useState(1)
+  const [itemsPerPage, setItemsPerPage] = useState(9)
+
+  // Detect screen width for responsive item count
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth
+      if (width >= 1024) {
+        setItemsPerPage(9)
+      } else {
+        setItemsPerPage(8)
+      }
+    }
+
+    handleResize()
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
+
+  const totalPages = Math.ceil(webinars.length / itemsPerPage)
+  const startIdx = (currentPage - 1) * itemsPerPage
+  const currentWebinars = webinars.slice(startIdx, startIdx + itemsPerPage)
+
+  const handlePrev = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1)
+    }
+  }
+
+  const handleNext = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1)
+    }
+  }
+
   return (
     <div className="bg-base-white flex flex-col justify-center items-center pt-[48.49px] pb-12 md:py-16 lg:pt-[124px] lg:pb-[132px] px-6 md:px-8 lg:px-[124px]">
       <div className="max-w-[1192px] flex flex-col gap-4 md:gap-6 lg:gap-10">
-        
         <div className="flex flex-col lg:flex-row gap-8 md:gap-12 lg:justify-between items-stretch lg:items-center">
           <h3 className="text-[32px] md:text-[40px] leading-10 md:leading-[50px] text-grayscale-900 w-full">
             Watch past webinars
@@ -32,7 +68,7 @@ export default function WebinarFeatures() {
 
         <div className="flex flex-col gap-10 lg:gap-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8">
-            {webinars.map((item, i) => (
+            {currentWebinars.map((item, i) => (
               <div
                 key={i}
                 className="bg-grayscale-50 rounded-[16px] p-2 lg:min-h-[456px] flex flex-col"
@@ -79,32 +115,52 @@ export default function WebinarFeatures() {
               </div>
             ))}
           </div>
-
           <div className="flex flex-row justify-between items-center">
-            <div className="flex flex-row gap-4 items-center">
+            <div
+              className="flex flex-row gap-4 items-center cursor-pointer"
+              onClick={handlePrev}
+            >
               <div className="bg-[#FAFAFA] flex flex-col justify-center items-center rounded-full p-2">
                 <Image src="/webinar/arrow-left.png" alt="Previous" width={16} height={16} />
               </div>
-              <span className="hidden md:block text-[16px] leading-6 text-[#ABB1B9] font-medium">Previous</span>
+              <span className="hidden md:block text-[16px] leading-6 text-[#ABB1B9] font-medium">
+                Previous
+              </span>
             </div>
 
             <div className="flex flex-row items-center gap-2">
-              <div className="bg-primary-500 rounded-[12px] px-1 pt-0.5 pb-1 w-10 h-10 flex flex-col items-center justify-center">
-                <span className="w-8 h-6 text-[16px] text-center font-medium leading-6 text-base-white">1</span>
-              </div>
-              <div className="bg-base-white border-2 border-grayscale-100 rounded-[12px] px-1 pt-0.5 pb-1 w-10 h-10 flex flex-col items-center justify-center">
-                <span className="w-8 h-6 text-[16px] text-center font-medium leading-6 text-primary-500">2</span>
-              </div>
+              {Array.from({ length: totalPages }, (_, idx) => {
+                const pageNum = idx + 1
+                const isActive = currentPage === pageNum
+                return (
+                  <div
+                    key={pageNum}
+                    className={`cursor-pointer rounded-[12px] px-1 pt-0.5 pb-1 w-10 h-10 flex items-center justify-center ${
+                      isActive
+                        ? "bg-primary-500 text-base-white"
+                        : "bg-base-white border-2 border-grayscale-100 text-primary-500"
+                    }`}
+                    onClick={() => setCurrentPage(pageNum)}
+                  >
+                    <span className="text-[16px] text-center font-medium leading-6">{pageNum}</span>
+                  </div>
+                )
+              })}
             </div>
-            <div className="flex flex-row gap-4 items-center">
-              <span className="hidden md:block text-[16px] leading-6 text-primary-900 font-medium">Next</span>
+            
+            <div
+              className="flex flex-row gap-4 items-center cursor-pointer"
+              onClick={handleNext}
+            >
+              <span className="hidden md:block text-[16px] leading-6 text-primary-900 font-medium">
+                Next
+              </span>
               <div className="bg-primary-500 flex flex-col justify-center items-center rounded-full p-2">
                 <Image src="/webinar/arrow-right.png" alt="Next" width={16} height={16} />
               </div>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   )
