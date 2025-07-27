@@ -11,7 +11,6 @@ export default function WebinarFeatures() {
   const [currentPage, setCurrentPage] = useState(1)
   const [itemsPerPage, setItemsPerPage] = useState(9)
 
-  // Detect screen width for responsive item count
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth
