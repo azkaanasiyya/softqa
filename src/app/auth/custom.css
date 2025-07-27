@@ -19,6 +19,25 @@
   font-display: swap;
 }
 
+.hide-password-toggle::-ms-reveal {
+  display: none;
+}
+
+.hide-password-toggle::-webkit-reveal {
+  display: none;
+}
+
+.hide-password-toggle::-webkit-outer-spin-button,
+.hide-password-toggle::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.hide-password-toggle {
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

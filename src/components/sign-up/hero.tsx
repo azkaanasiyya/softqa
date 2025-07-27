@@ -2,6 +2,8 @@ import Image from "next/image";
 import { InputEmail } from "../custom/inputemail";
 import { Button } from "../ui/button";
 import Link from "next/link";
+import { InputPassword } from "../custom/inputpassword";
+import { InputUser } from "../custom/inputuser";
 
 export default function SignHero() {
     return (
@@ -18,7 +20,7 @@ export default function SignHero() {
                             <div className="flex flex-col gap-6">
                                 <div className="flex flex-col gap-2">
                                     <span className="text-[16px] leading-6 text-grayscale-900">Name</span>
-                                    <InputEmail placeholder="Justinus Lhaksana"/>
+                                    <InputUser placeholder="Justinus Lhaksana"/>
                                 </div>
                                 <div className="flex flex-col gap-2">
                                     <span className="text-[16px] leading-6 text-grayscale-900">Email</span>
@@ -26,7 +28,7 @@ export default function SignHero() {
                                 </div>
                                 <div className="flex flex-col gap-2">
                                     <span className="text-[16px] leading-6 text-grayscale-900">Password</span>
-                                    <InputEmail placeholder="******"/>
+                                    <InputPassword placeholder="******"/>
                                 </div>
                                 <Button variant="request" size="medium" className="w-full text-cyan-500">Sign Up</Button>
                             </div>
