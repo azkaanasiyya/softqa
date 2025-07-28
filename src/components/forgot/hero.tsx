@@ -18,7 +18,7 @@ export default function ForgotHero() {
                             <span className="text-[16px] leading-6 text-grayscale-900">Email Address</span>
                             <InputEmail placeholder="Enter your email"/>
                         </div>
-                        <Button variant="request" size="medium" className="w-full text-cyan-500">Send Email</Button>
+                        <Button variant="request" size="medium" className="w-full text-cyan-500 cursor-pointer">Send Email</Button>
                     </div>
                 </div>
                 <div className="flex flex-row gap-2 items-center">

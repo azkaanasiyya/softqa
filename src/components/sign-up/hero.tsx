@@ -33,17 +33,17 @@ export default function SignHero() {
                                     <span className="text-[16px] leading-6 text-grayscale-900">Password</span>
                                     <InputPassword placeholder="******"/>
                                 </div>
-                                <Button variant="request" size="medium" className="w-full text-cyan-500">Sign Up</Button>
+                                <Button variant="request" size="medium" className="w-full text-cyan-500 cursor-pointer">Sign Up</Button>
                             </div>
                         </div>
                         <div className="flex flex-col items-center gap-6 w-full">
                             <Image src="/auth/or.png" alt="image" width={488} height={22} className="lg:w-[488px] lg:h-[22px] w-full h-full"/>
                             <div className="flex flex-col items-center gap-4 w-full">
-                                <div className="flex items-center justify-center gap-3 w-full lg:max-w-[488px] px-6 py-5 rounded-[12px] border-2 border-grayscale-100 h-14">
+                                <div className="cursor-pointer flex items-center justify-center gap-3 w-full lg:max-w-[488px] px-6 py-5 rounded-[12px] border-2 border-grayscale-100 h-14">
                                     <Image src="/auth/google.png" alt="image" width={18} height={18} />
                                     <span className="text-[16px] leading-6 text-grayscale-900">Continue with Google</span>
                                 </div>
-                                <div className="flex justify-center gap-3 items-center w-full lg:max-w-[488px] px-6 py-5 rounded-[12px] border-2 border-grayscale-100 h-14">
+                                <div className="cursor-pointer flex justify-center gap-3 items-center w-full lg:max-w-[488px] px-6 py-5 rounded-[12px] border-2 border-grayscale-100 h-14">
                                     <Image src="/auth/apple.png" alt="image" width={16.28} height={20} />
                                     <span className="text-[16px] leading-6 text-grayscale-900">Continue with Apple</span>
                                 </div>
