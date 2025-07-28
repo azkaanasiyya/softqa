@@ -3,6 +3,7 @@ import Image from "next/image"
 import { useEffect, useState } from "react"
 import { Button } from "../ui/button"
 import { webinarHeroData } from "../data/webinarhero"
+import FadeInSection from "../animation/fadein"
 
 export default function WebinarHero() {
   const [itemsPerPage, setItemsPerPage] = useState(2)
@@ -42,7 +43,7 @@ export default function WebinarHero() {
   return (
     <div className="bg-primary-900 flex flex-col justify-center items-center pt-16 pb-12 md:py-20 lg:py-[104px] px-6 md:px-8 lg:px-[124px]">
       <div className="max-w-[1192px] flex flex-col justify-center items-center gap-[104px]">
-        <div className="flex flex-col justify-center items-center gap-6">
+        <FadeInSection delay={0.5} className="flex flex-col justify-center items-center gap-6">
           <div className="flex flex-col gap-4 items-center max-w-[786px]">
             <div className="flex flex-row gap-2">
               <div className="h-[22px] w-[1px] bg-cyan-500" />
@@ -55,10 +56,10 @@ export default function WebinarHero() {
           <p className="max-w-[654px] text-center text-[18px] leading-8 font-normal text-[#FFFFFFEB]">
             Free live training workshops, Monday to Friday, from the comfort of your own home. Let’s learn, grow, and build together.
           </p>
-        </div>
+        </FadeInSection>
 
         <div className="flex flex-col gap-10 w-full">
-          <div className="flex flex-row justify-between items-center w-full">
+          <FadeInSection delay={0.5} className="flex flex-row justify-between items-center w-full">
             <h3 className="text-[24px] md:text-[32px] lg:text-[40px] leading-[30px] md:leading-10 lg:leading-[50px] text-base-white">
               Upcoming
             </h3>
@@ -83,10 +84,10 @@ export default function WebinarHero() {
                 <Image src="/webinar/right-web.png" alt="right" width={20} height={20} className="w-4 h-4 md:w-5 md:h-5" />
               </div>
             </div>
-          </div>
+          </FadeInSection>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full">
             {visibleData.map((item) => (
-              <div key={item.id} className="max-w-[576px] min-h-[464px] w-full flex flex-col p-2 rounded-[16px] bg-grayscale-50">
+              <FadeInSection delay={0.5} key={item.id} className="max-w-[576px] min-h-[464px] w-full flex flex-col p-2 rounded-[16px] bg-grayscale-50">
                 <div className={`${item.bgColor} rounded-[12px] pl-4 flex flex-row justify-between`}>
                   <div className="flex flex-col justify-between my-4 items-start">
                     <h4 className="text-[23.04px] md:text-[24px] lg:text-[32px] leading-[28.8px] md:leading-[30px] lg:leading-10 text-grayscale-900 whitespace-pre-line">
@@ -110,7 +111,7 @@ export default function WebinarHero() {
                     Register
                   </Button>
                 </div>
-              </div>
+              </FadeInSection>
             ))}
           </div>
         </div>

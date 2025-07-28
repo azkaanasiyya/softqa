@@ -1,10 +1,11 @@
 import Image from "next/image";
+import FadeInSection from "../animation/fadein";
 
 export default function DeveloperFeatures() {
     return (
         <div className="bg-base-white bg-[url('/developer/bg-features.png')] bg-no-repeat bg-center bg-cover flex flex-col justify-center items-center py-12 md:py-20 lg:py-[132px] px-6 md:px-8 lg:px-[124px]">
             <div className="max-w-[1192px] flex flex-col gap-10 md:gap-16 lg:gap-[104px]">
-                <div className="flex flex-col-reverse lg:flex-row gap-6 md:gap-10 lg:gap-24 items-center">
+                <FadeInSection delay={0.5} className="flex flex-col-reverse lg:flex-row gap-6 md:gap-10 lg:gap-24 items-center">
                     <div className="flex flex-col gap-3 md:gap-4 lg:gap-6 lg:max-w-[540px]">
                         <div className="flex flex-row gap-2">
                             <div className="h-[22px] w-[1px] bg-primary-500" />
@@ -18,8 +19,8 @@ export default function DeveloperFeatures() {
                     <div className="bg-additional-salty rounded-[16px] py-[30.58px] md:py-[65.84px] lg:py-[52px] px-[28.23px] md:px-[60.78px] lg:px-12 w-full flex-col justify-center items-center">
                         <Image src="/developer/effortless.png" alt="img" width={460} height={344} className="w-full h-full" />
                     </div>
-                </div>
-                <div className="flex flex-col lg:flex-row gap-6 md:gap-10 lg:gap-24 items-center">
+                </FadeInSection>
+                <FadeInSection delay={0.5} className="flex flex-col lg:flex-row gap-6 md:gap-10 lg:gap-24 items-center">
                     <div className="bg-additional-snow rounded-[16px] py-[30.58px] md:py-[65.84px] lg:py-[52px] px-[28.23px] md:px-[60.78px] lg:px-12 w-full flex flex-col justify-center items-center">
                         <div className="grid grid-cols-2 w-full gap-4">
                             <Image src="/developer/code-1.png" alt="img" width={222} height={164} className=" w-full h-full"/>
@@ -38,8 +39,8 @@ export default function DeveloperFeatures() {
                             <p className="text-[16px] md:text-[18px] leading-7 md:leading-8 text-grayscale-600">Your code remains entirely private—never used for training or shared externally. Safeguard your production code with robust security, including code obfuscation and deployment options.</p>
                         </div>
                     </div>
-                </div>
-                <div className="flex flex-col-reverse lg:flex-row gap-6 md:gap-10 lg:gap-24 items-center">
+                </FadeInSection>
+                <FadeInSection delay={0.5} className="flex flex-col-reverse lg:flex-row gap-6 md:gap-10 lg:gap-24 items-center">
                     <div className="flex flex-col gap-3 md:gap-4 lg:gap-6 lg:max-w-[540px]">
                         <div className="flex flex-row gap-2">
                             <div className="h-[22px] w-[1px] bg-primary-500" />
@@ -56,7 +57,7 @@ export default function DeveloperFeatures() {
                             <Image src="/developer/coverage-2.png" alt="img" width={460} height={293} className=" w-full h-full"/>
                         </div>
                     </div>
-                </div>
+                </FadeInSection>
             </div>
         </div>
     )

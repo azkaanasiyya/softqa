@@ -6,6 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import FadeInSection from "../animation/fadein";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -19,7 +20,7 @@ export default function Navbar() {
 
   return (
     <nav className="relative z-50 flex flex-col justify-center items-center">
-      <div className="max-w-[1280px] w-full flex justify-between items-center px-8 lg:px-20 py-5">
+      <FadeInSection delay={0.5} className="max-w-[1280px] w-full flex justify-between items-center px-8 lg:px-20 py-5">
         <Link href="/" className="cursor-pointer">
           <Image src="/logo.svg" alt="logo" width={124} height={40} />
         </Link>
@@ -67,7 +68,7 @@ export default function Navbar() {
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
-      </div>
+      </FadeInSection>
 
       {/* Mobile/Tablet Menu */}
       {isOpen && (
@@ -79,7 +80,7 @@ export default function Navbar() {
           />
 
           {/* Dropdown Menu */}
-          <div className="fixed top-0 left-0 w-full lg:w-auto bg-white z-50 lg:hidden">
+          <FadeInSection delay={0.5} className="fixed top-0 left-0 w-full lg:w-auto bg-white z-50 lg:hidden">
             <div className="flex justify-between items-center py-5 px-8 border-b mb-4 md:mb-10 border-grayscale-100">
               <Link href="/" onClick={() => setIsOpen(false)}>
                 <Image src="/logo.svg" alt="logo" width={124} height={40} />
@@ -116,7 +117,7 @@ export default function Navbar() {
                 </Button>
               </Link> 
             </div>
-          </div>
+          </FadeInSection>
         </>
       )}
     </nav>
