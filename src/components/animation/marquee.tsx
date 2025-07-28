@@ -5,33 +5,51 @@ import gsap from "gsap";
 
 type MarqueeProps = {
   children: ReactNode;
-  duration?: number;
+  duration?: number; 
 };
 
-export default function Marquee({ children, duration = 20 }: MarqueeProps) {
-  const marqueeRef = useRef<HTMLDivElement>(null);
+export default function Marquee({ children, duration = 10 }: MarqueeProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!marqueeRef.current) return;
+    if (!containerRef.current || !contentRef.current) return;
 
-    const ctx = gsap.context(() => {
-      gsap.to(marqueeRef.current, {
-        x: "-50%",
-        ease: "none",
-        duration: duration,
-        repeat: -1,
-      });
-    }, marqueeRef);
+    const contentWidth = contentRef.current.offsetWidth;
 
-    return () => ctx.revert();
+    const tl = gsap.timeline({ repeat: -1 });
+
+    tl.fromTo(
+      contentRef.current,
+      { x: 0 },
+      {
+        x: -contentWidth / 2,
+        duration,
+        ease: "linear"
+      }
+    );
+
+    return () => {
+      tl.kill(); 
+    };
   }, [duration]);
 
   return (
-    <div className="overflow-hidden w-full">
+    <div
+      className="relative overflow-hidden w-full"
+      ref={containerRef}
+    >
+      <div className="pointer-events-none absolute left-0 top-0 h-full w-[248px] bg-gradient-to-r from-white to-transparent z-10" />
+
+      <div className="pointer-events-none absolute right-0 top-0 h-full w-[248px] bg-gradient-to-l from-white to-transparent z-10" />
+
       <div
-        ref={marqueeRef}
-        className="flex flex-row gap-16 whitespace-nowrap"
+        ref={contentRef}
+        className="flex flex-row gap-16 whitespace-nowrap w-max"
       >
+        {children}
+        {children}
+        {children}
         {children}
         {children}
       </div>
