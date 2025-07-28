@@ -1,16 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
+import FadeInSection from "../animation/fadein";
 
 export default function Footer() {
     return (
         <div className="bg-[url('/footer/bg-footer-mobile.png')] md:bg-[url('/footer/bg-footer-tablet.png')] lg:bg-[url('/footer/bg-footer.png')] bg-no-repeat bg-top bg-cover pt-12 md:pt-[88px] lg:pt-[104px] pb-8 md:pb-10 lg:pb-8 px-6 md:px-8 lg:px-[124px] flex flex-col items-center justify-center">
             <div className="max-w-[1192px] w-full flex flex-col gap-20 md:gap-[104px]">
                 <div className="flex flex-col gap-12 md:gap-8 max-w-[1192px] w-full items-center">
-                    <div className="flex flex-col items-center justify-center gap-4 md:gap-6 max-w-[305px] w-full">
+                    <FadeInSection delay={0.5} className="flex flex-col items-center justify-center gap-4 md:gap-6 max-w-[305px] w-full">
                         <Image src="/footer/logo-footer.svg" alt="footer" width={64} height={64} />
                         <p className="text-center text-[16px] leading-[24px] font-normal text-base-white opacity-[88%]">Deliver unparalleled digital experience with our AI-powered unit testing.</p>
-                    </div>
-                    <div className="flex flex-row justify-between max-w-[1192px] w-full items-center">
+                    </FadeInSection>
+                    <FadeInSection delay={0.5} className="flex flex-row justify-between max-w-[1192px] w-full items-center">
                         <ul className="flex flex-col gap-8">
                             <Link href="/">
                                 <li className="cursor-pointer text-[24px] md:text-[32px] leading-[30px] md:leading-[40px] font-normal text-base-white">Home</li> 
@@ -27,9 +28,9 @@ export default function Footer() {
                                 <li className="cursor-pointer text-[24px] md:text-[32px] leading-[30px] md:leading-[40px] font-normal text-base-white text-end">Pricing</li>
                             </Link>
                         </ul>
-                    </div>
+                    </FadeInSection>
                 </div>
-                <div className="flex flex-col-reverse md:flex-row md:justify-between items-center gap-4 md:gap-0 pt-6 md:pt-8 border-t border-[#FFFFFF1F]">
+                <FadeInSection delay={0.5} className="flex flex-col-reverse md:flex-row md:justify-between items-center gap-4 md:gap-0 pt-6 md:pt-8 border-t border-[#FFFFFF1F]">
                     <p className="text-[14px] md:text-[16px] leading-[22px] md:leading-[24px] font-normal text-white-opacity-80">© Copyright 2025 SoftQA. All rights reserved.</p>
                     <div className="flex flex-row gap-6">
                         <Link href="https://x.com" target="_blank" rel="noopener noreferrer">
@@ -54,7 +55,7 @@ export default function Footer() {
                         </Link>
                         
                     </div>
-                </div>
+                </FadeInSection>
             </div>
         </div>
     )

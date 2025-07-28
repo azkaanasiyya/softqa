@@ -4,11 +4,12 @@ import { Button } from "../ui/button";
 import Link from "next/link";
 import { InputPassword } from "../custom/inputpassword";
 import { InputUser } from "../custom/inputuser";
+import FadeInSection from "../animation/fadein";
 
 export default function SignHero() {
     return (
         <div className="flex flex-col justify-center w-full items-center overflow-hidden">
-            <div className="flex flex-row max-w-[1720px] max-h-[1024px] h-full w-full gap-[124px] px-6 md:px-8 lg:pl-[124px] lg:mx-auto lg:pr-[0px]">
+            <FadeInSection delay={0.5} className="flex flex-row max-w-[1720px] max-h-[1024px] h-full w-full gap-[124px] px-6 md:px-8 lg:pl-[124px] lg:mx-auto lg:pr-[0px]">
                 <div className="lg:w-1/3 py-6 md:pt-12 lg:pt-[45px] pb-[86px] lg:pb-[124px] flex flex-col gap-8 md:gap-12 lg:gap-16 items-start">
                     <Image src="/logo.svg" alt="logo" width={148.8} height={48} className="lg:w-[148.8px] lg:h-[48px] w-[124px] h-[40px]"/>
                     <div className="flex flex-col items-center gap-6 w-full lg:max-w-[488px]">
@@ -77,7 +78,7 @@ export default function SignHero() {
                     </div>
                     <Image src="/auth/gradient.png" alt="signup bg" width={704} height={464} className="absolute z-10 bottom-0 left-0 w-full h-[464px]" />
                 </div>
-            </div>
+            </FadeInSection>
         </div>
         
     )

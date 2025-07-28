@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { MobileSectionSelect } from "./selectid";
+import FadeInSection from "@/components/animation/fadein";
 
 export default function ContentWebDetail() {
 
@@ -30,13 +31,13 @@ const [activeId, setActiveId] = useState("");
 
     return (
         <div className="flex flex-col justify-center items-center pt-6 md:pt-8 lg:pt-8 px-6 md:px-8 lg:px-[124px] pb-12 md:pb-20 lg:pb-[104px]">
-            <div className="max-w-[1192px] flex flex-col gap-12 lg:gap-[88px]">
+            <FadeInSection delay={0.5} className="max-w-[1192px] flex flex-col gap-12 lg:gap-[88px]">
                 <div className="flex flex-row gap-1 items-start">
                     <span className="text-[16px] leading-6 text-grayscale-900">Webinar</span>
                     <span className="text-[16px] leading-6 text-grayscale-500 w-4 flex flex-col justify-center items-center">/</span>
                     <span className="text-[16px] leading-6 text-grayscale-400">Achieving 100% Test Coverage</span>
                 </div>
-                <div className="flex flex-col gap-8">
+                <FadeInSection delay={0.5} className="flex flex-col gap-8">
                     <div className="flex flex-col items-center gap-10 md:gap-16">
                         <div className="flex flex-col gap-4 items-center w-full max-w-[784px]">
                             <h2 className="text-[40px] md:text-[48px] leading-[50px] md:leading-[60px] text-center text-grayscale-900">Achieving 100% Test Coverage</h2>
@@ -72,8 +73,8 @@ const [activeId, setActiveId] = useState("");
                         </div>
                     </div>
                     <Image src="/webinar/david-kim.png" alt="icon" width={1192} height={624} className="lg:w-[1192px] lg:h-[624px] w-full h-full" />
-                </div>
-                <div className="flex flex-col lg:flex-row lg:items-start gap-8">
+                </FadeInSection>
+                <FadeInSection delay={0.5} className="flex flex-col lg:flex-row lg:items-start gap-8">
                     <MobileSectionSelect activeId={activeId} setActiveId={setActiveId} />
                     <div className="lg:sticky lg:top-24 hidden md:flex md:flex-col gap-8 max-w-[274px]">
                         <div className="flex flex-col gap-3">
@@ -398,8 +399,8 @@ const [activeId, setActiveId] = useState("");
                             </div>
                         </div>
                     </div> 
-                </div>
-            </div>
+                </FadeInSection>
+            </FadeInSection>
         </div>
     )
 }

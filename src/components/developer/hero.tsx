@@ -5,6 +5,7 @@ import { Button } from "../ui/button";
 import Image from "next/image";
 import { useState } from "react";
 import { deveTestimonials as slides } from "../data/developer";
+import FadeInSection from "../animation/fadein";
                                
 export default function DeveloperHero() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -20,7 +21,7 @@ export default function DeveloperHero() {
   return (
     <div className="bg-[url('/developer/bg-hero.png')] bg-no-repeat bg-center bg-cover py-16 md:py-20 lg:py-[104px] px-6 md:px-8 lg:px-[124px] flex flex-col items-center">
       <div className="max-w-[1192px] flex flex-col gap-[72px]">
-        <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-start">
+        <FadeInSection delay={0.5} className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-start">
           <div className="flex flex-col gap-3 md:gap-4 lg:max-w-[580px]">
             <div className="flex flex-row gap-2">
               <div className="h-[22px] w-[1px] bg-cyan-500" />
@@ -48,9 +49,9 @@ export default function DeveloperHero() {
               </Link>
             </div>
           </div>
-        </div>
+        </FadeInSection>
 
-        <div className="flex flex-col gap-8">
+        <FadeInSection delay={0.5} className="flex flex-col gap-8">
           <div className="bg-base-white border-2 border-grayscale-100 rounded-[16px] pt-4 px-4 pb-6 md:p-6 lg:pr-12 lg:pl-6 flex flex-col lg:flex-row gap-5 md:gap-10 lg:gap-12">
             <Image
               src={slides[currentSlide].image}
@@ -117,7 +118,7 @@ export default function DeveloperHero() {
               </div>
             </div>
           </div>
-        </div>
+        </FadeInSection>
       </div>
     </div>
   );

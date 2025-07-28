@@ -1,10 +1,11 @@
+import FadeInSection from "../animation/fadein";
 import { Button } from "../ui/button";
 import Image from "next/image";
 
 export default function PricingHero() {
     return (
         <div className="bg-[url('/pricing/bg-hero-pricing.png')] bg-no-repeat bg-center bg-cover flex flex-col justify-center items-center pt-20 pb-16 lg:py-[104px] px-6 md:px-8 lg:px-[124px]">
-            <div className="max-w-[1192px] flex flex-col gap-12 lg:gap-16 items-center w-full">
+            <FadeInSection delay={0.5} className="max-w-[1192px] flex flex-col gap-12 lg:gap-16 items-center w-full">
                 <div className="flex flex-col gap-4 items-center">
                     <div className="flex flex-col gap-3 md:gap-4 items-center">
                         <div className="flex flex-row gap-2">
@@ -175,7 +176,7 @@ export default function PricingHero() {
                       </div>
                     </div>
                 </div>
-            </div>
+            </FadeInSection>
         </div>
     )
 }

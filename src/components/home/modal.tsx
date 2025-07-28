@@ -7,6 +7,7 @@ import Image from "next/image";
 import { SelectRegion } from "./selectregion";
 import { SelectNumber } from "./selectnumber";
 import { InputName } from "../custom/inputname";
+import FadeInSection from "../animation/fadein";
 
 type HomeModalProps = {
     triggerType?: 'white' | 'green';
@@ -35,7 +36,7 @@ export function HomeModal({triggerType = 'white'}: HomeModalProps) {
             </DialogTrigger>
             )}
         <DialogContent className="w-full md:max-w-[584px] max-w-[90vw] overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] max-h-[90vh]">
-            <div className="flex flex-col w-full gap-6">
+            <FadeInSection delay={0.5} className="flex flex-col w-full gap-6">
                 <div className="flex flex-col gap-2">
                     <DialogHeader>
                         <DialogTitle>Contact our sales team! </DialogTitle>
@@ -73,12 +74,14 @@ export function HomeModal({triggerType = 'white'}: HomeModalProps) {
                     <span className="text-[16px] leading-6 text-grayscale-400">Additional notes*</span>
                     <Textarea variant="sales" placeholder="What would you like to talk about?"/>
                 </div>
-            </div>
-          <DialogFooter>
-            <DialogClose asChild>
-                <Button variant="request" size="big" className="cursor-pointer text-cyan-500 w-full max-w-[520px]">Send to Sales</Button>
-            </DialogClose>
-          </DialogFooter>
+            </FadeInSection>
+            <FadeInSection delay={0.5}>
+                <DialogFooter>
+                    <DialogClose asChild>
+                        <Button variant="request" size="big" className="cursor-pointer text-cyan-500 w-full max-w-[520px]">Send to Sales</Button>
+                    </DialogClose>
+                </DialogFooter>
+            </FadeInSection>
         </DialogContent>
       </form>
         </Dialog>

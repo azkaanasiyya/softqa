@@ -3,6 +3,7 @@
 import Image from "next/image"
 import { useState } from "react"
 import { testimonials } from "../data/testimonials"
+import FadeInSection from "../animation/fadein";
 
 export default function HomeTestimonials() {
   const [activeIndex, setActiveIndex] = useState(0)
@@ -14,7 +15,7 @@ export default function HomeTestimonials() {
     <div className="flex flex-col justify-center items-center px-6 md:px-8 lg:px-[124px] py-12 md:py-20 lg:pt-[124px] lg:pb-[132px] border-y">
       <div className="max-w-[1192px] flex flex-col gap-10 md:gap-12 lg:gap-16 items-center justify-center">
        
-        <div className="max-w-[580px] flex flex-col gap-3 md:gap-4 items-center">
+        <FadeInSection delay={0.5} className="max-w-[580px] flex flex-col gap-3 md:gap-4 items-center">
           <div className="flex flex-row gap-2">
             <div className="h-[22px] w-[1px] bg-primary-500" />
             <p className="text-[14px] font-medium leading-[22px] uppercase text-primary-500">
@@ -24,7 +25,7 @@ export default function HomeTestimonials() {
           <h2 className="max-w-[580px] text-[32px] md:text-[48px] leading-10 md:leading-[60px] font-normal text-center text-grayscale-900">
             They talk about it <br /> better than us
           </h2>
-        </div>
+        </FadeInSection>
 
         <div className="flex flex-col-reverse md:flex-row items-stretch w-full">
 

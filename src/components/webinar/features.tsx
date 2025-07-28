@@ -6,6 +6,7 @@ import { InputWebinar } from "../custom/inputwebinar"
 import { SelectCategories } from "./selectcategories"
 import { SelectRecent } from "./selectrecent"
 import { webinars } from "../data/webinars"
+import FadeInSection from "../animation/fadein"
 
 export default function WebinarFeatures() {
   const [currentPage, setCurrentPage] = useState(1)
@@ -45,7 +46,7 @@ export default function WebinarFeatures() {
   return (
     <div className="bg-base-white flex flex-col justify-center items-center pt-[48.49px] pb-12 md:py-16 lg:pt-[124px] lg:pb-[132px] px-6 md:px-8 lg:px-[124px]">
       <div className="max-w-[1192px] flex flex-col gap-4 md:gap-6 lg:gap-10">
-        <div className="flex flex-col lg:flex-row gap-8 md:gap-12 lg:justify-between items-stretch lg:items-center">
+        <FadeInSection delay={0.5} className="flex flex-col lg:flex-row gap-8 md:gap-12 lg:justify-between items-stretch lg:items-center">
           <h3 className="text-[32px] md:text-[40px] leading-10 md:leading-[50px] text-grayscale-900 w-full">
             Watch past webinars
           </h3>
@@ -63,9 +64,9 @@ export default function WebinarFeatures() {
               />
             </div>
           </div>
-        </div>
+        </FadeInSection>
 
-        <div className="flex flex-col gap-10 lg:gap-16">
+        <FadeInSection delay={0.5} className="flex flex-col gap-10 lg:gap-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8">
             {currentWebinars.map((item, i) => (
               <div
@@ -114,7 +115,7 @@ export default function WebinarFeatures() {
               </div>
             ))}
           </div>
-          <div className="flex flex-row justify-between items-center">
+          <FadeInSection delay={0.5} className="flex flex-row justify-between items-center">
             <div
               className="flex flex-row gap-4 items-center cursor-pointer"
               onClick={handlePrev}
@@ -158,8 +159,8 @@ export default function WebinarFeatures() {
                 <Image src="/webinar/arrow-right.png" alt="Next" width={16} height={16} />
               </div>
             </div>
-          </div>
-        </div>
+          </FadeInSection>
+        </FadeInSection>
       </div>
     </div>
   )

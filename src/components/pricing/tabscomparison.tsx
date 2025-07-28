@@ -10,10 +10,11 @@ import {
   TabsTrigger,
 } from "@/components/ui/tabs"
 import Image from "next/image";
+import FadeInSection from "../animation/fadein";
 
 export function TabsComparison() {
   return (
-    <div className="flex w-full flex-col">
+    <FadeInSection delay={0.5} className="flex w-full flex-col">
       <Tabs defaultValue="starter">
         <TabsList>
           <TabsTrigger value="starter">
@@ -183,6 +184,6 @@ export function TabsComparison() {
           </Card>
         </TabsContent>
       </Tabs>
-    </div>
+    </FadeInSection>
   )
 }

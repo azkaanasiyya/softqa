@@ -3,15 +3,16 @@ import { InputEmail } from "../custom/inputemail";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import { InputPassword } from "../custom/inputpassword";
+import FadeInSection from "../animation/fadein";
 
 export default function SignInHero() {
     return (
         <div className="flex flex-col justify-center w-full items-center">
-            <div className="flex flex-col items-center lg:items-start lg:flex-row max-w-[1720px] w-full lg:gap-[124px] py-8 md:pt-12 px-6 md:px-8 lg:py-0 lg:pr-0 lg:pl-[124px] lg:mx-auto">
+            <FadeInSection delay={0.5} className="flex flex-col items-center lg:items-start lg:flex-row max-w-[1720px] w-full lg:gap-[124px] py-8 md:pt-12 px-6 md:px-8 lg:py-0 lg:pr-0 lg:pl-[124px] lg:mx-auto">
                 <div className="lg:pt-[45px] md:pb-[152px] lg:pb-[124px] flex flex-col gap-8 md:gap-[88px] lg:gap-24 items-start w-full">
                     <Image src="/logo.svg" alt="logo" width={148.8} height={48} className="lg:w-[148.8px] lg:h-[48px] w-[124px] h-[40px]"/>
                     <div className="flex flex-col items-center gap-6 w-full lg:max-w-[488px]">
-                        <div className="flex flex-col gap-3 md:gap-12 lg:gap-8 w-full">
+                        <FadeInSection delay={0.5} className="flex flex-col gap-3 md:gap-12 lg:gap-8 w-full">
                             <div className="flex flex-col gap-3 lg:gap-4">
                                 <h4 className="text-[24px] md:text-[32px] leading-[30px] md:leading-10 text-grayscale-900">Welcome Back!</h4>
                                 <span className="text-[16px] md:text-[18px] leading-7 md:leading-8 text-grayscale-600">Sign in to access your dashboard and continue optimizing your QA process.</span>
@@ -32,8 +33,8 @@ export default function SignInHero() {
                                 </div>
                                 <Button variant="request" size="medium" className="w-full text-cyan-500">Sign In</Button>
                             </div>
-                        </div>
-                        <div className="flex flex-col items-center gap-6 w-full">
+                        </FadeInSection>
+                        <FadeInSection delay={0.5} className="flex flex-col items-center gap-6 w-full">
                             <Image src="/auth/or.png" alt="image" width={488} height={22}  className="lg:w-[488px] lg:h-[22px] w-full h-full"/>
                             <div className="flex flex-col items-center gap-4 w-full">
                                 <div className="flex items-center justify-center gap-3 w-full lg:max-w-[488px] px-6 py-5 rounded-[12px] border-2 border-grayscale-100 h-14">
@@ -45,17 +46,17 @@ export default function SignInHero() {
                                     <span className="text-[16px] leading-6 text-grayscale-900">Continue with Apple</span>
                                 </div>
                             </div>
-                        </div>
-                        <div className="flex flex-row gap-2">
+                        </FadeInSection>
+                        <FadeInSection delay={0.3} className="flex flex-row gap-2">
                             <span className="text-[16px] leading-6 text-grayscale-600">Don’t have an Account?</span>
                             <Link href="/auth/sign-up" className="cursor-pointer">
                                 <span className="text-[16px] leading-6 text-primary-500 font-medium">Sign Up</span>
                             </Link>
-                        </div>
+                        </FadeInSection>
                     </div>
                 </div>
                 <div className="bg-[url('/auth/bg-sign-in.png')] bg-no-repeat bg-center bg-cover pt-[216px] px-[72px] pb-16 hidden lg:flex lg:flex-col w-full gap-[210px]">
-                    <div className="flex flex-col max-w-[560px] gap-8">
+                    <FadeInSection delay={0.5} className="flex flex-col max-w-[560px] gap-8">
                         <h1 className="text-[56px] leading-[70px] text-base-white">Revolutionize QA with Smarter Automation</h1>
                         <div className="flex flex-col gap-10">
                             <p className="text-[24px] leading-9 text-[#FFFFFFEB]">&quot;SoftQA has completely transformed our testing process. It’s reliable, efficient, and ensures our releases are always top-notch.&quot;</p>
@@ -67,8 +68,8 @@ export default function SignInHero() {
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="flex flex-col items-center max-w-[560px] gap-8">
+                    </FadeInSection>
+                    <FadeInSection delay={0.5} className="flex flex-col items-center max-w-[560px] gap-8">
                         <Image src="/auth/join.png" alt="image" width={560} height={22} />
                         <div className="flex flex-col items-center gap-10">
                             <div className="flex flex-row gap-10">
@@ -84,9 +85,9 @@ export default function SignInHero() {
                                 <Image src="/auth/dropbox.png" alt="image" width={108.67} height={32} />
                             </div>
                         </div>
-                    </div>
+                    </FadeInSection>
                 </div>
-            </div>
+            </FadeInSection>
         </div>
         
     )
