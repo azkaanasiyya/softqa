@@ -4,6 +4,8 @@ import { useEffect, useState } from "react"
 import { Button } from "../ui/button"
 import { webinarHeroData } from "../data/webinarhero"
 import FadeInSection from "../animation/fadein"
+import { ArrowRight, ArrowLeft } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 export default function WebinarHero() {
   const [itemsPerPage, setItemsPerPage] = useState(2)
@@ -67,21 +69,36 @@ export default function WebinarHero() {
             <div className="flex flex-row gap-4">
               <div
                 onClick={handlePrev}
-                className={`flex justify-center items-center w-8 md:w-10 h-8 md:h-10 rounded-full border-2 ${
-                  currentIndex === 0 ? "border-gray-500 opacity-50 cursor-not-allowed" : "border-white-opacity-12 cursor-pointer"
-                }`}
+                className={cn(
+                  "flex justify-center items-center w-8 md:w-10 h-8 md:h-10 rounded-full border transition-colors",
+                  currentIndex === 0
+                    ? "border-white/60 hover:border-white cursor-not-allowed"
+                    : "bg-cyan-500 cursor-pointer hover:bg-cyan-400"
+                )}
               >
-                <Image src="/webinar/left-web.png" alt="left" width={20} height={20} className="w-4 h-4 md:w-5 md:h-5" />
+                <ArrowLeft
+                  className={cn(
+                    "w-5 h-5",
+                    currentIndex === 0 ? "text-[#FFFFFF66]" : "text-primary-500"
+                  )}
+                />
               </div>
+
               <div
                 onClick={handleNext}
-                className={`flex justify-center items-center w-8 md:w-10 h-8 md:h-10 rounded-full ${
+                className={cn(
+                  "flex justify-center items-center w-8 md:w-10 h-8 md:h-10 rounded-full border transition-colors",
                   currentIndex + itemsPerPage >= webinarHeroData.length
-                    ? "bg-gray-500 opacity-50 cursor-not-allowed"
-                    : "bg-cyan-500 cursor-pointer"
-                }`}
+                    ? "border-white/60 hover:border-white cursor-not-allowed"
+                    : "bg-cyan-500 cursor-pointer hover:bg-cyan-400"
+                )}
               >
-                <Image src="/webinar/right-web.png" alt="right" width={20} height={20} className="w-4 h-4 md:w-5 md:h-5" />
+                <ArrowRight
+                  className={cn(
+                    "w-5 h-5",
+                    currentIndex + itemsPerPage >= webinarHeroData.length ? "text-[#FFFFFF66]" : "text-primary-500"
+                  )}
+                />
               </div>
             </div>
           </FadeInSection>
@@ -107,7 +124,7 @@ export default function WebinarHero() {
                       <p className="text-[16px] leading-6 text-grayscale-600">{item.description}</p>
                     </div>
                   </div>
-                  <Button variant="request" size="medium" className="text-cyan-500 w-full lg:w-auto">
+                  <Button variant="request" size="medium" className="text-cyan-500 w-full lg:w-auto cursor-pointer">
                     Register
                   </Button>
                 </div>
