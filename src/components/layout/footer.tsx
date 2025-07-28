@@ -14,18 +14,18 @@ export default function Footer() {
                     <FadeInSection delay={0.5} className="flex flex-row justify-between max-w-[1192px] w-full items-center">
                         <ul className="flex flex-col gap-8">
                             <Link href="/">
-                                <li className="cursor-pointer text-[24px] md:text-[32px] leading-[30px] md:leading-[40px] font-normal text-base-white">Home</li> 
+                                <li className="cursor-pointer text-[24px] md:text-[32px] leading-[30px] md:leading-[40px] font-normal text-base-white hover:underline transition duration-200">Home</li> 
                             </Link>
                             <Link href="/developer">
-                                <li className="cursor-pointer text-[24px] md:text-[32px] leading-[30px] md:leading-[40px] font-normal text-base-white">Developer</li>
+                                <li className="cursor-pointer text-[24px] md:text-[32px] leading-[30px] md:leading-[40px] font-normal text-base-white hover:underline transition duration-200">Developer</li>
                             </Link>
                         </ul>
                         <ul className="flex flex-col gap-8">
                             <Link href="/webinar">
-                                <li className="cursor-pointer text-[24px] md:text-[32px] leading-[30px] md:leading-[40px] font-normal text-base-white text-end">Webinar</li>
+                                <li className="cursor-pointer text-[24px] md:text-[32px] leading-[30px] md:leading-[40px] font-normal text-base-white text-end hover:underline transition duration-200">Webinar</li>
                             </Link>
                             <Link href="/pricing">
-                                <li className="cursor-pointer text-[24px] md:text-[32px] leading-[30px] md:leading-[40px] font-normal text-base-white text-end">Pricing</li>
+                                <li className="cursor-pointer text-[24px] md:text-[32px] leading-[30px] md:leading-[40px] font-normal text-base-white text-end hover:underline transition duration-200">Pricing</li>
                             </Link>
                         </ul>
                     </FadeInSection>
@@ -35,22 +35,22 @@ export default function Footer() {
                     <div className="flex flex-row gap-6">
                         <Link href="https://x.com" target="_blank" rel="noopener noreferrer">
                             <div className="bg-[#FFFFFF1F] w-10 h-10 rounded-full flex flex-col items-center justify-center cursor-pointer">
-                                <Image src="/footer/x.svg" alt="footer" width={16} height={16} />
+                                <Image src="/footer/x.svg" alt="footer" width={16} height={16} className="opacity-80 hover:opacity-100 transition duration-200"/>
                             </div>
                         </Link>
                         <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
                             <div className="bg-[#FFFFFF1F] w-10 h-10 rounded-full flex flex-col items-center justify-center cursor-pointer">
-                                <Image src="/footer/linkedin.svg" alt="footer" width={16} height={16} />
+                                <Image src="/footer/linkedin.svg" alt="footer" width={16} height={16} className="opacity-80 hover:opacity-100 transition duration-200"/>
                             </div>
                         </Link>
                         <Link href="https://instagram.com" target="_blank" rel="noopener noreferrer">
                             <div className="bg-[#FFFFFF1F] w-10 h-10 rounded-full flex flex-col items-center justify-center cursor-pointer">
-                            <Image src="/footer/ig.svg" alt="footer" width={16} height={16} />
+                            <Image src="/footer/ig.svg" alt="footer" width={16} height={16} className="opacity-80 hover:opacity-100 transition duration-200"/>
                         </div>
                         </Link>
                         <Link href="https://github.com" target="_blank" rel="noopener noreferrer">
                             <div className="bg-[#FFFFFF1F] w-10 h-10 rounded-full flex flex-col items-center justify-center cursor-pointer">
-                                <Image src="/footer/github.svg" alt="footer" width={16} height={16} />
+                                <Image src="/footer/github.svg" alt="footer" width={16} height={16} className="opacity-80 hover:opacity-100 transition duration-200"/>
                             </div>
                         </Link>
                         
