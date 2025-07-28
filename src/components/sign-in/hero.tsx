@@ -10,7 +10,9 @@ export default function SignInHero() {
         <div className="flex flex-col justify-center w-full items-center">
             <FadeInSection delay={0.5} className="flex flex-col items-center lg:items-start lg:flex-row max-w-[1720px] w-full lg:gap-[124px] py-8 md:pt-12 px-6 md:px-8 lg:py-0 lg:pr-0 lg:pl-[124px] lg:mx-auto">
                 <div className="lg:pt-[45px] md:pb-[152px] lg:pb-[124px] flex flex-col gap-8 md:gap-[88px] lg:gap-24 items-start w-full">
-                    <Image src="/logo.svg" alt="logo" width={148.8} height={48} className="lg:w-[148.8px] lg:h-[48px] w-[124px] h-[40px]"/>
+                    <Link href="/" className="cursor-pointer">
+                        <Image src="/logo.svg" alt="logo" width={148.8} height={48} className="lg:w-[148.8px] lg:h-[48px] w-[124px] h-[40px]"/>
+                    </Link> 
                     <div className="flex flex-col items-center gap-6 w-full lg:max-w-[488px]">
                         <FadeInSection delay={0.5} className="flex flex-col gap-3 md:gap-12 lg:gap-8 w-full">
                             <div className="flex flex-col gap-3 lg:gap-4">
