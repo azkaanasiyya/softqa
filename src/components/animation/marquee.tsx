@@ -8,7 +8,7 @@ type MarqueeProps = {
   duration?: number; 
 };
 
-export default function Marquee({ children, duration = 10 }: MarqueeProps) {
+export default function Marquee({ children, duration = 5 }: MarqueeProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
 
