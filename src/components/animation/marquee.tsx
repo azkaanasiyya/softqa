@@ -39,14 +39,17 @@ export default function Marquee({ children, duration = 10 }: MarqueeProps) {
       className="relative overflow-hidden w-full"
       ref={containerRef}
     >
-      <div className="pointer-events-none absolute left-0 top-0 h-full w-[248px] bg-gradient-to-r from-white to-transparent z-10" />
+      <div className="pointer-events-none absolute left-0 top-0 h-full w-16 md:w-[248px] bg-gradient-to-r from-white to-transparent z-10" />
 
-      <div className="pointer-events-none absolute right-0 top-0 h-full w-[248px] bg-gradient-to-l from-white to-transparent z-10" />
+      <div className="pointer-events-none absolute right-0 top-0 h-full w-16 md:w-[248px] bg-gradient-to-l from-white to-transparent z-10" />
 
       <div
         ref={contentRef}
-        className="flex flex-row gap-16 whitespace-nowrap w-max"
+        className="flex flex-row gap-8 md:gap-12 lg:gap-20 whitespace-nowrap w-max"
       >
+        {children}
+        {children}
+        {children}
         {children}
         {children}
         {children}
