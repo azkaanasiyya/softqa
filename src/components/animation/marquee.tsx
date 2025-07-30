@@ -8,32 +8,25 @@ type MarqueeProps = {
   duration?: number; 
 };
 
-export default function Marquee({ children, duration = 3 }: MarqueeProps) {
+export default function Marquee({ children, duration = 10}: MarqueeProps){
+  const marqueeRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!containerRef.current || !contentRef.current) return;
+    if (!marqueeRef.current) return;
 
-    const contentWidth = contentRef.current.offsetWidth;
+    const ctx = gsap.context(() => {
+      gsap.to(marqueeRef.current, {
+        x: "-50%",
+        ease: "none",
+        duration: duration,
+        repeat: -1,
+      });
+    }, marqueeRef);
 
-    const tl = gsap.timeline({ repeat: -1 });
-
-    tl.fromTo(
-      contentRef.current,
-      { x: 0 },
-      {
-        x: -contentWidth / 2,
-        duration,
-        ease: "linear"
-      }
-    );
-
-    return () => {
-      tl.kill(); 
-    };
+    return () => ctx.revert();
   }, [duration]);
-
+  
   return (
     <div
       className="relative overflow-hidden w-full"
@@ -44,18 +37,12 @@ export default function Marquee({ children, duration = 3 }: MarqueeProps) {
       <div className="pointer-events-none absolute right-0 top-0 h-full w-16 md:w-[248px] bg-gradient-to-l from-white to-transparent z-10" />
 
       <div
-        ref={contentRef}
+        ref={marqueeRef}
         className="flex flex-row gap-8 md:gap-12 lg:gap-20 whitespace-nowrap w-max"
       >
         {children}
         {children}
-        {children}
-        {children}
-        {children}
-        {children}
-        {children}
-        {children}
       </div>
     </div>
-  );
+  )
 }
