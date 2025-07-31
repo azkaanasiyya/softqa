@@ -8,26 +8,36 @@ import FadeInSection from "@/components/animation/fadein";
 export default function ContentWebDetail() {
 
 const [activeId, setActiveId] = useState("");
+const handleSmoothScroll = (id:string) => (e: { preventDefault: () => void; }) => {
+    e.preventDefault();
+    const el = document.getElementById(id);
+    if (el) {
+        el.scrollIntoView({behavior: "smooth", block: "start"});
+        setActiveId(id);
+    }
+};
 
-    useEffect(() => {
-        const sections = document.querySelectorAll("section[id]");
-        const observer = new IntersectionObserver(
-            (entries) => {
-            const visible = entries
-                .filter(entry => entry.isIntersecting)
-                .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
-            if (visible) {
-                setActiveId(visible.target.id);
-            }
-            },
-            {
-            rootMargin: "-30% 0px -60% 0px",
-            threshold: 0.5,
-            }
-        );
-        sections.forEach(section => observer.observe(section));
-        return () => observer.disconnect();
-        }, []);
+    // useEffect(() => {
+    //     const sections = document.querySelectorAll("section[id]");
+    //     const observer = new IntersectionObserver(
+    //         (entries) => {
+    //         const visible = entries
+    //             .filter(entry => entry.isIntersecting)
+    //             .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+    //         if (visible) {
+    //             setActiveId(visible.target.id);
+    //             const el = document.getElementById(visible.target.id);
+    //             if (el) el.scrollIntoView({ behavior: "smooth", block: "start" })
+    //         }
+    //         },
+    //         {
+    //         rootMargin: "-30% 0px -60% 0px",
+    //         threshold: 0.5,
+    //         }
+    //     );
+    //     sections.forEach(section => observer.observe(section));
+    //     return () => observer.disconnect();
+    //     }, []);
 
     return (
         <div className="flex flex-col justify-center items-center pt-6 md:pt-8 lg:pt-8 px-6 md:px-8 lg:px-[124px] pb-12 md:pb-20 lg:pb-[104px]">
@@ -80,11 +90,11 @@ const [activeId, setActiveId] = useState("");
                         <div className="flex flex-col gap-3">
                             <span className="text-[16px] leading-6 text-grayscale-900">0:00 - 12:00</span>
                             <div className="flex flex-col gap-2">
-                                <a href="#section-1" onClick={() => setActiveId("section-1")} className="flex flex-row gap-2 items-center">
+                                <a href="#section-1" onClick={handleSmoothScroll("section-1")} className="flex flex-row gap-2 items-center">
                                     <div className={`h-[16px] w-[2px] ${activeId === 'section-1' ? 'bg-primary-500' : 'bg-grayscale-200'}`} />
                                     <p className={`text-[16px] font-normal leading-[24px] ${activeId === 'section-1' ? 'text-primary-500' : 'text-grayscale-500'}`}>Introduction and Overview</p>
                                 </a>
-                                <a href="#section-1-2" onClick={() => setActiveId("section-1-2")} className="flex flex-row gap-2 items-center">
+                                <a href="#section-1-2" onClick={handleSmoothScroll("section-1-2")} className="flex flex-row gap-2 items-center">
                                     <div className={`h-[16px] w-[2px] ${activeId === 'section-1-2' ? 'bg-primary-500' : 'bg-grayscale-200'}`} />
                                     <p className={`text-[16px] font-normal leading-[24px] ${activeId === 'section-1-2' ? 'text-primary-500' : 'text-grayscale-500'}`}>Why Achieve 100% Test Coverage?</p>
                                 </a>
@@ -93,11 +103,11 @@ const [activeId, setActiveId] = useState("");
                         <div className="flex flex-col gap-3">
                             <span className="text-[16px] leading-6 text-grayscale-900">12:01 - 30:00</span>
                             <div className="flex flex-col gap-2">
-                                <a href="#section-2" onClick={() => setActiveId("section-2")} className="flex flex-row gap-2 items-start">
+                                <a href="#section-2" onClick={handleSmoothScroll("section-2")} className="flex flex-row gap-2 items-start">
                                     <div className={`h-[16px] w-[2px] ${activeId === 'section-2' ? 'bg-primary-500' : 'bg-grayscale-200'}`} />
                                     <p className={`text-[16px] font-normal leading-[24px] ${activeId === 'section-2' ? 'text-primary-500' : 'text-grayscale-500'}`}>Efficient Test Execution with Batch Mode</p>
                                 </a>
-                                <a href="#section-2-2" onClick={() => setActiveId("section-2-2")} className="flex flex-row gap-2 items-center">
+                                <a href="#section-2-2" onClick={handleSmoothScroll("section-2-2")} className="flex flex-row gap-2 items-center">
                                     <div className={`h-[16px] w-[2px] ${activeId === 'section-2-2' ? 'bg-primary-500' : 'bg-grayscale-200'}`} />
                                     <p className={`text-[16px] font-normal leading-[24px] ${activeId === 'section-2-2' ? 'text-primary-500' : 'text-grayscale-500'}`}>Automation Tools and Frameworks</p>
                                 </a>
@@ -106,11 +116,11 @@ const [activeId, setActiveId] = useState("");
                         <div className="flex flex-col gap-3">
                             <span className="text-[16px] leading-6 text-grayscale-900">30:01 - 50:00</span>
                             <div className="flex flex-col gap-2">
-                                <a href="#section-3" onClick={() => setActiveId("section-3")} className="flex flex-row gap-2 items-start">
+                                <a href="#section-3" onClick={handleSmoothScroll("section-3")} className="flex flex-row gap-2 items-start">
                                     <div className={`h-[16px] w-[2px] ${activeId === 'section-3' ? 'bg-primary-500' : 'bg-grayscale-200'}`} />
                                     <p className={`text-[16px] font-normal leading-[24px] ${activeId === 'section-3' ? 'text-primary-500' : 'text-grayscale-500'}`}>Managing Technical Debt Through Testing</p>
                                 </a>
-                                <a href="#section-3-2" onClick={() => setActiveId("section-3-2")} className="flex flex-row gap-2 items-start">
+                                <a href="#section-3-2" onClick={handleSmoothScroll("section-3-2")} className="flex flex-row gap-2 items-start">
                                     <div className={`h-[16px] w-[2px] ${activeId === 'section-3-2' ? 'bg-primary-500' : 'bg-grayscale-200'}`} />
                                     <p className={`text-[16px] font-normal leading-[24px] ${activeId === 'section-3-2' ? 'text-primary-500' : 'text-grayscale-500'}`}>Actionable Strategies for High Coverage</p>
                                 </a>
@@ -118,14 +128,14 @@ const [activeId, setActiveId] = useState("");
                         </div>
                         <div className="flex flex-col gap-3">
                             <span className="text-[16px] leading-6 text-grayscale-900">50:01 - 57:00</span>
-                            <a href="#section-4" onClick={() => setActiveId("section-4")} className="flex flex-row gap-2 items-center">
+                            <a href="#section-4" onClick={handleSmoothScroll("section-4")} className="flex flex-row gap-2 items-center">
                                 <div className={`h-[16px] w-[2px] ${activeId === 'section-4' ? 'bg-primary-500' : 'bg-grayscale-200'}`} />
                                 <p className={`text-[16px] font-normal leading-[24px] ${activeId === 'section-4' ? 'text-primary-500' : 'text-grayscale-500'}`}>Final Thoughts</p>
                             </a>
                         </div>
                     </div>
-                    <div className="lg:overflow-y-auto lg:[&::-webkit-scrollbar]:hidden lg:[-ms-overflow-style:none] lg:[scrollbar-width:none] lg:max-h-screen flex flex-col gap-12 lg:gap-[72px] lg:pl-16">
-                        <section id="section-1" className="flex flex-col gap-4 max-w-[822px]">
+                    <div className="lg:overflow-y-auto lg:[&::-webkit-scrollbar]:hidden lg:[-ms-overflow-style:none] lg:[scrollbar-width:none flex flex-col gap-12 lg:gap-[72px] lg:pl-16">
+                        <section id="section-1" className="flex flex-col gap-4 max-w-[822px] mt-[88px]">
                             <h1 className="text-[40px] md:text-[56px] leading-[50px] md:leading-[70px] text-grayscale-900">0:00 - 12:00</h1>
                             <div className="flex flex-col gap-16">
                                 <div className="flex flex-col gap-10">
