@@ -93,8 +93,8 @@ export default function DeveloperHero() {
 
             <div className="flex justify-between items-center w-full">
 
-              <div className="flex items-center gap-2 md:gap-4">
-                <button onClick={prev} className="bg-primary-50 rounded-full cursor-pointer flex justify-center items-center w-6 h-6 md:w-8 md:h-8">
+              <div onClick={prev} className="cursor-pointer flex items-center gap-2 md:gap-4">
+                <button className="bg-primary-50 rounded-full cursor-pointer flex justify-center items-center w-6 h-6 md:w-8 md:h-8">
                   <Image src="/developer/arrow-left.png" alt="prev" width={16} height={16} />
                 </button>
                 <div className="flex flex-row gap-2 items-center">
@@ -105,14 +105,14 @@ export default function DeveloperHero() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-2 md:gap-4">
+              <div onClick={next} className="cursor-pointer flex items-center gap-2 md:gap-4">
                 <div className="flex flex-row gap-2 items-center">
                   <p className="hidden md:block text-[16px] leading-6 font-normal text-grayscale-500">Next</p>
                   <p className="text-[14px] md:text-[16px] leading-[22px] md:leading-6 font-medium text-primary-900">
                     {slides[(currentSlide + 1) % slides.length].name.split(" ")[0]}
                   </p>
                 </div>
-                <button onClick={next} className="bg-primary-500 rounded-full cursor-pointer flex justify-center items-center w-8 h-8">
+                <button className="bg-primary-500 rounded-full cursor-pointer flex justify-center items-center w-8 h-8">
                   <Image src="/developer/arrow-right.png" alt="next" width={16} height={16} />
                 </button>
               </div>
