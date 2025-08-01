@@ -10,7 +10,7 @@ export function InputWebinar(props: React.InputHTMLAttributes<HTMLInputElement>)
   return (
     <div className="relative w-full max-w-[760px]">
       <span className="absolute left-4 top-1/2 -translate-y-1/2">
-        <Search className={cn("w-5 h-5", focused ? "text-grayscale-900" : "text-grayscale-400")} />
+        <Search className={cn("w-5 h-5", focused ? "text-primary-500" : "text-grayscale-400")} />
       </span>
       <input
         {...props}
