@@ -70,9 +70,9 @@ export default function WebinarHero() {
               <div
                 onClick={handlePrev}
                 className={cn(
-                  "flex justify-center items-center w-8 md:w-10 h-8 md:h-10 rounded-full border transition-colors",
+                  "flex justify-center items-center w-8 md:w-10 h-8 md:h-10 rounded-full border-2 border-white-opacity-12 transition-colors",
                   currentIndex === 0
-                    ? "border-white/60 cursor-not-allowed"
+                    ? "border-white-opacity-12"
                     : "bg-cyan-500 cursor-pointer hover:bg-cyan-400"
                 )}
               >
@@ -87,9 +87,9 @@ export default function WebinarHero() {
               <div
                 onClick={handleNext}
                 className={cn(
-                  "flex justify-center items-center w-8 md:w-10 h-8 md:h-10 rounded-full border transition-colors",
+                  "flex justify-center items-center w-8 md:w-10 h-8 md:h-10 rounded-full border-2 border-white-opacity-12 transition-colors",
                   currentIndex + itemsPerPage >= webinarHeroData.length
-                    ? "border-white/60 cursor-not-allowed"
+                    ? "border-white-opacity-12"
                     : "bg-cyan-500 cursor-pointer hover:bg-cyan-400"
                 )}
               >
