@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { deveTestimonials as slides } from "../data/developer";
 import FadeInSection from "../animation/fadein";
+import { Modal } from "./modal";
                                
 export default function DeveloperHero() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -53,14 +54,25 @@ export default function DeveloperHero() {
 
         <FadeInSection delay={0.5} className="flex flex-col gap-8">
           <div className="bg-base-white border-2 border-grayscale-100 rounded-[16px] pt-4 px-4 pb-6 md:p-6 lg:pr-12 lg:pl-6 flex flex-col lg:flex-row gap-5 md:gap-10 lg:gap-12">
-            <Image
-              src={slides[currentSlide].image}
-              alt="img"
-              width={388}
-              height={416}
-              className="w-full lg:w-[388px] h-auto"
-            />
-            <div className="flex flex-col justify-between gap-6 lg:py-3">
+            <div className="relative w-full lg:w-[388px] h-full">
+              <Image
+                src={slides[currentSlide].image}
+                alt="img"
+                width={388}
+                height={416}
+                className="w-full lg:w-[388px] h-auto"
+              />
+              <div className="absolute bottom-0 left-0 z-10 flex flex-row justify-between w-full p-4 md:p-6">
+                <div className="flex flex-col gap-1">
+                  <span className="text-[16px] leading-6 text-base-white">{slides[currentSlide].name}</span>
+                  <span className="text-[14px] leading-[150%] text-white-opacity-88">
+                    {slides[currentSlide].role}<span className="font-medium text-base-white">{slides[currentSlide].bold}</span>
+                  </span>
+                </div>
+                <Modal />
+              </div>
+            </div>
+            <div className="max-w-[684px] w-full flex flex-col justify-between gap-6 lg:py-3">
               <p className="text-[20px] md:text-[24px] lg:text-[32px] font-normal text-grayscale-900 leading-9 md:leading-[42px] lg:leading-12">
                 “{slides[currentSlide].quote}”
               </p>

@@ -12,7 +12,7 @@ export function HelpModal() {
         <DialogTrigger asChild>
           <Button variant="get" size="default" className="cursor-pointer text-primary-500 w-full max-w-[328px]">Contact Us</Button>
         </DialogTrigger>
-        <DialogContent className="w-full md:max-w-[584px] max-w-[90vw] overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] max-h-[90vh]">
+        <DialogContent className="w-full md:max-w-[584px] max-w-[90vw] overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] pt-5 md:pt-6 pb-6 md:pb-10 px-6 md:px-8 max-h-[90vh]">
             <FadeInSection delay={0.5} className="flex flex-col gap-6">
                 <DialogHeader>
                     <DialogTitle>Get in touch</DialogTitle>
