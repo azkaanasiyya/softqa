@@ -35,7 +35,7 @@ export function HomeModal({triggerType = 'white'}: HomeModalProps) {
                 <Button variant="talk" size="big" className="cursor-pointer text-cyan-500 w-full">Talk to Sales</Button>
             </DialogTrigger>
             )}
-        <DialogContent className="w-full md:max-w-[584px] max-w-[90vw] overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] max-h-[90vh]">
+        <DialogContent className="w-full md:max-w-[584px] max-w-[90vw] overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] max-h-[90vh] pt-5 md:pt-6 pb-6 md:pb-10 px-6 md:px-8">
             <FadeInSection delay={0.5} className="flex flex-col w-full gap-6">
                 <div className="flex flex-col gap-2">
                     <DialogHeader>

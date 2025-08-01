@@ -21,12 +21,15 @@ const buttonVariants = cva(
           "bg-white-opacity-12 hover:bg-white-opacity-6 border-2 border-white-opacity-6",
         dropdown:
           "bg-base-white border border-primary-500",
+        developer:
+          "bg-base-white hover:bg-primary-100 hover:shadow hover:scale-[1.02]"
       },
       size: {
         default: "h-[48px] rounded-[8px] px-[24px] py-[12px] text-[16px] flex flex-col justify-center items-center leading-[24px] font-medium",
         medium: "h-[56px] rounded-[12px] px-[24px] py-[16px] text-[16px] flex flex-row gap-[8px] leading-[24px] font-medium",
         big: "h-[64px] w-full md:w-auto rounded-[12px] px-[32px] py-[20px] text-[16px] flex flex-col justify-center items-center leading-[24px] font-medium",
         select: "h-[64px] rounded-[12px] px-[16px] text-[16px] flex flex-col items-start leading-[24px] font-normal text-grayscale-400",
+        developer: "w-[52px] h-[52px] rounded-full text-[20px]"
       },
     },
     defaultVariants: {
