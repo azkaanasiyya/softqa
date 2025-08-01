@@ -1,6 +1,6 @@
+import Image from "next/image";
 import { Button } from "../ui/button";
 import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
-import { Play } from "lucide-react";
 
 export function Modal() {
     return (
@@ -12,7 +12,7 @@ export function Modal() {
                         size="developer"
                         className="cursor-pointer"
                         >
-                        <Play className="text-primary-900 text-[20px] fill-primary-900 cursor-pointer"/>
+                        <Image src="/developer/play.png" alt="play" width={20} height={20}/>
                     </Button>
                 </DialogTrigger>
                 <DialogContent className="w-[80vw] h-[80vh] aspect-video object-cover rounded-[20px]">
