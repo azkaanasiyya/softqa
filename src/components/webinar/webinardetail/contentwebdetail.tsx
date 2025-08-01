@@ -135,11 +135,11 @@ const handleSmoothScroll = (id:string) => (e: { preventDefault: () => void; }) =
                         </div>
                     </div>
                     <div className="lg:overflow-y-auto lg:[&::-webkit-scrollbar]:hidden lg:[-ms-overflow-style:none] lg:[scrollbar-width:none flex flex-col gap-12 lg:gap-[72px] lg:pl-16">
-                        <section id="section-1" className="flex flex-col gap-4 max-w-[822px] mt-[88px]">
+                        <section id="section-1" className="scroll-mt-20 flex flex-col gap-4 max-w-[822px]">
                             <h1 className="text-[40px] md:text-[56px] leading-[50px] md:leading-[70px] text-grayscale-900">0:00 - 12:00</h1>
                             <div className="flex flex-col gap-16">
                                 <div className="flex flex-col gap-10">
-                                    <h4 id="section-1" className="text-[24px] md:text-[32px] leading-[30px] md:leading-10 text-grayscale-900">Introduction and Overview</h4>
+                                    <h4 className="text-[24px] md:text-[32px] leading-[30px] md:leading-10 text-grayscale-900">Introduction and Overview</h4>
                                     <div className="flex flex-col gap-8">
                                         <div className="flex flex-col gap-2">
                                             <div className="flex flex-row gap-3 items-center">
@@ -171,8 +171,8 @@ const handleSmoothScroll = (id:string) => (e: { preventDefault: () => void; }) =
                                         </div>
                                     </div>
                                 </div>
-                                <div className="flex flex-col gap-10">
-                                    <h4 id="section-1-2" className="text-[32px] leading-10 text-grayscale-900">Why Achieve 100% Test Coverage?</h4>
+                                <div id="section-1-2" className="scroll-mt-20 flex flex-col gap-10">
+                                    <h4 className="text-[32px] leading-10 text-grayscale-900">Why Achieve 100% Test Coverage?</h4>
                                     <div className="flex flex-col gap-8">
                                         <div className="flex flex-col gap-2">
                                             <div className="flex flex-row gap-3 items-center">
@@ -206,11 +206,11 @@ const handleSmoothScroll = (id:string) => (e: { preventDefault: () => void; }) =
                                 </div>
                             </div>
                         </section>
-                        <section id="section-2" className="flex flex-col gap-4 max-w-[822px]">
+                        <section id="section-2" className="flex flex-col gap-4 max-w-[822px] scroll-mt-20">
                             <h1 className="text-[40px] md:text-[56px] leading-[50px] md:leading-[70px] text-grayscale-900">12:01 - 30:00</h1>
                             <div className="flex flex-col gap-16">
                                 <div className="flex flex-col gap-10">
-                                    <h4 id="section-2" className="text-[24px] md:text-[32px] leading-[30px] md:leading-10 text-grayscale-900">Efficient Test Execution with Batch Mode</h4>
+                                    <h4 className="text-[24px] md:text-[32px] leading-[30px] md:leading-10 text-grayscale-900">Efficient Test Execution with Batch Mode</h4>
                                     <div className="flex flex-col gap-8">
                                         <div className="flex flex-col gap-2">
                                             <div className="flex flex-row gap-3 items-center">
@@ -242,8 +242,8 @@ const handleSmoothScroll = (id:string) => (e: { preventDefault: () => void; }) =
                                         </div>
                                     </div>
                                 </div>
-                                <div className="flex flex-col gap-10">
-                                    <h4 id="section-2-2" className="text-[24px] md:text-[32px] leading-[30px] md:leading-10 text-grayscale-900">Automation Tools and Frameworks</h4>
+                                <div id="section-2-2" className="scroll-mt-20 flex flex-col gap-10">
+                                    <h4 className="text-[24px] md:text-[32px] leading-[30px] md:leading-10 text-grayscale-900">Automation Tools and Frameworks</h4>
                                     <div className="flex flex-col gap-8">
                                         <div className="flex flex-col gap-2">
                                             <div className="flex flex-row gap-3 items-center">
@@ -277,11 +277,11 @@ const handleSmoothScroll = (id:string) => (e: { preventDefault: () => void; }) =
                                 </div>
                             </div>
                         </section>
-                        <section id="section-3" className="flex flex-col gap-4 max-w-[822px]">
+                        <section id="section-3" className="scroll-mt-20 flex flex-col gap-4 max-w-[822px]">
                             <h1 className="text-[40px] md:text-[56px] leading-[50px] md:leading-[70px] text-grayscale-900">30:01 - 50:00</h1>
                             <div className="flex flex-col gap-16">
                                 <div className="flex flex-col gap-10">
-                                    <h4 id="section-3" className="text-[24px] md:text-[32px] leading-[30px] md:leading-10 text-grayscale-900">Managing Technical Debt Through Testing</h4>
+                                    <h4 className="text-[24px] md:text-[32px] leading-[30px] md:leading-10 text-grayscale-900">Managing Technical Debt Through Testing</h4>
                                     <div className="flex flex-col gap-8">
                                         <div className="flex flex-col gap-2">
                                             <div className="flex flex-row gap-3 items-center">
@@ -327,8 +327,8 @@ const handleSmoothScroll = (id:string) => (e: { preventDefault: () => void; }) =
                                         </div>
                                     </div>
                                 </div>
-                                <div className="flex flex-col gap-10">
-                                    <h4 id="section-3-2" className="text-[24px] md:text-[32px] leading-[30px] md:leading-10 text-grayscale-900">Actionable Strategies for High Coverage</h4>
+                                <div id="section-3-2" className="scroll-mt-20 flex flex-col gap-10">
+                                    <h4 className="text-[24px] md:text-[32px] leading-[30px] md:leading-10 text-grayscale-900">Actionable Strategies for High Coverage</h4>
                                     <div className="flex flex-col gap-8">
                                         <div className="flex flex-col gap-2">
                                             <div className="flex flex-row gap-3 items-center">
@@ -362,10 +362,10 @@ const handleSmoothScroll = (id:string) => (e: { preventDefault: () => void; }) =
                                 </div>
                             </div>
                         </section>
-                        <section id="section-4" className="flex flex-col gap-4 max-w-[822px]">
+                        <section id="section-4" className="scroll-mt-20 flex flex-col gap-4 max-w-[822px]">
                             <h1 className="text-[40px] md:text-[56px] leading-[50px] md:leading-[70px] text-grayscale-900">50:01 - 57:00</h1>
                             <div className="flex flex-col gap-10">
-                                <h4 id="section-4" className="text-[24px] md:text-[32px] leading-[30px] md:leading-10 text-grayscale-900">Final Thoughts</h4>
+                                <h4 className="text-[24px] md:text-[32px] leading-[30px] md:leading-10 text-grayscale-900">Final Thoughts</h4>
                                     <div className="flex flex-col gap-8">
                                         <div className="flex flex-col gap-2">
                                             <div className="flex flex-row gap-3 items-center">
