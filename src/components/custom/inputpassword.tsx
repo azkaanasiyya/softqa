@@ -20,7 +20,7 @@ export function InputPassword(props: React.ComponentProps<typeof Input>) {
       <button
         type="button"
         onClick={() => setShowPassword(!showPassword)}
-        className="absolute right-5 top-1/2 -translate-y-1/2 focus:outline-none"
+        className="absolute right-5 top-1/2 -translate-y-1/2 focus:outline-none cursor-pointer"
         tabIndex={-1}
       >
         {showPassword ? (
@@ -44,7 +44,7 @@ export function InputPassword(props: React.ComponentProps<typeof Input>) {
         }}
         className={cn(
           "w-full h-14 border-2 border-grayscale-100 appearance-none p-4 pl-[52px] pr-[44px] text-[16px] leading-6 rounded-[12px]",
-          isFocused && "border-primary-500 text-primary-500",
+          isFocused && "border-primary-500 text-grayscale-900",
           props.className,
           "hide-password-toggle"
         )}
