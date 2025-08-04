@@ -25,7 +25,7 @@ export default function ForgotHero() {
                     <span className="text-[16px] leading-6 text-grayscale-600">Back to</span>
                     <div className="flex flex-row gap-1 items-center">
                         <Image src="/auth/left-arrow.png" alt="image" width={16} height={16} />
-                        <Link href="/sign-in" className="cursor-pointer">
+                        <Link href="/auth/sign-in" className="cursor-pointer">
                             <span className="text-[16px] leading-6 font-medium text-primary-500">Sign In</span>
                         </Link>
                     </div>

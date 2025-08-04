@@ -29,7 +29,7 @@ export default function SignInHero() {
                                         <span className="text-[16px] leading-6 text-grayscale-900">Password</span>
                                         <InputPassword placeholder="Enter your password"/>
                                     </div>
-                                    <Link href="/forgot" className="cursor-pointer self-end">
+                                    <Link href="/auth/forgot" className="cursor-pointer self-end">
                                         <span className="text-[14px] leading-[22px] font-medium text-primary-500 text-end">Forgot Password?</span>    
                                     </Link>
                                 </div>
