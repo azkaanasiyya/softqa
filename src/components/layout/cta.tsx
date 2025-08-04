@@ -28,7 +28,7 @@ export default function CTA() {
                 </div>
                 <Image src="/cta/img-desktop.png" alt="cta" width={704} height={484} className="w-[704px] h-[484px] object-cover object-left-top overflow-visible hidden lg:block" />
                 <Image src="/cta/img-tablet.png" alt="cta" width={768} height={256} className="w-[768px] h-[256px] hidden md:block lg:hidden" />
-                <Image src="/cta/img-mobile.png" alt="cta" width={375} height={180} className="w-[375px] h-[180px] md:hidden" />
+                <Image src="/cta/img-mobile.png" alt="cta" width={375} height={180} className="w-[375px] h-[180px] object-cover overflow-visible md:hidden" />
             </FadeInSection>
         </div>
     )
