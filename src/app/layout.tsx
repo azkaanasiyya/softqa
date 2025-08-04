@@ -1,5 +1,6 @@
-import "./custom.css"
 import type { Metadata } from "next";
+import "./globals.css";
+import MainClientLayout from "./main-layout"; 
 
 export const metadata: Metadata = {
   title: "SoftQA",
@@ -9,11 +10,17 @@ export const metadata: Metadata = {
   }
 };
 
-export default function SignInLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <body>
-        <main>{children}</main>
+        <MainClientLayout>
+          {children}
+        </MainClientLayout>
       </body>
     </html>
   );

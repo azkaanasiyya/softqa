@@ -49,12 +49,12 @@ export default function Navbar() {
 
         {/* Desktop Buttons */}
         <div className="hidden lg:flex gap-4">
-          <Link href="/auth/sign-in">
+          <Link href="/sign-in">
             <Button variant="login" size="default" className="text-primary-500 cursor-pointer">
               Sign In
             </Button>
           </Link>
-          <Link href="/auth/sign-up">
+          <Link href="/sign-up">
             <Button variant="request" size="default" className="text-cyan-500 cursor-pointer">
               Get Started
             </Button>
@@ -105,13 +105,13 @@ export default function Navbar() {
             </ul>
 
             <div className="flex flex-col gap-4 p-6 md:p-8">
-              <Link href="/auth/sign-up" onClick={() => setIsOpen(false)}>
+              <Link href="/sign-up" onClick={() => setIsOpen(false)}>
                 <Button variant="request" size="default" className="w-full text-cyan-500">
                   Get Started
                 </Button>
               </Link>
               
-              <Link href="/auth/sign-in" onClick={() => setIsOpen(false)}>
+              <Link href="/sign-in" onClick={() => setIsOpen(false)}>
                 <Button variant="login" size="default" className="w-full text-primary-500">
                   Sign In
                 </Button>
