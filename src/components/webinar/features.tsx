@@ -7,6 +7,8 @@ import { SelectCategories } from "./selectcategories"
 import { SelectRecent } from "./selectrecent"
 import { webinars } from "../data/webinars"
 import FadeInSection from "../animation/fadein"
+import { cn } from "@/lib/utils"
+import { ArrowLeft } from "lucide-react"
 
 export default function WebinarFeatures() {
   const [currentPage, setCurrentPage] = useState(1)
@@ -120,8 +122,20 @@ export default function WebinarFeatures() {
               className="flex flex-row gap-4 items-center cursor-pointer"
               onClick={handlePrev}
             >
-              <div className="bg-[#FAFAFA] flex flex-col justify-center items-center rounded-full p-2">
-                <Image src="/webinar/arrow-left.png" alt="Previous" width={16} height={16} />
+              <div
+                  className={cn(
+                      "flex justify-center items-center w-8 h-8 rounded-full border-transparent transition-colors",
+                      currentPage === 1
+                      ? "bg-[#FAFAFA] cursor-not-allowed"
+                      : "bg-primary-500 cursor-pointer hover:bg-primary-400"
+                  )}
+              >
+                  <ArrowLeft
+                      className={cn(
+                          "w-4 h-4",
+                          currentPage === 1 ? "text-[#ABB1B9]" : "text-base-white"
+                      )}
+                  />
               </div>
               <span className="hidden md:block text-[16px] leading-6 text-[#ABB1B9] font-medium">
                 Previous

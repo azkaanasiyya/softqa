@@ -60,6 +60,7 @@ export default function MoreWebDetail() {
 
    const visibleData = webinars.slice(currentIndex, currentIndex + itemsPerPage);
 
+
   const handleNext = () => {
     const nextIndex = currentIndex + itemsPerPage;
     if (nextIndex < webinars.length) {
