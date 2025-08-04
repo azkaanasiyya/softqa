@@ -10,7 +10,7 @@ export default function MainClientLayout({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
-  const excludePaths = ['/sign-in', '/sign-up', '/forgot'];
+  const excludePaths = ['/auth/sign-in', '/auth/sign-up', '/auth/forgot'];
   const showLayout = !excludePaths.includes(pathname);
  
   return (

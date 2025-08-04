@@ -22,7 +22,7 @@ export default function HomeHero() {
                                 SoftQA automatically writes your unit tests at mind-boggling scale. Your software development process will never feel the same again.
                             </p>
                             <div className="flex flex-col md:flex-row w-full md:w-auto gap-4 md:gap-5">
-                                <Link href="/sign-up">
+                                <Link href="/auth/sign-up">
                                     <Button
                                         variant="request"
                                         size="big"
