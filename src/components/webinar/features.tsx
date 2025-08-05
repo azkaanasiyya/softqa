@@ -1,3 +1,4 @@
+// components/WebinarFeatures.jsx
 "use client"
 import Image from "next/image"
 import Link from "next/link"
@@ -13,6 +14,14 @@ import { ArrowLeft } from "lucide-react"
 export default function WebinarFeatures() {
   const [currentPage, setCurrentPage] = useState(1)
   const [itemsPerPage, setItemsPerPage] = useState(9)
+  const [selectedCategory, setSelectedCategory] = useState("all")
+
+  const filteredWebinars = webinars.filter((webinar) => {
+    if (selectedCategory === "all") {
+      return true
+    }
+    return webinar.tag.toLowerCase() === selectedCategory.toLowerCase()
+  })
 
   useEffect(() => {
     const handleResize = () => {
@@ -29,9 +38,9 @@ export default function WebinarFeatures() {
     return () => window.removeEventListener("resize", handleResize)
   }, [])
 
-  const totalPages = Math.ceil(webinars.length / itemsPerPage)
+  const totalPages = Math.ceil(filteredWebinars.length / itemsPerPage)
   const startIdx = (currentPage - 1) * itemsPerPage
-  const currentWebinars = webinars.slice(startIdx, startIdx + itemsPerPage)
+  const currentWebinars = filteredWebinars.slice(startIdx, startIdx + itemsPerPage)
 
   const handlePrev = () => {
     if (currentPage > 1) {
@@ -44,6 +53,11 @@ export default function WebinarFeatures() {
       setCurrentPage(currentPage + 1)
     }
   }
+  
+  useEffect(() => {
+    setCurrentPage(1)
+  }, [selectedCategory]);
+
 
   return (
     <div className="bg-base-white flex flex-col justify-center items-center pt-[48.49px] pb-12 md:py-16 lg:pt-[124px] lg:pb-[132px] px-6 md:px-8 lg:px-[124px]">
@@ -55,7 +69,7 @@ export default function WebinarFeatures() {
           <div className="flex flex-row gap-4 w-full">
             <InputWebinar placeholder="Search webinar..." />
             <SelectRecent />
-            <SelectCategories />
+            <SelectCategories onCategoryChange={setSelectedCategory} />
             <div className="flex flex-col md:hidden items-center justify-center w-12 h-12 rounded-[12px] border-2 border-grayscale-100">
               <Image
                 src="/webinar/filter.png"
@@ -67,7 +81,6 @@ export default function WebinarFeatures() {
             </div>
           </div>
         </FadeInSection>
-
         <FadeInSection delay={0.5} className="flex flex-col gap-10 lg:gap-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8">
             {currentWebinars.map((item, i) => (
@@ -92,7 +105,6 @@ export default function WebinarFeatures() {
                     className="rounded-tr-[12px] rounded-br-[12px] object-cover object-bottom w-[134.77px] h-[183.14px] md:w-[142.13px] md:h-[193.16px] lg:w-[156px] lg:h-[212px]"
                   />
                 </div>
-
                 <div className="flex flex-col justify-between gap-6 py-4 px-4">
                   <div className="flex flex-col gap-1">
                     <p className="text-[14px] leading-[22px] text-grayscale-600">{item.date}</p>
@@ -116,6 +128,11 @@ export default function WebinarFeatures() {
                 </div>
               </div>
             ))}
+            {filteredWebinars.length === 0 && (
+              <div className="text-center">
+                Tidak ada webinar yang ditemukan.
+              </div>
+            )}
           </div>
           <FadeInSection delay={0.5} className="flex flex-row justify-between items-center">
             <div
@@ -123,25 +140,24 @@ export default function WebinarFeatures() {
               onClick={handlePrev}
             >
               <div
-                  className={cn(
-                      "flex justify-center items-center w-8 h-8 rounded-full border-transparent transition-colors",
-                      currentPage === 1
-                      ? "bg-[#FAFAFA] cursor-not-allowed"
-                      : "bg-primary-500 cursor-pointer hover:bg-primary-400"
-                  )}
+                className={cn(
+                  "flex justify-center items-center w-8 h-8 rounded-full border-transparent transition-colors",
+                  currentPage === 1
+                  ? "bg-[#FAFAFA] cursor-not-allowed"
+                  : "bg-primary-500 cursor-pointer hover:bg-primary-400"
+                )}
               >
-                  <ArrowLeft
-                      className={cn(
-                          "w-4 h-4",
-                          currentPage === 1 ? "text-[#ABB1B9]" : "text-base-white"
-                      )}
-                  />
+                <ArrowLeft
+                  className={cn(
+                    "w-4 h-4",
+                    currentPage === 1 ? "text-[#ABB1B9]" : "text-base-white"
+                  )}
+                />
               </div>
               <span className="hidden md:block text-[16px] leading-6 text-[#ABB1B9] font-medium">
                 Previous
               </span>
             </div>
-
             <div className="flex flex-row items-center gap-2">
               {Array.from({ length: totalPages }, (_, idx) => {
                 const pageNum = idx + 1
@@ -161,7 +177,6 @@ export default function WebinarFeatures() {
                 )
               })}
             </div>
-            
             <div
               className="flex flex-row gap-4 items-center cursor-pointer"
               onClick={handleNext}
