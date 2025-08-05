@@ -12,24 +12,25 @@ import { ChevronDownIcon } from "lucide-react"
 
 interface SelectCategoriesProps {
   onCategoryChange: (value: string) => void;
+  selectedCategory: string;
 }
 
-export function SelectCategories( {onCategoryChange}: SelectCategoriesProps ) {
+export function SelectCategories( {onCategoryChange, selectedCategory}: SelectCategoriesProps ) {
   return (
-    <Select onValueChange={onCategoryChange}>
+    <Select onValueChange={onCategoryChange} value={selectedCategory}>
       <SelectTrigger icon={<ChevronDownIcon />} className="w-full max-h-12 h-full hidden md:flex cursor-pointer">
         <SelectValue placeholder="All categories" />
       </SelectTrigger>
       <SelectContent className="overflow-y-auto max-h-[264px] h-full">
         <SelectGroup>
           <SelectItem value="all">All categories</SelectItem>
-          <SelectItem value="#Teamwork">#Teamwork</SelectItem>
-          <SelectItem value="#Technology">#Technology</SelectItem>
-          <SelectItem value="#Productivity">#Productivity</SelectItem>
-          <SelectItem value="#Innovation">#Innovation</SelectItem>
-          <SelectItem value="#Security">#Security</SelectItem>
-          <SelectItem value="#DevOps">#DevOps</SelectItem>
-          <SelectItem value="#Education">#Education</SelectItem>
+          <SelectItem value="teamwork">#Teamwork</SelectItem>
+          <SelectItem value="technology">#Technology</SelectItem>
+          <SelectItem value="productivity">#Productivity</SelectItem>
+          <SelectItem value="innovation">#Innovation</SelectItem>
+          <SelectItem value="security">#Security</SelectItem>
+          <SelectItem value="devOps">#DevOps</SelectItem>
+          <SelectItem value="education">#Education</SelectItem>
         </SelectGroup>
       </SelectContent>
     </Select>
