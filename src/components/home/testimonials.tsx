@@ -1,20 +1,32 @@
 "use client";
 
-import Image from "next/image"
-import { useState } from "react"
-import { testimonials } from "../data/testimonials"
+import Image from "next/image";
+import { useState, useEffect } from "react"; 
+import { testimonials } from "../data/testimonials";
 import FadeInSection from "../animation/fadein";
+import { ArrowDown, ArrowLeft, ArrowRight, ArrowUp } from "lucide-react";
 
 export default function HomeTestimonials() {
-  const [activeIndex, setActiveIndex] = useState(0)
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  const next = () => setActiveIndex((activeIndex + 1) % testimonials.length)
-  const prev = () => setActiveIndex((activeIndex - 1 + testimonials.length) % testimonials.length)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((current) => (current + 1) % testimonials.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []); 
+
+  const next = () => setActiveIndex((activeIndex + 1) % testimonials.length);
+  const prev = () => setActiveIndex((activeIndex - 1 + testimonials.length) % testimonials.length);
+
+  const isFirstSlide = activeIndex === 0;
+  const isLastSlide = activeIndex === testimonials.length - 1;
 
   return (
     <div className="flex flex-col justify-center items-center px-6 md:px-8 lg:px-[124px] py-12 md:py-20 lg:pt-[124px] lg:pb-[132px] border-y">
       <div className="max-w-[1192px] flex flex-col gap-10 md:gap-12 lg:gap-16 items-center justify-center">
-       
+        
         <FadeInSection delay={0.5} className="max-w-[580px] flex flex-col gap-3 md:gap-4 items-center">
           <div className="flex flex-row gap-2">
             <div className="h-[22px] w-[1px] bg-primary-500" />
@@ -30,11 +42,19 @@ export default function HomeTestimonials() {
         <div className="flex flex-col-reverse md:flex-row items-stretch w-full">
 
           <div className="flex flex-row md:hidden gap-2 mt-6 items-center justify-center">
-            <button onClick={prev} className="cursor-pointer bg-transparent hover:bg-primary-50 rounded-[12px] w-12 h-12 flex justify-center items-center">
-              <Image src="/home/testimonials/arrow-left.png" alt="prev" width={20} height={20} />
+            <button
+              onClick={prev}
+              disabled={isFirstSlide} 
+              className={`rounded-[12px] p-5 flex justify-center items-center ${isFirstSlide ? 'bg-transparent' : 'cursor-pointer bg-primary-50'}`}
+            >
+              <ArrowLeft className={`w-5 h-5 ${isFirstSlide ? 'text-grayscale-300' : 'text-primary-500'}`} strokeWidth={2.5}/>
             </button>
-            <button onClick={next} className="cursor-pointer bg-primary-50 hover:bg-primary-100 rounded-[12px] w-12 h-12 flex justify-center items-center">
-              <Image src="/home/testimonials/arrow-right.png" alt="next" width={20} height={20} />
+            <button
+              onClick={next}
+              disabled={isLastSlide} 
+              className={`rounded-[12px] p-5 flex justify-center items-center ${isLastSlide ? 'bg-transparent' : 'cursor-pointer bg-primary-50'}`}
+            >
+              <ArrowRight className={`w-5 h-5 ${isLastSlide ? 'text-grayscale-300' : 'text-primary-500'}`} strokeWidth={2.5}/>
             </button>
           </div>
 
@@ -55,8 +75,20 @@ export default function HomeTestimonials() {
                 </div>
               </div>
               <div className="hidden md:flex md:flex-col items-center">
-                <button className="cursor-pointer flex flex-col justify-center items-center p-2" onClick={prev}><Image src="/home/testimonials/arrow-up.png" alt="up" width={16} height={16} /></button>
-                <button className="cursor-pointer" onClick={next}><Image src="/home/testimonials/arrow-down.png" alt="down" width={32} height={32} /></button>
+                <button
+                  className={`flex flex-col justify-center items-center p-2 rounded-[8px] ${isFirstSlide ? 'bg-transparent' : 'cursor-pointer bg-base-white'}`}
+                  onClick={prev}
+                  disabled={isFirstSlide}
+                >
+                  <ArrowUp className={`w-4 h-4 ${isFirstSlide ? 'text-grayscale-300' : 'text-grayscale-900'}`} strokeWidth={3.5}/>
+                </button>
+                <button
+                  className={`flex flex-col justify-center items-center p-2 rounded-[8px] ${isLastSlide ? 'bg-transparent' : 'cursor-pointer bg-base-white'}`}
+                  onClick={next}
+                  disabled={isLastSlide}
+                >
+                  <ArrowDown className={`w-4 h-4 ${isLastSlide ? 'text-grayscale-300' : 'text-grayscale-900'}`} strokeWidth={3.5}/>
+                </button>
               </div>
             </div>
           </div>
@@ -65,7 +97,7 @@ export default function HomeTestimonials() {
             {testimonials.map((t, i) => (
               <div
                 key={i}
-                className={`flex-1 cursor-pointer rounded-tr-[8px] rounded-br-[8px] ${t.color} ${activeIndex === i ? 'opacity-100' : 'opacity-50'}`}
+                className={`flex-1 cursor-pointer rounded-tr-[8px] rounded-br-[8px] ${t.color}`}
                 onClick={() => setActiveIndex(i)}
               />
             ))}
@@ -75,7 +107,7 @@ export default function HomeTestimonials() {
             {testimonials.map((t, i) => (
               <div
                 key={i}
-                className={`w-1/4 cursor-pointer ${t.color} rounded-t-[8px] ${activeIndex === i ? 'opacity-100' : 'opacity-50'}`}
+                className={`w-1/4 cursor-pointer ${t.color} rounded-t-[8px]`}
                 onClick={() => setActiveIndex(i)}
               />
             ))}
@@ -83,5 +115,5 @@ export default function HomeTestimonials() {
         </div>
       </div>
     </div>
-  )
+  );
 }
