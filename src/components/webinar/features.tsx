@@ -1,4 +1,4 @@
-// components/WebinarFeatures.jsx
+// src/components/WebinarFeatures.jsx
 "use client"
 import Image from "next/image"
 import Link from "next/link"
@@ -15,12 +15,31 @@ export default function WebinarFeatures() {
   const [currentPage, setCurrentPage] = useState(1)
   const [itemsPerPage, setItemsPerPage] = useState(9)
   const [selectedCategory, setSelectedCategory] = useState("all")
+  const [sortOption, setSortOption] = useState("recent")
 
   const filteredWebinars = webinars.filter((webinar) => {
     if (selectedCategory === "all") {
       return true
     }
-    return webinar.tag.toLowerCase() === selectedCategory.toLowerCase()
+    const webinarTagWithoutHash = webinar.tag.substring(1).toLowerCase()
+    return webinarTagWithoutHash === selectedCategory
+  })
+
+  const sortedWebinars = [...filteredWebinars].sort((a, b) => {
+    if (sortOption === "recent") {
+      const dateA = new Date(a.date)
+      const dateB = new Date(b.date)
+      return dateB.getTime() - dateA.getTime()
+    }
+    if (sortOption === "old") {
+      const dateA = new Date(a.date)
+      const dateB = new Date(b.date)
+      return dateA.getTime() - dateB.getTime()
+    }
+    if (sortOption === "pop") {
+      return b.views - a.views
+    }
+    return 0
   })
 
   useEffect(() => {
@@ -32,15 +51,18 @@ export default function WebinarFeatures() {
         setItemsPerPage(8)
       }
     }
-
     handleResize()
     window.addEventListener("resize", handleResize)
     return () => window.removeEventListener("resize", handleResize)
   }, [])
 
-  const totalPages = Math.ceil(filteredWebinars.length / itemsPerPage)
+  useEffect(() => {
+    setCurrentPage(1)
+  }, [selectedCategory, sortOption])
+
+  const totalPages = Math.ceil(sortedWebinars.length / itemsPerPage)
   const startIdx = (currentPage - 1) * itemsPerPage
-  const currentWebinars = filteredWebinars.slice(startIdx, startIdx + itemsPerPage)
+  const currentWebinars = sortedWebinars.slice(startIdx, startIdx + itemsPerPage)
 
   const handlePrev = () => {
     if (currentPage > 1) {
@@ -53,11 +75,6 @@ export default function WebinarFeatures() {
       setCurrentPage(currentPage + 1)
     }
   }
-  
-  useEffect(() => {
-    setCurrentPage(1)
-  }, [selectedCategory]);
-
 
   return (
     <div className="bg-base-white flex flex-col justify-center items-center pt-[48.49px] pb-12 md:py-16 lg:pt-[124px] lg:pb-[132px] px-6 md:px-8 lg:px-[124px]">
@@ -68,16 +85,10 @@ export default function WebinarFeatures() {
           </h3>
           <div className="flex flex-row gap-4 w-full">
             <InputWebinar placeholder="Search webinar..." />
-            <SelectRecent />
-            <SelectCategories onCategoryChange={setSelectedCategory} />
+            <SelectRecent onSortChange={setSortOption} selectedSort={sortOption} />
+            <SelectCategories onCategoryChange={setSelectedCategory} selectedCategory={selectedCategory} />
             <div className="flex flex-col md:hidden items-center justify-center w-12 h-12 rounded-[12px] border-2 border-grayscale-100">
-              <Image
-                src="/webinar/filter.png"
-                alt="icon"
-                width={20}
-                height={20}
-                className="w-5 h-5"
-              />
+              <Image src="/webinar/filter.png" alt="icon" width={20} height={20} className="w-5 h-5" />
             </div>
           </div>
         </FadeInSection>
@@ -128,35 +139,23 @@ export default function WebinarFeatures() {
                 </div>
               </div>
             ))}
-            {filteredWebinars.length === 0 && (
-              <div className="text-center">
+            {sortedWebinars.length === 0 && (
+              <div className="text-center md:col-span-2 lg:col-span-3 text-muted-foreground p-10">
                 Tidak ada webinar yang ditemukan.
               </div>
             )}
           </div>
           <FadeInSection delay={0.5} className="flex flex-row justify-between items-center">
-            <div
-              className="flex flex-row gap-4 items-center cursor-pointer"
-              onClick={handlePrev}
-            >
+            <div className="flex flex-row gap-4 items-center cursor-pointer" onClick={handlePrev}>
               <div
                 className={cn(
                   "flex justify-center items-center w-8 h-8 rounded-full border-transparent transition-colors",
-                  currentPage === 1
-                  ? "bg-[#FAFAFA] cursor-not-allowed"
-                  : "bg-primary-500 cursor-pointer hover:bg-primary-400"
+                  currentPage === 1 ? "bg-[#FAFAFA] cursor-not-allowed" : "bg-primary-500 cursor-pointer hover:bg-primary-400"
                 )}
               >
-                <ArrowLeft
-                  className={cn(
-                    "w-4 h-4",
-                    currentPage === 1 ? "text-[#ABB1B9]" : "text-base-white"
-                  )}
-                />
+                <ArrowLeft className={cn("w-4 h-4", currentPage === 1 ? "text-[#ABB1B9]" : "text-base-white")} />
               </div>
-              <span className="hidden md:block text-[16px] leading-6 text-[#ABB1B9] font-medium">
-                Previous
-              </span>
+              <span className="hidden md:block text-[16px] leading-6 text-[#ABB1B9] font-medium">Previous</span>
             </div>
             <div className="flex flex-row items-center gap-2">
               {Array.from({ length: totalPages }, (_, idx) => {
@@ -166,9 +165,7 @@ export default function WebinarFeatures() {
                   <div
                     key={pageNum}
                     className={`cursor-pointer rounded-[12px] px-1 pt-0.5 pb-1 w-10 h-10 flex items-center justify-center ${
-                      isActive
-                        ? "bg-primary-500 text-base-white"
-                        : "bg-base-white border-2 border-grayscale-100 text-primary-500"
+                      isActive ? "bg-primary-500 text-base-white" : "bg-base-white border-2 border-grayscale-100 text-primary-500"
                     }`}
                     onClick={() => setCurrentPage(pageNum)}
                   >
@@ -177,13 +174,8 @@ export default function WebinarFeatures() {
                 )
               })}
             </div>
-            <div
-              className="flex flex-row gap-4 items-center cursor-pointer"
-              onClick={handleNext}
-            >
-              <span className="hidden md:block text-[16px] leading-6 text-primary-900 font-medium">
-                Next
-              </span>
+            <div className="flex flex-row gap-4 items-center cursor-pointer" onClick={handleNext}>
+              <span className="hidden md:block text-[16px] leading-6 text-primary-900 font-medium">Next</span>
               <div className="bg-primary-500 flex flex-col justify-center items-center rounded-full p-2">
                 <Image src="/webinar/arrow-right.png" alt="Next" width={16} height={16} />
               </div>

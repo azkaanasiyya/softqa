@@ -7,6 +7,7 @@ export const webinars = [
         date: "Mar 23, 2024",
         subtitle: "Exploring Open Source SoftQA Tools",
         description: "A guide to the best open-source QA tools for small and medium-sized teams.",
+        views: 100,
     },
     {
         title: "100% Coverage",
@@ -16,6 +17,7 @@ export const webinars = [
         date: "Mar 20, 2024",
         subtitle: "Achieving 100% Test Coverage",
         description: "Learn how to utilize batch mode and automation tools to cover all your test cases and minimize technical debt.",
+        views: 1000,
     },
     {
         title: "Secure Your Code",
@@ -25,6 +27,7 @@ export const webinars = [
         date: "Mar 18, 2024",
         subtitle: "Enhancing Security in Automated Testing",
         description: "Protect your code and maintain compliance with robust security measures in your automated testing processes.",
+        views: 700,
     },
     {
         title: "Continuous QA",
@@ -34,6 +37,7 @@ export const webinars = [
         date: "Mar 4, 2024",
         subtitle: "Continuous Testing for DevOps Success",
         description: "Understand the role of continuous testing in DevOps pipelines and how it enhances collaboration and delivery speed.",
+        views: 790,
     },
     {
         title: "Zero Defects!",
@@ -43,6 +47,7 @@ export const webinars = [
         date: "Feb 28, 2024",
         subtitle: "Achieving Zero Defects with QA Automation",
         description: "Implement QA automation practices that help minimize bugs and deliver software with zero defects.",
+        views: 300,
     },
     {
         title: "Scale QA Effortlessly",
@@ -52,6 +57,7 @@ export const webinars = [
         date: "Feb 12, 2024",
         subtitle: "Building Scalable Testing Strategies",
         description: "Discover strategies to design scalable QA frameworks that grow with your organization’s needs.",
+        views: 1700,
     },
     {
         title: "AI Test Script",
@@ -61,6 +67,7 @@ export const webinars = [
         date: "Feb 12, 2024",
         subtitle: "Writing Test Scripts with AI Assistance",
         description: "Learn how AI can help you generate and refine test scripts, saving time and reducing errors.",
+        views: 750,
     },
     {
         title: "Collaborate Better",
@@ -70,6 +77,7 @@ export const webinars = [
         date: "Feb 1, 2024",
         subtitle: "Bridging the Gap: Developers and Testers",
         description: "Foster collaboration between development and QA teams to enhance software quality and team dynamics.",
+        views: 3000,
     },
     {
         title: "QA Solution",
@@ -79,6 +87,7 @@ export const webinars = [
         date: "Jan 15, 2024",
         subtitle: "QA Automation: Challenges and Solutions",
         description: "Overcome the common challenges faced during QA automation with tried-and-true solutions.",
+        views: 100,
     },
     {
         title: "Next-Gen QA with AI",
@@ -88,6 +97,7 @@ export const webinars = [
         date: "Mar 19, 2024",
         subtitle: "Integrating AI in Regression Testing",
         description: "Explore how AI can reduce false positives and prioritize flaky tests.",
+        views: 890,
     },
     {
         title: "Testing Simplified",
@@ -97,6 +107,7 @@ export const webinars = [
         date: "Mar 17, 2024",
         subtitle: "Universal Testing Using Open Tools",
         description: "Test across browsers without vendor lock-in using Playwright and Selenium Grid.",
+        views: 70,
     },
     {
         title: "Mocking Made Easy",
@@ -106,6 +117,7 @@ export const webinars = [
         date: "Mar 15, 2024",
         subtitle: "Using Mocks & Stubs Efficiently",
         description: "Reduce test fragility with proper isolation techniques for backend and third-party APIs.",
+        views: 900,
     },
     {
         title: "Shift Left Testing",
@@ -115,6 +127,7 @@ export const webinars = [
         date: "Mar 12, 2024",
         subtitle: "Catch Bugs Earlier in Dev Lifecycle",
         description: "How test automation in early dev stages can reduce cost and improve quality.",
+        views: 1230,
     },
     {
         title: "CI/CD for QA Teams",
@@ -124,6 +137,7 @@ export const webinars = [
         date: "Mar 10, 2024",
         subtitle: "Streamlining QA in Jenkins & GitHub",
         description: "Create robust testing pipelines that integrate smoothly into your CI/CD process.",
+        views: 400,
     },
     {
         title: "Mobile Testing",
@@ -133,6 +147,7 @@ export const webinars = [
         date: "Mar 8, 2024",
         subtitle: "Reliable Tests for Android & iOS",
         description: "From emulators to device farms, learn how to test across devices effectively.",
+        views: 794,
     },
     {
         title: "Integration Testing",
@@ -142,6 +157,7 @@ export const webinars = [
         date: "Mar 6, 2024",
         subtitle: "Connecting Microservices Without the Pain",
         description: "Learn strategies for stable integration tests in microservice-heavy systems.",
+        views: 630,
     },
     {
         title: "Test Data",
@@ -151,6 +167,7 @@ export const webinars = [
         date: "Mar 3, 2024",
         subtitle: "Automate Your Test Data Strategy",
         description: "How to manage dynamic test data and stay compliant with real-world scenarios.",
+        views: 709,
     },
     {
         title: "Testing In Agile",
@@ -160,5 +177,6 @@ export const webinars = [
         date: "Feb 28, 2024",
         subtitle: "QA Role in Fast Iteration Cycles",
         description: "Understand how to balance coverage and speed in fast-paced development teams.",
+        views: 2000,
     },
 ]
