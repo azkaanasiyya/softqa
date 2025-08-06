@@ -9,7 +9,7 @@ import { SelectRecent } from "./selectrecent"
 import { webinars } from "../data/webinars"
 import FadeInSection from "../animation/fadein"
 import { cn } from "@/lib/utils"
-import { ArrowLeft } from "lucide-react"
+import { ArrowLeft, ArrowRight } from "lucide-react"
 
 export default function WebinarFeatures() {
   const [currentPage, setCurrentPage] = useState(1)
@@ -146,16 +146,16 @@ export default function WebinarFeatures() {
             )}
           </div>
           <FadeInSection delay={0.5} className="flex flex-row justify-between items-center">
-            <div className="flex flex-row gap-4 items-center cursor-pointer" onClick={handlePrev}>
+            <div className={`flex flex-row gap-4 items-center ${currentPage === 1 ? "" : "cursor-pointer"}`} onClick={handlePrev}>
               <div
                 className={cn(
                   "flex justify-center items-center w-8 h-8 rounded-full border-transparent transition-colors",
-                  currentPage === 1 ? "bg-[#FAFAFA] cursor-not-allowed" : "bg-primary-500 cursor-pointer hover:bg-primary-400"
+                  currentPage === 1 ? "bg-[#FAFAFA]" : "bg-primary-500 cursor-pointer hover:bg-primary-400"
                 )}
               >
                 <ArrowLeft className={cn("w-4 h-4", currentPage === 1 ? "text-[#ABB1B9]" : "text-base-white")} />
               </div>
-              <span className="hidden md:block text-[16px] leading-6 text-[#ABB1B9] font-medium">Previous</span>
+              <span className={`hidden md:block text-[16px] leading-6 font-medium ${currentPage === 1 ? "text-[#ABB1B9]" : "text-primary-500"}`}>Previous</span>
             </div>
             <div className="flex flex-row items-center gap-2">
               {Array.from({ length: totalPages }, (_, idx) => {
@@ -174,10 +174,13 @@ export default function WebinarFeatures() {
                 )
               })}
             </div>
-            <div className="flex flex-row gap-4 items-center cursor-pointer" onClick={handleNext}>
-              <span className="hidden md:block text-[16px] leading-6 text-primary-900 font-medium">Next</span>
-              <div className="bg-primary-500 flex flex-col justify-center items-center rounded-full p-2">
-                <Image src="/webinar/arrow-right.png" alt="Next" width={16} height={16} />
+            <div className={`flex flex-row gap-4 items-center ${currentPage === 1 ? "cursor-pointer" : ""}`} onClick={handleNext}>
+              <span className={`hidden md:block text-[16px] leading-6 font-medium ${currentPage === 1 ? "text-primary-500" : "text-[#ABB1B9]"}`}>Next</span>
+              <div className={cn(
+                  "flex justify-center items-center w-8 h-8 rounded-full border-transparent transition-colors",
+                  currentPage === 1 ? "bg-primary-500 cursor-pointer hover:bg-primary-400" : "bg-[#FAFAFA]"
+                )}>
+                <ArrowRight className={cn("w-4 h-4", currentPage === 1 ? "text-base-white" : "text-[#ABB1B9]")} />
               </div>
             </div>
           </FadeInSection>
