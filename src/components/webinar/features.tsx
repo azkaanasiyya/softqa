@@ -1,23 +1,23 @@
-// src/components/WebinarFeatures.jsx
 "use client"
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react"
-import { InputWebinar } from "../custom/inputwebinar"
 import { SelectCategories } from "./selectcategories"
 import { SelectRecent } from "./selectrecent"
 import { webinars } from "../data/webinars"
 import FadeInSection from "../animation/fadein"
 import { cn } from "@/lib/utils"
 import { ArrowLeft, ArrowRight } from "lucide-react"
+import { WebinarSearch } from "./webinarsearch"
 
 export default function WebinarFeatures() {
   const [currentPage, setCurrentPage] = useState(1)
   const [itemsPerPage, setItemsPerPage] = useState(9)
   const [selectedCategory, setSelectedCategory] = useState("all")
   const [sortOption, setSortOption] = useState("recent")
+  const [searchQuery, setSearchQuery] = useState("");
 
-  const filteredWebinars = webinars.filter((webinar) => {
+  const filteredWebinarsByCategory = webinars.filter((webinar) => {
     if (selectedCategory === "all") {
       return true
     }
@@ -25,7 +25,16 @@ export default function WebinarFeatures() {
     return webinarTagWithoutHash === selectedCategory
   })
 
-  const sortedWebinars = [...filteredWebinars].sort((a, b) => {
+  const filteredAndSearchedWebinars = filteredWebinarsByCategory.filter((webinar) => {
+    const searchString = searchQuery.toLowerCase().trim()
+    if (!searchString) {
+      return true
+    }
+    const searchArea = `${webinar.title} ${webinar.subtitle} ${webinar.description}`.toLowerCase()
+    return searchArea.includes(searchString)
+  })
+
+  const sortedWebinars = [...filteredAndSearchedWebinars].sort((a, b) => {
     if (sortOption === "recent") {
       const dateA = new Date(a.date)
       const dateB = new Date(b.date)
@@ -58,7 +67,7 @@ export default function WebinarFeatures() {
 
   useEffect(() => {
     setCurrentPage(1)
-  }, [selectedCategory, sortOption])
+  }, [selectedCategory, sortOption, searchQuery])
 
   const totalPages = Math.ceil(sortedWebinars.length / itemsPerPage)
   const startIdx = (currentPage - 1) * itemsPerPage
@@ -84,7 +93,7 @@ export default function WebinarFeatures() {
             Watch past webinars
           </h3>
           <div className="flex flex-row gap-4 w-full">
-            <InputWebinar placeholder="Search webinar..." />
+            <WebinarSearch onSearchChange={setSearchQuery} />
             <SelectRecent onSortChange={setSortOption} selectedSort={sortOption} />
             <SelectCategories onCategoryChange={setSelectedCategory} selectedCategory={selectedCategory} />
             <div className="flex flex-col md:hidden items-center justify-center w-12 h-12 rounded-[12px] border-2 border-grayscale-100">
