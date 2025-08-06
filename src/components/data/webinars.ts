@@ -1,5 +1,6 @@
 export const webinars = [
     {
+        id: 1,
         title: "Open Source QA",
         tag: "#Innovation",
         tagColor: "bg-additional-palm",
@@ -10,6 +11,7 @@ export const webinars = [
         views: 100,
     },
     {
+        id: 2,
         title: "100% Coverage",
         tag: "#Technology",
         tagColor: "bg-additional-light",
@@ -20,6 +22,7 @@ export const webinars = [
         views: 1000,
     },
     {
+        id: 3,
         title: "Secure Your Code",
         tag: "#Security",
         tagColor: "bg-additional-salty",
@@ -30,6 +33,7 @@ export const webinars = [
         views: 700,
     },
     {
+        id: 4,
         title: "Continuous QA",
         tag: "#DevOps",
         tagColor: "bg-additional-snow",
@@ -40,6 +44,7 @@ export const webinars = [
         views: 790,
     },
     {
+        id: 5,
         title: "Zero Defects!",
         tag: "#Innovation",
         tagColor: "bg-additional-purplish",
@@ -50,6 +55,7 @@ export const webinars = [
         views: 300,
     },
     {
+        id: 6,
         title: "Scale QA Effortlessly",
         tag: "#Productivity",
         tagColor: "bg-additional-sweet",
@@ -60,6 +66,7 @@ export const webinars = [
         views: 1700,
     },
     {
+        id: 7,
         title: "AI Test Script",
         tag: "#Innovation",
         tagColor: "bg-additional-diamond",
@@ -70,6 +77,7 @@ export const webinars = [
         views: 750,
     },
     {
+        id: 8,
         title: "Collaborate Better",
         tag: "#Teamwork",
         tagColor: "bg-additional-palm",
@@ -80,6 +88,7 @@ export const webinars = [
         views: 3000,
     },
     {
+        id: 9,
         title: "QA Solution",
         tag: "#Education",
         tagColor: "bg-additional-light",
@@ -90,6 +99,7 @@ export const webinars = [
         views: 100,
     },
     {
+        id: 10,
         title: "Next-Gen QA with AI",
         tag: "#Innovation",
         tagColor: "bg-additional-purplish",
@@ -100,6 +110,7 @@ export const webinars = [
         views: 890,
     },
     {
+        id: 11,
         title: "Testing Simplified",
         tag: "#Technology",
         tagColor: "bg-additional-sweet",
@@ -110,6 +121,7 @@ export const webinars = [
         views: 70,
     },
     {
+        id: 12,
         title: "Mocking Made Easy",
         tag: "#Productivity",
         tagColor: "bg-additional-snow",
@@ -120,6 +132,7 @@ export const webinars = [
         views: 900,
     },
     {
+        id: 13,
         title: "Shift Left Testing",
         tag: "#Technology",
         tagColor: "bg-additional-light",
@@ -130,6 +143,7 @@ export const webinars = [
         views: 1230,
     },
     {
+        id: 14,
         title: "CI/CD for QA Teams",
         tag: "#Teamwork",
         tagColor: "bg-additional-diamond",
@@ -140,6 +154,7 @@ export const webinars = [
         views: 400,
     },
     {
+        id: 15,
         title: "Mobile Testing",
         tag: "#Technology",
         tagColor: "bg-additional-palm",
@@ -150,6 +165,7 @@ export const webinars = [
         views: 794,
     },
     {
+        id: 16,
         title: "Integration Testing",
         tag: "#Innovation",
         tagColor: "bg-additional-salty",
@@ -160,6 +176,7 @@ export const webinars = [
         views: 630,
     },
     {
+        id: 17,
         title: "Test Data",
         tag: "#Producitivity",
         tagColor: "bg-additional-palm",
@@ -170,6 +187,7 @@ export const webinars = [
         views: 709,
     },
     {
+        id: 18,
         title: "Testing In Agile",
         tag: "#Teamwork",
         tagColor: "bg-additional-light",

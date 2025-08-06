@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { MobileSectionSelect } from "./selectid";
 import FadeInSection from "@/components/animation/fadein";
+import Link from "next/link";
 
 export default function ContentWebDetail() {
 
@@ -17,33 +18,13 @@ const handleSmoothScroll = (id:string) => (e: { preventDefault: () => void; }) =
     }
 };
 
-    // useEffect(() => {
-    //     const sections = document.querySelectorAll("section[id]");
-    //     const observer = new IntersectionObserver(
-    //         (entries) => {
-    //         const visible = entries
-    //             .filter(entry => entry.isIntersecting)
-    //             .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
-    //         if (visible) {
-    //             setActiveId(visible.target.id);
-    //             const el = document.getElementById(visible.target.id);
-    //             if (el) el.scrollIntoView({ behavior: "smooth", block: "start" })
-    //         }
-    //         },
-    //         {
-    //         rootMargin: "-30% 0px -60% 0px",
-    //         threshold: 0.5,
-    //         }
-    //     );
-    //     sections.forEach(section => observer.observe(section));
-    //     return () => observer.disconnect();
-    //     }, []);
-
     return (
         <div className="flex flex-col justify-center items-center pt-6 md:pt-8 lg:pt-8 px-6 md:px-8 lg:px-[124px] pb-12 md:pb-20 lg:pb-[104px]">
             <FadeInSection delay={0.5} className="max-w-[1192px] flex flex-col gap-12 lg:gap-[88px]">
                 <div className="flex flex-row gap-1 items-start">
-                    <span className="text-[16px] leading-6 text-grayscale-900">Webinar</span>
+                    <Link href="/webinar" className="cursor-pointer">
+                        <span className="text-[16px] leading-6 text-grayscale-900">Webinar</span>
+                    </Link>
                     <span className="text-[16px] leading-6 text-grayscale-500 w-4 flex flex-col justify-center items-center">/</span>
                     <span className="text-[16px] leading-6 text-grayscale-400">Achieving 100% Test Coverage</span>
                 </div>
