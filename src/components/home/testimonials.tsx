@@ -1,5 +1,3 @@
-// HomeTestimonials.tsx
-
 "use client";
 
 import Image from "next/image";
@@ -11,12 +9,14 @@ import TestimonialAnimation from "../animation/testimonial";
 
 export default function HomeTestimonials() {
   const [activeIndex, setActiveIndex] = useState<number>(0);
-  const mainCardRef = useRef<HTMLDivElement>(null);
-  const sideIndicatorsRef = useRef<HTMLDivElement>(null);
-  const bottomIndicatorsRef = useRef<HTMLDivElement>(null);
+
+  const mainCardRef = useRef<HTMLDivElement | null>(null);
+  const sideIndicatorsRef = useRef<HTMLDivElement | null>(null);
+  const bottomIndicatorsRef = useRef<HTMLDivElement | null>(null);
+  const contentRef = useRef<HTMLDivElement | null>(null); 
 
   TestimonialAnimation(
-    { mainCardRef, sideIndicatorsRef, bottomIndicatorsRef },
+    { mainCardRef, sideIndicatorsRef, bottomIndicatorsRef, contentRef },
     activeIndex
   );
 
@@ -71,36 +71,38 @@ export default function HomeTestimonials() {
             ref={mainCardRef}
             className={`flex flex-col flex-1 min-h-[448px] justify-between md:px-10 lg:px-16 p-6 md:py-12 lg:py-14 ${testimonials[activeIndex].color} rounded-b-[8px] md:rounded-b-[0px] md:rounded-tl-[16px] md:rounded-bl-[16px]`}
           >
-            <p className="text-[20px] md:text-[28px] leading-9 md:leading-[48px] font-normal text-grayscale-900">
-              “{testimonials[activeIndex].message}”
-            </p>
-            <div className="flex flex-row justify-between items-center">
-              <div className="flex flex-row gap-5 items-center">
-                <Image src={testimonials[activeIndex].avatar} alt="testimonial" width={64} height={64} className="w-12 h-12 md:w-16 md:h-16" />
-                <div className="flex flex-col gap-1.5">
-                  <p className="text-[16px] md:text-[18px] font-normal text-grayscale-900 leading-6 md:leading-[28px]">
-                    {testimonials[activeIndex].name}
-                  </p>
-                  <p className="text-[14px] leading-[22px] md:text-[16px] font-normal md:leading-[24px] text-grayscale-600">
-                    {testimonials[activeIndex].title}
-                  </p>
+            <div ref={contentRef} className="h-full flex flex-col justify-between">
+              <p className="text-[20px] md:text-[28px] leading-9 md:leading-[48px] font-normal text-grayscale-900">
+                “{testimonials[activeIndex].message}”
+              </p>
+              <div className="flex flex-row justify-between items-center">
+                <div className="flex flex-row gap-5 items-center">
+                  <Image src={testimonials[activeIndex].avatar} alt="testimonial" width={64} height={64} className="w-12 h-12 md:w-16 md:h-16" />
+                  <div className="flex flex-col gap-1.5">
+                    <p className="text-[16px] md:text-[18px] font-normal text-grayscale-900 leading-6 md:leading-[28px]">
+                      {testimonials[activeIndex].name}
+                    </p>
+                    <p className="text-[14px] leading-[22px] md:text-[16px] font-normal md:leading-[24px] text-grayscale-600">
+                      {testimonials[activeIndex].title}
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div className="hidden md:flex md:flex-col items-center">
-                <button
-                  className={`flex flex-col justify-center items-center p-2 rounded-[8px] ${isFirstSlide ? 'bg-transparent' : 'cursor-pointer bg-base-white'}`}
-                  onClick={prev}
-                  disabled={isFirstSlide}
-                >
-                  <ArrowUp className={`w-4 h-4 ${isFirstSlide ? 'text-grayscale-300' : 'text-grayscale-900'}`} strokeWidth={3.5} />
-                </button>
-                <button
-                  className={`flex flex-col justify-center items-center p-2 rounded-[8px] ${isLastSlide ? 'bg-transparent' : 'cursor-pointer bg-base-white'}`}
-                  onClick={next}
-                  disabled={isLastSlide}
-                >
-                  <ArrowDown className={`w-4 h-4 ${isLastSlide ? 'text-grayscale-300' : 'text-grayscale-900'}`} strokeWidth={3.5} />
-                </button>
+                <div className="hidden md:flex md:flex-col items-center">
+                  <button
+                    className={`flex flex-col justify-center items-center p-2 rounded-[8px] ${isFirstSlide ? 'bg-transparent' : 'cursor-pointer bg-base-white'}`}
+                    onClick={prev}
+                    disabled={isFirstSlide}
+                  >
+                    <ArrowUp className={`w-4 h-4 ${isFirstSlide ? 'text-grayscale-300' : 'text-grayscale-900'}`} strokeWidth={3.5} />
+                  </button>
+                  <button
+                    className={`flex flex-col justify-center items-center p-2 rounded-[8px] ${isLastSlide ? 'bg-transparent' : 'cursor-pointer bg-base-white'}`}
+                    onClick={next}
+                    disabled={isLastSlide}
+                  >
+                    <ArrowDown className={`w-4 h-4 ${isLastSlide ? 'text-grayscale-300' : 'text-grayscale-900'}`} strokeWidth={3.5} />
+                  </button>
+                </div>
               </div>
             </div>
           </div>
