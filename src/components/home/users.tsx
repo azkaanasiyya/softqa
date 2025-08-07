@@ -25,7 +25,7 @@ export default function HomeUsers() {
                 </CountUp>
                 <FadeInSection delay={0.5} className="flex flex-col gap-3 md:gap-2 items-center justify-center max-w-[784px]">
                     <h4 className="text-[24px] md:text-[32px] font-normal leading-[30px] md:leading-[40px] text-center text-base-white">Unit tests written by Community Edition</h4>
-                    <h6 className="text-[18px] md:text-[20px] leading-8 md:leading-[36px] font-normal text-base-white opacity-[72%] text-center">SoftQA can write a complete and correct unit test every 2 seconds. Our AI are continuously being developed to achieve an efficient unit tests.</h6>
+                    <h6 className="text-[18px] md:text-[20px] leading-8 md:leading-[36px] font-normal text-white-opacity-72 text-center">SoftQA can write a complete and correct unit test every 2 seconds. Our AI are continuously being developed to achieve an efficient unit tests.</h6>
                 </FadeInSection>
             </div>
         </div>

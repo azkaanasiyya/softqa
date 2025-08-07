@@ -4,7 +4,7 @@ import FadeInSection from "../animation/fadein";
 
 export default function SocialProof() {
     return (
-        <div className="relative bg-[url('/home/bg-social.png')] bg-no-repeat bg-center bg-cover border-t border-b border-grayscale-100 py-16 flex flex-col gap-4 md:gap-8 items-center overflow-hidden">
+        <div className="relative bg-[url('/home/bg-social.png')] bg-no-repeat bg-center bg-cover border-t border-b border-grayscale-100 py-8 md:py-12 lg:py-16 flex flex-col gap-4 md:gap-8 items-center overflow-hidden">
             <div className="absolute">
                 <Image
                     src="/home/bg-line.png"

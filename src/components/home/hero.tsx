@@ -18,7 +18,7 @@ export default function HomeHero() {
                             <h1 className="text-[40px] md:text-[56px] leading-[50px] md:leading-[70px] font-normal text-grayscale-900">The World&apos;s Most Accurate Unit Testing Generative AI</h1>
                         </FadeInSection>
                         <FadeInSection delay={0.5} className="flex flex-col gap-8 md:gap-10 lg:gap-[32px]">
-                            <p className="text-[18px] md:text-[20px] font-normal leading-8 md:leading-[36px] max-w-[485px] text-grayscale-600">
+                            <p className="text-[18px] md:text-[20px] font-normal leading-8 md:leading-[36px] lg:max-w-[485px] text-grayscale-600">
                                 SoftQA automatically writes your unit tests at mind-boggling scale. Your software development process will never feel the same again.
                             </p>
                             <div className="flex flex-col md:flex-row w-full md:w-auto gap-4 md:gap-5">
@@ -38,7 +38,9 @@ export default function HomeHero() {
                     </div>
                 </div>
                 <FadeInSection delay={0.5} variant="right-to-left">
-                    <Image src="/home/hero.png" alt="hero" width={564} height={616} className="lg:w-[564px] lg:h-[616px] max-w-[704px] max-h-[768.91px] w-full h-full"/>
+                    <div className="w-full h-full">
+                       <Image src="/home/hero.png" alt="hero" width={564} height={616} className="lg:w-[564px] lg:h-[616px] max-w-[704px] max-h-[768.91px] w-full h-full"/> 
+                    </div>
                 </FadeInSection>
             </div>
         </div>
