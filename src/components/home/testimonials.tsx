@@ -71,7 +71,7 @@ export default function HomeTestimonials() {
             ref={mainCardRef}
             className={`flex flex-col flex-1 min-h-[448px] justify-between md:px-10 lg:px-16 p-6 md:py-12 lg:py-14 ${testimonials[activeIndex].color} rounded-b-[8px] md:rounded-b-[0px] md:rounded-tl-[16px] md:rounded-bl-[16px]`}
           >
-            <div ref={contentRef} className="h-full flex flex-col justify-between">
+            <div ref={contentRef} className="min-h-[450px] md:min-h-[456px] lg:min-h-0 h-full flex flex-col justify-between">
               <p className="text-[20px] md:text-[28px] leading-9 md:leading-[48px] font-normal text-grayscale-900">
                 “{testimonials[activeIndex].message}”
               </p>
