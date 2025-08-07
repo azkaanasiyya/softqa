@@ -1,5 +1,3 @@
-// TestimonialAnimation.tsx
-
 import { useEffect, RefObject } from "react";
 import { gsap } from "gsap";
 
