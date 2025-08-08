@@ -21,7 +21,7 @@ export default function CTA() {
                     </div>
                     <div className="flex flex-col md:flex-row gap-4 w-full md:w-auto md:gap-5">
                         <Link href="/auth/sign-up">
-                           <Button variant="get" size="big" className="cursor-pointer text-primary-900">Get Started</Button> 
+                           <Button variant="get" size="big" className="cursor-pointer text-primary-900 w-full">Get Started</Button> 
                         </Link>
                         <HomeModal triggerType="green"/>
                     </div>
