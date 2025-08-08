@@ -26,7 +26,7 @@ export default function HomeHero() {
                                     <Button
                                         variant="request"
                                         size="big"
-                                        className="cursor-pointer text-cyan-500"
+                                        className="cursor-pointer text-cyan-500 w-full"
                                     >
                                         Get Started
                                     </Button>
