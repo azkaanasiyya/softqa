@@ -23,7 +23,7 @@ export function InputSearch(props: React.InputHTMLAttributes<HTMLInputElement>) 
           props.onBlur?.(e);
         }}
         className={cn(
-          "w-full h-16 border-2 border-grayscale-100 p-5 pl-[52px] text-[16px] leading-6 rounded-[16px] transition-colors",
+          "w-full h-12 md:h-16 bg-base-white border-2 border-grayscale-100 p-5 pl-[52px] text-[16px] leading-6 rounded-[12px] md:rounded-[16px] transition-colors",
           focused && "border-primary-500 text-grayscale-900",
           props.className
         )}
