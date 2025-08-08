@@ -9,7 +9,7 @@ export default function Footer() {
                 <div className="flex flex-col gap-12 md:gap-8 max-w-[1192px] w-full items-center">
                     <FadeInSection delay={0.5} className="flex flex-col items-center justify-center gap-4 md:gap-6 max-w-[305px] w-full">
                         <Image src="/footer/logo-footer.svg" alt="footer" width={64} height={64} />
-                        <p className="text-center text-[16px] leading-[24px] font-normal text-base-white opacity-[88%]">Deliver unparalleled digital experience with our AI-powered unit testing.</p>
+                        <p className="text-center text-[16px] leading-[24px] font-normal text-white-opacity-88">Deliver unparalleled digital experience with our AI-powered unit testing.</p>
                     </FadeInSection>
                     <FadeInSection delay={0.5} className="flex flex-row justify-between max-w-[1192px] w-full items-center">
                         <ul className="flex flex-col gap-8">

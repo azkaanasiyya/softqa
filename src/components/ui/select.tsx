@@ -55,9 +55,9 @@ function SelectTrigger({
       {!hideDefaultIcon && (
         <SelectPrimitive.Icon asChild>
           {icon ? (
-            <span className={cn("size-4 opacity-50", iconClassName)}>{icon}</span>
+            <span className={cn("size-4 text-grayscale-400", iconClassName)}>{icon}</span>
           ) : (
-            <ChevronDownIcon className={cn("size-4 opacity-50", iconClassName)} />
+            <ChevronDownIcon className={cn("size-4 text-grayscale-400", iconClassName)} />
           )}
         </SelectPrimitive.Icon>
       )}

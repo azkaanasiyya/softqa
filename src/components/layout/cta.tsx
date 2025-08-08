@@ -13,11 +13,11 @@ export default function CTA() {
                         <h2 className="text-[32px] md:text-[48px] leading-10 md:leading-[60px] font-normal text-start md:text-center lg:text-start text-base-white">
                             Ready to turn{" "}
                             <br className="block md:hidden" />
-                            your
+                            your{" "}
                             <br className="hidden md:block" />
                             development innovation?
                         </h2>
-                        <p className="text-[18px] leading-8 md:leading-[28px] font-normal text-start md:text-center lg:text-start text-base-white opacity-[88%]">Try and see the magic of the SoftQA in action.</p>
+                        <p className="text-[18px] leading-8 md:leading-[28px] font-normal text-start md:text-center lg:text-start text-white-opacity-88">Try and see the magic of the <br className="md:hidden"/> SoftQA in action.</p>
                     </div>
                     <div className="flex flex-col md:flex-row gap-4 w-full md:w-auto md:gap-5">
                         <Link href="/auth/sign-up">

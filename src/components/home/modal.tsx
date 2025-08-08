@@ -71,7 +71,7 @@ export function HomeModal({triggerType = 'white'}: HomeModalProps) {
                     </div>
                 </div>
                 <div className="flex flex-col gap-2">
-                    <span className="text-[16px] leading-6 text-grayscale-400">Additional notes*</span>
+                    <span className="text-[16px] leading-6 text-grayscale-900">Additional notes*</span>
                     <Textarea variant="sales" placeholder="What would you like to talk about?"/>
                 </div>
             </FadeInSection>
