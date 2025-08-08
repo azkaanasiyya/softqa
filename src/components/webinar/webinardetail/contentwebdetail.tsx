@@ -5,6 +5,7 @@ import { useState } from "react";
 import { MobileSectionSelect } from "./selectid";
 import FadeInSection from "@/components/animation/fadein";
 import Link from "next/link";
+import Copy from "./copy";
 
 export default function ContentWebDetail() {
 
@@ -19,7 +20,7 @@ const handleSmoothScroll = (id:string) => (e: { preventDefault: () => void; }) =
 };
 
     return (
-        <div className="flex flex-col justify-center items-center pt-6 md:pt-8 lg:pt-8 px-6 md:px-8 lg:px-[124px] pb-12 md:pb-20 lg:pb-[104px]">
+        <div className="flex flex-col justify-center items-center pt-6 md:pt-8 lg:pt-8 px-6 md:px-8 lg:px-[124px] pb-12 md:pb-20 lg:pb-[104px] border-t border-grayscale-100">
             <FadeInSection delay={0.5} className="max-w-[1192px] flex flex-col gap-12 lg:gap-[88px]">
                 <div className="flex flex-row gap-1 items-start">
                     <Link href="/webinar" className="cursor-pointer">
@@ -28,7 +29,7 @@ const handleSmoothScroll = (id:string) => (e: { preventDefault: () => void; }) =
                     <span className="text-[16px] leading-6 text-grayscale-500 w-4 flex flex-col justify-center items-center">/</span>
                     <span className="text-[16px] leading-6 text-grayscale-400">Achieving 100% Test Coverage</span>
                 </div>
-                <FadeInSection delay={0.5} className="flex flex-col gap-8">
+                <FadeInSection delay={0.5} className="flex flex-col gap-4 md:gap-8">
                     <div className="flex flex-col items-center gap-10 md:gap-16">
                         <div className="flex flex-col gap-4 items-center w-full max-w-[784px]">
                             <h2 className="text-[40px] md:text-[48px] leading-[50px] md:leading-[60px] text-center text-grayscale-900">Achieving 100% Test Coverage</h2>
@@ -63,11 +64,11 @@ const handleSmoothScroll = (id:string) => (e: { preventDefault: () => void; }) =
                             </div>
                         </div>
                     </div>
-                    <Image src="/webinar/david-kim.png" alt="icon" width={1192} height={624} className="lg:w-[1192px] lg:h-[624px] w-full h-full" />
+                    <Image src="/webinar/david-kim.png" alt="icon" width={1192} height={624} className="lg:w-[1192px] lg:h-[624px] w-full h-full lg:object-cover rounded-[12px] lg:rounded-[16px]" />
                 </FadeInSection>
                 <FadeInSection delay={0.5} className="flex flex-col lg:flex-row lg:items-start gap-8">
                     <MobileSectionSelect activeId={activeId} setActiveId={setActiveId} />
-                    <div className="lg:sticky lg:top-24 hidden md:flex md:flex-col gap-8 max-w-[274px]">
+                    <div className="lg:sticky lg:top-24 hidden md:flex md:flex-col gap-8 lg:max-w-[274px]">
                         <div className="flex flex-col gap-3">
                             <span className="text-[16px] leading-6 text-grayscale-900">0:00 - 12:00</span>
                             <div className="flex flex-col gap-2">
@@ -153,7 +154,7 @@ const handleSmoothScroll = (id:string) => (e: { preventDefault: () => void; }) =
                                     </div>
                                 </div>
                                 <div id="section-1-2" className="scroll-mt-20 flex flex-col gap-10">
-                                    <h4 className="text-[32px] leading-10 text-grayscale-900">Why Achieve 100% Test Coverage?</h4>
+                                    <h4 className="text-[24px] md:text-[32px] leading-[30px] md:leading-10 text-grayscale-900">Why Achieve 100% Test Coverage?</h4>
                                     <div className="flex flex-col gap-8">
                                         <div className="flex flex-col gap-2">
                                             <div className="flex flex-row gap-3 items-center">
@@ -375,18 +376,22 @@ const handleSmoothScroll = (id:string) => (e: { preventDefault: () => void; }) =
                         <div className="bg-primary-50 flex flex-row items-center justify-between w-full rounded-[12px] p-4 md:p-6">
                             <span className="text-[16px] md:text-[24px] leading-6 md:leading-[30px] font-medium md:font-normal text-grayscale-900">Share this webinar?</span>
                             <div className="flex flex-row gap-2">
-                                <div className="flex flex-col items-center justify-center w-6 h-6 md:w-8 md:h-8 rounded-full bg-primary-500">
-                                    <Image src="/webinar/link.png" alt="icon" width={20} height={20} className="w-[15px] h-[15px] md:w-5 md:h-5"/>
-                                </div>
-                                <div className="flex flex-col items-center justify-center w-6 h-6 md:w-8 md:h-8 rounded-full bg-primary-500">
-                                    <Image src="/webinar/fb.png" alt="icon" width={16} height={16} className="w-3 h-3 md:w-4 md:h-4"/>
-                                </div>
-                                <div className="flex flex-col items-center justify-center w-6 h-6 md:w-8 md:h-8 rounded-full bg-primary-500">
-                                    <Image src="/webinar/x.png" alt="icon" width={16} height={16} className="w-3 h-3 md:w-4 md:h-4"/>
-                                </div>
-                                <div className="flex flex-col items-center justify-center w-6 h-6 md:w-8 md:h-8 rounded-full bg-primary-500">
-                                    <Image src="/webinar/linkedin.png" alt="icon" width={16} height={16} className="w-3 h-3 md:w-4 md:h-4"/>
-                                </div>
+                                <Copy />
+                                <Link href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                                    <div className="flex flex-col items-center justify-center w-6 h-6 md:w-8 md:h-8 rounded-full bg-primary-500">
+                                        <Image src="/webinar/fb.png" alt="icon" width={16} height={16} className="hover:opacity-80 transition duration-200 w-3 h-3 md:w-4 md:h-4"/>
+                                    </div> 
+                                </Link>
+                                <Link href="https://x.com" target="_blank" rel="noopener noreferrer">
+                                    <div className="flex flex-col items-center justify-center w-6 h-6 md:w-8 md:h-8 rounded-full bg-primary-500">
+                                        <Image src="/webinar/x.png" alt="icon" width={16} height={16} className="hover:opacity-80 transition duration-200 w-3 h-3 md:w-4 md:h-4"/>
+                                    </div> 
+                                </Link>
+                                <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                                    <div className="flex flex-col items-center justify-center w-6 h-6 md:w-8 md:h-8 rounded-full bg-primary-500">
+                                        <Image src="/webinar/linkedin.png" alt="icon" width={16} height={16} className="hover:opacity-80 transition duration-200 w-3 h-3 md:w-4 md:h-4"/>
+                                    </div>
+                                </Link>
                             </div>
                         </div>
                     </div> 
