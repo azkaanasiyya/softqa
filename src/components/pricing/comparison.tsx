@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Button } from "../ui/button";
 import { TabsComparison } from "./tabscomparison";
 import FadeInSection from "../animation/fadein";
+import Link from "next/link";
 
 export default function PricingComparison() {
     return (
@@ -64,7 +65,9 @@ export default function PricingComparison() {
                         <Image src="/pricing/checklist.png" alt="check" width={20} height={20} className="w-[20px] h-[20px]"/>
                     </div>
                     <div className="border-b border-l border-grayscale-100 rounded-bl-[16px] h-[96px] py-6 px-5 flex flex-col justify-center items-center">
-                        <Button variant="login" size="medium" className="cursor-pointer text-primary-500 w-[230.33px]">Get Started</Button>
+                        <Link href="/auth/sign-up" className="w-full block">
+                            <Button variant="login" size="medium" className="cursor-pointer text-primary-500 w-[230.33px]">Get Started</Button>
+                        </Link>
                     </div>
                 </div>
                 <div className="bg-base-white hidden lg:flex lg:flex-col max-w-[270.33px]">
@@ -106,7 +109,9 @@ export default function PricingComparison() {
                         <Image src="/pricing/checklist.png" alt="check" width={20} height={20} className="w-[20px] h-[20px]"/>
                     </div>
                     <div className="bg-grayscale-50 border-b border-l border-grayscale-100 h-[96px] py-6 px-5 flex flex-col justify-center items-center">
-                        <Button variant="request" size="medium" className="cursor-pointer text-cyan-500 w-[230.33px]">Get Started</Button>
+                        <Link href="/auth/sign-up" className="w-full block">
+                            <Button variant="request" size="medium" className="cursor-pointer text-cyan-500 w-[230.33px]">Get Started</Button>
+                        </Link>
                     </div>
                 </div>
                 <div className="bg-base-white hidden lg:flex lg:flex-col max-w-[270.33px]">
@@ -148,7 +153,9 @@ export default function PricingComparison() {
                         <Image src="/pricing/checklist.png" alt="check" width={20} height={20} className="w-[20px] h-[20px]"/>
                     </div>
                     <div className="border-b border-l border-r border-grayscale-100 rounded-br-[16px] h-[96px] py-6 px-5 flex flex-col justify-center items-center">
-                        <Button variant="login" size="medium" className="cursor-pointer text-primary-500 w-[230.33px]">Get Started</Button>
+                        <Link href="/auth/sign-up" className="w-full block">
+                            <Button variant="login" size="medium" className="cursor-pointer text-primary-500 w-[230.33px]">Get Started</Button>
+                        </Link>
                     </div>
                 </div>
             </FadeInSection>
