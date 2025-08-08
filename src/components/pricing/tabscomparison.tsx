@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -11,23 +13,25 @@ import {
 } from "@/components/ui/tabs"
 import Image from "next/image";
 import FadeInSection from "../animation/fadein";
+import { useState } from "react";
 
 export function TabsComparison() {
+  const [activeTab, setActiveTab] = useState("starter");
   return (
     <FadeInSection delay={0.5} className="flex w-full flex-col">
-      <Tabs defaultValue="starter">
+      <Tabs defaultValue="starter" value={activeTab} onValueChange={setActiveTab}>
         <TabsList>
           <TabsTrigger value="starter">
             <span>Starter</span>
-            <span className="text-[18px] leading-7 text-grayscale-900">$29</span>
+            <span className={`text-[18px] leading-7 ${activeTab === "starter" ? "text-primary-500" : "text-grayscale-900"}`}>$29</span>
           </TabsTrigger>
           <TabsTrigger value="team">
             <span>Team</span>
-            <span className="text-[18px] leading-7 text-grayscale-900">$99</span>
+            <span className={`text-[18px] leading-7 ${activeTab === "team" ? "text-primary-500" : "text-grayscale-900"}`}>$99</span>
           </TabsTrigger>
           <TabsTrigger value="enterprise">
             <span>Enterprise</span>
-            <span className="text-[18px] leading-7 text-grayscale-900">Custom</span>
+            <span className={`text-[18px] leading-7 ${activeTab === "enterprise" ? "text-primary-500" : "text-grayscale-900"}`}>Custom</span>
           </TabsTrigger>
         </TabsList>
         <TabsContent value="starter">
@@ -72,12 +76,12 @@ export function TabsComparison() {
                 <span className="text-[18px] leading-7 text-grayscale-900">AI Features</span>
                 <Image src="/pricing/sign.png" alt="check" width={20} height={20} className="w-[20px] h-[20px]"/>
               </div>
-              <div className="flex flex-row w-full justify-between py-4 md:py-5 px-2 border-b border-grayscale-100 items-center">
+              <div className="flex flex-row w-full justify-between py-4 md:py-5 px-2 items-center">
                 <span className="text-[18px] leading-7 text-grayscale-900">Training & Onboarding</span>
                 <Image src="/pricing/checklist.png" alt="check" width={20} height={20} className="w-[20px] h-[20px]"/>
               </div>
             <CardFooter>
-              <Button variant="login" size="medium" className="cursor-pointer text-primary-500 w-full mt-4 md:mt-6">Get Started</Button>
+              <Button variant="login" size="medium" className="cursor-pointer text-primary-500 w-full mt-4 md:mt-6 h-12 md:h-auto">Get Started</Button>
             </CardFooter>
           </Card>
         </TabsContent>
@@ -123,12 +127,12 @@ export function TabsComparison() {
                 <span className="text-[18px] leading-7 text-grayscale-900">AI Features</span>
                 <Image src="/pricing/checklist.png" alt="check" width={20} height={20} className="w-[20px] h-[20px]"/>
               </div>
-              <div className="flex flex-row w-full justify-between py-4 md:py-5 px-2 border-b border-grayscale-100 items-center">
+              <div className="flex flex-row w-full justify-between py-4 md:py-5 px-2 items-center">
                 <span className="text-[18px] leading-7 text-grayscale-900">Training & Onboarding</span>
                 <Image src="/pricing/checklist.png" alt="check" width={20} height={20} className="w-[20px] h-[20px]"/>
               </div>
             <CardFooter>
-              <Button variant="request" size="medium" className="cursor-pointer text-cyan-500 w-full mt-4 md:mt-6">Get Started</Button>
+              <Button variant="request" size="medium" className="cursor-pointer text-cyan-500 w-full mt-4 md:mt-6 h-12 md:h-auto">Get Started</Button>
             </CardFooter>
           </Card>
         </TabsContent>
@@ -174,12 +178,12 @@ export function TabsComparison() {
                 <span className="text-[18px] leading-7 text-grayscale-900">AI Features</span>
                 <Image src="/pricing/checklist.png" alt="check" width={20} height={20} className="w-[20px] h-[20px]"/>
               </div>
-              <div className="flex flex-row w-full justify-between py-4 md:py-5 px-2 border-b border-grayscale-100 items-center">
+              <div className="flex flex-row w-full justify-between py-4 md:py-5 px-2 items-center">
                 <span className="text-[18px] leading-7 text-grayscale-900">Training & Onboarding</span>
                 <Image src="/pricing/checklist.png" alt="check" width={20} height={20} className="w-[20px] h-[20px]"/>
               </div>
             <CardFooter>
-              <Button variant="login" size="medium" className="cursor-pointer text-primary-500 w-full mt-4 md:mt-6">Get Started</Button>
+              <Button variant="login" size="medium" className="cursor-pointer text-primary-500 w-full mt-4 md:mt-6 h-12 md:h-auto">Get Started</Button>
             </CardFooter>
           </Card>
         </TabsContent>

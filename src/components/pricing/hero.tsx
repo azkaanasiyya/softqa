@@ -1,3 +1,4 @@
+import Link from "next/link";
 import FadeInSection from "../animation/fadein";
 import { Button } from "../ui/button";
 import Image from "next/image";
@@ -12,13 +13,13 @@ export default function PricingHero() {
                             <div className="h-[22px] w-[1px] bg-cyan-500" />
                             <p className="text-[14px] font-medium leading-[22px] uppercase text-cyan-500">pricing</p>
                         </div>
-                        <h1 className="text-[40px] md:text-[56px] leading-[50px] md:leading-[70px] font-normal text-base-white text-center">Scale Your Testing</h1>
+                        <h1 className="text-[40px] md:text-[56px] leading-[50px] md:leading-[70px] font-normal text-base-white text-center tracking-tight md:tracking-normal">Scale Your Testing</h1>
                     </div>
                     <p className="max-w-[654px] text-[18px] leading-8 font-normal text-[#FFFFFFEB] text-center">From startup to enterprise, find the perfect plan to fit your needs and enhance your QA. Unlock the power of autonomous testing with SoftQA today.</p>
                 </div>
                 <div className="flex flex-col gap-12 lg:gap-[72px] items-center w-full">
                     <div className="flex flex-col gap-6 lg:gap-[0px] lg:flex-row items-center w-full lg:items-end">
-                        <div className="bg-primary-900 flex flex-col gap-8 p-6 md:p-8 rounded-[16px] border-2 border-[#FFFFFF0F] w-full lg:max-w-[397.33px] min-h-[678px]">
+                        <div className="bg-primary-900 flex flex-col gap-8 p-6 md:p-8 rounded-[16px] border-2 border-[#FFFFFF0F] w-full md:h-[630px] lg:max-w-[397.33px] lg:h-[678px] h-auto">
                             <div className="flex flex-col gap-6">
                                 <div className="flex flex-col gap-4 md:gap-6">
                                     <div className="flex flex-col gap-1">
@@ -30,7 +31,9 @@ export default function PricingHero() {
                                         <p className="text-[16px] pb-2.5 leading-6 text-[#FFFFFFEB]">/month</p>
                                     </div>
                                 </div>
-                                <Button variant="pricing" size="big" className="cursor-pointer text-cyan-500">Get Started</Button>
+                                <Link href="/auth/sign-up" className="w-full block">
+                                    <Button variant="pricing" size="big" className="cursor-pointer text-cyan-500 w-full h-12 md:h-auto text-[14px] leading-[22px] md:text-[16px] md:leading-6">Get Started</Button>
+                                </Link>
                             </div>
                             <div className="flex flex-col gap-4">
                                 <div className="flex flex-row gap-3 items-center">
@@ -67,12 +70,12 @@ export default function PricingHero() {
                                 </div>
                             </div>
                         </div>
-                        <div className="p-[3px] rounded-[16px] bg-gradient-to-b from-[#B5FFFE] to-[#12454B] w-full lg:max-w-[397.33px]  min-h-[694px]">
-                            <div className="bg-[#12454B] flex flex-col gap-8 p-6 md:p-8 rounded-[16px] h-[694px] ">
+                        <div className="p-[3px] rounded-[16px] bg-gradient-to-b from-[#B5FFFE] to-[#12454B] h-full w-full lg:max-w-[397.33px] md:min-h-[630px] lg:min-h-[694px]">
+                            <div className="bg-[#12454B] flex flex-col gap-8 p-6 md:p-8 rounded-[16px] h-full w-full md:h-[630px] lg:h-[694px] ">
                                 <div className="flex flex-col gap-6">
                                     <div className="flex flex-col gap-4 md:gap-6">
                                         <div className="flex flex-col gap-1">
-                                            <div className="flex flex-row gap-2 items-end">
+                                            <div className="flex flex-row gap-2 items-center md:items-end">
                                                 <h5 className="text-[20px] md:text-[24px] leading-9 md:leading-6 font-normal text-base-white">Team</h5>
                                                 <div className="bg-white-opacity-12 rounded-[8px] py-1 px-2 text-[11px] leading-[18px] uppercase font-medium text-cyan-500">popular</div>
                                             </div>
@@ -83,7 +86,9 @@ export default function PricingHero() {
                                             <p className="text-[16px] pb-2.5 leading-6 text-[#FFFFFFEB]">/month</p>
                                         </div>
                                     </div>
-                                    <Button variant="get" size="big" className="cursor-pointer text-primary-900">Get Started</Button>
+                                    <Link href="/auth/sign-up" className="w-full block">
+                                        <Button variant="get" size="big" className="cursor-pointer text-primary-900 w-full h-12 md:h-auto text-[14px] leading-[22px] md:text-[16px] md:leading-6">Get Started</Button>
+                                    </Link>
                                 </div>
                                 <div className="flex flex-col gap-4">
                                     <div className="flex flex-row gap-3 items-center">
@@ -121,7 +126,7 @@ export default function PricingHero() {
                                 </div>
                             </div>
                         </div>
-                        <div className="bg-primary-900 flex flex-col gap-8 p-6 md:p-8 rounded-[16px] border-2 border-[#FFFFFF0F] w-full lg:max-w-[397.33px] lg:h-[678px] h-auto">
+                        <div className="bg-primary-900 flex flex-col gap-8 p-6 md:p-8 rounded-[16px] border-2 border-[#FFFFFF0F] w-full md:h-[630px] lg:max-w-[397.33px] lg:h-[678px] h-auto">
                             <div className="flex flex-col gap-6">
                                 <div className="flex flex-col gap-4 md:gap-6">
                                     <div className="flex flex-col gap-1">
@@ -130,7 +135,9 @@ export default function PricingHero() {
                                     </div>
                                     <h2 className="text-[32px] md:text-[48px] leading-10 md:leading-[60px] text-base-white font-normal">Custom</h2>
                                 </div>
-                                <Button variant="pricing" size="big" className="cursor-pointer text-cyan-500">Get Started</Button>
+                                <Link href="/auth/sign-up" className="w-full block">
+                                    <Button variant="pricing" size="big" className="cursor-pointer text-cyan-500 w-full h-12 md:h-auto text-[14px] leading-[22px] md:text-[16px] md:leading-6">Get Started</Button>
+                                </Link>
                             </div>
                             <div className="flex flex-col gap-4">
                                 <div className="flex flex-row gap-3 items-center">
@@ -170,8 +177,8 @@ export default function PricingHero() {
                     </div>
                     <div className="flex flex-col items-center justify-center gap-4 max-w-[327px] md:max-w-[608px] lg:max-w-[774px]">
                       <Image src="/pricing/female.png" alt="icon" width={56} height={56} className="w-14 h-14"/>
-                      <div className="flex flex-col gap-4 md:gap-6 items-center max-w-[779px]">
-                        <p className="text-[16px] md:text-[20px] lg:text-[24px] leading-7 md:leading-9 lg:leading-[42px] font-normal text-center text-base-white">“SoftQA has transformed how our team approaches testing. The automation tools are intuitive, and the detailed analytics have significantly improved our product quality.”</p>
+                      <div className="flex flex-col gap-4 md:gap-6 items-center max-w-[774px]">
+                        <p className="text-[16px] md:text-[20px] lg:text-[24px] leading-7 md:leading-9 lg:leading-[42px] font-normal text-center tracking-normal lg:tracking-tight text-base-white">“SoftQA has transformed how our team approaches testing. The <br className="hidden lg:block"/> automation tools are intuitive, and the detailed analytics have significantly <br className="hidden lg:block"/> improved our product quality.”</p>
                         <p className="text-[14px] md:text-[16px] leading-[22px] md:leading-6 font-normal text-center text-[#FFFFFFEB]">Russel Alexander</p>
                       </div>
                     </div>
