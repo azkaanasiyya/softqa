@@ -47,7 +47,7 @@ export default function DeveloperFeatures() {
                             <p className="text-[14px] font-medium leading-[22px] uppercase text-primary-500">Coverage Fast</p>
                         </div>
                         <div className="flex flex-col gap-2 md:gap-3 lg:gap-4">
-                            <h3 className="text-[24px] md:text-[40px] leading-[30px] md:leading-[50px] font-normal text-grayscale-900">Intelligent QA for <br />Complete Coverage</h3>
+                            <h3 className="text-[24px] md:text-[40px] leading-[30px] md:leading-[50px] font-normal text-grayscale-900">Intelligent QA for <br className="hidden lg:block" />Complete Coverage</h3>
                             <p className="text-[16px] md:text-[18px] leading-7 md:leading-8 text-grayscale-600">Quickly generate comprehensive tests for extensive codebases in one go. With Batch Mode, eliminate technical debt and achieve full test coverage at unparalleled speed.</p>
                         </div>
                     </div>

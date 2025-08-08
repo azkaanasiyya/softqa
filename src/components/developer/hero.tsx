@@ -7,6 +7,7 @@ import { useState } from "react";
 import { deveTestimonials as slides } from "../data/developer";
 import FadeInSection from "../animation/fadein";
 import { Modal } from "./modal";
+import { ArrowLeft } from "lucide-react";
                                
 export default function DeveloperHero() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -28,7 +29,7 @@ export default function DeveloperHero() {
               <div className="h-[22px] w-[1px] bg-cyan-500" />
               <p className="text-[14px] font-medium leading-[22px] uppercase text-cyan-500">developer</p>
             </div>
-            <h1 className="text-[40px] md:text-[56px] leading-[50px] md:leading-[70px] font-normal text-base-white">
+            <h1 className="text-[40px] md:text-[56px] leading-[50px] md:leading-[70px] font-normal tracking-tight md:tracking-normal text-base-white">
               Crush Bugs, Ship Faster, Deploy with Confidence.
             </h1>
           </div>
@@ -60,7 +61,7 @@ export default function DeveloperHero() {
                 alt="img"
                 width={388}
                 height={416}
-                className="w-full lg:w-[388px] h-auto"
+                className="w-full lg:w-[388px] md:h-[424px] lg:h-full md:object-cover md:object-top lg:object-contain"
               />
               <div className="absolute bottom-0 left-0 z-10 flex flex-row justify-between w-full p-4 md:p-6">
                 <div className="flex flex-col gap-1">
@@ -107,7 +108,7 @@ export default function DeveloperHero() {
 
               <div onClick={prev} className="cursor-pointer flex items-center gap-2 md:gap-4">
                 <button className="bg-primary-50 rounded-full cursor-pointer flex justify-center items-center w-6 h-6 md:w-8 md:h-8">
-                  <Image src="/developer/arrow-left.png" alt="prev" width={16} height={16} />
+                  <ArrowLeft size={16} className="text-grayscale-400" />
                 </button>
                 <div className="flex flex-row gap-2 items-center">
                   <p className="hidden md:block text-[16px] leading-6 font-normal text-grayscale-500">Previous</p>
