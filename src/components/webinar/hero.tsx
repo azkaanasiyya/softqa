@@ -44,7 +44,7 @@ export default function WebinarHero() {
 
   return (
     <div className="bg-primary-900 flex flex-col justify-center items-center pt-16 pb-12 md:py-20 lg:py-[104px] px-6 md:px-8 lg:px-[124px]">
-      <div className="max-w-[1192px] flex flex-col justify-center items-center gap-[104px]">
+      <div className="max-w-[1192px] flex flex-col justify-center items-center gap-10 md:gap-16 lg:gap-[104px]">
         <FadeInSection delay={0.5} className="flex flex-col justify-center items-center gap-6">
           <div className="flex flex-col gap-4 items-center max-w-[786px]">
             <div className="flex flex-row gap-2">
@@ -56,14 +56,15 @@ export default function WebinarHero() {
             </h1>
           </div>
           <p className="max-w-[654px] text-center text-[18px] leading-8 font-normal text-[#FFFFFFEB]">
-            Free live training workshops, Monday to Friday, from the comfort of your own home. Let’s learn, grow, and build together.
+            Free live training workshops, Monday to Friday, from the comfort of your <br className="hidden md:block lg:hidden"/> own home. Let’s learn, grow, and build together.
           </p>
         </FadeInSection>
 
         <div className="flex flex-col gap-10 w-full">
           <FadeInSection delay={0.5} className="flex flex-row justify-between items-center w-full">
-            <h3 className="text-[24px] md:text-[32px] lg:text-[40px] leading-[30px] md:leading-10 lg:leading-[50px] text-base-white">
+            <h3 className="relative text-[24px] md:text-[32px] lg:text-[40px] leading-[30px] md:leading-10 lg:leading-[50px] text-base-white">
               Upcoming
+              <span className="absolute top-2 right-[-8px] w-1.5 h-1.5 rounded-full bg-cyan-500"></span>
             </h3>
 
             <div className="flex flex-row gap-4">
@@ -121,7 +122,7 @@ export default function WebinarHero() {
                     <p className="text-[14px] leading-[22px] text-grayscale-600">{item.date}</p>
                     <div className="flex flex-col gap-2 lg:gap-3">
                       <h5 className="text-[24px] leading-[30px] text-grayscale-900">{item.subtitle}</h5>
-                      <p className="text-[16px] leading-6 text-grayscale-600">{item.description}</p>
+                      <p className="text-[16px] leading-6 text-grayscale-600 line-clamp-2">{item.description}</p>
                     </div>
                   </div>
                   <Button variant="request" size="medium" className="text-cyan-500 w-full lg:w-auto cursor-pointer">

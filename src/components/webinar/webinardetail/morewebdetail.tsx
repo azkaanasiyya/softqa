@@ -77,7 +77,7 @@ export default function MoreWebDetail() {
 
   return (
     <div className="flex flex-col justify-center items-center px-6 md:px-8 lg:px-[124px]">
-      <div className="max-w-[1192px] py-12 md:py-16 lg:pt-20 pb-[104px] border-t-2 border-grayscale-100 flex flex-col gap-8">
+      <div className="max-w-[1192px] py-12 md:py-16 lg:pt-20 pb-12 md:pb-16 lg:pb-[104px] border-t-2 border-grayscale-100 flex flex-col gap-8">
         <FadeInSection delay={0.5} className="flex flex-row w-full justify-between items-center">
           <h3 className="text-[24px] md:text-[40px] leading-[30px] md:leading-[50px] text-grayscale-900">
             More webinars <br className="md:hidden" /> from SoftQA

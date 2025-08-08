@@ -125,7 +125,7 @@ export default function WebinarFeatures() {
                     className="rounded-tr-[12px] rounded-br-[12px] object-cover object-bottom w-[134.77px] h-[183.14px] md:w-[142.13px] md:h-[193.16px] lg:w-[156px] lg:h-[212px]"
                   />
                 </div>
-                <div className="flex flex-col justify-between gap-6 py-4 px-4">
+                <div className="flex flex-col justify-between h-[208.86px] md:h-auto gap-6 py-4 px-4">
                   <div className="flex flex-col gap-1">
                     <p className="text-[14px] leading-[22px] text-grayscale-600">{item.date}</p>
                     <div className="flex flex-col gap-1 lg:gap-3">
@@ -139,7 +139,7 @@ export default function WebinarFeatures() {
                   </div>
                   <Link href="/webinar/webinardetail" className="cursor-pointer">
                     <div className="flex flex-row gap-1 items-end cursor-pointer">
-                      <p className="text-[14px] lg:text-[16px] leading-[22px] lg:leading-6 text-primary-500 font-medium underline">
+                      <p className="text-[14px] lg:text-[16px] leading-[22px] lg:leading-6 text-primary-500 font-medium hover:underline">
                         Read more
                       </p>
                       <Image src="/webinar/icon.png" alt="icon" width={16} height={16} className="w-4 h-4" />
