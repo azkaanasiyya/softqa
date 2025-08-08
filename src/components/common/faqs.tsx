@@ -14,7 +14,7 @@ export default function FAQs() {
     return (
         <div className="bg-primary-50 py-12 md:py-20 lg:py-[116px] px-8 lg:px-[124px] flex flex-col justify-center items-center">
             <div className="max-w-[1192px] flex flex-col lg:flex-row items-center lg:items-stretch gap-8">
-                <div className="max-w-[478px] w-full flex flex-col justify-between items-start">
+                <div className="lg:max-w-[478px] w-full flex flex-col justify-between items-start">
                     <div className="flex flex-col items-center w-full lg:items-start gap-4">
                         <div className="flex flex-row gap-2">
                             <div className="h-[22px] w-[1px] bg-primary-500" />
@@ -29,7 +29,7 @@ export default function FAQs() {
                     </Button>
                     </Link>
                 </div>
-                <div className="flex justify-center pt-5 md:pt-8 lg:pt-12 max-w-[682px] w-full">
+                <div className="flex justify-center pt-0 md:pt-8 lg:pt-12 max-w-[682px] w-full">
                     <FadeInSection delay={0.5} className="flex flex-col w-full">
                         <Accordion
                             type="single"

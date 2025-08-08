@@ -17,12 +17,12 @@ export default function HomeContent() {
             <FadeInSection delay={0.5} className="max-w-[1192px] grid grids-cols-1 lg:grid-cols-2 gap-8">
                 <div className="rounded-[16px] bg-additional-unbleached flex flex-col lg:max-w-[580px] w-full">
                     <div className="flex flex-col-reverse md:flex-row">
-                        <div className="flex flex-col gap-2 md:justify-between p-6 md:p-8 md:h-[296px] lg:max-w-[324px] w-full border-b border-grayscale-100">
+                        <div className="flex flex-col gap-2 md:justify-between p-6 md:p-8 md:h-[248px] lg:max-w-[324px] w-full border-b border-grayscale-100">
                             <div className="flex flex-row gap-2">
                                 <div className="h-[22px] w-[1px] bg-primary-500" />
                                 <p className="text-[14px] font-medium leading-[22px] text-primary-500">AUTOPILOT</p>
                             </div>
-                            <h4 className="text-[24px] md:text-[32px] leading-[30px] md:leading-10 text-grayscale-900 font-normal hover:underline cursor-pointer">Autopilot for Unit Testing</h4>
+                            <h4 className="text-[24px] md:text-[32px] leading-[30px] md:leading-10 text-grayscale-900 tracking-tight md:tracking-normal font-normal hover:underline cursor-pointer">Autopilot for Unit Testing</h4>
                         </div>
                         <div className="bg-additional-palm h-[316px] md:h-[248px] lg:h-auto md:max-w-[256px] w-full rounded-t-[16px] md:rounded-tl-[0px] md:rounded-tr-[16px] flex flex-col justify-center items-center">
                             <Image
@@ -45,7 +45,7 @@ export default function HomeContent() {
                                 <div className="h-[22px] w-[1px] bg-primary-500" />
                                 <p className="text-[14px] font-medium leading-[22px] text-primary-500">ALL IN ONE</p>
                             </div>
-                            <h4 className="text-[24px] md:text-[32px] leading-[30px] md:leading-10 text-grayscale-900 font-normal hover:underline cursor-pointer">One tool for all browser</h4>
+                            <h4 className="text-[24px] md:text-[32px] leading-[30px] md:leading-10 text-grayscale-900 tracking-tight md:tracking-normal font-normal hover:underline cursor-pointer">One tool for all browser</h4>
                         </div>
                         <div className="bg-additional-light h-[316px] md:h-[248px] lg:h-auto md:max-w-[256px] w-full rounded-t-[16px] md:rounded-tl-[0px] md:rounded-tr-[16px] flex flex-col justify-center items-center">
                             <Image
@@ -68,7 +68,7 @@ export default function HomeContent() {
                                 <div className="h-[22px] w-[1px] bg-primary-500" />
                                 <p className="text-[14px] font-medium leading-[22px] text-primary-500">MAXIMIZED</p>
                             </div>
-                            <h4 className="text-[24px] md:text-[32px] leading-[30px] md:leading-10 text-grayscale-900 font-normal hover:underline cursor-pointer">Test Coverage, Maximized</h4>
+                            <h4 className="text-[24px] md:text-[32px] leading-[30px] md:leading-10 text-grayscale-900 tracking-tight md:tracking-normal font-normal hover:underline cursor-pointer">Test Coverage, Maximized</h4>
                         </div>
                         <div className="bg-additional-salty h-[316px] md:h-[248px] lg:h-auto  md:max-w-[256px] w-full rounded-t-[16px] md:rounded-tl-[0px] md:rounded-tr-[16px] flex flex-col justify-center items-center">
                             <Image
@@ -91,7 +91,7 @@ export default function HomeContent() {
                                 <div className="h-[22px] w-[1px] bg-primary-500" />
                                 <p className="text-[14px] font-medium leading-[22px] text-primary-500">FAST</p>
                             </div>
-                            <h4 className="text-[24px] md:text-[32px] leading-[30px] md:leading-10 text-grayscale-900 font-normal hover:underline cursor-pointer">Testing at Warp Speed</h4>
+                            <h4 className="text-[24px] md:text-[32px] leading-[30px] md:leading-10 text-grayscale-900 tracking-tight md:tracking-normal font-normal hover:underline cursor-pointer">Testing at Warp Speed</h4>
                         </div>
                         <div className="bg-additional-snow h-[316px] md:h-[248px] lg:h-auto md:max-w-[256px] w-full rounded-t-[16px] md:rounded-tl-[0px] md:rounded-tr-[16px] flex flex-col justify-center items-center">
                             <Image
