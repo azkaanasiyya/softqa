@@ -3,7 +3,7 @@ import FadeInSection from "../animation/fadein";
 
 export default function DeveloperFeatures() {
     return (
-        <div className="bg-base-white bg-[url('/developer/bg-features.png')] bg-no-repeat bg-center bg-cover flex flex-col justify-center items-center py-12 md:py-20 lg:py-[132px] px-6 md:px-8 lg:px-[124px]">
+        <div className="bg-[url('/line.png')] bg-no-repeat bg-center bg-cover flex flex-col justify-center items-center py-12 md:py-20 lg:py-[132px] px-6 md:px-8 lg:px-[124px]">
             <div className="max-w-[1192px] flex flex-col gap-10 md:gap-16 lg:gap-[104px]">
                 <FadeInSection delay={0.5} className="flex flex-col-reverse lg:flex-row gap-6 md:gap-10 lg:gap-24 items-center">
                     <div className="flex flex-col gap-3 md:gap-4 lg:gap-6 lg:max-w-[540px]">

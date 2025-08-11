@@ -6,7 +6,7 @@ import FadeInSection from "../animation/fadein";
 
 export default function HelpHero() {
     return (
-        <div className="flex flex-col justify-center items-center border-t border-grayscale-100 px-6 md:px-8 lg:px-[124px] pb-12 pt-16 md:py-20 lg:pt-[104px] lg:pb-[116px] w-full">
+        <div className="bg-[url('/line.png')] bg-no-repeat bg-center bg-cover flex flex-col justify-center items-center border-t border-grayscale-100 px-6 md:px-8 lg:px-[124px] pb-12 pt-16 md:py-20 lg:pt-[104px] lg:pb-[116px] w-full">
             <FadeInSection className="max-w-[1192px] flex flex-col gap-10 md:gap-12 lg:gap-20 justify-center items-center w-full">
                 <FadeInSection delay={0.5} className="flex flex-col gap-8 md:gap-10 w-full max-w-[784px]">
                     <h1 className="text-[40px] md:text-[56px] leading-[50px] md:leading-[70px] text-center tracking-tight text-grayscale-900">How can we help?</h1>
@@ -34,17 +34,17 @@ export default function HelpHero() {
                                 </div>
                             </div>
                         </Link>                        
-                        <div className="flex flex-col gap-1">
+                        <div className="flex flex-col gap-1 w-full">
                             <div className="flex flex-row justify-between items-center py-3">
-                                <span className="text-[16px] md:text-[18px] truncate max-w-full leading-6 md:leading-7 text-grayscale-900">How do I create an account?</span>
+                                <span className="text-[16px] md:text-[18px] leading-6 md:leading-7 text-grayscale-900 line-clamp-1">How do I create an account?</span>
                                 <Image src="/help/right-gray.png" alt="icon" width={16} height={16} />
                             </div>
                             <div className="flex flex-row justify-between items-center py-3">
-                                <span className="text-[16px] md:text-[18px] truncate max-w-full leading-6 md:leading-7 text-grayscale-900">How do I update my profile informa...</span>
+                                <span className="text-[16px] md:text-[18px] leading-6 md:leading-7 text-grayscale-900 line-clamp-1">How do I update my profile informa...</span>
                                 <Image src="/help/right-gray.png" alt="icon" width={16} height={16} />
                             </div>
                             <div className="flex flex-row justify-between items-center py-3">
-                                <span className="text-[16px] md:text-[18px] truncate max-w-full leading-6 md:leading-7 text-grayscale-900">How can I delete my account?</span>
+                                <span className="text-[16px] md:text-[18px] leading-6 md:leading-7 text-grayscale-900 line-clamp-1">How can I delete my account?</span>
                                 <Image src="/help/right-gray.png" alt="icon" width={16} height={16} />
                             </div>
                         </div>
@@ -58,17 +58,17 @@ export default function HelpHero() {
                                 </div>
                             </div>
                         </Link>
-                        <div className="flex flex-col gap-1">
+                        <div className="flex flex-col gap-1 w-full">
                             <div className="flex flex-row justify-between items-center py-3">
-                                <span className="text-[16px] md:text-[18px] truncate max-w-full leading-6 md:leading-7 text-grayscale-900">What payment methods are accept...</span>
+                                <span className="text-[16px] md:text-[18px] leading-6 md:leading-7 text-grayscale-900 line-clamp-1">What payment methods are accept...</span>
                                 <Image src="/help/right-gray.png" alt="icon" width={16} height={16} />
                             </div>
                             <div className="flex flex-row justify-between items-center py-3">
-                                <span className="text-[16px] md:text-[18px] truncate max-w-full leading-6 md:leading-7 text-grayscale-900">How do I view my invoice?</span>
+                                <span className="text-[16px] md:text-[18px] leading-6 md:leading-7 text-grayscale-900 line-clamp-1">How do I view my invoice?</span>
                                 <Image src="/help/right-gray.png" alt="icon" width={16} height={16} />
                             </div>
                             <div className="flex flex-row justify-between items-center py-3">
-                                <span className="text-[16px] md:text-[18px] truncate max-w-full leading-6 md:leading-7 text-grayscale-900">What is the refund policy?</span>
+                                <span className="text-[16px] md:text-[18px] leading-6 md:leading-7 text-grayscale-900 line-clamp-1">What is the refund policy?</span>
                                 <Image src="/help/right-gray.png" alt="icon" width={16} height={16} />
                             </div>
                         </div>
@@ -82,17 +82,17 @@ export default function HelpHero() {
                                 </div>
                             </div>
                         </Link>
-                        <div className="flex flex-col gap-1">
+                        <div className="flex flex-col gap-1 w-full">
                             <div className="flex flex-row justify-between items-center py-3">
-                                <span className="text-[16px] md:text-[18px] truncate max-w-full leading-6 md:leading-7 text-grayscale-900">How can I troubleshoot login issues?</span>
+                                <span className="text-[16px] md:text-[18px] leading-6 md:leading-7 text-grayscale-900 line-clamp-1">How can I troubleshoot login issues?</span>
                                 <Image src="/help/right-gray.png" alt="icon" width={16} height={16} />
                             </div>
                             <div className="flex flex-row justify-between items-center py-3">
-                                <span className="text-[16px] md:text-[18px] truncate max-w-full leading-6 md:leading-7 text-grayscale-900">What should I do if the app crashes?</span>
+                                <span className="text-[16px] md:text-[18px] leading-6 md:leading-7 text-grayscale-900 line-clamp-1">What should I do if the app crashes?</span>
                                 <Image src="/help/right-gray.png" alt="icon" width={16} height={16} />
                             </div>
                             <div className="flex flex-row justify-between items-center py-3">
-                                <span className="text-[16px] md:text-[18px] truncate max-w-full leading-6 md:leading-7 text-grayscale-900">How do I report a bug?</span>
+                                <span className="text-[16px] md:text-[18px] leading-6 md:leading-7 text-grayscale-900 line-clamp-1">How do I report a bug?</span>
                                 <Image src="/help/right-gray.png" alt="icon" width={16} height={16} />
                             </div>
                         </div>
@@ -106,17 +106,17 @@ export default function HelpHero() {
                                 </div>
                             </div>
                         </Link>
-                        <div className="flex flex-col gap-1">
+                        <div className="flex flex-col gap-1 w-full">
                             <div className="flex flex-row justify-between items-center py-3">
-                                <span className="text-[16px] md:text-[18px] truncate max-w-full leading-6 md:leading-7 text-grayscale-900">How do I navigate the dashboard?</span>
+                                <span className="text-[16px] md:text-[18px] leading-6 md:leading-7 text-grayscale-900 line-clamp-1">How do I navigate the dashboard?</span>
                                 <Image src="/help/right-gray.png" alt="icon" width={16} height={16} />
                             </div>
                             <div className="flex flex-row justify-between items-center py-3">
-                                <span className="text-[16px] md:text-[18px] truncate max-w-full leading-6 md:leading-7 text-grayscale-900">Where can I find tutorials?</span>
+                                <span className="text-[16px] md:text-[18px] leading-6 md:leading-7 text-grayscale-900 line-clamp-1">Where can I find tutorials?</span>
                                 <Image src="/help/right-gray.png" alt="icon" width={16} height={16} />
                             </div>
                             <div className="flex flex-row justify-between items-center py-3">
-                                <span className="text-[16px] md:text-[18px] truncate max-w-full leading-6 md:leading-7 text-grayscale-900">How do I set up my first project?</span>
+                                <span className="text-[16px] md:text-[18px] leading-6 md:leading-7 text-grayscale-900 line-clamp-1">How do I set up my first project?</span>
                                 <Image src="/help/right-gray.png" alt="icon" width={16} height={16} />
                             </div>
                         </div>
@@ -130,17 +130,17 @@ export default function HelpHero() {
                                 </div>
                             </div>
                         </Link>
-                        <div className="flex flex-col gap-1">
+                        <div className="flex flex-col gap-1 w-full">
                             <div className="flex flex-row justify-between items-center py-3">
-                                <span className="text-[16px] md:text-[18px] truncate max-w-full leading-6 md:leading-7 text-grayscale-900">How do I integrate with third-party t...</span>
+                                <span className="text-[16px] md:text-[18px] leading-6 md:leading-7 text-grayscale-900 line-clamp-1">How do I integrate with third-party t...</span>
                                 <Image src="/help/right-gray.png" alt="icon" width={16} height={16} />
                             </div>
                             <div className="flex flex-row justify-between items-center py-3">
-                                <span className="text-[16px] md:text-[18px] truncate max-w-full leading-6 md:leading-7 text-grayscale-900">What automation options are availa...</span>
+                                <span className="text-[16px] md:text-[18px] leading-6 md:leading-7 text-grayscale-900 line-clamp-1">What automation options are availa...</span>
                                 <Image src="/help/right-gray.png" alt="icon" width={16} height={16} />
                             </div>
                             <div className="flex flex-row justify-between items-center py-3">
-                                <span className="text-[16px] md:text-[18px] truncate max-w-full leading-6 md:leading-7 text-grayscale-900">How can I customize my workflow?</span>
+                                <span className="text-[16px] md:text-[18px] leading-6 md:leading-7 text-grayscale-900 line-clamp-1">How can I customize my workflow?</span>
                                 <Image src="/help/right-gray.png" alt="icon" width={16} height={16} />
                             </div>
                         </div>
