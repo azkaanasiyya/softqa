@@ -27,7 +27,7 @@ export function InputEmail(props: React.ComponentProps<typeof Input>) {
             props.onBlur?.(e)
             }}
             className={cn(
-            "w-full h-14 border-2 border-grayscale-100 p-4 pl-[52px] text-[16px] leading-6 rounded-[12px]",
+            "w-full h-12 md:h-14 border-2 border-grayscale-100 p-4 pl-[52px] text-[16px] leading-6 rounded-[12px]",
             isFocused && "border-primary-500 text-grayscale-900",
             props.className
             )}

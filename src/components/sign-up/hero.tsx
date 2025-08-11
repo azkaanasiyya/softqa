@@ -10,15 +10,15 @@ export default function SignHero() {
     return (
         <div className="flex flex-col justify-center w-full items-center overflow-hidden">
             <FadeInSection delay={0.5} className="flex flex-row max-w-[1720px] max-h-[1024px] h-full w-full gap-[124px] px-6 md:px-8 lg:pl-[124px] lg:mx-auto lg:pr-[0px]">
-                <div className="lg:w-1/3 py-6 md:pt-12 lg:pt-[45px] pb-[86px] lg:pb-[124px] flex flex-col gap-8 md:gap-12 lg:gap-16 items-start">
-                <Link href="/" className="cursor-pointer">
-                    <Image src="/logo.svg" alt="logo" width={148.8} height={48} className="lg:w-[148.8px] lg:h-[48px] w-[124px] h-[40px]"/>
-                </Link> 
+                <div className="lg:w-1/3 py-6 md:pt-12 lg:pt-[45px] pb-[86px] lg:pb-[124px] flex flex-col gap-8 md:gap-12 lg:gap-16 items-start w-full">
+                    <Link href="/" className="cursor-pointer">
+                        <Image src="/logo.svg" alt="logo" width={148.8} height={48} className="lg:w-[148.8px] lg:h-[48px] w-[124px] h-[40px]"/>
+                    </Link> 
                     <div className="flex flex-col items-center gap-6 w-full lg:max-w-[488px]">
                         <div className="flex flex-col gap-8 w-full">
                             <div className="flex flex-col gap-4">
                                 <h4 className="text-[24px] md:text-[32px] leading-[30px] md:leading-10 text-grayscale-900">Get Started with SoftQA Today</h4>
-                                <span className="text-[16px] md:text-[18px] leading-7 md:leading-8 text-grayscale-600">Join thousands of developers and QA professionals streamlining their testing processes with our platform.</span>
+                                <span className="text-[16px] md:text-[18px] leading-7 md:leading-8 text-grayscale-600">Join thousands of developers and QA professionals streamlining their testing <br className="hidden md:block lg:outline-hidden"/> processes with our platform.</span>
                             </div>
                             <div className="flex flex-col gap-6">
                                 <div className="flex flex-col gap-2">
@@ -33,17 +33,19 @@ export default function SignHero() {
                                     <span className="text-[16px] leading-6 text-grayscale-900">Password</span>
                                     <InputPassword placeholder="******"/>
                                 </div>
-                                <Button variant="request" size="medium" className="w-full text-cyan-500 cursor-pointer">Sign Up</Button>
+                                <Button variant="request" size="medium" className="w-full text-cyan-500 cursor-pointer h-[48px] md:h-full">Sign Up</Button>
                             </div>
                         </div>
                         <div className="flex flex-col items-center gap-6 w-full">
-                            <Image src="/auth/or.png" alt="image" width={488} height={22} className="lg:w-[488px] lg:h-[22px] w-full h-full"/>
+                            <Image src="/auth/or.png" alt="image" width={488} height={22} className="hidden lg:block w-full h-full"/>
+                            <Image src="/auth/or-tablet.png" alt="image" width={704} height={22} className="hidden md:block lg:block w-full h-full"/>
+                            <Image src="/auth/or-mobile.png" alt="image" width={327} height={22} className="block md:hidden w-full h-full"/>
                             <div className="flex flex-col items-center gap-4 w-full">
-                                <div className="cursor-pointer flex items-center justify-center gap-3 w-full lg:max-w-[488px] px-6 py-5 rounded-[12px] border-2 border-grayscale-100 h-14">
+                                <div className="cursor-pointer flex items-center justify-center gap-3 w-full lg:max-w-[488px] px-6 py-3 md:py-5 rounded-[12px] border-2 border-grayscale-100 h-12 md:h-14">
                                     <Image src="/auth/google.png" alt="image" width={18} height={18} />
                                     <span className="text-[16px] leading-6 text-grayscale-900">Continue with Google</span>
                                 </div>
-                                <div className="cursor-pointer flex justify-center gap-3 items-center w-full lg:max-w-[488px] px-6 py-5 rounded-[12px] border-2 border-grayscale-100 h-14">
+                                <div className="cursor-pointer flex justify-center gap-3 items-center w-full lg:max-w-[488px] px-6 py-3 md:py-5 rounded-[12px] border-2 border-grayscale-100 h-12 md:h-14">
                                     <Image src="/auth/apple.png" alt="image" width={16.28} height={20} />
                                     <span className="text-[16px] leading-6 text-grayscale-900">Continue with Apple</span>
                                 </div>
