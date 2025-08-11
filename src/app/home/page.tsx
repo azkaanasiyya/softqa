@@ -8,7 +8,7 @@ import CTA from "@/components/layout/cta";
 
 export default function HomePage() {
     return (
-        <div className="bg-[url('/line.png')] bg-no-repeat bg-center bg-cover">
+        <div className="">
             <HomeHero/>
             <SocialProof/>
             <HomeContent />

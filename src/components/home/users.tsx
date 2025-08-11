@@ -5,7 +5,7 @@ import FadeInSection from "../animation/fadein";
 
 export default function HomeUsers() {
     return (
-        <div className="bg-[url('/home/bg-users.png'),_url('/line.png')] bg-no-repeat bg-center bg-cover py-12 md:py-20 lg:py-[132px] px-6 md:px-9 lg:px-[124px] border-x">
+        <div className="bg-[url('/home/bg-users-mobile.png')] md:bg-[url('/home/bg-users.png'),_url('/line.png')] bg-no-repeat bg-center bg-cover py-12 md:py-20 lg:py-[132px] px-6 md:px-9 lg:px-[124px] border-x">
             <div className="flex flex-col items-center gap-6 md:gap-4">
                 <CountUp
                     end={4587144}

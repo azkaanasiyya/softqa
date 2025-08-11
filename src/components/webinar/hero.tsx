@@ -43,7 +43,8 @@ export default function WebinarHero() {
   }
 
   return (
-    <div className="bg-primary-900 flex flex-col justify-center items-center pt-16 pb-12 md:py-20 lg:py-[104px] px-6 md:px-8 lg:px-[124px]">
+    <div className="relative bg-primary-900 flex flex-col justify-center items-center pt-16 pb-12 md:py-20 lg:py-[104px] px-6 md:px-8 lg:px-[124px]
+    before:absolute before:inset-0 before:bg-[url('/line.png')] before:bg-no-repeat before:bg-center before:bg-cover before:opacity-12 before:z-0">
       <div className="max-w-[1192px] flex flex-col justify-center items-center gap-10 md:gap-16 lg:gap-[104px]">
         <FadeInSection delay={0.5} className="flex flex-col justify-center items-center gap-6">
           <div className="flex flex-col gap-4 items-center max-w-[786px]">
