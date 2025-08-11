@@ -33,13 +33,16 @@ export default function Navbar() {
               <li key={item.name}>
                 <Link href={item.href}>
                   <p
-                    className={`text-[16px] pb-1 ${
+                    className={`relative text-[16px] pb-1 ${
                       isActive
-                        ? "font-medium text-black border-b border-primary-500"
+                        ? "font-medium text-black"
                         : "font-normal text-grayscale-900"
                     }`}
                   >
                     {item.name}
+                    {isActive && (
+                      <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-6 h-0.5 bg-primary-500"></span>
+                    )}
                   </p>
                 </Link>
               </li>
