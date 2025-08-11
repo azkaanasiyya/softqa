@@ -32,6 +32,7 @@ export function WebinarSearch({ onSearchChange }: WebinarSearchProps) {
                         <CommandInput 
                         placeholder="Search webinar..." 
                         onValueChange={onSearchChange} 
+                        className="placeholder:text-grayscale-400 flex h-12 w-full rounded-[16px] py-3 pl-[44px] pr-4 text-[16px] leading-6 border-2 border-grayscale-100 focus:border-primary-500 disabled:cursor-not-allowed disabled:opacity-50"
                         />
                     </Command>
                 </div>
