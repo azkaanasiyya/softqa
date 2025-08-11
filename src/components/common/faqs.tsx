@@ -12,7 +12,7 @@ import FadeInSection from "../animation/fadein";
 
 export default function FAQs() {
     return (
-        <div className="bg-primary-50 py-12 md:py-20 lg:py-[116px] px-8 lg:px-[124px] flex flex-col justify-center items-center">
+        <div className="bg-primary-50 bg-[url('/line.png')] bg-no-repeat bg-center bg-cover py-12 md:py-20 lg:py-[116px] px-8 lg:px-[124px] flex flex-col justify-center items-center">
             <div className="max-w-[1192px] flex flex-col lg:flex-row items-center lg:items-stretch gap-8">
                 <div className="lg:max-w-[478px] w-full flex flex-col justify-between items-start">
                     <div className="flex flex-col items-center w-full lg:items-start gap-4">
