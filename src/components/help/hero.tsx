@@ -6,7 +6,7 @@ import FadeInSection from "../animation/fadein";
 
 export default function HelpHero() {
     return (
-        <div className="bg-[url('/line.png')] bg-no-repeat bg-center bg-cover flex flex-col justify-center items-center border-t border-grayscale-100 px-6 md:px-8 lg:px-[124px] pb-12 pt-16 md:py-20 lg:pt-[104px] lg:pb-[116px] w-full">
+        <div className="bg-[url('/line.png')] bg-no-repeat bg-center bg-[length:1192px_auto] flex flex-col justify-center items-center border-t border-grayscale-100 px-6 md:px-8 lg:px-[124px] pb-12 pt-16 md:py-20 lg:pt-[104px] lg:pb-[116px] w-full">
             <FadeInSection className="max-w-[1192px] flex flex-col gap-10 md:gap-12 lg:gap-20 justify-center items-center w-full">
                 <FadeInSection delay={0.5} className="flex flex-col gap-8 md:gap-10 w-full max-w-[784px]">
                     <h1 className="text-[40px] md:text-[56px] leading-[50px] md:leading-[70px] text-center tracking-tight text-grayscale-900">How can we help?</h1>

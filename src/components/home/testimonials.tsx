@@ -35,7 +35,7 @@ export default function HomeTestimonials() {
   const isLastSlide = activeIndex === testimonials.length - 1;
 
   return (
-    <div className="bg-[url('/line.png')] bg-no-repeat bg-center bg-cover flex flex-col justify-center items-center px-6 md:px-8 lg:px-[124px] py-12 md:py-20 lg:pt-[124px] lg:pb-[132px] border-y">
+    <div className="bg-[url('/line.png')] bg-no-repeat bg-center bg-[length:1192px_auto] flex flex-col justify-center items-center px-6 md:px-8 lg:px-[124px] py-12 md:py-20 lg:pt-[124px] lg:pb-[132px] border-y">
       <div className="max-w-[1192px] flex flex-col gap-10 md:gap-12 lg:gap-16 items-center justify-center">
         <FadeInSection delay={0.5} className="max-w-[580px] flex flex-col gap-3 md:gap-4 items-center">
           <div className="flex flex-row gap-2">

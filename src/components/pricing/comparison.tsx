@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function PricingComparison() {
     return (
-        <div className="bg-base-white lg:bg-[url('/line.png')] bg-no-repeat bg-center bg-cover flex flex-col justify-center items-center py-12 md:py-16 lg:py-[104px] px-6 md:px-8 lg:px-[124px]">
+        <div className="bg-base-white lg:bg-[url('/line.png')] bg-no-repeat bg-center bg-[length:1192px_auto] flex flex-col justify-center items-center py-12 md:py-16 lg:py-[104px] px-6 md:px-8 lg:px-[124px]">
             <FadeInSection delay={0.5} className="max-w-[1192px] w-full flex lg:flex-row flex-col items-center lg:items-start gap-8 lg:gap-0">
                 <h4 className="lg:hidden text-[32px] leading-10 text-center">Compare Plans</h4>
                 <div className="block lg:hidden w-full">
