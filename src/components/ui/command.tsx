@@ -65,27 +65,22 @@ function CommandInput({
   ...props
 }: React.ComponentProps<typeof CommandPrimitive.Input>) {
   return (
-    // Mengubah struktur wrapper agar cocok dengan desain Anda
     <div
       data-slot="command-input-wrapper"
-      // Hapus styling default seperti border-b dan gap
       className="relative flex items-center"
     >
-      {/* Ikon pencarian */}
       <SearchIcon className="absolute left-4 size-4 shrink-0 opacity-50" />
       <CommandPrimitive.Input
         data-slot="command-input"
         className={cn(
-          // Styling default yang sudah di-override
-          "placeholder:text-grayscale-400 flex h-12 w-full rounded-[16px] py-3 pl-[44px] pr-4 text-[16px] leading-6 border-2 border-grayscale-100 focus:border-primary-500 disabled:cursor-not-allowed disabled:opacity-50",
+          "placeholder:text-gray-500 flex h-10 w-full rounded-md bg-transparent py-3 pr-3 pl-11 text-sm outline-none disabled:cursor-not-allowed disabled:opacity-50",
           className
         )}
         {...props}
       />
     </div>
-  )
+  );
 }
-
 
 function CommandList({
   className,
@@ -123,7 +118,7 @@ function CommandGroup({
     <CommandPrimitive.Group
       data-slot="command-group"
       className={cn(
-        "text-foreground [&_[cmdk-group-heading]]:text-muted-foreground w-full p-3 flex gap-1 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:font-medium",
+        "text-foreground [&_[cmdk-group-heading]]:text-muted-foreground p-3 flex gap-1 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:font-medium",
         className
       )}
       {...props}
@@ -152,7 +147,7 @@ function CommandItem({
     <CommandPrimitive.Item
       data-slot="command-item"
       className={cn(
-        "data-[selected=true]:bg-primary-50 data-[selected=true]:text-accent-foreground [&_svg:not([class*='text-'])]:text-muted-foreground relative flex items-center gap-2 rounded-sm px-3 py-2 w-full text-sm outline-hidden select-none data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+        "data-[selected=true]:bg-primary-50 data-[selected=true]:text-accent-foreground [&_svg:not([class*='text-'])]:text-muted-foreground relative flex items-center gap-2 rounded-sm px-3 py-3 h-12 w-full text-[16px] outline-hidden select-none data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
         className
       )}
       {...props}

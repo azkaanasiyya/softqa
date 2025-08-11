@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import * as AccordionPrimitive from "@radix-ui/react-accordion"
-import { Plus } from "lucide-react"
+import { Minus, Plus } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
@@ -20,7 +20,7 @@ function AccordionItem({
   return (
     <AccordionPrimitive.Item
       data-slot="accordion-item"
-      className={cn("border-b-2 border-grayscale-100 last:border-b-0 w-full", className)}
+      className={cn("border-b-2 border-grayscale-100 w-full", className)}
       {...props}
     />
   )
@@ -36,13 +36,14 @@ function AccordionTrigger({
       <AccordionPrimitive.Trigger
         data-slot="accordion-trigger"
         className={cn(
-          "w-full focus-visible:border-ring focus-visible:ring-ring/50 px-3 py-8 flex flex-1 items-start justify-between gap-4 rounded-md text-left text-[16px] md:text-[20px] font-normal leading-6 md:leading-9 text-grayscale-900 transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-180",
+          "w-full focus-visible:border-ring focus-visible:ring-ring/50 px-3 py-8 flex flex-1 items-start justify-between gap-4 rounded-md text-left text-[16px] md:text-[20px] font-normal leading-6 md:leading-9 text-grayscale-900 transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>.plus-icon]:hidden [&[data-state=open]>.minus-icon]:block",
           className
         )}
         {...props}
       >
         {children}
-        <Plus className="pointer-events-none size-5 shrink-0 translate-y-0.5 text-grayscale-300 transition-transform duration-200" />
+        <Plus className="plus-icon pointer-events-none size-5 shrink-0 translate-y-0.5 text-grayscale-300 transition-transform duration-200" />
+        <Minus className="minus-icon hidden pointer-events-none text-primary-500 size-5 shrink-0 translate-y-0.5 transition-transform duration-200" />
       </AccordionPrimitive.Trigger>
     </AccordionPrimitive.Header>
   )
