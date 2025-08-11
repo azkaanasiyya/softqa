@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function PricingHero() {
     return (
         <div className="relative bg-primary-900 flex flex-col justify-center items-center pt-20 pb-16 lg:py-[104px] px-6 md:px-8 lg:px-[124px]
-        before:absolute before:inset-0 before:bg-[url('/line.png')] before:bg-no-repeat before:bg-center before:bg-cover before:opacity-12 before:z-0">
+        before:absolute before:inset-0 before:bg-[url('/line.png')] before:bg-no-repeat before:bg-center before:bg-[length:1192px_auto] before:opacity-12 before:z-0">
             <FadeInSection delay={0.5} className="max-w-[1192px] flex flex-col gap-12 lg:gap-16 items-center w-full">
                 <div className="flex flex-col gap-4 items-center">
                     <div className="flex flex-col gap-3 md:gap-4 items-center">

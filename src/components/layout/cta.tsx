@@ -7,7 +7,7 @@ import FadeInSection from "../animation/fadein";
 export default function CTA() {
     return (
         <div className="relative bg-primary-900 flex flex-col items-center justify-center pt-12 md:pt-20 lg:pt-0 overflow-hidden
-        before:absolute before:inset-0 before:bg-[url('/line.png')] before:bg-no-repeat before:bg-center before:bg-cover before:opacity-12 before:z-0">
+        before:absolute before:inset-0 before:bg-[url('/line.png')] before:bg-no-repeat before:bg-center before:bg-[length:1192px_auto] before:opacity-12 before:z-0">
             <FadeInSection delay={0.5} className="max-w-[1440px] flex flex-col lg:flex-row gap-12 lg:gap-8 lg:pl-[128px] items-center justify-center">
                 <div className="flex flex-col items-center lg:items-start gap-8 md:gap-12 max-w-[327px] md:max-w-[704px] lg:max-w-[580px]">
                     <div className="flex flex-col items-start md:items-center lg:items-start gap-4">

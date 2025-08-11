@@ -6,7 +6,7 @@ import FadeInSection from "../animation/fadein";
 
 export default function HomeHero() {
     return (
-        <div className="bg-[url('/line.png')] bg-no-repeat bg-center bg-cover px-6 md:px-8 lg:px-[124px] py-16 md:py-20 lg:pt-[88px] lg:pb-[104px] flex flex-col justify-center items-center">
+        <div className="bg-[url('/line.png')] bg-no-repeat bg-center bg-[length:1192px_auto] px-6 md:px-8 lg:px-[124px] py-16 md:py-20 lg:pt-[88px] lg:pb-[104px] flex flex-col justify-center items-center">
             <div className="max-w-[1192px] w-full flex flex-col lg:flex-row items-center justify-center gap-12">
                 <div className="flex flex-col gap-6 lg:justify-between lg:py-6 lg:max-w-[580px] items-start">
                     <div className="flex flex-col lg:justify-between gap-4 md:gap-6 lg:min-h-[568px]">
