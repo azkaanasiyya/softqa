@@ -5,7 +5,8 @@ import Image from "next/image";
 
 export default function PricingHero() {
     return (
-        <div className="bg-[url('/pricing/bg-hero-pricing.png')] bg-no-repeat bg-center bg-cover flex flex-col justify-center items-center pt-20 pb-16 lg:py-[104px] px-6 md:px-8 lg:px-[124px]">
+        <div className="relative bg-primary-900 flex flex-col justify-center items-center pt-20 pb-16 lg:py-[104px] px-6 md:px-8 lg:px-[124px]
+        before:absolute before:inset-0 before:bg-[url('/line.png')] before:bg-no-repeat before:bg-center before:bg-cover before:opacity-12 before:z-0">
             <FadeInSection delay={0.5} className="max-w-[1192px] flex flex-col gap-12 lg:gap-16 items-center w-full">
                 <div className="flex flex-col gap-4 items-center">
                     <div className="flex flex-col gap-3 md:gap-4 items-center">
@@ -18,8 +19,8 @@ export default function PricingHero() {
                     <p className="max-w-[654px] text-[18px] leading-8 font-normal text-[#FFFFFFEB] text-center">From startup to enterprise, find the perfect plan to fit your needs and enhance your QA. Unlock the power of autonomous testing with SoftQA today.</p>
                 </div>
                 <div className="flex flex-col gap-12 lg:gap-[72px] items-center w-full">
-                    <div className="flex flex-col gap-6 lg:gap-[0px] lg:flex-row items-center w-full lg:items-end">
-                        <div className="bg-primary-900 flex flex-col gap-8 p-6 md:p-8 rounded-[16px] border-2 border-[#FFFFFF0F] w-full md:h-[630px] lg:max-w-[397.33px] lg:h-[678px] h-auto">
+                    <div className="flex flex-col gap-6 lg:gap-0 lg:flex-row items-center w-full lg:items-stretch">
+                        <div className="bg-primary-900 flex flex-col gap-8 p-6 md:p-8 rounded-[16px] border-2 border-[#FFFFFF0F] w-full md:h-[630px] lg:max-w-[397.33px] lg:h-auto">
                             <div className="flex flex-col gap-6">
                                 <div className="flex flex-col gap-4 md:gap-6">
                                     <div className="flex flex-col gap-1">
@@ -70,8 +71,8 @@ export default function PricingHero() {
                                 </div>
                             </div>
                         </div>
-                        <div className="p-[3px] rounded-[16px] bg-gradient-to-b from-[#B5FFFE] to-[#12454B] h-full w-full lg:max-w-[397.33px] md:min-h-[630px] lg:min-h-[694px]">
-                            <div className="bg-[#12454B] flex flex-col gap-8 p-6 md:p-8 rounded-[16px] h-full w-full md:h-[630px] lg:h-[694px] ">
+                        <div className="p-[3px] rounded-[16px] bg-gradient-to-b from-[#B5FFFE] to-[#12454B] h-full w-full lg:max-w-[397.33px] lg:h-auto">
+                            <div className="bg-[#12454B] flex flex-col gap-8 p-6 md:p-8 rounded-[16px] h-full w-full">
                                 <div className="flex flex-col gap-6">
                                     <div className="flex flex-col gap-4 md:gap-6">
                                         <div className="flex flex-col gap-1">
@@ -126,7 +127,7 @@ export default function PricingHero() {
                                 </div>
                             </div>
                         </div>
-                        <div className="bg-primary-900 flex flex-col gap-8 p-6 md:p-8 rounded-[16px] border-2 border-[#FFFFFF0F] w-full md:h-[630px] lg:max-w-[397.33px] lg:h-[678px] h-auto">
+                        <div className="bg-primary-900 flex flex-col gap-8 p-6 md:p-8 rounded-[16px] border-2 border-[#FFFFFF0F] w-full md:h-[630px] lg:max-w-[397.33px] lg:h-auto">
                             <div className="flex flex-col gap-6">
                                 <div className="flex flex-col gap-4 md:gap-6">
                                     <div className="flex flex-col gap-1">
@@ -176,11 +177,11 @@ export default function PricingHero() {
                         </div>
                     </div>
                     <div className="flex flex-col items-center justify-center gap-4 max-w-[327px] md:max-w-[608px] lg:max-w-[774px]">
-                      <Image src="/pricing/female.png" alt="icon" width={56} height={56} className="w-14 h-14"/>
-                      <div className="flex flex-col gap-4 md:gap-6 items-center max-w-[774px]">
-                        <p className="text-[16px] md:text-[20px] lg:text-[24px] leading-7 md:leading-9 lg:leading-[42px] font-normal text-center tracking-normal lg:tracking-tight text-base-white">“SoftQA has transformed how our team approaches testing. The <br className="hidden lg:block"/> automation tools are intuitive, and the detailed analytics have significantly <br className="hidden lg:block"/> improved our product quality.”</p>
-                        <p className="text-[14px] md:text-[16px] leading-[22px] md:leading-6 font-normal text-center text-[#FFFFFFEB]">Russel Alexander</p>
-                      </div>
+                        <Image src="/pricing/female.png" alt="icon" width={56} height={56} className="w-14 h-14"/>
+                        <div className="flex flex-col gap-4 md:gap-6 items-center max-w-[774px]">
+                            <p className="text-[16px] md:text-[20px] lg:text-[24px] leading-7 md:leading-9 lg:leading-[42px] font-normal text-center tracking-normal lg:tracking-tight text-base-white">“SoftQA has transformed how our team approaches testing. The <br className="hidden lg:block"/> automation tools are intuitive, and the detailed analytics have significantly <br className="hidden lg:block"/> improved our product quality.”</p>
+                            <p className="text-[14px] md:text-[16px] leading-[22px] md:leading-6 font-normal text-center text-[#FFFFFFEB]">Russel Alexander</p>
+                        </div>
                     </div>
                 </div>
             </FadeInSection>
