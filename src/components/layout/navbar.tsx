@@ -78,7 +78,7 @@ export default function Navbar() {
         <>
           {/* Overlay */}
           <div
-            className="fixed inset-0 bg-black/20 z-40"
+            className="fixed inset-0 bg-[#0E0E1080] z-40 backdrop-blur-xs"
             onClick={() => setIsOpen(false)}
           />
 
