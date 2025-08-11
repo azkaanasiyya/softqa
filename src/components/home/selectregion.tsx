@@ -1,4 +1,3 @@
-// components/select-region.tsx
 import * as React from "react"
 import {
   Select,
@@ -21,16 +20,14 @@ export function SelectRegion() {
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState("");
 
-  // Dapatkan objek region yang sesuai dengan nilai yang dipilih
   const selectedRegion = regions.find(region => region.value === value);
 
   return (
     <Select open={open} onOpenChange={setOpen} value={value} onValueChange={setValue}>
       <SelectTrigger icon={<ChevronDownIcon/>}>
-        {/* Tampilkan label dan ikon yang dipilih, atau placeholder jika belum ada */}
         {value ? (
           <div className="flex items-center gap-2">
-            <Image src={selectedRegion?.icon!} alt={selectedRegion?.label!} width={20} height={20} className="w-5 h-5" />
+            <Image src={selectedRegion?.icon || ""} alt={selectedRegion?.label || ""} width={20} height={20} className="w-5 h-5" />
             <span>{selectedRegion?.label}</span>
           </div>
         ) : (
