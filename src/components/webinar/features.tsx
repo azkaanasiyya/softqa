@@ -7,7 +7,7 @@ import { SelectRecent } from "./selectrecent"
 import { webinars } from "../data/webinars"
 import FadeInSection from "../animation/fadein"
 import { cn } from "@/lib/utils"
-import { ArrowLeft, ArrowRight, ListFilter } from "lucide-react"
+import { ArrowLeft, ArrowRight } from "lucide-react"
 import { WebinarSearch } from "./webinarsearch"
 import { SelectMobile } from "./selectmobile"
 
