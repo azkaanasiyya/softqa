@@ -17,7 +17,7 @@ export default function SignHero() {
                     <div className="flex flex-col items-center gap-6 w-full lg:max-w-[488px]">
                         <div className="flex flex-col gap-8 w-full">
                             <div className="flex flex-col gap-4">
-                                <h4 className="text-[24px] md:text-[32px] leading-[30px] md:leading-10 text-grayscale-900">Get Started with SoftQA Today</h4>
+                                <h4 className="text-[24px] md:text-[32px] leading-[30px] md:leading-10 tracking-tight md:tracking-normal text-grayscale-900">Get Started with SoftQA Today</h4>
                                 <span className="text-[16px] md:text-[18px] leading-7 md:leading-8 text-grayscale-600">Join thousands of developers and QA professionals streamlining their testing <br className="hidden md:block lg:outline-hidden"/> processes with our platform.</span>
                             </div>
                             <div className="flex flex-col gap-6">
@@ -33,12 +33,12 @@ export default function SignHero() {
                                     <span className="text-[16px] leading-6 text-grayscale-900">Password</span>
                                     <InputPassword placeholder="******"/>
                                 </div>
-                                <Button variant="request" size="medium" className="w-full text-cyan-500 cursor-pointer h-[48px] md:h-full">Sign Up</Button>
+                                <Button variant="request" size="medium" className="w-full text-cyan-500 cursor-pointer h-[48px] md:h-14">Sign Up</Button>
                             </div>
                         </div>
                         <div className="flex flex-col items-center gap-6 w-full">
                             <Image src="/auth/or.png" alt="image" width={488} height={22} className="hidden lg:block w-full h-full"/>
-                            <Image src="/auth/or-tablet.png" alt="image" width={704} height={22} className="hidden md:block lg:block w-full h-full"/>
+                            <Image src="/auth/or-tablet.png" alt="image" width={704} height={22} className="hidden md:block lg:hidden w-full h-full"/>
                             <Image src="/auth/or-mobile.png" alt="image" width={327} height={22} className="block md:hidden w-full h-full"/>
                             <div className="flex flex-col items-center gap-4 w-full">
                                 <div className="cursor-pointer flex items-center justify-center gap-3 w-full lg:max-w-[488px] px-6 py-3 md:py-5 rounded-[12px] border-2 border-grayscale-100 h-12 md:h-14">
