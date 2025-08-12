@@ -63,7 +63,10 @@ export default function SignInHero() {
                     <FadeInSection delay={0.5} className="flex flex-col max-w-[560px] gap-8">
                         <h1 className="text-[56px] leading-[70px] text-base-white">Revolutionize QA with Smarter Automation</h1>
                         <div className="flex flex-col gap-10">
-                            <p className="text-[24px] leading-9 text-[#FFFFFFEB]">&quot;SoftQA has completely transformed our testing process. It’s reliable, efficient, and ensures our releases are always top-notch.&quot;</p>
+                            <div className="relative">
+                                <p className="text-[24px] leading-9 text-[#FFFFFFEB]">&quot;SoftQA has completely transformed our testing process. It’s reliable, efficient, and ensures our releases are always top-notch.&quot;</p>
+                                <Image src="/auth/quote.png" alt="image" width={21.7} height={16} className="absolute top-[-18px] left-[-22px]"/>
+                            </div>
                             <div className="flex flex-row items-center gap-4">
                                 <Image src="/auth/michael.png" alt="image" width={56} height={56} />
                                 <div className="flex flex-col gap-0.5">
@@ -76,13 +79,13 @@ export default function SignInHero() {
                     <FadeInSection delay={0.5} className="flex flex-col items-center max-w-[560px] gap-8">
                         <Image src="/auth/join.png" alt="image" width={560} height={22} />
                         <div className="flex flex-col items-center gap-10">
-                            <div className="flex flex-row gap-10">
+                            <div className="flex flex-wrap gap-10">
                                 <Image src="/auth/discord.png" alt="image" width={114} height={32} />
                                 <Image src="/auth/mailchimp.png" alt="image" width={112} height={32} />
                                 <Image src="/auth/grammarly.png" alt="image" width={120} height={32} />
                                 <Image src="/auth/attentive.png" alt="image" width={94} height={32} />
                             </div>
-                            <div className="flex flex-row gap-10">
+                            <div className="flex flex-wrap gap-10">
                                 <Image src="/auth/hellosign.png" alt="image" width={111.33} height={32} />
                                 <Image src="/auth/intercom.png" alt="image" width={111.33} height={32} />
                                 <Image src="/auth/square.png" alt="image" width={87.66} height={32} />

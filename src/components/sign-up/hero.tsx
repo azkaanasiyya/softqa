@@ -8,9 +8,9 @@ import FadeInSection from "../animation/fadein";
 
 export default function SignHero() {
     return (
-        <div className="flex flex-col justify-center w-full items-center overflow-hidden">
-            <FadeInSection delay={0.5} className="flex flex-row max-w-[1720px] max-h-[1024px] h-full w-full gap-[124px] px-6 md:px-8 lg:pl-[124px] lg:mx-auto lg:pr-[0px]">
-                <div className="lg:w-1/3 py-6 md:pt-12 lg:pt-[45px] pb-[86px] lg:pb-[124px] flex flex-col gap-8 md:gap-12 lg:gap-16 items-start w-full">
+        <div className="flex flex-col justify-center w-screen items-center">
+            <FadeInSection delay={0.5} className="flex flex-col lg:flex-row max-w-[1720px] h-full w-full gap-[124px] px-6 md:px-8 lg:pl-[124px] lg:mx-auto lg:pr-[0px]">
+                <div className="w-full lg:max-w-[488px] py-6 md:pt-12 lg:pt-[45px] pb-[86px] lg:pb-[124px] flex flex-col gap-8 md:gap-12 lg:gap-16 items-start">
                     <Link href="/" className="cursor-pointer">
                         <Image src="/logo.svg" alt="logo" width={148.8} height={48} className="lg:w-[148.8px] lg:h-[48px] w-[124px] h-[40px]"/>
                     </Link> 
@@ -59,7 +59,7 @@ export default function SignHero() {
                         </div>
                     </div>
                 </div>
-                <div className="relative bg-[url('/auth/bg-sign-in.png')] bg-no-repeat bg-center bg-cover pt-[104px] pl-[72px] pb-16 hidden lg:flex lg:flex-col w-full gap-[80px] overflow-hidden lg:w-2/3">
+                <div className="relative bg-[url('/auth/bg-sign-in.png')] bg-no-repeat bg-center bg-cover pt-[104px] pl-[72px] pb-16 hidden lg:flex lg:flex-col w-[704px] xl:w-full gap-[80px] overflow-hidden">
                     <h1 className="text-[56px] leading-[70px] max-w-[560px] text-base-white">
                         Accelerate Your Team for Testing Software!
                     </h1>
@@ -77,13 +77,12 @@ export default function SignHero() {
                         alt="leader image"
                         width={624}
                         height={80}
-                        className="absolute bottom-25 z-9999 -left-8 "
+                        className="absolute bottom-0 z-9999 -left-8 "
                         />
                     </div>
-                    <Image src="/auth/gradient.png" alt="signup bg" width={704} height={464} className="absolute z-10 bottom-0 left-0 w-full h-[464px]" />
+                    <Image src="/auth/gradient.png" alt="signup bg" width={704} height={464} className="absolute z-10 bottom-0 left-0 w-full min-h-[464px]" />
                 </div>
             </FadeInSection>
         </div>
-        
     )
 }
