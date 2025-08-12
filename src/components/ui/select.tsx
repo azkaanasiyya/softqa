@@ -57,7 +57,7 @@ function SelectTrigger({
           {icon ? (
             <span className={cn("size-4 text-grayscale-400", iconClassName)}>{icon}</span>
           ) : (
-            <ChevronDownIcon className={cn("size-4 text-grayscale-400", iconClassName)} />
+            <ChevronDownIcon className={cn("size-4 text-grayscale-400 transition-transform duration-200 group-data-[state=open]:rotate-180", iconClassName)} />
           )}
         </SelectPrimitive.Icon>
       )}
