@@ -47,7 +47,7 @@ export function WebinarSearch({ onSearchChange }: WebinarSearchProps) {
                 onSelect={() => {
                   handleSelect(webinar.subtitle);
                 }}
-                className="cursor-pointer"
+                className="cursor-pointer h-16"
               >
                 <div className="w-full flex flex-col">
                   <span className="line-clamp-1 text-[16px] leading-6 text-grayscale-900">{webinar.subtitle}</span>

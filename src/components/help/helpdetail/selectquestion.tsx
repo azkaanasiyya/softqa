@@ -7,19 +7,16 @@ import {
   SelectContent,
   SelectItem,
 } from "@/components/ui/select"
-import Image from "next/image"
+import { ListVideo } from "lucide-react"
 
 export function SelectQuestion() {
   return (
     <Select>
       <SelectTrigger
-        icon={
-          <Image
-            src="/webinar/playlist.png"
-            alt="icon"
-            width={20}
-            height={20}
-          />
+          icon={
+            <ListVideo 
+              className="text-grayscale-400 w-5 h-5 size-5"
+            />
         }
         className="md:hidden px-4 py-[15px] rounded-[12px] border-2 border-grayscale-100 justify-between"
       >
