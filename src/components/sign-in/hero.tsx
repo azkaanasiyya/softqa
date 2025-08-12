@@ -38,7 +38,7 @@ export default function SignInHero() {
                         </FadeInSection>
                         <FadeInSection delay={0.5} className="flex flex-col items-center gap-6 w-full">
                             <Image src="/auth/or.png" alt="image" width={488} height={22} className="hidden lg:block w-full h-full"/>
-                            <Image src="/auth/or-tablet.png" alt="image" width={704} height={22} className="hidden md:block lg:block w-full h-full"/>
+                            <Image src="/auth/or-tablet.png" alt="image" width={704} height={22} className="hidden md:block lg:hidden w-full h-full"/>
                             <Image src="/auth/or-mobile.png" alt="image" width={327} height={22} className="block md:hidden w-full h-full"/>
                             <div className="flex flex-col items-center gap-4 w-full">
                                 <div className="cursor-pointer flex items-center justify-center gap-3 w-full lg:max-w-[488px] px-6 py-3 md:py-5 rounded-[12px] border-2 border-grayscale-100 h-12 md:h-14">
