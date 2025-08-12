@@ -7,8 +7,9 @@ import { SelectRecent } from "./selectrecent"
 import { webinars } from "../data/webinars"
 import FadeInSection from "../animation/fadein"
 import { cn } from "@/lib/utils"
-import { ArrowLeft, ArrowRight } from "lucide-react"
+import { ArrowLeft, ArrowRight, ListFilter } from "lucide-react"
 import { WebinarSearch } from "./webinarsearch"
+import { SelectMobile } from "./selectmobile"
 
 export default function WebinarFeatures() {
   const [currentPage, setCurrentPage] = useState(1)
@@ -96,9 +97,7 @@ export default function WebinarFeatures() {
             <WebinarSearch onSearchChange={setSearchQuery} />
             <SelectRecent onSortChange={setSortOption} selectedSort={sortOption} />
             <SelectCategories onCategoryChange={setSelectedCategory} selectedCategory={selectedCategory} />
-            <div className="flex flex-col md:hidden items-center justify-center w-12 h-12 rounded-[12px] border-2 border-grayscale-100">
-              <Image src="/webinar/filter.png" alt="icon" width={20} height={20} className="w-5 h-5" />
-            </div>
+            <SelectMobile onCategoryChange={setSelectedCategory} selectedCategory={selectedCategory} />
           </div>
         </FadeInSection>
         <FadeInSection delay={0.5} className="flex flex-col gap-10 lg:gap-16">
