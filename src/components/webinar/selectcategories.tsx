@@ -21,7 +21,7 @@ export function SelectCategories( {onCategoryChange, selectedCategory}: SelectCa
       <SelectTrigger icon={<ChevronDownIcon />} className="w-full max-h-12 h-full hidden md:flex cursor-pointer">
         <SelectValue placeholder="All categories" />
       </SelectTrigger>
-      <SelectContent className="overflow-y-auto max-h-[264px] h-full">
+      <SelectContent className="overflow-y-auto max-h-[264px] h-full w-[216px]">
         <SelectGroup>
           <SelectItem value="all">All categories</SelectItem>
           <SelectItem value="teamwork">#Teamwork</SelectItem>

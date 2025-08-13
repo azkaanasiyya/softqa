@@ -20,7 +20,7 @@ export function SelectRecent({ onSortChange, selectedSort }: SelectRecentProps) 
       <SelectTrigger icon={<ChevronDownIcon />} className={cn("w-full max-h-12 h-full hidden md:flex", "cursor-pointer")}>
         <SelectValue placeholder="Most recent" />
       </SelectTrigger>
-      <SelectContent>
+      <SelectContent className="w-[288px]">
         <SelectGroup>
           {options.map((option) => (
             <SelectItem key={option.value} value={option.value}>

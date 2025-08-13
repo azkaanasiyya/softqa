@@ -88,7 +88,7 @@ export default function WebinarFeatures() {
 
   return (
     <div className="bg-base-white bg-[url('/line.png')] bg-no-repeat bg-center bg-[length:1192px_auto] flex flex-col justify-center items-center pt-[48.49px] pb-12 md:py-16 lg:pt-[124px] lg:pb-[132px] px-6 md:px-8 lg:px-[124px]">
-      <div className="max-w-[1192px] flex flex-col gap-4 md:gap-6 lg:gap-10">
+      <div className="max-w-[1192px] w-full flex flex-col gap-4 md:gap-6 lg:gap-10">
         <FadeInSection delay={0.5} className="flex flex-col lg:flex-row gap-8 md:gap-12 lg:justify-between items-stretch lg:items-center">
           <h3 className="text-[32px] md:text-[40px] leading-10 md:leading-[50px] text-grayscale-900 w-full">
             Watch past webinars
@@ -100,59 +100,62 @@ export default function WebinarFeatures() {
             <SelectMobile onCategoryChange={setSelectedCategory} selectedCategory={selectedCategory} />
           </div>
         </FadeInSection>
-        <FadeInSection delay={0.5} className="flex flex-col gap-10 lg:gap-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8">
-            {currentWebinars.map((item, i) => (
-              <div
-                key={i}
-                className="bg-grayscale-50 rounded-[16px] p-2 lg:min-h-[456px] flex flex-col"
-              >
-                <div className={`${item.tagColor} rounded-[12px] pl-[13.82px] md:pl-[14.58px] lg:pl-4 flex flex-row lg:flex-wrap gap-6 justify-between`}>
-                  <div className="flex flex-col max-w-[164px] items-start justify-between my-[13.82px] md:my-[14.58px] lg:my-4">
-                    <h4 className="text-[27.46px] md:text-[29.16px] lg:text-[32px] leading-[34.56px] md:leading-[36.44px] lg:leading-10 text-grayscale-900">
-                      {item.title}
-                    </h4>
-                    <div className="rounded-[17px] border border-grayscale-900 py-1 px-2">
-                      <p className="text-[10px] leading-[150%] text-grayscale-900">{item.tag}</p>
+        <FadeInSection delay={0.5} className="flex flex-col w-full gap-10 lg:gap-16">
+          {sortedWebinars.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8">
+              {currentWebinars.map((item, i) => (
+                <div
+                  key={i}
+                  className="bg-grayscale-50 rounded-[16px] p-2 lg:min-h-[456px] flex flex-col"
+                >
+                  <div className={`${item.tagColor} rounded-[12px] pl-[13.82px] md:pl-[14.58px] lg:pl-4 flex flex-row lg:flex-wrap gap-6 justify-between`}>
+                    <div className="flex flex-col max-w-[164px] items-start justify-between my-[13.82px] md:my-[14.58px] lg:my-4">
+                      <h4 className="text-[27.46px] md:text-[29.16px] lg:text-[32px] leading-[34.56px] md:leading-[36.44px] lg:leading-10 text-grayscale-900">
+                        {item.title}
+                      </h4>
+                      <div className="rounded-[17px] border border-grayscale-900 py-1 px-2">
+                        <p className="text-[10px] leading-[150%] text-grayscale-900">{item.tag}</p>
+                      </div>
                     </div>
+                    <Image
+                      src={item.image}
+                      alt="webinar"
+                      width={156}
+                      height={212}
+                      className="rounded-tr-[12px] rounded-br-[12px] object-cover object-bottom w-[134.77px] h-[183.14px] md:w-[142.13px] md:h-[193.16px] lg:w-[156px] lg:h-[212px]"
+                    />
                   </div>
-                  <Image
-                    src={item.image}
-                    alt="webinar"
-                    width={156}
-                    height={212}
-                    className="rounded-tr-[12px] rounded-br-[12px] object-cover object-bottom w-[134.77px] h-[183.14px] md:w-[142.13px] md:h-[193.16px] lg:w-[156px] lg:h-[212px]"
-                  />
-                </div>
-                <div className="flex flex-col justify-between h-[208.86px] md:h-auto gap-6 py-4 px-4">
-                  <div className="flex flex-col gap-1">
-                    <p className="text-[14px] leading-[22px] text-grayscale-600">{item.date}</p>
-                    <div className="flex flex-col gap-1 lg:gap-3">
-                      <h5 className="text-[18px] md:text-[24px] leading-7 md:leading-[30px] text-grayscale-900">
-                        {item.subtitle}
-                      </h5>
-                      <p className="text-[14px] lg:text-[16px] leading-[22px] lg:leading-6 text-grayscale-600 line-clamp-2">
-                        {item.description}
-                      </p>
+                  <div className="flex flex-col justify-between h-[208.86px] md:h-auto gap-6 py-4 px-4">
+                    <div className="flex flex-col gap-1">
+                      <p className="text-[14px] leading-[22px] text-grayscale-600">{item.date}</p>
+                      <div className="flex flex-col gap-1 lg:gap-3">
+                        <h5 className="text-[18px] md:text-[24px] leading-7 md:leading-[30px] text-grayscale-900">
+                          {item.subtitle}
+                        </h5>
+                        <p className="text-[14px] lg:text-[16px] leading-[22px] lg:leading-6 text-grayscale-600 line-clamp-2">
+                          {item.description}
+                        </p>
+                      </div>
                     </div>
+                    <Link href="/webinar/webinardetail" className="cursor-pointer">
+                      <div className="flex flex-row gap-1 items-end cursor-pointer">
+                        <p className="text-[14px] lg:text-[16px] leading-[22px] lg:leading-6 text-primary-500 font-medium hover:underline">
+                          Read more
+                        </p>
+                        <Image src="/webinar/icon.png" alt="icon" width={16} height={16} className="w-4 h-4" />
+                      </div>
+                    </Link>
                   </div>
-                  <Link href="/webinar/webinardetail" className="cursor-pointer">
-                    <div className="flex flex-row gap-1 items-end cursor-pointer">
-                      <p className="text-[14px] lg:text-[16px] leading-[22px] lg:leading-6 text-primary-500 font-medium hover:underline">
-                        Read more
-                      </p>
-                      <Image src="/webinar/icon.png" alt="icon" width={16} height={16} className="w-4 h-4" />
-                    </div>
-                  </Link>
                 </div>
+              ))}
+            </div>
+          ) : (
+            <div className="flex justify-center items-center py-5 w-full max-w-[1192px]">
+              <div className="text-center text-grayscale-900">
+                No webinar found.
               </div>
-            ))}
-            {sortedWebinars.length === 0 && (
-              <div className="text-center md:col-span-2 lg:col-span-3 text-muted-foreground p-10">
-                Tidak ada webinar yang ditemukan.
-              </div>
-            )}
-          </div>
+            </div>
+          )}
           <FadeInSection delay={0.5} className="flex flex-row justify-between items-center">
             <div className={`flex flex-row gap-4 items-center ${currentPage === 1 ? "" : "cursor-pointer"}`} onClick={handlePrev}>
               <div
