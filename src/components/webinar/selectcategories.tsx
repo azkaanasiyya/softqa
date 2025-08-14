@@ -8,7 +8,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import { ChevronDownIcon } from "lucide-react"
 
 interface SelectCategoriesProps {
   onCategoryChange: (value: string) => void;
@@ -18,7 +17,7 @@ interface SelectCategoriesProps {
 export function SelectCategories( {onCategoryChange, selectedCategory}: SelectCategoriesProps ) {
   return (
     <Select onValueChange={onCategoryChange} value={selectedCategory}>
-      <SelectTrigger icon={<ChevronDownIcon />} className="w-full max-h-12 h-full hidden md:flex cursor-pointer">
+      <SelectTrigger className="w-full max-h-12 h-full hidden md:flex cursor-pointer">
         <SelectValue placeholder="All categories" />
       </SelectTrigger>
       <SelectContent className="overflow-y-auto max-h-[264px] h-full w-[216px]">

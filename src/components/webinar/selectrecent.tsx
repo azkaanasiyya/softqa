@@ -1,6 +1,5 @@
 import * as React from "react"
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { ChevronDownIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 interface SelectRecentProps {
@@ -17,7 +16,7 @@ export function SelectRecent({ onSortChange, selectedSort }: SelectRecentProps) 
   
   return (
     <Select onValueChange={onSortChange} value={selectedSort}>
-      <SelectTrigger icon={<ChevronDownIcon />} className={cn("w-full max-h-12 h-full hidden md:flex", "cursor-pointer")}>
+      <SelectTrigger className={cn("w-full max-h-12 h-full hidden md:flex", "cursor-pointer")}>
         <SelectValue placeholder="Most recent" />
       </SelectTrigger>
       <SelectContent className="w-[288px]">
