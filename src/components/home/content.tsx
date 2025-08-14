@@ -11,13 +11,13 @@ export default function HomeContent() {
                 </div>
                 <div className="flex flex-col max-w-[580px] gap-4 items-center">
                     <h2 className="text-[32px] leading-10 md:text-[48px] font-normal text-center text-grayscale-900 md:leading-[60px]">Your Last Manual Unit Test Was Yesterday</h2>
-                    <p className="text-[18px] md:text-[20px] leading-7 md:leading-[36px] tracking-tight lg:tracking-normal text-center text-grayscale-500">SoftQA crafts unit tests at enterprise scale, freeing your creativity for development and enlightening your code&apos;s testability.</p>
+                    <p className="text-[18px] md:text-[20px] leading-7 md:leading-[36px] tracking-tight lg:tracking-normal text-center text-grayscale-500">SoftQA crafts unit tests at enterprise <br className="md:hidden"/> scale, freeing your creativity for development and enlightening your <br className="md:hidden"/> code&apos;s testability.</p>
                 </div>
             </FadeInSection>
             <FadeInSection delay={0.5} className="max-w-[1192px] grid grids-cols-1 lg:grid-cols-2 gap-8">
                 <div className="rounded-[16px] bg-additional-unbleached flex flex-col lg:max-w-[580px] w-full">
                     <div className="flex flex-col-reverse md:flex-row">
-                        <div className="flex flex-col gap-2 md:justify-between p-6 md:p-8 md:h-[248px] lg:max-w-[324px] w-full border-b border-grayscale-100">
+                        <div className="flex flex-col gap-2 md:justify-between p-6 md:p-8 md:h-[248px] lg:h-[296px] lg:max-w-[324px] w-full border-b border-grayscale-100">
                             <div className="flex flex-row gap-2">
                                 <div className="h-[22px] w-[1px] bg-primary-500" />
                                 <p className="text-[14px] font-medium leading-[22px] text-primary-500">AUTOPILOT</p>
@@ -40,7 +40,7 @@ export default function HomeContent() {
                 </div>
                 <div className="rounded-[16px] bg-primary-50 flex flex-col lg:max-w-[580px] w-full">
                     <div className="flex flex-col-reverse md:flex-row">
-                        <div className="flex flex-col gap-2 md:justify-between p-6 md:p-8 md:h-[248px] lg:max-w-[324px] w-full border-b border-grayscale-100">
+                        <div className="flex flex-col gap-2 md:justify-between p-6 md:p-8 md:h-[248px] lg:h-[296px] lg:max-w-[324px] w-full border-b border-grayscale-100">
                             <div className="flex flex-row gap-2">
                                 <div className="h-[22px] w-[1px] bg-primary-500" />
                                 <p className="text-[14px] font-medium leading-[22px] text-primary-500">ALL IN ONE</p>
@@ -63,7 +63,7 @@ export default function HomeContent() {
                 </div>
                 <div className="rounded-[16px] bg-additional-distant flex flex-col lg:max-w-[580px] w-full">
                     <div className="flex flex-col-reverse md:flex-row">
-                        <div className="flex flex-col gap-2 md:justify-between p-6 md:p-8 md:h-[248px] lg:max-w-[324px] w-full border-b border-grayscale-100">
+                        <div className="flex flex-col gap-2 md:justify-between p-6 md:p-8 md:h-[248px] lg:h-[296px] lg:max-w-[324px] w-full border-b border-grayscale-100">
                             <div className="flex flex-row gap-2">
                                 <div className="h-[22px] w-[1px] bg-primary-500" />
                                 <p className="text-[14px] font-medium leading-[22px] text-primary-500">MAXIMIZED</p>
