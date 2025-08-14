@@ -5,7 +5,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import { ChevronDownIcon } from "lucide-react"
 import Image from "next/image"
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "../ui/command";
 
@@ -24,7 +23,7 @@ export function SelectRegion() {
 
   return (
     <Select open={open} onOpenChange={setOpen} value={value} onValueChange={setValue}>
-      <SelectTrigger icon={<ChevronDownIcon/>}>
+      <SelectTrigger>
         {value ? (
           <div className="flex items-center gap-2">
             <Image src={selectedRegion?.icon || ""} alt={selectedRegion?.label || ""} width={20} height={20} className="w-5 h-5" />
