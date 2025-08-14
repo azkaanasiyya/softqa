@@ -126,7 +126,7 @@ export default function WebinarHero() {
                       <p className="text-[16px] leading-6 text-grayscale-600 line-clamp-2">{item.description}</p>
                     </div>
                   </div>
-                  <Button variant="request" size="medium" className="text-cyan-500 w-full lg:w-auto cursor-pointer">
+                  <Button variant="request" size="medium" className="text-cyan-500 w-full lg:w-[148px] cursor-pointer h-12 lg:h-14">
                     Register
                   </Button>
                 </div>
