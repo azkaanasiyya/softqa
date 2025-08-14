@@ -26,7 +26,7 @@ export default function DeveloperHero() {
       before:absolute before:inset-0 before:bg-[url('/line.png')] before:bg-no-repeat before:bg-center before:bg-[length:1192px_auto] before:opacity-12 before:z-0" />
 
       <div className="relative z-10 py-16 md:py-20 lg:py-[104px] px-6 md:px-8 lg:px-[124px] flex flex-col items-center">
-        <div className="max-w-[1192px] flex flex-col gap-[72px]">
+        <div className="max-w-[1192px] flex flex-col gap-12 md:gap-[72px]">
           <FadeInSection delay={0.5} className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-start">
             <div className="flex flex-col gap-3 md:gap-4 lg:max-w-[580px]">
               <div className="flex flex-row gap-2">
@@ -39,7 +39,7 @@ export default function DeveloperHero() {
             </div>
             <div className="flex flex-col gap-10 lg:gap-6 lg:pt-[52px] lg:max-w-[580px]">
               <p className="text-[18px] leading-[32px] font-normal text-[#FFFFFFE0]">
-                SoftQA is the Modern Software Quality Platform that empowers developers to ship more features
+                SoftQA is the Modern Software Quality Platform that empowers developers to ship <br className="hidden md:block lg:hidden"/> more features
                 without compromising code quality, without leaving their IDE.
               </p>
               <div className="flex flex-col w-full md:w-auto md:flex-row gap-4 md:gap-5">
@@ -65,7 +65,7 @@ export default function DeveloperHero() {
                   alt="img"
                   width={388}
                   height={416}
-                  className="w-full lg:w-[388px] md:h-[424px] lg:h-full md:object-cover md:object-top lg:object-contain"
+                  className="w-full lg:w-[388px] md:h-[424px] lg:h-full md:object-cover md:object-[center_10%] lg:object-contain rounded-[16px]"
                 />
                 <div className="absolute bottom-0 left-0 z-10 flex flex-row justify-between w-full p-4 md:p-6">
                   <div className="flex flex-col gap-1">
@@ -94,19 +94,6 @@ export default function DeveloperHero() {
               </div>
             </div>
 
-            <div className="flex flex-col items-center gap-4">
-              <div className="flex items-center gap-2">
-                {slides.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentSlide(index)}
-                    className={`transition-all duration-300 rounded-full cursor-pointer h-2 ${
-                      currentSlide === index ? "w-8 bg-primary-500" : "w-2 bg-grayscale-200"
-                    }`}
-                  />
-                ))}
-              </div>
-
               <div className="flex justify-between items-center w-full">
                 <div onClick={prev} className="cursor-pointer flex items-center gap-2 md:gap-4">
                   <button className="bg-primary-50 rounded-full cursor-pointer flex justify-center items-center w-6 h-6 md:w-8 md:h-8">
@@ -118,6 +105,18 @@ export default function DeveloperHero() {
                       {slides[(currentSlide - 1 + slides.length) % slides.length].name.split(" ")[0]}
                     </p>
                   </div>
+                </div>
+
+                <div className="flex items-center gap-2">
+                  {slides.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentSlide(index)}
+                      className={`transition-all duration-300 rounded-full cursor-pointer h-2 ${
+                        currentSlide === index ? "w-8 bg-primary-500" : "w-2 bg-grayscale-200"
+                      }`}
+                    />
+                  ))}
                 </div>
 
                 <div onClick={next} className="cursor-pointer flex items-center gap-2 md:gap-4">
@@ -132,10 +131,9 @@ export default function DeveloperHero() {
                   </button>
                 </div>
               </div>
-            </div>
-          </FadeInSection>
+            </FadeInSection>
+          </div>
         </div>
-      </div>
     </div>
   );
 }
