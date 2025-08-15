@@ -7,18 +7,25 @@ import { useState } from "react";
 import { deveTestimonials as slides } from "../data/developer";
 import FadeInSection from "../animation/fadein";
 import { Modal } from "./modal";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 export default function DeveloperHero() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const next = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
+    if (currentSlide < slides.length - 1) {
+      setCurrentSlide(currentSlide + 1);
+    }
   };
 
   const prev = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+    if (currentSlide > 0) {
+      setCurrentSlide(currentSlide - 1);
+    }
   };
+
+  const isFirstSlide = currentSlide === 0;
+  const isLastSlide = currentSlide === slides.length - 1;
 
   return (
     <div className="relative">
@@ -95,17 +102,23 @@ export default function DeveloperHero() {
             </div>
 
               <div className="flex justify-between items-center w-full">
-                <div onClick={prev} className="cursor-pointer flex items-center gap-2 md:gap-4">
-                  <button className="bg-primary-50 rounded-full cursor-pointer flex justify-center items-center w-6 h-6 md:w-8 md:h-8">
-                    <ArrowLeft size={16} className="text-grayscale-400" />
-                  </button>
+                <button
+                  onClick={prev}
+                  disabled={isFirstSlide}
+                  className={`flex w-full max-w-[86px] md:max-w-[173px] items-center gap-2 md:gap-4 transition-opacity duration-300 ${isFirstSlide ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
+                >
+                  <div className={`rounded-full flex justify-center items-center w-6 h-6 md:w-8 md:h-8 ${isFirstSlide ? 'bg-primary-50' : 'bg-primary-500'}`}>
+                    <ArrowLeft size={16} className={`${isFirstSlide ? 'text-grayscale-300' : 'text-base-white'}`} />
+                  </div>
                   <div className="flex flex-row gap-2 items-center">
                     <p className="hidden md:block text-[16px] leading-6 font-normal text-grayscale-500">Previous</p>
-                    <p className="text-[14px] md:text-[16px] leading-[22px] md:leading-6 font-medium text-primary-900">
-                      {slides[(currentSlide - 1 + slides.length) % slides.length].name.split(" ")[0]}
-                    </p>
+                    {!isFirstSlide && (
+                      <p className="text-[14px] md:text-[16px] leading-[22px] md:leading-6 font-medium text-primary-900">
+                        {slides[currentSlide - 1]?.name.split(" ")[0]}
+                      </p>
+                    )}
                   </div>
-                </div>
+                </button>
 
                 <div className="flex items-center gap-2">
                   {slides.map((_, index) => (
@@ -119,17 +132,23 @@ export default function DeveloperHero() {
                   ))}
                 </div>
 
-                <div onClick={next} className="cursor-pointer flex items-center gap-2 md:gap-4">
+                <button
+                  onClick={next}
+                  disabled={isLastSlide}
+                  className={`flex w-full max-w-[86px] md:max-w-[173px] items-center justify-end gap-2 md:gap-4 transition-opacity duration-300 ${isLastSlide ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
+                >
                   <div className="flex flex-row gap-2 items-center">
                     <p className="hidden md:block text-[16px] leading-6 font-normal text-grayscale-500">Next</p>
-                    <p className="text-[14px] md:text-[16px] leading-[22px] md:leading-6 font-medium text-primary-900">
-                      {slides[(currentSlide + 1) % slides.length].name.split(" ")[0]}
-                    </p>
+                    {!isLastSlide && (
+                      <p className="text-[14px] md:text-[16px] leading-[22px] md:leading-6 font-medium text-primary-900">
+                        {slides[currentSlide + 1]?.name.split(" ")[0]}
+                      </p>
+                    )}
                   </div>
-                  <button className="bg-primary-500 rounded-full cursor-pointer flex justify-center items-center w-8 h-8">
-                    <Image src="/developer/arrow-right.png" alt="next" width={16} height={16} />
-                  </button>
-                </div>
+                  <div className={`rounded-full flex justify-center items-center w-6 h-6 md:w-8 md:h-8 ${isLastSlide ? 'bg-primary-50' : 'bg-primary-500'}`}>
+                    <ArrowRight size={16} className={`${isLastSlide ? 'text-grayscale-300' : 'text-base-white'}`} />
+                  </div>
+                </button>
               </div>
             </FadeInSection>
           </div>
