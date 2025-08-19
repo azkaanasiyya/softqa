@@ -17,7 +17,7 @@ interface SelectCategoriesProps {
 export function SelectCategories( {onCategoryChange, selectedCategory}: SelectCategoriesProps ) {
   return (
     <Select onValueChange={onCategoryChange} value={selectedCategory}>
-      <SelectTrigger className="w-full max-h-12 h-full hidden md:flex lg:flex-grow cursor-pointer px-4 py-3 lg:text-[10px] xl:text-[16px] lg:px-2 xl:px-4">
+      <SelectTrigger className="w-full max-h-12 h-full flex lg:flex-grow cursor-pointer px-4 py-3 lg:text-[10px] xl:text-[16px] lg:px-2 xl:px-4">
         <SelectValue placeholder="All categories" className="whitespace-normal"/>
       </SelectTrigger>
       <SelectContent className="overflow-y-auto max-h-[264px] h-full w-[216px]">

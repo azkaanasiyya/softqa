@@ -9,7 +9,6 @@ import FadeInSection from "../animation/fadein"
 import { cn } from "@/lib/utils"
 import { ArrowLeft, ArrowRight } from "lucide-react"
 import { WebinarSearch } from "./webinarsearch"
-import { SelectMobile } from "./selectmobile"
 
 export default function WebinarFeatures() {
   const [currentPage, setCurrentPage] = useState(1)
@@ -93,11 +92,17 @@ export default function WebinarFeatures() {
           <h3 className="text-[32px] md:text-[40px] leading-10 md:leading-[50px] text-grayscale-900 w-full">
             Watch past webinars
           </h3>
-          <div className="flex flex-row gap-4 w-full">
+          <div className="hidden md:flex flex-row gap-4 w-full">
             <WebinarSearch onSearchChange={setSearchQuery} />
             <SelectRecent onSortChange={setSortOption} selectedSort={sortOption} />
             <SelectCategories onCategoryChange={setSelectedCategory} selectedCategory={selectedCategory} />
-            <SelectMobile onCategoryChange={setSelectedCategory} selectedCategory={selectedCategory} />
+          </div>
+          <div className="md:hidden flex flex-col gap-4 w-full">
+            <WebinarSearch onSearchChange={setSearchQuery} />
+            <div className="flex flex-row gap-4 w-full">
+              <SelectRecent onSortChange={setSortOption} selectedSort={sortOption} />
+              <SelectCategories onCategoryChange={setSelectedCategory} selectedCategory={selectedCategory} />
+            </div>
           </div>
         </FadeInSection>
         <FadeInSection delay={0.5} className="flex flex-col w-full gap-10 lg:gap-16">
