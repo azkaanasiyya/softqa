@@ -88,7 +88,7 @@ export default function WebinarFeatures() {
   return (
     <div className="bg-base-white bg-[url('/line.png')] bg-no-repeat bg-center bg-[length:1192px_auto] flex flex-col justify-center items-center pt-[48.49px] pb-12 md:py-16 lg:pt-[124px] lg:pb-[132px] px-6 md:px-8 lg:px-[124px]">
       <div className="max-w-[1192px] w-full flex flex-col gap-4 md:gap-6 lg:gap-10">
-        <FadeInSection delay={0.5} className="flex flex-col lg:flex-row gap-8 md:gap-12 lg:justify-between items-stretch lg:items-center">
+        <FadeInSection delay={0.5} className="flex flex-col xl:flex-row gap-8 md:gap-12 lg:justify-between items-stretch xl:items-center">
           <h3 className="text-[32px] md:text-[40px] leading-10 md:leading-[50px] text-grayscale-900 w-full">
             Watch past webinars
           </h3>
