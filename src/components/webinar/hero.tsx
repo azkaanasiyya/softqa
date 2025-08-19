@@ -116,7 +116,13 @@ export default function WebinarHero() {
                       <p className="text-[10px] leading-[150%] text-grayscale-900">{item.tag}</p>
                     </div>
                   </div>
-                  <Image src={item.image} alt="speaker" width={156} height={212} className="rounded-tr-[12px] rounded-br-[12px]" />
+                  <div className="relative">
+                    <Image src={item.image} alt="speaker" width={156} height={212} className="rounded-tr-[12px] rounded-br-[12px]" />
+                    <div className="absolute bottom-0 left-0 z-10 flex flex-col p-3">
+                      <p className="text-[14px] leading-[18px] font-medium text-base-white">{item.name}</p>
+                      <p className="text-[12px] leading-[18px] text-base-white">{item.role}</p>
+                    </div>
+                  </div>
                 </div>
                 <div className="min-h-[236px] h-full flex flex-col gap-8 md:gap-6 lg:justify-between items-start px-3 pb-3 pt-4 lg:py-4 lg:pl-4 lg:pr-16">
                   <div className="flex flex-col gap-1">

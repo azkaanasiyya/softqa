@@ -1,25 +1,67 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import { MobileSectionSelect } from "./selectid";
 import FadeInSection from "@/components/animation/fadein";
 import Link from "next/link";
 import Copy from "./copy";
 
 export default function ContentWebDetail() {
+    
+    const [activeId, setActiveId] = useState("");
+    const sectionRefs = useRef<Record<string, HTMLElement>>({});
+    const observer = useRef<IntersectionObserver | null>(null);
+    const navRef = useRef<HTMLDivElement>(null); 
 
-const [activeId, setActiveId] = useState("");
-const handleSmoothScroll = (id:string) => (e: { preventDefault: () => void; }) => {
-    e.preventDefault();
-    const el = document.getElementById(id);
-    if (el) {
-        el.scrollIntoView({behavior: "smooth", block: "start"});
-        setActiveId(id);
-    }
-};
+    const handleSmoothScroll = useCallback((id: string) => (e: { preventDefault: () => void; }) => {
+        e.preventDefault();
+        const el = document.getElementById(id);
+        if (el) {
+            el.scrollIntoView({ behavior: "smooth", block: "start" });
+            setActiveId(id);
+        }
+    }, []);
 
-    return (
+    useEffect(() => {
+        const sections = document.querySelectorAll("section[id]");
+        sections.forEach(section => {
+            sectionRefs.current[section.id] = section as HTMLElement;
+        });
+
+        const navHeight = navRef.current ? navRef.current.offsetHeight : 0;
+        const rootMarginValue = `-${navHeight}px 0px 0px 0px`;
+        
+        const observerOptions = {
+            root: null,
+            rootMargin: rootMarginValue, 
+            threshold: 0.1
+        };
+
+        observer.current = new IntersectionObserver((entries) => {
+            const visibleEntries = entries.filter(entry => entry.isIntersecting);
+            if (visibleEntries.length > 0) {
+                const topMostEntry = visibleEntries.reduce((prev, curr) => 
+                    prev.boundingClientRect.top < curr.boundingClientRect.top ? prev : curr
+                );
+                setActiveId(topMostEntry.target.id);
+            }
+        }, observerOptions);
+
+        Object.values(sectionRefs.current).forEach(section => {
+            if (observer.current) {
+                observer.current.observe(section);
+            }
+        });
+
+        return () => {
+            if (observer.current) {
+                observer.current.disconnect();
+            }
+        };
+    }, []);
+
+    return ( 
         <div className="flex flex-col justify-center items-center pt-6 md:pt-8 lg:pt-8 px-6 md:px-8 lg:px-[124px] pb-12 md:pb-20 lg:pb-[104px] border-t border-grayscale-100">
             <FadeInSection delay={0.5} className="max-w-[1192px] flex flex-col gap-12 lg:gap-[88px]">
                 <div className="flex flex-row gap-1 items-start">
@@ -68,7 +110,8 @@ const handleSmoothScroll = (id:string) => (e: { preventDefault: () => void; }) =
                 </FadeInSection>
                 <FadeInSection delay={0.5} className="flex flex-col lg:flex-row lg:items-start gap-8">
                     <MobileSectionSelect activeId={activeId} setActiveId={setActiveId} />
-                    <div className="lg:sticky lg:top-24 hidden md:flex md:flex-col gap-8 lg:max-w-[274px]">
+                    {/* Tambahkan ref ke elemen navigasi Anda */}
+                    <div ref={navRef} className="lg:sticky lg:top-24 hidden md:flex md:flex-col gap-8 lg:max-w-[274px]">
                         <div className="flex flex-col gap-3">
                             <span className="text-[16px] leading-6 text-grayscale-900">0:00 - 12:00</span>
                             <div className="flex flex-col gap-2">
@@ -86,7 +129,7 @@ const handleSmoothScroll = (id:string) => (e: { preventDefault: () => void; }) =
                             <span className="text-[16px] leading-6 text-grayscale-900">12:01 - 30:00</span>
                             <div className="flex flex-col gap-2">
                                 <a href="#section-2" onClick={handleSmoothScroll("section-2")} className="flex flex-row gap-2 items-start">
-                                    <div className={`h-[16px] w-[2px] ${activeId === 'section-2' ? 'bg-primary-500' : 'bg-grayscale-200'}`} />
+                                    <div className={`mt-1 h-[16px] w-[2px] ${activeId === 'section-2' ? 'bg-primary-500' : 'bg-grayscale-200'}`} />
                                     <p className={`text-[16px] font-normal leading-[24px] ${activeId === 'section-2' ? 'text-primary-500' : 'text-grayscale-500'}`}>Efficient Test Execution with Batch Mode</p>
                                 </a>
                                 <a href="#section-2-2" onClick={handleSmoothScroll("section-2-2")} className="flex flex-row gap-2 items-center">
@@ -99,11 +142,11 @@ const handleSmoothScroll = (id:string) => (e: { preventDefault: () => void; }) =
                             <span className="text-[16px] leading-6 text-grayscale-900">30:01 - 50:00</span>
                             <div className="flex flex-col gap-2">
                                 <a href="#section-3" onClick={handleSmoothScroll("section-3")} className="flex flex-row gap-2 items-start">
-                                    <div className={`h-[16px] w-[2px] ${activeId === 'section-3' ? 'bg-primary-500' : 'bg-grayscale-200'}`} />
+                                    <div className={`mt-1 h-[16px] w-[2px] ${activeId === 'section-3' ? 'bg-primary-500' : 'bg-grayscale-200'}`} />
                                     <p className={`text-[16px] font-normal leading-[24px] ${activeId === 'section-3' ? 'text-primary-500' : 'text-grayscale-500'}`}>Managing Technical Debt Through Testing</p>
                                 </a>
                                 <a href="#section-3-2" onClick={handleSmoothScroll("section-3-2")} className="flex flex-row gap-2 items-start">
-                                    <div className={`h-[16px] w-[2px] ${activeId === 'section-3-2' ? 'bg-primary-500' : 'bg-grayscale-200'}`} />
+                                    <div className={`mt-1 h-[16px] w-[2px] ${activeId === 'section-3-2' ? 'bg-primary-500' : 'bg-grayscale-200'}`} />
                                     <p className={`text-[16px] font-normal leading-[24px] ${activeId === 'section-3-2' ? 'text-primary-500' : 'text-grayscale-500'}`}>Actionable Strategies for High Coverage</p>
                                 </a>
                             </div>
@@ -116,7 +159,7 @@ const handleSmoothScroll = (id:string) => (e: { preventDefault: () => void; }) =
                             </a>
                         </div>
                     </div>
-                    <div className="lg:overflow-y-auto lg:[&::-webkit-scrollbar]:hidden lg:[-ms-overflow-style:none] lg:[scrollbar-width:none flex flex-col gap-12 lg:gap-[72px] lg:pl-16">
+                    <div className="lg:pl-16 flex flex-col gap-12 lg:gap-[72px]">
                         <section id="section-1" className="scroll-mt-20 flex flex-col gap-4 max-w-[822px]">
                             <h1 className="text-[40px] md:text-[56px] leading-[50px] md:leading-[70px] text-grayscale-900">0:00 - 12:00</h1>
                             <div className="flex flex-col gap-16">
@@ -153,7 +196,7 @@ const handleSmoothScroll = (id:string) => (e: { preventDefault: () => void; }) =
                                         </div>
                                     </div>
                                 </div>
-                                <div id="section-1-2" className="scroll-mt-20 flex flex-col gap-10">
+                                <section id="section-1-2" className="scroll-mt-20 flex flex-col gap-10">
                                     <h4 className="text-[24px] md:text-[32px] leading-[30px] md:leading-10 text-grayscale-900">Why Achieve 100% Test Coverage?</h4>
                                     <div className="flex flex-col gap-8">
                                         <div className="flex flex-col gap-2">
@@ -185,7 +228,7 @@ const handleSmoothScroll = (id:string) => (e: { preventDefault: () => void; }) =
                                             <p className="text-[16px] md:text-[18px] leading-7 md:leading-8 text-grayscale-600">Sure. I worked with a team where low test coverage caused recurring production bugs. By systematically increasing their coverage, they reduced their bug count by 80% within six months.</p>
                                         </div>
                                     </div>
-                                </div>
+                                </section>
                             </div>
                         </section>
                         <section id="section-2" className="flex flex-col gap-4 max-w-[822px] scroll-mt-20">
@@ -224,7 +267,7 @@ const handleSmoothScroll = (id:string) => (e: { preventDefault: () => void; }) =
                                         </div>
                                     </div>
                                 </div>
-                                <div id="section-2-2" className="scroll-mt-20 flex flex-col gap-10">
+                                <section id="section-2-2" className="scroll-mt-20 flex flex-col gap-10">
                                     <h4 className="text-[24px] md:text-[32px] leading-[30px] md:leading-10 text-grayscale-900">Automation Tools and Frameworks</h4>
                                     <div className="flex flex-col gap-8">
                                         <div className="flex flex-col gap-2">
@@ -256,7 +299,7 @@ const handleSmoothScroll = (id:string) => (e: { preventDefault: () => void; }) =
                                             <p className="text-[16px] md:text-[18px] leading-7 md:leading-8 text-grayscale-600">Focus on your application’s most critical paths first. Don’t automate everything—prioritize high-impact areas.</p>
                                         </div>
                                     </div>
-                                </div>
+                                </section>
                             </div>
                         </section>
                         <section id="section-3" className="scroll-mt-20 flex flex-col gap-4 max-w-[822px]">
@@ -293,23 +336,9 @@ const handleSmoothScroll = (id:string) => (e: { preventDefault: () => void; }) =
                                             </div>
                                             <p className="text-[16px] md:text-[18px] leading-7 md:leading-8 text-grayscale-600">Tests need to evolve with your codebase. Regularly update them to reflect new features or changes, and make them part of your development workflow.</p>
                                         </div>
-                                        <div className="flex flex-col gap-2">
-                                            <div className="flex flex-row gap-3 items-center">
-                                                <Image src="/webinar/james-icon.png" alt="icon" width={32} height={32} />
-                                                <span className="text-[18px] leading-7 text-grayscale-900">James</span>
-                                            </div>
-                                            <p className="text-[16px] md:text-[18px] leading-7 md:leading-8 text-grayscale-600">What’s the best way to maintain tests?</p>
-                                        </div>
-                                        <div className="flex flex-col gap-2">
-                                            <div className="flex flex-row gap-3 items-center">
-                                                <Image src="/webinar/david-icon.png" alt="icon" width={32} height={32} />
-                                                <span className="text-[18px] leading-7 text-grayscale-900">David Kim</span>
-                                            </div>
-                                            <p className="text-[16px] md:text-[18px] leading-7 md:leading-8 text-grayscale-600">Tests need to evolve with your codebase. Regularly update them to reflect new features or changes, and make them part of your development workflow.</p>
-                                        </div>
                                     </div>
                                 </div>
-                                <div id="section-3-2" className="scroll-mt-20 flex flex-col gap-10">
+                                <section id="section-3-2" className="scroll-mt-20 flex flex-col gap-10">
                                     <h4 className="text-[24px] md:text-[32px] leading-[30px] md:leading-10 text-grayscale-900">Actionable Strategies for High Coverage</h4>
                                     <div className="flex flex-col gap-8">
                                         <div className="flex flex-col gap-2">
@@ -341,36 +370,36 @@ const handleSmoothScroll = (id:string) => (e: { preventDefault: () => void; }) =
                                             <p className="text-[16px] md:text-[18px] leading-7 md:leading-8 text-grayscale-600">Include test coverage metrics in your sprints. Make it a shared goal for the team rather than a QA-only responsibility.</p>
                                         </div>
                                     </div>
-                                </div>
+                                </section>
                             </div>
                         </section>
                         <section id="section-4" className="scroll-mt-20 flex flex-col gap-4 max-w-[822px]">
                             <h1 className="text-[40px] md:text-[56px] leading-[50px] md:leading-[70px] text-grayscale-900">50:01 - 57:00</h1>
                             <div className="flex flex-col gap-10">
                                 <h4 className="text-[24px] md:text-[32px] leading-[30px] md:leading-10 text-grayscale-900">Final Thoughts</h4>
-                                    <div className="flex flex-col gap-8">
-                                        <div className="flex flex-col gap-2">
-                                            <div className="flex flex-row gap-3 items-center">
-                                                <Image src="/webinar/james-icon.png" alt="icon" width={32} height={32} />
-                                                <span className="text-[18px] leading-7 text-grayscale-900">James</span>
-                                            </div>
-                                            <p className="text-[16px] md:text-[18px] leading-7 md:leading-8 text-grayscale-600">David, any closing advice for teams working toward 100% test coverage?</p>
+                                <div className="flex flex-col gap-8">
+                                    <div className="flex flex-col gap-2">
+                                        <div className="flex flex-row gap-3 items-center">
+                                            <Image src="/webinar/james-icon.png" alt="icon" width={32} height={32} />
+                                            <span className="text-[18px] leading-7 text-grayscale-900">James</span>
                                         </div>
-                                        <div className="flex flex-col gap-2">
-                                            <div className="flex flex-row gap-3 items-center">
-                                                <Image src="/webinar/david-icon.png" alt="icon" width={32} height={32} />
-                                                <span className="text-[18px] leading-7 text-grayscale-900">David Kim</span>
-                                            </div>
-                                            <p className="text-[16px] md:text-[18px] leading-7 md:leading-8 text-grayscale-600">Test coverage is an investment. It takes time upfront but pays off in reduced bugs and faster development cycles. Start small, focus on value, and use the right tools.</p>
-                                        </div>
-                                        <div className="flex flex-col gap-2">
-                                            <div className="flex flex-row gap-3 items-center">
-                                                <Image src="/webinar/james-icon.png" alt="icon" width={32} height={32} />
-                                                <span className="text-[18px] leading-7 text-grayscale-900">James</span>
-                                            </div>
-                                            <p className="text-[16px] md:text-[18px] leading-7 md:leading-8 text-grayscale-600">Thanks, David, for sharing your insights. To our listeners, if you have feedback or questions about this episode, feel free to reach out. And don’t forget to prioritize quality in your development practices.</p>
-                                        </div>
+                                        <p className="text-[16px] md:text-[18px] leading-7 md:leading-8 text-grayscale-600">David, any closing advice for teams working toward 100% test coverage?</p>
                                     </div>
+                                    <div className="flex flex-col gap-2">
+                                        <div className="flex flex-row gap-3 items-center">
+                                            <Image src="/webinar/david-icon.png" alt="icon" width={32} height={32} />
+                                            <span className="text-[18px] leading-7 text-grayscale-900">David Kim</span>
+                                        </div>
+                                        <p className="text-[16px] md:text-[18px] leading-7 md:leading-8 text-grayscale-600">Test coverage is an investment. It takes time upfront but pays off in reduced bugs and faster development cycles. Start small, focus on value, and use the right tools.</p>
+                                    </div>
+                                    <div className="flex flex-col gap-2">
+                                        <div className="flex flex-row gap-3 items-center">
+                                            <Image src="/webinar/james-icon.png" alt="icon" width={32} height={32} />
+                                            <span className="text-[18px] leading-7 text-grayscale-900">James</span>
+                                        </div>
+                                        <p className="text-[16px] md:text-[18px] leading-7 md:leading-8 text-grayscale-600">Thanks, David, for sharing your insights. To our listeners, if you have feedback or questions about this episode, feel free to reach out. And don’t forget to prioritize quality in your development practices.</p>
+                                    </div>
+                                </div>
                             </div>
                         </section>
                         <div className="bg-primary-50 flex flex-row items-center justify-between w-full rounded-[12px] p-4 md:p-6">
@@ -379,22 +408,22 @@ const handleSmoothScroll = (id:string) => (e: { preventDefault: () => void; }) =
                                 <Copy />
                                 <Link href="https://facebook.com" target="_blank" rel="noopener noreferrer">
                                     <div className="flex flex-col items-center justify-center w-6 h-6 md:w-8 md:h-8 rounded-full bg-primary-500">
-                                        <Image src="/webinar/fb.png" alt="icon" width={16} height={16} className="hover:opacity-80 transition duration-200 w-3 h-3 md:w-4 md:h-4"/>
-                                    </div> 
+                                        <Image src="/webinar/fb.png" alt="icon" width={16} height={16} className="hover:opacity-80 transition duration-200 w-3 h-3 md:w-4 md:h-4" />
+                                    </div>
                                 </Link>
                                 <Link href="https://x.com" target="_blank" rel="noopener noreferrer">
                                     <div className="flex flex-col items-center justify-center w-6 h-6 md:w-8 md:h-8 rounded-full bg-primary-500">
-                                        <Image src="/webinar/x.png" alt="icon" width={16} height={16} className="hover:opacity-80 transition duration-200 w-3 h-3 md:w-4 md:h-4"/>
-                                    </div> 
+                                        <Image src="/webinar/x.png" alt="icon" width={16} height={16} className="hover:opacity-80 transition duration-200 w-3 h-3 md:w-4 md:h-4" />
+                                    </div>
                                 </Link>
                                 <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
                                     <div className="flex flex-col items-center justify-center w-6 h-6 md:w-8 md:h-8 rounded-full bg-primary-500">
-                                        <Image src="/webinar/linkedin.png" alt="icon" width={16} height={16} className="hover:opacity-80 transition duration-200 w-3 h-3 md:w-4 md:h-4"/>
+                                        <Image src="/webinar/linkedin.png" alt="icon" width={16} height={16} className="hover:opacity-80 transition duration-200 w-3 h-3 md:w-4 md:h-4" />
                                     </div>
                                 </Link>
                             </div>
                         </div>
-                    </div> 
+                    </div>
                 </FadeInSection>
             </FadeInSection>
         </div>

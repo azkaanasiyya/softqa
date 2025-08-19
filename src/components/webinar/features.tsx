@@ -107,13 +107,13 @@ export default function WebinarFeatures() {
         </FadeInSection>
         <FadeInSection delay={0.5} className="flex flex-col w-full gap-10 lg:gap-16">
           {sortedWebinars.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-8">
               {currentWebinars.map((item, i) => (
                 <div
                   key={i}
                   className="bg-grayscale-50 rounded-[16px] p-2 lg:min-h-[456px] flex flex-col"
                 >
-                  <div className={`${item.tagColor} rounded-[12px] pl-[13.82px] md:pl-[14.58px] lg:pl-4 flex flex-row lg:flex-wrap xl:flex-row gap-6 justify-between`}>
+                  <div className={`${item.tagColor} rounded-[12px] pl-[13.82px] md:pl-[14.58px] lg:pl-4 flex flex-row gap-6 justify-between`}>
                     <div className="flex flex-col max-w-[164px] items-start justify-between my-[13.82px] md:my-[14.58px] lg:my-4">
                       <h4 className="text-[27.46px] md:text-[29.16px] lg:text-[32px] leading-[34.56px] md:leading-[36.44px] lg:leading-10 text-grayscale-900">
                         {item.title}
@@ -122,13 +122,20 @@ export default function WebinarFeatures() {
                         <p className="text-[10px] leading-[150%] text-grayscale-900">{item.tag}</p>
                       </div>
                     </div>
-                    <Image
-                      src={item.image}
-                      alt="webinar"
-                      width={156}
-                      height={212}
-                      className="rounded-tr-[12px] rounded-br-[12px] object-cover object-bottom w-[134.77px] h-[183.14px] md:w-[142.13px] md:h-[193.16px] lg:w-[156px] lg:h-[212px]"
-                    />
+                    <div className="relative">
+                      <Image
+                        src={item.image}
+                        alt="webinar"
+                        width={156}
+                        height={212}
+                        className="rounded-tr-[12px] rounded-br-[12px] object-cover object-bottom w-[134.77px] h-[183.14px] md:min-w-[142.13px] md:min-h-[193.16px] xl:w-[156px] xl:h-[212px]"
+                      />
+                      <div className="absolute bottom-0 left-0 z-10 flex flex-col p-3">
+                        <p className="text-[12.09px] md:text-[12.76px] lg:text-[14px] leading-[15.55px] md:leading-[16.4px] lg:leading-[18px] font-medium text-base-white">{item.name}</p>
+                        <p className="text-[10.37px] md:text-[10.93px] lg:text-[12px] leading-[15.55px] md:leading-[16.4px] lg:leading-[18px] text-base-white">{item.role}</p>
+                      </div>
+                    </div>
+                    
                   </div>
                   <div className="flex flex-col justify-between h-[208.86px] md:h-auto gap-6 py-4 px-4">
                     <div className="flex flex-col gap-1">
