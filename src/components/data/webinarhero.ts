@@ -25,11 +25,11 @@ export const webinarHeroData = [
   },
   {
     id: 3,
-    title: "Testing Pipelines",
+    title: "Testing \nPipelines",
     tag: "#Productivity",
     name: "Anika Sharma",
     role: "Senior QA Engineer",
-    image: "/webinar/anika.png",
+    image: "/webinar/anika2.png",
     date: "Mar 25, 2024",
     subtitle: "Optimizing Test Execution Time",
     description: "Speed up your CI/CD pipelines using parallel execution and test splitting strategies.",
