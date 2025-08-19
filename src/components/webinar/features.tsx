@@ -113,7 +113,7 @@ export default function WebinarFeatures() {
                   key={i}
                   className="bg-grayscale-50 rounded-[16px] p-2 lg:min-h-[456px] flex flex-col"
                 >
-                  <div className={`${item.tagColor} rounded-[12px] pl-[13.82px] md:pl-[14.58px] lg:pl-4 flex flex-row lg:flex-wrap gap-6 justify-between`}>
+                  <div className={`${item.tagColor} rounded-[12px] pl-[13.82px] md:pl-[14.58px] lg:pl-4 flex flex-row lg:flex-wrap xl:flex-row gap-6 justify-between`}>
                     <div className="flex flex-col max-w-[164px] items-start justify-between my-[13.82px] md:my-[14.58px] lg:my-4">
                       <h4 className="text-[27.46px] md:text-[29.16px] lg:text-[32px] leading-[34.56px] md:leading-[36.44px] lg:leading-10 text-grayscale-900">
                         {item.title}
