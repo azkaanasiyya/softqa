@@ -16,7 +16,7 @@ export function SelectRecent({ onSortChange, selectedSort }: SelectRecentProps) 
   
   return (
     <Select onValueChange={onSortChange} value={selectedSort}>
-      <SelectTrigger className={cn("w-full max-h-12 h-full flex lg:flex-grow px-4 py-3 lg:px-2 xl:px-4", "cursor-pointer")}>
+      <SelectTrigger className={cn("w-full max-h-12 h-full flex lg:flex-grow px-4 py-3", "cursor-pointer")}>
         <SelectValue placeholder="Most recent" />
       </SelectTrigger>
       <SelectContent className="w-[288px]">
