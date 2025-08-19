@@ -117,7 +117,7 @@ export default function WebinarHero() {
                     </div>
                   </div>
                   <div className="relative">
-                    <Image src={item.image} alt="speaker" width={156} height={212} className="rounded-tr-[12px] rounded-br-[12px]" />
+                    <Image src={item.image} alt="speaker" width={156} height={212} className="rounded-tr-[12px] rounded-br-[12px] w-[156px] h-[212px]" />
                     <div className="absolute bottom-0 left-0 z-10 flex flex-col p-3">
                       <p className="text-[14px] leading-[18px] font-medium text-base-white">{item.name}</p>
                       <p className="text-[12px] leading-[18px] text-base-white">{item.role}</p>
