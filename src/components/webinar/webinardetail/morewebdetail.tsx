@@ -104,7 +104,7 @@ export default function MoreWebDetail() {
                   delay={0.5}
                   className="bg-grayscale-50 rounded-[16px] p-2 xl:min-h-[456px] flex flex-col"
                 >
-                  <div className={`${item.tagColor} rounded-[12px] pl-[13.82px] md:pl-[14.58px] xl:pl-4 flex flex-row xl:flex-wrap gap-[13.87px] xl:gap-6 justify-between`}>
+                  <div className={`${item.tagColor} rounded-[12px] pl-[13.82px] md:pl-[14.58px] xl:pl-4 flex flex-row gap-[13.87px] xl:gap-6 justify-between`}>
                     <div className="flex flex-col max-w-[164px] items-start justify-between my-[13.82px] md:my-[14.58px] xl:my-4">
                       <h4 className="md:w-[94.76px] xl:w-auto text-[27.64px] md:text-[18.49px] xl:text-[32px] leading-[34.56px] md:leading-[23.11px] xl:leading-10 text-grayscale-900">
                         {item.title}
