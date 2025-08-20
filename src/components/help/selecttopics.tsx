@@ -1,5 +1,6 @@
-import * as React from "react"
+"use client"
 
+import * as React from "react"
 import {
   Select,
   SelectContent,
@@ -8,11 +9,19 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
+import { SelectProps } from "@radix-ui/react-select";
 
-export function SelectTopics() {
+interface SelectTopicsProps extends SelectProps {
+  value?: string;
+  onValueChange?: (value: string) => void;
+  onBlur?: () => void;
+  name?: string;
+}
+
+export function SelectTopics({ value, onValueChange, onBlur, name, ...props }: SelectTopicsProps) {
   return (
-    <Select>
-      <SelectTrigger className="w-full">
+    <Select value={value} onValueChange={onValueChange} {...props}>
+      <SelectTrigger onBlur={onBlur} name={name} className="w-full">
         <SelectValue placeholder="Select one" />
       </SelectTrigger>
       <SelectContent>
