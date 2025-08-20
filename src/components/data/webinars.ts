@@ -227,7 +227,7 @@ export const webinars = [
         name: "Omar Khaled",
         role: "Scrum QA Coach",
         tagColor: "bg-additional-light",
-        image: "/webinar/omar.png",
+        image: "/webinar/omar2.png",
         date: "Feb 28, 2024",
         subtitle: "QA Role in Fast Iteration Cycles",
         description: "Understand how to balance coverage and speed in fast-paced development teams.",
