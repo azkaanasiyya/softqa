@@ -170,43 +170,43 @@ export default function WebinarFeatures() {
           )}
           <FadeInSection delay={0.5} className="flex flex-row justify-between items-center">
             <div className={`flex flex-row gap-4 items-center ${currentPage === 1 ? "" : "cursor-pointer"}`} onClick={handlePrev}>
-              <div
-                className={cn(
-                  "flex justify-center items-center w-8 h-8 rounded-full border-transparent transition-colors",
-                  currentPage === 1 ? "bg-[#FAFAFA]" : "bg-primary-500 cursor-pointer hover:bg-primary-400"
-                )}
-              >
-                <ArrowLeft className={cn("w-4 h-4", currentPage === 1 ? "text-[#ABB1B9]" : "text-base-white")} />
-              </div>
-              <span className={`hidden md:block text-[16px] leading-6 font-medium ${currentPage === 1 ? "text-[#ABB1B9]" : "text-primary-500"}`}>Previous</span>
+                <div
+                    className={cn(
+                        "flex justify-center items-center w-8 h-8 rounded-full border-transparent transition-colors",
+                        currentPage === 1 ? "bg-[#FAFAFA]" : "bg-primary-500 cursor-pointer hover:bg-primary-400"
+                    )}
+                >
+                    <ArrowLeft className={cn("w-4 h-4", currentPage === 1 ? "text-[#ABB1B9]" : "text-base-white")} />
+                </div>
+                <span className={`hidden md:block text-[16px] leading-6 font-medium ${currentPage === 1 ? "text-[#ABB1B9]" : "text-primary-500"}`}>Previous</span>
             </div>
             <div className="flex flex-row items-center gap-2">
-              {Array.from({ length: totalPages }, (_, idx) => {
-                const pageNum = idx + 1
-                const isActive = currentPage === pageNum
-                return (
-                  <div
-                    key={pageNum}
-                    className={`cursor-pointer rounded-[12px] px-1 pt-0.5 pb-1 w-10 h-10 flex items-center justify-center ${
-                      isActive ? "bg-primary-500 text-base-white" : "bg-base-white border-2 border-grayscale-100 text-primary-500"
-                    }`}
-                    onClick={() => setCurrentPage(pageNum)}
-                  >
-                    <span className="text-[16px] text-center font-medium leading-6">{pageNum}</span>
-                  </div>
-                )
-              })}
+                {Array.from({ length: totalPages }, (_, idx) => {
+                    const pageNum = idx + 1
+                    const isActive = currentPage === pageNum
+                    return (
+                        <div
+                            key={pageNum}
+                            className={`cursor-pointer rounded-[12px] px-1 pt-0.5 pb-1 w-10 h-10 flex items-center justify-center ${
+                                isActive ? "bg-primary-500 text-base-white" : "bg-base-white border-2 border-grayscale-100 text-primary-500"
+                            }`}
+                            onClick={() => setCurrentPage(pageNum)}
+                        >
+                            <span className="text-[16px] text-center font-medium leading-6">{pageNum}</span>
+                        </div>
+                    )
+                })}
             </div>
-            <div className={`flex flex-row gap-4 items-center ${currentPage === 1 ? "cursor-pointer" : ""}`} onClick={handleNext}>
-              <span className={`hidden md:block text-[16px] leading-6 font-medium ${currentPage === 1 ? "text-primary-500" : "text-[#ABB1B9]"}`}>Next</span>
-              <div className={cn(
-                  "flex justify-center items-center w-8 h-8 rounded-full border-transparent transition-colors",
-                  currentPage === 1 ? "bg-primary-500 cursor-pointer hover:bg-primary-400" : "bg-[#FAFAFA]"
+            <div className={`flex flex-row gap-4 items-center ${currentPage < totalPages ? "cursor-pointer" : ""}`} onClick={handleNext}>
+                <span className={`hidden md:block text-[16px] leading-6 font-medium ${currentPage < totalPages ? "text-primary-500" : "text-[#ABB1B9]"}`}>Next</span>
+                <div className={cn(
+                    "flex justify-center items-center w-8 h-8 rounded-full border-transparent transition-colors",
+                    currentPage < totalPages ? "bg-primary-500 cursor-pointer hover:bg-primary-400" : "bg-[#FAFAFA]"
                 )}>
-                <ArrowRight className={cn("w-4 h-4", currentPage === 1 ? "text-base-white" : "text-[#ABB1B9]")} />
-              </div>
+                    <ArrowRight className={cn("w-4 h-4", currentPage < totalPages ? "text-base-white" : "text-[#ABB1B9]")} />
+                </div>
             </div>
-          </FadeInSection>
+        </FadeInSection>
         </FadeInSection>
       </div>
     </div>
