@@ -21,7 +21,7 @@ export default function DeveloperFeatures() {
                     </div>
                 </FadeInSection>
                 <FadeInSection delay={0.5} className="flex flex-col lg:flex-row gap-6 md:gap-10 lg:gap-24 items-center">
-                    <div className="bg-additional-snow rounded-[16px] py-[30.58px] md:py-[65.84px] lg:py-[52px] px-[28.23px] md:px-[60.78px] lg:px-12 flex flex-col w-full justify-center items-center">
+                    <div className="bg-additional-snow rounded-[16px] py-[30.58px] md:py-[65.84px] lg:py-[52px] px-[28.23px] md:px-[60.78px] lg:px-12 flex flex-col justify-center items-center">
                         <div className="grid grid-cols-2 gap-4">
                             <Image src="/developer/code-1.png" alt="img" width={222} height={164} className="w-full max-w-[222px] h-full max-h-[164px]"/>
                             <Image src="/developer/code-2.png" alt="img" width={222} height={164} className="w-full max-w-[222px] h-full max-h-[164px]"/>
