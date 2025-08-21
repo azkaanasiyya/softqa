@@ -16,12 +16,12 @@ export default function DeveloperFeatures() {
                             <p className="text-[16px] md:text-[18px] leading-7 md:leading-8 text-grayscale-600">Concentrate on building your codebase while we handle the testing. Our system ensures your tests stay up-to-date automatically as your code evolves, maintaining precision and consistency with minimal effort.</p>
                         </div>
                     </div>
-                    <div className="bg-additional-salty rounded-[16px] py-[30.58px] md:py-[65.84px] lg:py-[52px] px-[28.23px] md:px-[60.78px] lg:px-12 w-full flex-col justify-center items-center">
+                    <div className="bg-additional-salty rounded-[16px] py-[30.58px] md:py-[65.84px] lg:py-[52px] px-[28.23px] md:px-[60.78px] lg:px-12 flex-col justify-center items-center">
                         <Image src="/developer/effortless.png" alt="img" width={460} height={344} className="w-full max-w-[460px] h-full max-h-[344px]" />
                     </div>
                 </FadeInSection>
                 <FadeInSection delay={0.5} className="flex flex-col lg:flex-row gap-6 md:gap-10 lg:gap-24 items-center">
-                    <div className="bg-additional-snow rounded-[16px] py-[30.58px] md:py-[65.84px] lg:py-[52px] px-[28.23px] md:px-[60.78px] lg:px-12 w-full flex flex-col justify-center items-center">
+                    <div className="bg-additional-snow rounded-[16px] py-[30.58px] md:py-[65.84px] lg:py-[52px] px-[28.23px] md:px-[60.78px] lg:px-12 flex flex-col justify-center items-center">
                         <div className="grid grid-cols-2 w-full gap-4">
                             <Image src="/developer/code-1.png" alt="img" width={222} height={164} className="w-full max-w-[222px] h-full max-h-[164px]"/>
                             <Image src="/developer/code-2.png" alt="img" width={222} height={164} className="w-full max-w-[222px] h-full max-h-[164px]"/>
@@ -51,7 +51,7 @@ export default function DeveloperFeatures() {
                             <p className="text-[16px] md:text-[18px] leading-7 md:leading-8 text-grayscale-600">Quickly generate comprehensive tests for extensive codebases in one go. With Batch Mode, eliminate technical debt and achieve full test coverage at unparalleled speed.</p>
                         </div>
                     </div>
-                    <div className="bg-additional-light rounded-[16px] py-[30.58px] md:py-[65.84px] lg:py-[52px] px-[28.23px] md:px-[60.78px] lg:px-12 w-full flex-col justify-center items-center">
+                    <div className="bg-additional-light rounded-[16px] py-[30.58px] md:py-[65.84px] lg:py-[52px] px-[28.23px] md:px-[60.78px] lg:px-12 flex-col justify-center items-center">
                         <div className="flex flex-col w-full gap-3">
                             <Image src="/developer/coverage-1.png" alt="img" width={460} height={93} className=" w-full max-w-[460px] h-full max-h-[93px]"/>
                             <Image src="/developer/coverage-2.png" alt="img" width={460} height={293} className=" w-full max-w-[460px] h-full max-h-[293px]"/>
