@@ -16,7 +16,7 @@ export default function WebinarFeatures() {
   const [selectedCategory, setSelectedCategory] = useState("all")
   const [sortOption, setSortOption] = useState("recent")
   const [searchQuery, setSearchQuery] = useState("");
-  const contentRef = useRef<HTMLDivElement>(null) 
+  const contentRef = useRef<HTMLDivElement>(null)
 
   const filteredWebinarsByCategory = webinars.filter((webinar) => {
     if (selectedCategory === "all") {
@@ -70,29 +70,36 @@ export default function WebinarFeatures() {
     setCurrentPage(1)
   }, [selectedCategory, sortOption, searchQuery])
 
-  useEffect(() => {
-    if (contentRef.current) {
-      contentRef.current.scrollIntoView({
-        behavior: "smooth",
-        block: "start", 
-      })
-    }
-  }, [currentPage]) 
-
   const totalPages = Math.ceil(sortedWebinars.length / itemsPerPage)
   const startIdx = (currentPage - 1) * itemsPerPage
   const currentWebinars = sortedWebinars.slice(startIdx, startIdx + itemsPerPage)
 
+  const scrollToContent = () => {
+    if (contentRef.current) {
+      contentRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   const handlePrev = () => {
     if (currentPage > 1) {
       setCurrentPage(currentPage - 1)
+      scrollToContent() 
     }
   }
 
   const handleNext = () => {
     if (currentPage < totalPages) {
       setCurrentPage(currentPage + 1)
+      scrollToContent() 
     }
+  }
+
+  const handlePageClick = (pageNum: number) => {
+    setCurrentPage(pageNum)
+    scrollToContent() 
   }
 
   return (
@@ -201,7 +208,7 @@ export default function WebinarFeatures() {
                             className={`cursor-pointer rounded-[12px] px-1 pt-0.5 pb-1 w-10 h-10 flex items-center justify-center ${
                                 isActive ? "bg-primary-500 text-base-white" : "bg-base-white border-2 border-grayscale-100 text-primary-500"
                             }`}
-                            onClick={() => setCurrentPage(pageNum)}
+                            onClick={() => handlePageClick(pageNum)}
                         >
                             <span className="text-[16px] text-center font-medium leading-6">{pageNum}</span>
                         </div>
