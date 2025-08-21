@@ -72,7 +72,7 @@ export function HomeModal({ triggerType = 'white' }: HomeModalProps) {
                     <Button
                         variant="talk"
                         size="big"
-                        className="cursor-pointer text-cyan-500 w-full"
+                        className="cursor-pointer text-cyan-500"
                         onClick={() => setIsDialogOpen(true)}
                     >
                         Talk to Sales
