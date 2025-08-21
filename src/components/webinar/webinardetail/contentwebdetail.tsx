@@ -6,13 +6,22 @@ import { MobileSectionSelect } from "./selectid";
 import FadeInSection from "@/components/animation/fadein";
 import Link from "next/link";
 import Copy from "./copy";
+import { FacebookShareButton, LinkedinShareButton, TwitterShareButton } from 'next-share';
 
 export default function ContentWebDetail() {
-    
+
     const [activeId, setActiveId] = useState("");
     const sectionRefs = useRef<Record<string, HTMLElement>>({});
     const observer = useRef<IntersectionObserver | null>(null);
-    const navRef = useRef<HTMLDivElement>(null); 
+    const navRef = useRef<HTMLDivElement>(null);
+
+    const [currentUrl, setCurrentUrl] = useState('');
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            setCurrentUrl(window.location.href);
+        }
+    }, []);
 
     const handleSmoothScroll = useCallback((id: string) => (e: { preventDefault: () => void; }) => {
         e.preventDefault();
@@ -31,17 +40,17 @@ export default function ContentWebDetail() {
 
         const navHeight = navRef.current ? navRef.current.offsetHeight : 0;
         const rootMarginValue = `-${navHeight}px 0px 0px 0px`;
-        
+
         const observerOptions = {
             root: null,
-            rootMargin: rootMarginValue, 
+            rootMargin: rootMarginValue,
             threshold: 0.1
         };
 
         observer.current = new IntersectionObserver((entries) => {
             const visibleEntries = entries.filter(entry => entry.isIntersecting);
             if (visibleEntries.length > 0) {
-                const topMostEntry = visibleEntries.reduce((prev, curr) => 
+                const topMostEntry = visibleEntries.reduce((prev, curr) =>
                     prev.boundingClientRect.top < curr.boundingClientRect.top ? prev : curr
                 );
                 setActiveId(topMostEntry.target.id);
@@ -61,7 +70,7 @@ export default function ContentWebDetail() {
         };
     }, []);
 
-    return ( 
+    return (
         <div className="flex flex-col justify-center items-center pt-6 md:pt-8 lg:pt-8 px-6 md:px-8 lg:px-[124px] pb-12 md:pb-20 lg:pb-[104px] border-t border-grayscale-100">
             <FadeInSection delay={0.5} className="max-w-[1192px] flex flex-col gap-12 lg:gap-[88px]">
                 <div className="flex flex-row gap-1 items-start">
@@ -406,21 +415,34 @@ export default function ContentWebDetail() {
                             <span className="text-[16px] md:text-[24px] leading-6 md:leading-[30px] font-medium md:font-normal text-grayscale-900">Share this webinar?</span>
                             <div className="flex flex-row gap-2">
                                 <Copy />
-                                <Link href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                                <FacebookShareButton
+                                    url={currentUrl}
+                                    quote={'Check out this awesome webinar!'}
+                                    hashtag={'#Webinar'}
+                                >
                                     <div className="flex flex-col items-center justify-center w-6 h-6 md:w-8 md:h-8 rounded-full bg-primary-500">
                                         <Image src="/webinar/fb.png" alt="icon" width={16} height={16} className="hover:opacity-80 transition duration-200 w-3 h-3 md:w-4 md:h-4" />
                                     </div>
-                                </Link>
-                                <Link href="https://x.com" target="_blank" rel="noopener noreferrer">
+                                </FacebookShareButton>
+                                <TwitterShareButton
+                                    url={currentUrl}
+                                    title={'Check out this awesome webinar!'}
+                                    hashtags={['Webinar', 'TechTalk']}
+                                >
                                     <div className="flex flex-col items-center justify-center w-6 h-6 md:w-8 md:h-8 rounded-full bg-primary-500">
                                         <Image src="/webinar/x.png" alt="icon" width={16} height={16} className="hover:opacity-80 transition duration-200 w-3 h-3 md:w-4 md:h-4" />
                                     </div>
-                                </Link>
-                                <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                                </TwitterShareButton>
+                                <LinkedinShareButton
+                                    url={currentUrl}
+                                    title={'Webinar Title'}
+                                    summary={'A brief summary of the webinar.'}
+                                    source={'Your Website Name'}
+                                >
                                     <div className="flex flex-col items-center justify-center w-6 h-6 md:w-8 md:h-8 rounded-full bg-primary-500">
                                         <Image src="/webinar/linkedin.png" alt="icon" width={16} height={16} className="hover:opacity-80 transition duration-200 w-3 h-3 md:w-4 md:h-4" />
                                     </div>
-                                </Link>
+                                </LinkedinShareButton>
                             </div>
                         </div>
                     </div>
