@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image"
 import Link from "next/link"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import { SelectCategories } from "./selectcategories"
 import { SelectRecent } from "./selectrecent"
 import { webinars } from "../data/webinars"
@@ -16,6 +16,7 @@ export default function WebinarFeatures() {
   const [selectedCategory, setSelectedCategory] = useState("all")
   const [sortOption, setSortOption] = useState("recent")
   const [searchQuery, setSearchQuery] = useState("");
+  const contentRef = useRef<HTMLDivElement>(null) 
 
   const filteredWebinarsByCategory = webinars.filter((webinar) => {
     if (selectedCategory === "all") {
@@ -69,6 +70,15 @@ export default function WebinarFeatures() {
     setCurrentPage(1)
   }, [selectedCategory, sortOption, searchQuery])
 
+  useEffect(() => {
+    if (contentRef.current) {
+      contentRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start", 
+      })
+    }
+  }, [currentPage]) 
+
   const totalPages = Math.ceil(sortedWebinars.length / itemsPerPage)
   const startIdx = (currentPage - 1) * itemsPerPage
   const currentWebinars = sortedWebinars.slice(startIdx, startIdx + itemsPerPage)
@@ -107,7 +117,7 @@ export default function WebinarFeatures() {
         </FadeInSection>
         <FadeInSection delay={0.5} className="flex flex-col w-full gap-10 lg:gap-16">
           {sortedWebinars.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-8">
+            <div ref={contentRef} className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-8">
               {currentWebinars.map((item, i) => (
                 <Link key={i} href={`/webinar/webinardetail?id=${item.id}`} className="cursor-pointer">
                   <div
@@ -181,7 +191,7 @@ export default function WebinarFeatures() {
                 </div>
                 <span className={`hidden md:block text-[16px] leading-6 font-medium ${currentPage === 1 ? "text-[#ABB1B9]" : "text-primary-500"}`}>Previous</span>
             </div>
-            <div className="flex flex-row items-center gap-2">
+            <div className="flex flex-row items-center gap-2 overflow-x-auto whitespace-nowrap scrollbar-hide">
                 {Array.from({ length: totalPages }, (_, idx) => {
                     const pageNum = idx + 1
                     const isActive = currentPage === pageNum

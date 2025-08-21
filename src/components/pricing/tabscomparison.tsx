@@ -82,7 +82,7 @@ export function TabsComparison() {
                 <Image src="/pricing/checklist.png" alt="check" width={20} height={20} className="w-[20px] h-[20px]"/>
               </div>
             <CardFooter>
-              <Link href="/auth/sign-up" className="cursor-pointer">
+              <Link href="/auth/sign-up" className="cursor-pointer  w-full">
                 <Button variant="login" size="medium" className="cursor-pointer text-primary-500 w-full mt-4 md:mt-6 h-12 md:h-auto">Get Started</Button>
               </Link>
             </CardFooter>
@@ -135,7 +135,7 @@ export function TabsComparison() {
                 <Image src="/pricing/checklist.png" alt="check" width={20} height={20} className="w-[20px] h-[20px]"/>
               </div>
             <CardFooter>
-              <Link href="/auth/sign-up" className="cursor-pointer">
+              <Link href="/auth/sign-up" className="cursor-pointer  w-full">
                 <Button variant="request" size="medium" className="cursor-pointer text-cyan-500 w-full mt-4 md:mt-6 h-12 md:h-auto">Get Started</Button>
               </Link>
             </CardFooter>
@@ -188,7 +188,7 @@ export function TabsComparison() {
                 <Image src="/pricing/checklist.png" alt="check" width={20} height={20} className="w-[20px] h-[20px]"/>
               </div>
             <CardFooter>
-              <Link href="/auth/sign-up" className="cursor-pointer">
+              <Link href="/auth/sign-up" className="cursor-pointer  w-full">
                 <Button variant="login" size="medium" className="cursor-pointer text-primary-500 w-full mt-4 md:mt-6 h-12 md:h-auto">Get Started</Button>
               </Link>
             </CardFooter>
