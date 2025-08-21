@@ -87,7 +87,7 @@ export default function HomeTestimonials() {
                     </p>
                   </div>
                 </div>
-                <div className="hidden md:flex md:flex-col items-center">
+                <div className="hidden md:flex md:flex-col items-center gap-2">
                   <button
                     className={`flex flex-col justify-center items-center p-2 rounded-[8px] ${isFirstSlide ? 'bg-transparent' : 'cursor-pointer bg-base-white'}`}
                     onClick={prev}
