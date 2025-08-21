@@ -17,16 +17,16 @@ export default function DeveloperFeatures() {
                         </div>
                     </div>
                     <div className="bg-additional-salty rounded-[16px] py-[30.58px] md:py-[65.84px] lg:py-[52px] px-[28.23px] md:px-[60.78px] lg:px-12 w-full flex-col justify-center items-center">
-                        <Image src="/developer/effortless.png" alt="img" width={460} height={344} className="w-full h-full" />
+                        <Image src="/developer/effortless.png" alt="img" width={460} height={344} className="w-full max-w-[460px] h-full max-h-[344px]" />
                     </div>
                 </FadeInSection>
                 <FadeInSection delay={0.5} className="flex flex-col lg:flex-row gap-6 md:gap-10 lg:gap-24 items-center">
                     <div className="bg-additional-snow rounded-[16px] py-[30.58px] md:py-[65.84px] lg:py-[52px] px-[28.23px] md:px-[60.78px] lg:px-12 w-full flex flex-col justify-center items-center">
                         <div className="grid grid-cols-2 w-full gap-4">
-                            <Image src="/developer/code-1.png" alt="img" width={222} height={164} className=" w-full h-full"/>
-                            <Image src="/developer/code-2.png" alt="img" width={222} height={164} className=" w-full h-full"/>
-                            <Image src="/developer/code-3.png" alt="img" width={222} height={164} className=" w-full h-full"/>
-                            <Image src="/developer/code-4.png" alt="img" width={222} height={164} className=" w-full h-full"/>
+                            <Image src="/developer/code-1.png" alt="img" width={222} height={164} className="w-full max-w-[222px] h-full max-h-[164px]"/>
+                            <Image src="/developer/code-2.png" alt="img" width={222} height={164} className="w-full max-w-[222px] h-full max-h-[164px]"/>
+                            <Image src="/developer/code-3.png" alt="img" width={222} height={164} className="w-full max-w-[222px] h-full max-h-[164px]"/>
+                            <Image src="/developer/code-4.png" alt="img" width={222} height={164} className="w-full max-w-[222px] h-full max-h-[164px]"/>
                         </div>
                     </div>
                     <div className="flex flex-col gap-3 md:gap-4 lg:gap-6 lg:max-w-[540px]">
@@ -53,8 +53,8 @@ export default function DeveloperFeatures() {
                     </div>
                     <div className="bg-additional-light rounded-[16px] py-[30.58px] md:py-[65.84px] lg:py-[52px] px-[28.23px] md:px-[60.78px] lg:px-12 w-full flex-col justify-center items-center">
                         <div className="flex flex-col w-full gap-3">
-                            <Image src="/developer/coverage-1.png" alt="img" width={460} height={93} className=" w-full h-full"/>
-                            <Image src="/developer/coverage-2.png" alt="img" width={460} height={293} className=" w-full h-full"/>
+                            <Image src="/developer/coverage-1.png" alt="img" width={460} height={93} className=" w-full max-w-[460px] h-full max-h-[93px]"/>
+                            <Image src="/developer/coverage-2.png" alt="img" width={460} height={293} className=" w-full max-w-[460px] h-full max-h-[293px]"/>
                         </div>
                     </div>
                 </FadeInSection>
