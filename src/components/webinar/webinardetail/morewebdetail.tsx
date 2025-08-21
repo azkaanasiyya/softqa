@@ -131,7 +131,7 @@ export default function MoreWebDetail() {
                       <div className="flex flex-col gap-1">
                         <p className="text-[14px] leading-[22px] text-grayscale-600">{item.date}</p>
                         <div className="flex flex-col gap-1 xl:gap-3">
-                          <h5 className="text-[18px] xl:text-[24px] leading-7 xl:leading-[30px] text-grayscale-900 group-hover:text-primary-500">{item.subtitle}</h5>
+                          <h5 className="text-[18px] xl:text-[24px] leading-7 xl:leading-[30px] text-grayscale-900 group-hover:text-primary-500 transition-colors duration-300">{item.subtitle}</h5>
                           <p className="text-[14px] xl:text-[16px] leading-[22px] xl:leading-6 text-grayscale-600 line-clamp-2">
                             {item.description}
                           </p>
