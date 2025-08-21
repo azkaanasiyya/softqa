@@ -99,52 +99,54 @@ export default function MoreWebDetail() {
         <div className="flex flex-col gap-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8">
             {visibleData.map((item) => (
-                <FadeInSection
-                  key={item.id}
-                  delay={0.5}
-                  className="bg-grayscale-50 rounded-[16px] p-2 xl:min-h-[456px] flex flex-col"
-                >
-                  <div className={`${item.tagColor} rounded-[12px] pl-[13.82px] md:pl-[14.58px] xl:pl-4 flex flex-row gap-[13.87px] xl:gap-6 justify-between`}>
-                    <div className="flex flex-col max-w-[164px] items-start justify-between my-[13.82px] md:my-[14.58px] xl:my-4">
-                      <h4 className="md:w-[94.76px] xl:w-auto text-[27.64px] md:text-[18.49px] xl:text-[32px] leading-[34.56px] md:leading-[23.11px] xl:leading-10 text-grayscale-900">
-                        {item.title}
-                      </h4>
-                      <div className="rounded-[17px] border border-grayscale-900 py-1 px-2">
-                        <p className="text-[10px] leading-[150%] text-grayscale-900">{item.tag}</p>
+              <Link key={item.id} href="/webinar/webinardetail" className="cursor-pointer">
+                  <FadeInSection
+                    delay={0.5}
+                    className="bg-grayscale-50 rounded-[16px] p-2 xl:min-h-[456px] flex flex-col"
+                  >
+                    <div className={`${item.tagColor} rounded-[12px] pl-[13.82px] md:pl-[14.58px] xl:pl-4 flex flex-row gap-[13.87px] xl:gap-6 justify-between`}>
+                      <div className="flex flex-col max-w-[164px] items-start justify-between my-[13.82px] md:my-[14.58px] xl:my-4">
+                        <h4 className="md:w-[94.76px] xl:w-auto text-[27.64px] md:text-[18.49px] xl:text-[32px] leading-[34.56px] md:leading-[23.11px] xl:leading-10 text-grayscale-900">
+                          {item.title}
+                        </h4>
+                        <div className="rounded-[17px] border border-grayscale-900 py-1 px-2">
+                          <p className="text-[10px] leading-[150%] text-grayscale-900">{item.tag}</p>
+                        </div>
+                      </div>
+                      <div className="relative">
+                        <Image
+                          src={item.image}
+                          alt="webinar"
+                          width={156}
+                          height={212}
+                          className="rounded-tr-[12px] rounded-br-[12px] object-cover w-[134.77px] h-[183.14px] md:w-[90.13px] md:h-[122.49px] xl:w-[156px] xl:h-[212px]"
+                        />
+                        <div className="absolute bottom-0 left-0 z-10 flex flex-col px-[10.37px] py-[9.47px] md:px-[6.93px] md:py-[5.73px] xl:p-3">
+                          <p className="text-[12.09px] md:text-[8.09px] xl:text-[14px] leading-[15.55px] md:leading-[10.4px] xl:leading-[18px] font-medium text-base-white">{item.name}</p>
+                          <p className="text-[10.37px] md:text-[6.93px] xl:text-[12px] leading-[15.55px] md:leading-[10.4px] xl:leading-[18px] text-base-white">{item.role}</p>
+                        </div>
                       </div>
                     </div>
-                    <div className="relative">
-                      <Image
-                        src={item.image}
-                        alt="webinar"
-                        width={156}
-                        height={212}
-                        className="rounded-tr-[12px] rounded-br-[12px] object-cover w-[134.77px] h-[183.14px] md:w-[90.13px] md:h-[122.49px] xl:w-[156px] xl:h-[212px]"
-                      />
-                      <div className="absolute bottom-0 left-0 z-10 flex flex-col px-[10.37px] py-[9.47px] md:px-[6.93px] md:py-[5.73px] xl:p-3">
-                        <p className="text-[12.09px] md:text-[8.09px] xl:text-[14px] leading-[15.55px] md:leading-[10.4px] xl:leading-[18px] font-medium text-base-white">{item.name}</p>
-                        <p className="text-[10.37px] md:text-[6.93px] xl:text-[12px] leading-[15.55px] md:leading-[10.4px] xl:leading-[18px] text-base-white">{item.role}</p>
+                    <div className="flex flex-col justify-between gap-[52.86px] md:gap-[18.84px] xl:gap-[26px] py-4 px-2 xl:p-4">
+                      <div className="flex flex-col gap-1">
+                        <p className="text-[14px] leading-[22px] text-grayscale-600">{item.date}</p>
+                        <div className="flex flex-col gap-1 xl:gap-3">
+                          <h5 className="text-[18px] xl:text-[24px] leading-7 xl:leading-[30px] text-grayscale-900">{item.subtitle}</h5>
+                          <p className="text-[14px] xl:text-[16px] leading-[22px] xl:leading-6 text-grayscale-600 line-clamp-2">
+                            {item.description}
+                          </p>
+                        </div>
                       </div>
+                      <Link href="/webinar/webinardetail" className="cursor-pointer">
+                        <div className="flex flex-row gap-1 items-end cursor-pointer">
+                          <p className="text-[14px] xl:text-[16px] leading-[22px] xl:leading-6 text-primary-500 font-medium underline">Read more</p>
+                          <Image src="/webinar/icon.png" alt="icon" width={16} height={16} className="w-4 h-4" />
+                        </div>
+                      </Link>
                     </div>
-                  </div>
-                  <div className="flex flex-col justify-between gap-[52.86px] md:gap-[18.84px] xl:gap-[26px] py-4 px-2 xl:p-4">
-                    <div className="flex flex-col gap-1">
-                      <p className="text-[14px] leading-[22px] text-grayscale-600">{item.date}</p>
-                      <div className="flex flex-col gap-1 xl:gap-3">
-                        <h5 className="text-[18px] xl:text-[24px] leading-7 xl:leading-[30px] text-grayscale-900">{item.subtitle}</h5>
-                        <p className="text-[14px] xl:text-[16px] leading-[22px] xl:leading-6 text-grayscale-600 line-clamp-2">
-                          {item.description}
-                        </p>
-                      </div>
-                    </div>
-                    <Link href="/webinar/webinardetail" className="cursor-pointer">
-                      <div className="flex flex-row gap-1 items-end cursor-pointer">
-                        <p className="text-[14px] xl:text-[16px] leading-[22px] xl:leading-6 text-primary-500 font-medium underline">Read more</p>
-                        <Image src="/webinar/icon.png" alt="icon" width={16} height={16} className="w-4 h-4" />
-                      </div>
-                    </Link>
-                  </div>
-                </FadeInSection>
+                  </FadeInSection>
+              </Link>
+                
             ))}
           </div>
 
