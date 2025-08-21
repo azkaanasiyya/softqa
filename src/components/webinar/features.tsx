@@ -126,7 +126,7 @@ export default function WebinarFeatures() {
           {sortedWebinars.length > 0 ? (
             <div ref={contentRef} className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-8">
               {currentWebinars.map((item, i) => (
-                <Link key={i} href={`/webinar/webinardetail?id=${item.id}`} className="cursor-pointer">
+                <Link key={i} href={`/webinar/webinardetail?id=${item.id}`} className="cursor-pointer group">
                   <div
                     className="bg-grayscale-50 rounded-[16px] p-2 lg:min-h-[456px] flex flex-col"
                   >
@@ -158,7 +158,7 @@ export default function WebinarFeatures() {
                       <div className="flex flex-col gap-1">
                         <p className="text-[14px] leading-[22px] text-grayscale-600">{item.date}</p>
                         <div className="flex flex-col gap-1 lg:gap-3">
-                          <h5 className="text-[18px] md:text-[24px] leading-7 md:leading-[30px] text-grayscale-900">
+                          <h5 className="text-[18px] md:text-[24px] leading-7 md:leading-[30px] text-grayscale-900 group-hover:text-primary-500">
                             {item.subtitle}
                           </h5>
                           <p className="text-[14px] lg:text-[16px] leading-[22px] lg:leading-6 text-grayscale-600 line-clamp-2">
@@ -168,7 +168,7 @@ export default function WebinarFeatures() {
                       </div>
                       <Link href="/webinar/webinardetail" className="cursor-pointer">
                         <div className="flex flex-row gap-1 items-end cursor-pointer">
-                          <p className="text-[14px] lg:text-[16px] leading-[22px] lg:leading-6 text-primary-500 font-medium hover:underline">
+                          <p className="text-[14px] lg:text-[16px] leading-[22px] lg:leading-6 text-primary-500 font-medium group-hover:underline">
                             Read more
                           </p>
                           <Image src="/webinar/icon.png" alt="icon" width={16} height={16} className="w-4 h-4" />

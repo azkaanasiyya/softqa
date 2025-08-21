@@ -99,7 +99,7 @@ export default function MoreWebDetail() {
         <div className="flex flex-col gap-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8">
             {visibleData.map((item) => (
-              <Link key={item.id} href="/webinar/webinardetail" className="cursor-pointer">
+              <Link key={item.id} href="/webinar/webinardetail" className="cursor-pointer group">
                   <FadeInSection
                     delay={0.5}
                     className="bg-grayscale-50 rounded-[16px] p-2 xl:min-h-[456px] flex flex-col"
@@ -131,7 +131,7 @@ export default function MoreWebDetail() {
                       <div className="flex flex-col gap-1">
                         <p className="text-[14px] leading-[22px] text-grayscale-600">{item.date}</p>
                         <div className="flex flex-col gap-1 xl:gap-3">
-                          <h5 className="text-[18px] xl:text-[24px] leading-7 xl:leading-[30px] text-grayscale-900">{item.subtitle}</h5>
+                          <h5 className="text-[18px] xl:text-[24px] leading-7 xl:leading-[30px] text-grayscale-900 group-hover:text-primary-500">{item.subtitle}</h5>
                           <p className="text-[14px] xl:text-[16px] leading-[22px] xl:leading-6 text-grayscale-600 line-clamp-2">
                             {item.description}
                           </p>
@@ -139,7 +139,7 @@ export default function MoreWebDetail() {
                       </div>
                       <Link href="/webinar/webinardetail" className="cursor-pointer">
                         <div className="flex flex-row gap-1 items-end cursor-pointer">
-                          <p className="text-[14px] xl:text-[16px] leading-[22px] xl:leading-6 text-primary-500 font-medium underline">Read more</p>
+                          <p className="text-[14px] xl:text-[16px] leading-[22px] xl:leading-6 text-primary-500 font-medium group-hover:underline">Read more</p>
                           <Image src="/webinar/icon.png" alt="icon" width={16} height={16} className="w-4 h-4" />
                         </div>
                       </Link>
