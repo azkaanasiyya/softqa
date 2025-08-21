@@ -158,7 +158,7 @@ export default function WebinarFeatures() {
                       <div className="flex flex-col gap-1">
                         <p className="text-[14px] leading-[22px] text-grayscale-600">{item.date}</p>
                         <div className="flex flex-col gap-1 lg:gap-3">
-                          <h5 className="text-[18px] md:text-[24px] leading-7 md:leading-[30px] text-grayscale-900 group-hover:text-primary-500">
+                          <h5 className="text-[18px] md:text-[24px] leading-7 md:leading-[30px] text-grayscale-900 group-hover:text-primary-500 transition-colors duration-300">
                             {item.subtitle}
                           </h5>
                           <p className="text-[14px] lg:text-[16px] leading-[22px] lg:leading-6 text-grayscale-600 line-clamp-2">
