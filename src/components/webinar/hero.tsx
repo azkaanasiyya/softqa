@@ -6,6 +6,7 @@ import { webinarHeroData } from "../data/webinarhero"
 import FadeInSection from "../animation/fadein"
 import { ArrowRight, ArrowLeft } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Link from "next/link"
 
 export default function WebinarHero() {
   const [itemsPerPage, setItemsPerPage] = useState(2)
@@ -132,9 +133,11 @@ export default function WebinarHero() {
                       <p className="text-[16px] leading-6 text-grayscale-600 line-clamp-2">{item.description}</p>
                     </div>
                   </div>
-                  <Button variant="request" size="medium" className="text-cyan-500 w-full lg:w-[148px] cursor-pointer h-12 lg:h-14">
-                    Register
-                  </Button>
+                  <Link href="/auth/sign-up" className="cursor-pointer">
+                    <Button variant="request" size="medium" className="text-cyan-500 w-full lg:w-[148px] cursor-pointer h-12 lg:h-14">
+                      Register
+                    </Button>
+                  </Link>
                 </div>
               </FadeInSection>
             ))}

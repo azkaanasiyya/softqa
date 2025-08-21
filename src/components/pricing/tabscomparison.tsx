@@ -14,6 +14,7 @@ import {
 import Image from "next/image";
 import FadeInSection from "../animation/fadein";
 import { useState } from "react";
+import Link from "next/link";
 
 export function TabsComparison() {
   const [activeTab, setActiveTab] = useState("starter");
@@ -81,7 +82,9 @@ export function TabsComparison() {
                 <Image src="/pricing/checklist.png" alt="check" width={20} height={20} className="w-[20px] h-[20px]"/>
               </div>
             <CardFooter>
-              <Button variant="login" size="medium" className="cursor-pointer text-primary-500 w-full mt-4 md:mt-6 h-12 md:h-auto">Get Started</Button>
+              <Link href="/auth/sign-up" className="cursor-pointer">
+                <Button variant="login" size="medium" className="cursor-pointer text-primary-500 w-full mt-4 md:mt-6 h-12 md:h-auto">Get Started</Button>
+              </Link>
             </CardFooter>
           </Card>
         </TabsContent>
@@ -132,7 +135,9 @@ export function TabsComparison() {
                 <Image src="/pricing/checklist.png" alt="check" width={20} height={20} className="w-[20px] h-[20px]"/>
               </div>
             <CardFooter>
-              <Button variant="request" size="medium" className="cursor-pointer text-cyan-500 w-full mt-4 md:mt-6 h-12 md:h-auto">Get Started</Button>
+              <Link href="/auth/sign-up" className="cursor-pointer">
+                <Button variant="request" size="medium" className="cursor-pointer text-cyan-500 w-full mt-4 md:mt-6 h-12 md:h-auto">Get Started</Button>
+              </Link>
             </CardFooter>
           </Card>
         </TabsContent>
@@ -183,7 +188,9 @@ export function TabsComparison() {
                 <Image src="/pricing/checklist.png" alt="check" width={20} height={20} className="w-[20px] h-[20px]"/>
               </div>
             <CardFooter>
-              <Button variant="login" size="medium" className="cursor-pointer text-primary-500 w-full mt-4 md:mt-6 h-12 md:h-auto">Get Started</Button>
+              <Link href="/auth/sign-up" className="cursor-pointer">
+                <Button variant="login" size="medium" className="cursor-pointer text-primary-500 w-full mt-4 md:mt-6 h-12 md:h-auto">Get Started</Button>
+              </Link>
             </CardFooter>
           </Card>
         </TabsContent>
