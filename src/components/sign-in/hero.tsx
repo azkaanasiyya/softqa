@@ -21,6 +21,7 @@ const SignInSchema = z.object({
     password: z.string().min(8, "Password must be at least 8 characters"),
 })
 
+
 export default function SignInHero() {
     const methods = useForm({
         resolver: zodResolver(SignInSchema),
@@ -37,7 +38,7 @@ export default function SignInHero() {
     }
 
     return (
-        <div className="flex flex-col justify-center w-screen items-center">
+        <div className="flex flex-col justify-center items-center overflow-x-hidden min-h-screen">
             <FadeInSection delay={0.5} className="flex flex-col items-center lg:items-start lg:flex-row max-w-[1720px] w-full lg:gap-[124px] py-8 md:pt-12 px-6 md:px-8 lg:py-0 lg:pr-0 lg:pl-[124px] lg:mx-auto">
                 <div className="lg:pt-[45px] md:pb-[152px] lg:pb-[124px] flex flex-col gap-8 md:gap-[88px] lg:gap-24 items-start w-full lg:max-w-[488px]">
                     <Link href="/" className="cursor-pointer">
@@ -123,7 +124,7 @@ export default function SignInHero() {
                     </div>
                 </div>
 
-                <div className="bg-[url('/auth/bg-sign-in.png')] bg-cover pt-[216px] px-[72px] pb-16 hidden lg:flex lg:flex-col w-[704px] xl:w-full gap-[210px]">
+                <div className="bg-[url('/auth/bg-sign-in.png')] bg-cover pt-[216px] px-[72px] pb-16 hidden lg:flex lg:flex-col w-[704px] xl:w-full gap-[210px] overflow-hidden">
                     <FadeInSection delay={0.5} className="flex flex-col max-w-[560px] gap-8">
                         <h1 className="text-[56px] leading-[70px] text-base-white">Revolutionize QA with Smarter Automation</h1>
                         <div className="flex flex-col gap-10">
@@ -142,16 +143,16 @@ export default function SignInHero() {
                             </div>
                         </div>
                     </FadeInSection>
-                    <FadeInSection delay={0.5} className="flex flex-col items-center max-w-[560px] gap-8">
+                    <FadeInSection delay={0.5} className="flex flex-col items-center w-full max-w-[560px] gap-8">
                         <Image src="/auth/join.png" alt="image" width={560} height={22} />
-                        <div className="flex flex-col items-center gap-10">
-                            <div className="flex flex-wrap gap-10">
+                        <div className="flex flex-col items-center gap-10 w-full">
+                            <div className="flex flex-wrap justify-between w-full">
                                 <Image src="/auth/discord.png" alt="image" width={114} height={32} />
                                 <Image src="/auth/mailchimp.png" alt="image" width={112} height={32} />
                                 <Image src="/auth/grammarly.png" alt="image" width={120} height={32} />
                                 <Image src="/auth/attentive.png" alt="image" width={94} height={32} />
                             </div>
-                            <div className="flex flex-wrap gap-10">
+                            <div className="flex flex-wrap justify-between w-full">
                                 <Image src="/auth/hellosign.png" alt="image" width={111.33} height={32} />
                                 <Image src="/auth/intercom.png" alt="image" width={111.33} height={32} />
                                 <Image src="/auth/square.png" alt="image" width={87.66} height={32} />

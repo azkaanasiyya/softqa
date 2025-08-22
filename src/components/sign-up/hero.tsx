@@ -187,7 +187,7 @@ export default function SignHero() {
               alt="leader image"
               width={624}
               height={80}
-              className="absolute bottom-0 -left-8"
+              className="absolute bottom-0 -left-8 z-999"
             />
           </div>
 
@@ -196,7 +196,7 @@ export default function SignHero() {
             alt="signup bg"
             width={704}
             height={464}
-            className="absolute z-10 bottom-0 left-0 w-full min-h-[464px]"
+            className="absolute bottom-0 left-0 w-full min-h-[464px]"
           />
         </div>
       </FadeInSection>
